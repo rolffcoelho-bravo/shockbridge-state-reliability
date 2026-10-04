@@ -1,0 +1,15 @@
+ShockBridge State Reliability
+Copyright 2026 Rodolfo Pereira
+
+Software is licensed under the Apache License, Version 2.0. Owner-authored
+documentation, tables, and figures are licensed under Creative Commons
+Attribution 4.0 International except where a file or source note says
+otherwise. See LICENSE and LICENSE-DOCS.md.
+
+The repository does not license or redistribute external datasets or
+third-party source material. Statistical displays derived from ECB statistics
+must retain their source notes and disclose transformations. ECB authorship or
+source attribution does not imply ECB endorsement.
+
+The public reproducibility export intentionally excludes the two private
+flagship blueprints and the canonical repository's full development history.

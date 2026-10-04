@@ -1,0 +1,35 @@
+schema_version: 1
+artifact_id: monthly-state-panel-v1
+created_on: 2026-10-02
+evidence_status: REAL_DATA_OUTCOME_BLIND
+decision_status: REJECTED_FEASIBILITY_DESIGN
+
+build:
+  command: >-
+    state-risk build-monthly-state-panel experiments/monthly_state_panel_v1.yaml
+    data/processed/monthly_state_panel_v1.csv
+    --audit-output reports/methodology/monthly_state_panel_v1.audit.json
+  config_sha256: 4a232610586057afd9893b0310d55b7161db157cd1ef7bb1a4fbb7ccfa5a98a5
+  implementation_sha256: e45dc1ff97926db523b5fb8a13697f965b0c00862b04bd947b2ad3d684c98c3d
+  source_registry_sha256: 88fd827be0cb0086717e261a0fec5fac38035c8ce32204869d8095e9138ae54d
+  outcomes_accessed: false
+
+outputs:
+  panel:
+    path: data/processed/monthly_state_panel_v1.csv
+    sha256: 852068717575f3d08bfb3641d34d391da20978165b264bb75b2a3737f1675205
+    bytes: 508797
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/monthly_state_panel_v1.audit.json
+    sha256: 89d37386cf136cf9234c378e554a030f5b2d03df1c14e17c6adc572a71c9690f
+    bytes: 472
+
+decision:
+  reason: >-
+    Month-end checkpoints mechanically exceed the frozen macro staleness caps
+    under the conservative pre-2015 archive availability rule.
+  hicp_coverage: 0.6363636363636364
+  industrial_production_coverage: 0.5314685314685315
+  superseded_by: monthly-state-panel-v2
+  model_estimation_authorized: false

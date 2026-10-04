@@ -1,0 +1,30 @@
+schema_version: 1
+experiment_id: state-support-power-v1
+evidence_status: SYNTHETIC_DESIGN_ONLY
+recorded_at_utc: 2026-10-01T23:59:54Z
+python_version: 3.9.6
+command: >-
+  .venv/bin/python -m shockbridge_state_risk design-power
+  experiments/design_power_v1.yaml
+  --output reports/methodology/state_support_power_v1.json
+
+configuration:
+  path: experiments/design_power_v1.yaml
+  sha256: b083e441be1937b7d5e2709d5c357a8aef962abf3f0a7e64e5e8da489fb0558c
+
+implementation:
+  path: src/shockbridge_state_risk/design/power.py
+  sha256: 6d2ef673e46436ae7e22abc71615d426f13e8f198fba9ee4c069cb5eb05664d7
+
+result:
+  path: reports/methodology/state_support_power_v1.json
+  sha256: 738194d18d37691113df5ac445ca4b28177946194cece3aa7cf853cf4cfb0b22
+  scenario_count: 180
+  replications_per_scenario: 300
+  estimators_per_scenario: 3
+
+reproduction_notes:
+  - deterministic_seeds_are_derived_from_the_base_seed_and_grid_indices
+  - process_parallelism_preserves_input_order
+  - the_result_is_a_design_simulation_not_an_empirical_estimate
+  - no_event_outcome_magnitude_is_read_by_the_simulator

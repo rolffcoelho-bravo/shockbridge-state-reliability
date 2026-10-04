@@ -1,0 +1,163 @@
+schema_version: 1
+contract_id: shockbridge-pre-event-state-panel-v1
+status: CANDIDATE_PANEL_BUILT_STATE_ESTIMATOR_STILL_BLOCKED
+audit_date: 2026-10-02
+
+purpose: construct an event-indexed point-in-time information set without using event outcomes
+event_universe: frozen_EA_MPD_press_release_events_joined_to_ABGMR_target_factor
+event_count: 242
+
+decision_clock:
+  timezone: Europe/Frankfurt
+  state_cutoff: immediately_before_the_scheduled_press_release_window
+  strict_rule: first_usable_timestamp_must_be_strictly_before_event_cutoff
+  market_data_rule: use_last_fully_observed_pre_event_value_never_event_day_close
+  macro_data_rule: use_latest_release_and_vintage_available_before_cutoff
+  release_timestamp_policy: exact_timestamp_when_available_else_documented_conservative_date_end
+  revisions: revised_values_for_prior_dates_are_future_information_until_their_release
+
+required_long_format_fields:
+  - event_id
+  - event_timestamp
+  - state_cutoff_timestamp
+  - feature_id
+  - feature_family
+  - observation_period
+  - value
+  - unit
+  - first_usable_timestamp
+  - vintage_id
+  - source_url
+  - source_artifact_sha256
+  - transformation_id
+  - age_at_cutoff
+
+candidate_feature_families:
+  systemic_stress:
+    priority: CORE
+    candidate_source: official_ECB_CISS
+    exact_series_ids:
+      - CISS.D.U2.Z0Z.4F.EC.SS_CIN.IDX
+      - CISS.D.U2.Z0Z.4F.EC.SS_CI.IDX
+    source_status: EXCLUDED_FROM_CAUSAL_PANEL_POST_SAMPLE_REPLACEMENT_VINTAGES_ONLY
+  policy_and_curve:
+    priority: CORE
+    candidate_source: official_ECB_rates_and_yield_curve_data
+    exact_series_ids:
+      - FM.D.U2.EUR.4F.KR.DFR.LEV
+      - YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y
+      - YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y
+    source_status: DFR_ADMITTED_YIELD_SLOPE_CONDITIONAL_CHALLENGER
+  inflation:
+    priority: CORE
+    candidate_source: ECB_real_time_database
+    exact_series_id: RTD.M.S0.N.P_C_OV.X
+    transformation: year_over_year_percent_change_within_each_as_of_vintage
+    source_status: ADMITTED
+  activity:
+    priority: CORE
+    candidate_source: ECB_real_time_database
+    exact_series_ids:
+      - RTD.M.S0.Y.I_XCONS.X
+      - RTD.M.S0.S.L_UNETO.F
+    transformations:
+      - industrial_production_year_over_year_percent_change
+      - unemployment_rate_level
+    source_status: ADMITTED_WITH_PRESPECIFIED_STALENESS_MISSINGNESS
+  sovereign_fragmentation:
+    priority: CHALLENGER
+    candidate_source: official_public_country_yield_series
+    source_status: RIGHTS_FREQUENCY_AND_COVERAGE_PENDING_AUDIT
+  liquidity_and_credit:
+    priority: CHALLENGER
+    candidate_source: official_ECB_market_or_bank_funding_series
+    source_status: FREQUENCY_AND_POINT_IN_TIME_SUITABILITY_PENDING_AUDIT
+
+feature_admission_rules:
+  - economic_definition_and_units_are_recorded
+  - source_is_publicly_retrievable_and_versionable
+  - first_usable_timestamp_is_auditable
+  - sample_coverage_is_reported_before_imputation
+  - transformation_uses_only_information_available_before_each_event
+  - feature_is_not_a_contemporaneous_descendant_of_the_event_shock
+  - feature_family_addition_requires_an_ablation_rationale
+
+prohibited_inputs:
+  - event_window_outcomes
+  - same_day_market_close_after_the_announcement
+  - full_sample_smoothed_state_probabilities
+  - revised_macro_values_before_their_revision_release
+  - crisis_labels_assigned_with_hindsight
+  - proprietary_data_without_a_public_reproduction_boundary
+
+missingness_and_staleness:
+  future_backfill: PROHIBITED
+  within_series_carry_forward: allowed_only_after_release_and_before_next_vintage
+  age_feature: REQUIRED
+  series_specific_maximum_age_days:
+    hicp_yoy: 90
+    industrial_production_yoy: 120
+    unemployment_rate: 120
+    deposit_facility_rate: 1
+    yield_curve_10y_minus_2y: 2
+  missingness_indicator: candidate_if_missingness_is_informative_and_prespecified
+  observed_candidate_panel_coverage:
+    hicp_yoy: 240_of_242
+    industrial_production_yoy: 235_of_242
+    unemployment_rate: 233_of_242
+    deposit_facility_rate: 242_of_242
+    yield_curve_10y_minus_2y: 209_of_242_conditional_challenger
+  coverage_gate: PASS_FOR_FOUR_ADMITTED_FEATURES_WITH_EXPLICIT_MISSINGNESS
+
+preprocessing:
+  scaling: expanding_or_training_block_only
+  winsorization: none_unless_development_only_rule_is_frozen
+  dimension_reduction: fit_on_admissible_history_only
+  stored_outputs:
+    - raw_point_in_time_value
+    - transformed_value
+    - transformation_parameters_as_of_cutoff
+    - missingness_and_age_flags
+
+state_estimation:
+  primary_estimator: PENDING_PANEL_AND_SUPPORT_AUDIT
+  first_candidate_state_count: 2
+  three_state_model: sensitivity_only_if_support_gate_passes
+  required_replay: expanding_or_rolling_filtered_probabilities
+  smoothed_probabilities: descriptive_only_never_a_decision_time_feature
+  hard_labels: descriptive_only_not_primary_transmission_input
+  label_alignment: map_states_across_refits_using_frozen_development_descriptors
+  uncertainty_propagation: bootstrap_or_posterior_draws_must_refit_state_stage
+
+support_diagnostics:
+  required:
+    - hard_argmax_event_count_by_state_and_block
+    - probability_weighted_effective_sample_size_by_state_and_block
+    - centered_probability_contrast_information_by_state_and_block
+    - posterior_entropy_by_event_and_block
+    - shock_support_by_state_and_sign
+    - leverage_and_influence_by_event
+  effective_sample_size: squared_sum_of_weights_divided_by_sum_of_squared_weights
+  minimum_support_rule: PENDING_STANDARDIZED_AND_ECONOMIC_SCALE_POWER_RECONCILIATION
+  stop_rule: simplify_state_model_if_any_confirmatory_contrast_fails_the_frozen_support_rule
+
+outcome_firewall:
+  state_panel_build: outcome_blind
+  state_model_screening: state_likelihood_stability_and_interpretability_only
+  transmission_outcomes_during_panel_build: SEALED_EXCEPT_PREVIOUSLY_RECORDED_COVERAGE_COUNTS
+  final_effect_estimation: prohibited_until_state_contract_and_identification_memo_are_frozen
+
+acceptance_tests:
+  - zero_point_in_time_violations
+  - zero_duplicate_event_feature_vintage_keys
+  - complete_provenance_for_every_retained_value
+  - explicit_missingness_and_age_for_every_event_feature
+  - filtered_probability_rows_sum_to_one_within_tolerance
+  - deterministic_replay_from_frozen_manifests
+  - support_and_power_gate_report_completed_before_estimator_selection
+
+blocking_items:
+  - economically_meaningful_smallest_interaction_effect
+  - minimum_effective_state_support
+  - primary_state_estimator
+  - yield_curve_historical_revision_archive_if_promoted_from_challenger

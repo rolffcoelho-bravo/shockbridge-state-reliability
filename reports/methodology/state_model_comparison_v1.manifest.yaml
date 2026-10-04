@@ -1,0 +1,79 @@
+schema_version: 1
+artifact_id: state-model-comparison-v1
+created_on: 2026-10-02
+evidence_status: REAL_DATA_OUTCOME_BLIND_MODEL_COMPARISON
+selection_status: KILL_GATE_NO_ELIGIBLE_MODEL
+
+frozen_design:
+  config_path: experiments/state_model_comparison_v1.yaml
+  config_sha256: dfa3f82845980e9f67cc886d725ed84ec6d66706a0ebce435f7e5693cbdf1d42
+  pre_result_git_commit: b8463b7
+  panel_path: data/processed/monthly_state_panel_v2.csv
+  panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  outcomes_accessed: false
+  synthetic_observations_used: false
+
+implementation:
+  benchmarks_path: src/shockbridge_state_risk/state/benchmarks.py
+  benchmarks_sha256: 43289b3ee582fe55bfe20724ab2dfaa196869a412190999ba3c0cf283b79f94b
+  comparison_path: src/shockbridge_state_risk/state/comparison.py
+  comparison_sha256: 78595aadb8155944953bf3495f6b8cb748d154a3fe7c9da5d03bed650b9c0f5c
+  repair_git_commit: 8615cd1
+
+attempt_1:
+  status: INVALID_NONFINITE_CHANGE_POINT_SCORE
+  reason: >-
+    A rolling change-point segment coincided with an all-missing unemployment
+    interval, producing undefined local predictive moments for July 2024.
+  comparison_path: data/processed/state_model_comparison_v1_attempt1.csv
+  comparison_sha256: 85f1ae44db43507beb148b08dec4579ef9211d4c677fabad8e431d6471d39dfe
+  comparison_bytes: 720923
+  audit_path: reports/methodology/state_model_comparison_v1_attempt1.audit.json
+  audit_sha256: 739ab8c422de9815338c937b937adf8e3df45bf876d9858ca87553729f4afd9b
+  audit_bytes: 45300
+  evidence_use: NONE_PRESERVED_FOR_DEVIATION_AUDIT
+
+final_outputs:
+  comparison:
+    path: data/processed/state_model_comparison_v1.csv
+    sha256: 26525d26df664f936ae52f7c34308f1caabef74f3b5c0cb766cd289175bdaa63
+    bytes: 720955
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/state_model_comparison_v1.audit.json
+    sha256: 1def39c5ca012f27c0724ce563692b046ced66a657f094259437a46b50143f7c
+    bytes: 45360
+    repository_disposition: COMMITTABLE
+  finite_value_check: PASS
+  rows: 3616
+
+primary_two_state_expanding:
+  dynamic_factor:
+    log_score: -1586.1899804852776
+    score_gain_vs_single_gaussian: 353.313961767561
+    minimum_restart_agreement: 0.391304347826087
+    support_gates_pass: true
+    screening_pass: false
+  hidden_markov:
+    log_score: -1629.2101765145949
+    score_gain_vs_single_gaussian: 310.2937657382437
+    minimum_restart_agreement: 0.7375
+    support_gates_pass: false
+    screening_pass: false
+  change_point:
+    log_score: -1685.2921254088615
+    score_gain_vs_single_gaussian: 254.21181684397766
+    minimum_restart_agreement: 0.6
+    support_gates_pass: false
+    screening_pass: false
+  pca_cluster:
+    log_score: -1798.943548768271
+    score_gain_vs_single_gaussian: 140.56039348456946
+    minimum_restart_agreement: 0.3656716417910448
+    support_gates_pass: true
+    screening_pass: false
+
+decision:
+  selected_primary_model: null
+  transmission_estimation_authorized: false
+  next_action: REDESIGN_STATE_ESTIMATION_WITHOUT_OPENING_OUTCOMES

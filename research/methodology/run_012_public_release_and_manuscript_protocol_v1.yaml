@@ -1,0 +1,100 @@
+schema_version: 1
+protocol_id: run-012-public-release-and-manuscript-v1
+created_on: 2026-10-04
+status: APPROVED_AND_FROZEN
+approval_basis: user_approved_run_012_release_reproducibility_and_manuscript_architecture
+
+approved_working_title: >-
+  When a State Is Not Stable Enough: Real-Time Measurement Reliability in
+  Euro-Area Monetary-Policy Research
+
+scientific_role:
+  purpose: >-
+    Prepare the clean-reproduced negative measurement result for rigorous
+    manuscript development and a later public repository without changing any
+    empirical classification, reopening model selection, or exposing
+    non-redistributable inputs.
+  new_empirical_estimation_allowed: false
+  new_state_model_search_allowed: false
+  transmission_outcome_access_allowed: false
+  external_validity_execution_allowed: false
+  exact_reproduction_checks_allowed: true
+
+release_audit_scope:
+  - tracked_current_tree_secret_scan
+  - full_git_history_secret_scan
+  - tracked_artifact_size_and_data_boundary_audit
+  - source_and_derived_artifact_redistribution_matrix
+  - package_metadata_and_readme_accuracy
+  - deterministic_runtime_lock
+  - second_available_python_runtime_test
+  - container_specification_if_runtime_is_available
+  - continuous_integration_alignment
+  - manuscript_architecture_and_claim_map
+
+dependency_contract:
+  exact_runtime_versions_source: reports/methodology/run_011_clean_reproduction.audit.json
+  direct_runtime_dependencies:
+    certifi: 2026.7.22
+    numpy: 1.26.4
+    openpyxl: 3.1.5
+    PyYAML: 6.0.3
+  transitive_runtime_dependencies:
+    et_xmlfile: 2.0.0
+  exact_dev_versions_source: active_verified_project_environment
+  lock_must_exclude_local_editable_paths: true
+  minimum_supported_python: "3.9"
+
+public_boundary:
+  proposed_repository_name: shockbridge-state-reliability
+  github_creation_authorized: false
+  remote_creation_authorized: false
+  license_selection_authorized: false
+  raw_or_processed_data_publication_authorized: false
+  source_manifests_and_retrieval_code_publication_candidate: true
+  deterministic_paper_tables_and_figures_publication_candidate: true
+  blueprint_publication_requires_content_review: true
+
+manuscript_contract:
+  article_type: measurement_reliability_and_scientific_governance_application
+  required_sections:
+    - abstract
+    - introduction
+    - institutional_and_data_timing
+    - prospective_validation_design
+    - results
+    - vintage_robustness
+    - closest_prior_art_and_contribution_boundary
+    - limitations_and_external_validity
+    - reproducibility_and_data_availability
+    - conclusion
+  must_distinguish:
+    - measured_facts
+    - sample_dependent_estimates
+    - interpretation
+    - limitations
+    - future_hypotheses
+  prohibited_claims:
+    - state_dependent_transmission_effect
+    - monetary_policy_amplification_result
+    - causal_revision_effect
+    - estimated_structural_break
+    - general_factor_model_failure
+    - novel_factor_or_stability_method
+
+completion_gates:
+  - working_title_and_readme_match_current_evidence
+  - deterministic_dependency_files_validate_in_clean_environment
+  - available_second_runtime_test_recorded_or_environment_blocker_explicit
+  - current_tree_and_full_history_secret_scans_pass
+  - redistribution_matrix_covers_every_public_artifact_family
+  - manuscript_skeleton_maps_every proposed claim to evidence
+  - all_local_artifacts_remain_hash_verified
+  - full_software_quality_suite_passes
+  - github_and_license_actions_remain_unexecuted
+
+next_stage_not_authorized:
+  - public_github_repository_creation
+  - open_source_license_selection
+  - external_validity_empirical_execution
+  - transmission_estimation

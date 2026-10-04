@@ -1,0 +1,176 @@
+{
+  "estimator_status": "BENCHMARK_NOT_FINAL_PRIMARY",
+  "events": 242,
+  "events_below_restart_agreement_threshold": [
+    "ecb-pr-2008-09-04",
+    "ecb-pr-2008-10-02"
+  ],
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_STATE_BENCHMARK",
+  "features": [
+    "hicp_yoy",
+    "industrial_production_yoy",
+    "unemployment_rate",
+    "deposit_facility_rate"
+  ],
+  "known_limitation": "Event-indexed replay treats irregular meeting intervals as one transition; monthly-calendar challengers remain required by Blueprint V2.",
+  "mean_restart_hard_agreement": 0.9969686184304705,
+  "mean_transition_matrix": [
+    [
+      0.9804947901847647,
+      0.019505209815235694
+    ],
+    [
+      0.031001249949686737,
+      0.9689987500503136
+    ]
+  ],
+  "minimum_restart_hard_agreement": 0.7,
+  "minimum_training_events": 40,
+  "outcomes_accessed": false,
+  "prequential_log_score_gain_vs_single_gaussian": 261.4891112890223,
+  "restart_agreement_threshold": 0.85,
+  "screening_gates": {
+    "all_selected_fits_converged": true,
+    "hmm_beats_state_independent_gaussian_prequentially": true,
+    "maximum_mean_entropy": true,
+    "minimum_hard_count": true,
+    "minimum_restart_agreement": false,
+    "minimum_weighted_ess": true
+  },
+  "screening_pass": false,
+  "shock_used_for_model_selection": false,
+  "support": {
+    "centered_probability_contrast_information": 44.58226820086557,
+    "eligible_replay_events": 202,
+    "maximum_entropy": 0.3056703892348989,
+    "mean_entropy": 0.004549172266627489,
+    "median_entropy": 3.2043858186660153e-09,
+    "states": {
+      "0": {
+        "blocks": {
+          "1": {
+            "events": 68,
+            "hard_count": 29,
+            "weighted_count": 29.09118540336675,
+            "weighted_ess": 29.174622641532725
+          },
+          "2": {
+            "events": 67,
+            "hard_count": 67,
+            "weighted_count": 66.99927132197759,
+            "weighted_ess": 66.9999998365079
+          },
+          "3": {
+            "events": 67,
+            "hard_count": 39,
+            "weighted_count": 38.872692991009586,
+            "weighted_ess": 38.99651688837607
+          }
+        },
+        "feature_weighted_means": {
+          "deposit_facility_rate": -0.02878326909899612,
+          "hicp_yoy": 1.4452291339965122,
+          "industrial_production_yoy": -0.37514394431153836,
+          "unemployment_rate": 9.763618470318427
+        },
+        "hard_count": 135,
+        "mean_probability": 0.6681344045364055,
+        "shock_negative_weighted_count": 91.00262663349801,
+        "shock_positive_weighted_count": 43.960523082855914,
+        "shock_weighted_mean_absolute_dose": 0.9436733963737705,
+        "shock_zero_weighted_count": 0.0,
+        "weighted_count": 134.9631497163539,
+        "weighted_ess": 135.17082663728087
+      },
+      "1": {
+        "blocks": {
+          "1": {
+            "events": 68,
+            "hard_count": 39,
+            "weighted_count": 38.90881459663325,
+            "weighted_ess": 38.99219149513858
+          },
+          "2": {
+            "events": 67,
+            "hard_count": 0,
+            "weighted_count": 0.0007286780224209934,
+            "weighted_ess": 3.097606783741394
+          },
+          "3": {
+            "events": 67,
+            "hard_count": 28,
+            "weighted_count": 28.12730700899042,
+            "weighted_ess": 28.251281770833508
+          }
+        },
+        "feature_weighted_means": {
+          "deposit_facility_rate": 2.473783895798426,
+          "hicp_yoy": 3.3244288785615863,
+          "industrial_production_yoy": 0.6588121825123293,
+          "unemployment_rate": 7.212985880025934
+        },
+        "hard_count": 67,
+        "mean_probability": 0.33186559546359456,
+        "shock_negative_weighted_count": 52.997373366502,
+        "shock_positive_weighted_count": 14.039476917144093,
+        "shock_weighted_mean_absolute_dose": 1.630122764615097,
+        "shock_zero_weighted_count": 0.0,
+        "weighted_count": 67.0368502836461,
+        "weighted_ess": 67.24485151677973
+      }
+    },
+    "top_state_contrast_leverage_events": [
+      {
+        "event_id": "ecb-pr-2007-06-06",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2009-01-15",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2008-10-02",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2008-09-04",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2008-08-07",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2006-07-06",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2006-08-03",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2006-08-31",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2008-07-03",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      },
+      {
+        "event_id": "ecb-pr-2008-06-05",
+        "leverage": 0.010013029855590662,
+        "probability_state_1": 1.0
+      }
+    ],
+    "warmup_events": 40
+  }
+}

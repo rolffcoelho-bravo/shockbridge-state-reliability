@@ -1,0 +1,232 @@
+{
+  "audit_id": "run-012-public-release-v1",
+  "blocker_counts": {
+    "current_privacy_findings": 0,
+    "current_secret_findings": 0,
+    "history_privacy_findings": 28,
+    "history_secret_findings": 0,
+    "prohibited_tracked_data_paths": 0,
+    "public_author_identity_records": 0,
+    "suspicious_filenames": 0
+  },
+  "credential_scan_status": "PASS",
+  "current_privacy_findings": [],
+  "current_secret_findings": [],
+  "current_tree_privacy_status": "PASS",
+  "data_boundary_status": "PASS",
+  "full_history_privacy_status": "FAIL",
+  "git_head": "01d92463c45e6e6ff358538b4e01a542a15e7302",
+  "historical_commit_count": 45,
+  "history_privacy_findings": [
+    {
+      "blob": "0788fd3ef57d23b508f3afcd8e16914ddffb067e",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "0894801aaf07f25641a09aa2cae7b792eb6d0639",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "10e9e680264b7a18c434418663ed1109a23287b9",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "16e907dc9a4119e62540b53e2c410aa3162ce198",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "16fdddb6ed263edfca42a99c993b8062bf1ae17f",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "175c7eb277af28a5126c72dc88baa9db0cd1b219",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "232f6dc6ff1e5186f7f1f8d73b423fcd893e1a4d",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "276d3accf14627a28c8f2adbb2c9793a9469d981",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "4072a9e3083c7d62f4ff2049e0eccadae4c9a19d",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "530bd0f09836376c7897293fb6658eddb4124112",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "54a8b4b2385e9f0730545ea214b14af26f54e7ea",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "56b14e286f0da1316bae8cc11be4f5e81911be6f",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "5e957f007bd9c32aeec7fe978a5daa529f32972b",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "765af9856af93a5767f1b2464ec9e4ea2e6b3e12",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "7b22dc184c61344808a36bfe3961bffce4a45e8f",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "91f400a6bd3358589aee81bde5654d75820952b1",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "97fec539258af4999abb0d46f4fa0c6961aaa5ec",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "9d32078d8b87c447097f30d1985d4b1da99ddd47",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "a60d9132aa8aae7b43e7e6778f9ea02f727341a7",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "a818e30be4cf76bbc85d0e0df1c710f5ab3029ce",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "affdb15e6f9bc5dd3c4c421616af6ebf49b700f7",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "c14397ccfa71f912178ca999a12ff70c7033a6c0",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "c1d87ff4c56e3bb357ca58fa4ef261c41595b094",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "d06f7f988498f2af1d4f0547f2cf340e224e01f1",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "e49f9108828bb3e445a5840e1cb2a579a2b708c7",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "f1fe8802bb62b99afdb81b3dca1d1d7ba096c9d6",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "f5944d907408fc4f82839915f595e11036cdb842",
+      "paths": [
+        "data/manifests/local_artifact_inventory_2026-10-02.yaml"
+      ],
+      "pattern": "macos_home"
+    },
+    {
+      "blob": "f66d11ab76db38b5a1d93b957e15de1a8f0c581c",
+      "paths": [
+        "PROJECT_STORAGE.md"
+      ],
+      "pattern": "macos_home"
+    }
+  ],
+  "history_secret_findings": [],
+  "prohibited_tracked_data_paths": [],
+  "public_author_identity_records": [],
+  "scan_boundaries": {
+    "binary_files_skipped_for_content_patterns": true,
+    "high_entropy_generic_secret_detection_performed": false,
+    "home_path_usernames_limited_to_portable_account_characters": true,
+    "legal_opinion_provided": false
+  },
+  "schema_version": 1,
+  "status": "PUBLICATION_BLOCKED",
+  "suspicious_filenames": [],
+  "tracked_file_count": 204,
+  "unique_historical_blob_count": 407
+}

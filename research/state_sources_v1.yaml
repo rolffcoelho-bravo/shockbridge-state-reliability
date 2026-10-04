@@ -1,0 +1,133 @@
+schema_version: 1
+registry_id: shockbridge-point-in-time-state-sources-v1
+audit_date: 2026-10-02
+timezone: Europe/Berlin
+
+sources:
+  event_dates:
+    path: data/raw/abgmr/press_release_factors_2025-10-30.csv
+    url: https://gragusa.org/factors/data/press_release_factors_2025-10-30.csv
+    sha256: 48c91fc9f52346bb564b49a29940b90c74b3b3a9edcce843a4aa269ae52bddd4
+    bytes: 7498
+    retrieved_at_utc: 2026-10-02T09:25:22Z
+    use: date_column_only
+    outcome_columns: SEALED_NOT_PARSED
+
+  rtd_archive:
+    path: data/raw/ecb_rtd/monthly_pre2015.zip
+    url: https://data.ecb.europa.eu/sites/default/files/2024-08/monthly.zip
+    sha256: a4c7f0a5e7ad2c5a55a4eb961e4b8a439db0154d26e5ff6cfb849e8654110370
+    bytes: 26976335
+    retrieved_at_utc: 2026-10-02T09:25:21Z
+    coverage: monthly_vintages_2001-01_through_2014-12
+    first_usable_rule: first_day_after_named_vintage_month_at_00_00_Frankfurt
+    rule_character: conservative
+    admission: ADMITTED
+
+  rtd_hicp:
+    path: data/raw/ecb_state/rtd_hicp_history.csv
+    url: "https://data-api.ecb.europa.eu/service/data/RTD/M.S0.N.P_C_OV.X?includeHistory=true&format=csvdata"
+    sha256: a6cae3deb3f243b07767904e7f4730340b7da9f7418e4ef4343aae6b60145552
+    bytes: 1050624
+    retrieved_at_utc: 2026-10-02T09:28:10Z
+    series_key: RTD.M.S0.N.P_C_OV.X
+    unit: index
+    transformation: year_over_year_percent_change
+    first_usable_field: VALID_FROM
+    admission: ADMITTED
+
+  rtd_unemployment:
+    path: data/raw/ecb_state/rtd_unemployment_history.csv
+    url: "https://data-api.ecb.europa.eu/service/data/RTD/M.S0.S.L_UNETO.F?includeHistory=true&format=csvdata&startPeriod=2015-01"
+    sha256: 9c985a6d374e5d67bc24b55c796d757c855fc45e306e358fcde550fb16fa4da3
+    bytes: 2267604
+    retrieved_at_utc: 2026-10-02T09:29:28Z
+    series_key: RTD.M.S0.S.L_UNETO.F
+    unit: percent
+    transformation: level
+    first_usable_field: VALID_FROM
+    admission: ADMITTED
+
+  rtd_ip:
+    path: data/raw/ecb_state/rtd_ip_history.csv
+    url: "https://data-api.ecb.europa.eu/service/data/RTD/M.S0.Y.I_XCONS.X?includeHistory=true&format=csvdata&startPeriod=2015-01&endPeriod=2025-12"
+    sha256: 5e2fb7b5ed3d35b975ff5246ce2bfeffd2b1133f1d9cf91586ae25140daccf2d
+    bytes: 1370592
+    retrieved_at_utc: 2026-10-02T09:32:31Z
+    series_key: RTD.M.S0.Y.I_XCONS.X
+    unit: index
+    transformation: year_over_year_percent_change
+    first_usable_field: VALID_FROM
+    admission: ADMITTED
+
+  dfr:
+    path: data/raw/ecb_state/dfr.csv
+    url: "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.DFR.LEV?format=csvdata&startPeriod=2001-01-01"
+    sha256: 23a57057fd4375659daa7470034a7d2b9f398972a51dbb49f7a4646a126cd5d8
+    bytes: 2793683
+    retrieved_at_utc: 2026-10-02T09:29:51Z
+    series_key: FM.D.U2.EUR.4F.KR.DFR.LEV
+    unit: percent_per_annum
+    transformation: last_effective_rate_strictly_before_event_date
+    admission: ADMITTED
+
+  yc_2y:
+    path: data/raw/ecb_state/yc_2y.csv
+    url: "https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y?format=csvdata&startPeriod=2004-09-06"
+    sha256: 14e7d7dbea558fe246c39dfd38c3953f320d04e76003b49a04c307d5421e3c67
+    bytes: 3178871
+    retrieved_at_utc: 2026-10-02T09:29:55Z
+    series_key: YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y
+    unit: percent_per_annum
+    admission: CONDITIONAL_CHALLENGER
+
+  yc_10y:
+    path: data/raw/ecb_state/yc_10y.csv
+    url: "https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y?format=csvdata&startPeriod=2004-09-06"
+    sha256: 147b5226a637d680405ad2574d13c14bd9b575200348f44cf8b9458a6f5ec765
+    bytes: 3198551
+    retrieved_at_utc: 2026-10-02T09:29:57Z
+    series_key: YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y
+    unit: percent_per_annum
+    transformation: ten_year_minus_two_year_spot_rate
+    first_usable_rule: observation_base_day_plus_next_business_day_at_noon_Frankfurt
+    admission: CONDITIONAL_CHALLENGER
+
+  ciss_new_2008_audit:
+    path: data/raw/ecb_state/ciss_new_2008m09_history.csv
+    url: "https://data-api.ecb.europa.eu/service/data/CISS/D.U2.Z0Z.4F.EC.SS_CIN.IDX?includeHistory=true&format=csvdata&startPeriod=2008-09-01&endPeriod=2008-09-30"
+    sha256: cd1b59ff737e9abd34509c660a4d00a3d9b92164ac9f734fef77335a2c19c1f9
+    bytes: 7494
+    retrieved_at_utc: 2026-10-02T09:32:37Z
+    series_key: CISS.D.U2.Z0Z.4F.EC.SS_CIN.IDX
+    observed_valid_from: 2026-10-01T09:15:45+02:00
+    admission: EXCLUDED_FROM_CAUSAL_STATE_PANEL
+    exclusion_reason: historical_values_are_only_observed_in_a_post_sample_replacement_vintage
+
+  ciss_new_2025_audit:
+    path: data/raw/ecb_state/ciss_new_2025m10_history.csv
+    url: "https://data-api.ecb.europa.eu/service/data/CISS/D.U2.Z0Z.4F.EC.SS_CIN.IDX?includeHistory=true&format=csvdata&startPeriod=2025-10-01&endPeriod=2025-10-31"
+    sha256: 4c96a9c36e6faf84c87e9c470fffa4f223673d41c40850f17cf5bab4fd6e57c7
+    bytes: 7839
+    retrieved_at_utc: 2026-10-02T09:32:39Z
+    series_key: CISS.D.U2.Z0Z.4F.EC.SS_CIN.IDX
+    observed_valid_from: 2026-10-01T09:15:45+02:00
+    admission: EXCLUDED_FROM_CAUSAL_STATE_PANEL
+
+  ciss_legacy_2008_audit:
+    path: data/raw/ecb_state/ciss_legacy_2008m09_history.csv
+    url: "https://data-api.ecb.europa.eu/service/data/CISS/D.U2.Z0Z.4F.EC.SS_CI.IDX?includeHistory=true&format=csvdata&startPeriod=2008-09-01&endPeriod=2008-09-30"
+    sha256: e169f8ce33c58937fec2c10343a0135b6d50415030b7d74a2b0be0af06f5ac9b
+    bytes: 1627
+    retrieved_at_utc: 2026-10-02T09:32:42Z
+    series_key: CISS.D.U2.Z0Z.4F.EC.SS_CI.IDX
+    observed_valid_from: 2025-04-15T10:35:53+02:00
+    admission: EXCLUDED_FROM_CAUSAL_STATE_PANEL
+
+  rtd_documentation:
+    path: data/raw/ecb_rtd/rtdb_docu.pdf
+    url: https://data.ecb.europa.eu/sites/default/files/2023-04/rtdb_docu.pdf
+    sha256: 8b7b9d897cadae918f6ede55751eb05c37ab1ebd06b1af279f497b2a1c9855e1
+    bytes: 473603
+    retrieved_at_utc: 2026-10-02T09:26:18Z
+    use: definitions_and_methodological_breaks

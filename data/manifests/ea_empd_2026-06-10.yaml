@@ -1,0 +1,25 @@
+artifact_id: ea_empd_official_2026_06_10
+source_url: https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3157-annex-EA-EMPD~8b94679d77.en.xlsx
+provider: European Central Bank
+publication_date: 2026-06-10
+retrieved_on: 2026-10-02
+sha256: b4bdc1b90b9842227e74ff013eb79c71edce5dff9da1d5e02ac75b5d45c5e129
+bytes: 1832465
+storage: ignored_local_raw
+redistribution_decision: FETCH_ONLY_NO_RAW_BUNDLING
+required_attribution: Source ECB; Altavilla, Gurkaynak, Kind and Laeven (2025)
+transformation_disclosure_required: true
+audit:
+  rows: 4926
+  columns: 54
+  first_event: 1999-01-07T13:45:00
+  last_event: 2026-03-28T10:00:00
+  duplicate_composite_event_keys: 0
+  event_type_counts:
+    GC_ME: 318
+    GC_PR: 318
+    GC_PC: 318
+    EB: 2972
+    P: 1000
+  structural_timing_break: 2022-07
+

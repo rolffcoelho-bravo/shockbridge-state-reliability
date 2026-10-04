@@ -1,0 +1,4 @@
+feature_id,compared_rows,maximum_absolute_difference,mean_signed_difference,median_absolute_difference,median_absolute_difference_in_development_standard_deviations,ninetieth_percentile_absolute_difference,ninetieth_percentile_absolute_difference_in_development_standard_deviations,pearson_correlation,root_mean_squared_difference,spearman_correlation,unique_observation_periods
+hicp_yoy,285,0.292522463563,0.0067300900315,0.0129413571399,0.0157632708612,0.0619686900448,0.0754812061462,0.999565862307,0.0546117547107,0.99836797673,240
+industrial_production_yoy,274,3.8555111849,0.365852688882,0.619162044354,0.100490239697,1.51079541719,0.245202681577,0.98684950533,0.974704543223,0.966842799393,233
+unemployment_rate,270,0.82038,0.233442055556,0.192,0.204076537762,0.610479,0.648877295295,0.98788435922,0.341095314158,0.985323596585,218

@@ -1,0 +1,116 @@
+schema_version: 1
+artifact_id: run-011-reproduction-and-positioning-v1
+created_on: 2026-10-04
+status: EXACT_REPRODUCTION_AND_POSITIONING_PASS
+evidence_status: REAL_DATA_OUTCOME_BLIND_REPRODUCTION_AND_LITERATURE_AUDIT
+
+frozen_design:
+  protocol_path: research/methodology/run_011_reproduction_and_positioning_protocol_v1.yaml
+  protocol_sha256: 9b7f00dffd656667fe592869ba9b27e174fc1da30919016d6f4067eab4627ad9
+  protocol_git_commit: ab31a5c
+  reproduced_source_git_commit: 02fdfd1
+  final_evidence_git_commit: 443cb3c
+  outcomes_accessed: false
+  synthetic_observations_used: false
+  new_empirical_estimation_performed: false
+
+clean_reproduction:
+  script:
+    path: scripts/reproduce_run010_clean.py
+    sha256: 42665a0a9e12573587bd20d8d3e38107dafaf5e62f672005c551bfd32f20bbf8
+  tests:
+    path: tests/test_reproduction.py
+    sha256: d09ae866b5ac1b30dfb5b3bee2d00a56fbcf8485e0a237fb96ccd8f4d7413d22
+  audit:
+    path: reports/methodology/run_011_clean_reproduction.audit.json
+    sha256: 85553fdd344354f7f9a6df98b4fb79c251a13e878cef14bfdaeb72d6e9154b89
+    bytes: 2239
+  result: EXACT_REPRODUCTION_PASS
+  exact_target_hash_matches: 4_of_4
+  canonical_outputs_unchanged: true
+  temporary_checkout_removed: true
+  isolated_python: 3.9.6
+  isolated_numpy: 1.26.4
+
+positioning:
+  closest_prior_art_audit:
+    path: reports/methodology/run_011_closest_prior_art_audit_2026-10-04.md
+    sha256: 5d36d7850c6b00070d34190f5d4ffe7113a60f180049f52f2aa7f71caac53540
+    bytes: 5347
+  new_primary_sources_registered: 8
+  literature_ledger_ids: [L019, L020, L021, L022, L023, L024, L025, L026]
+  method_novelty_claim_allowed: false
+  candidate_contribution: >-
+    Prospective artifact-level measurement validation and disciplined negative-result
+    governance in the registered euro-area application.
+
+paper_bundle:
+  directory: reports/paper/run011
+  builder:
+    path: scripts/build_run011_paper_artifacts.py
+    sha256: 48d22b824b7aba247ed57132c9abee376f1139448d8888d3d8836502d1552497
+  tests:
+    path: tests/test_paper_artifacts.py
+    sha256: f9b2cebe86cb75c26f34fd956f6b9299a911b466ec1f8abb7856f149eb9e75eb
+  source_audit_sha256: 6631f7ad8fd2bffc2d1d606e39a187029ea96d5adac61269af4c25f3d6584b81
+  source_episode_sha256: 67dec146bae186bc9e5680be36ec6caf80443bbc3449af99601c4a8c53e5001b
+  outputs:
+    geometry_table:
+      path: reports/paper/run011/run010_table_geometry_v1.csv
+      sha256: 5643d8afc9f19973dcf8aa0eda96069c4ddc1d599b526b8177e639767e47e524
+      bytes: 815
+      rows: 6
+    value_table:
+      path: reports/paper/run011/run010_table_value_differences_v1.csv
+      sha256: 6290697be9d980d3e201b577b05f2aa61c5d1bd2ab7667e9f1c2792d2b922a22
+      bytes: 839
+      rows: 3
+    bootstrap_table:
+      path: reports/paper/run011/run010_table_bootstrap_primary_v1.csv
+      sha256: a70c1c38e89f37f67d4813442856a802c2ed1efc7fd7a21a8123c9ab93dd896f
+      bytes: 942
+      rows: 9
+    geometry_figure:
+      path: reports/paper/run011/run010_figure_geometry_v1.svg
+      sha256: 53796230d3ac10f070dbfadc6759a8890c66cbcd6084ab623ab345f70e659c68
+      bytes: 13971
+    episode_figure:
+      path: reports/paper/run011/run010_figure_episodes_v1.svg
+      sha256: cdd7f761209c823935892482e237264c2ba3ff05c48a5cf79531084ab0a128fc
+      bytes: 8026
+    metadata:
+      path: reports/paper/run011/run010_paper_artifacts_v1.json
+      sha256: 7a4cf399e27df8c531886b212c67a733d4e6cbfa19e61385077c2d58d031c65b
+      bytes: 2028
+
+interpretation:
+  path: reports/methodology/run_011_reproduction_and_positioning_result_2026-10-04.md
+  sha256: 029d022ceccbc192f68377263405946b32235c34fad6ed1b2002c2d0c6d0f53d
+  bytes: 7465
+
+integrity:
+  deterministic_bundle_test: PASS
+  immutable_bundle_test: PASS
+  changed_input_rejection_test: PASS
+  failed_staging_cleanup_test: PASS
+  svg_xml_validation: PASS
+  rendered_visual_inspection: PASS
+  table_to_source_crosscheck: PASS
+  registered_artifacts_verified: 73
+  ruff_files_formatted: 121
+  strict_mypy_source_files: 34
+  tests_passed: 137
+  branch_aware_coverage_percent: 90
+  empirical_contract_status: BLOCKED_AS_DESIGNED
+  empirical_contract_unresolved_prerequisites: 11
+  no_outcome_columns_present: true
+  causal_revision_effect_claimed: false
+  structural_break_inference_claimed: false
+  transmission_estimation_authorized: false
+
+decision:
+  decision_id: D033
+  state_selected: false
+  run_008_to_run_010_decisions_changed: false
+  c08_status: CLEAN_REPRODUCED_POSITIONED_NEGATIVE_EVIDENCE
+  next_action: AWAIT_APPROVAL_FOR_TITLE_AND_RELEASE_REPRODUCIBILITY_IMPROVEMENTS

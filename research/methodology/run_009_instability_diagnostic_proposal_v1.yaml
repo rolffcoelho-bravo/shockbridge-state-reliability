@@ -1,0 +1,149 @@
+schema_version: 1
+proposal_id: run-009-instability-diagnostic-proposal-v1
+created_on: 2026-10-03
+status: APPROVED_AND_FROZEN_FOR_OUTCOME_BLIND_DIAGNOSTIC_EXECUTION
+general_design_authorized_on: 2026-10-03
+exact_contract_approved_on: 2026-10-03
+approval_scope: exact_numerical_contract_plus_leave_one_feature_out_sensitivity
+outcomes_accessed: false
+run_008_state_results_known: true
+empirical_run_009_executed: false
+
+scientific_role:
+  purpose: diagnose_state_measurement_instability_after_run_008_kill_gate
+  state_selection_allowed: false
+  transmission_eligibility_allowed: false
+  threshold_relaxation_allowed: false
+  formal_large_n_factor_break_test_claimed: false
+  causal_regime_attribution_claimed: false
+
+inputs:
+  panel_path: data/processed/monthly_state_panel_v2.csv
+  panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  run_008_manifest_path: reports/methodology/state_model_run008_v1.manifest.yaml
+  run_008_manifest_sha256: cdddd08dfff175726afccdd8c8e89c6d3bd1addf0db5f711999998b2ffd02237
+  features:
+    - hicp_yoy
+    - industrial_production_yoy
+    - unemployment_rate
+    - deposit_facility_rate
+  factor_dimension: 2
+  missing_history_rule: window_standardize_then_fill_at_standardized_mean
+
+window_sensitivity:
+  expanding_history: true
+  rolling_months: [96, 120, 144]
+  within_window_origins: only_after_each_rolling_window_first_truncates
+  common_origin_start: month-2014-02
+  common_origin_end: month-2025-10
+  primary_reporting_sample: common_origins_for_all_three_windows
+  full_eligible_origin_results_retained: true
+  primary_summaries_episodes_and_regimes_use_common_sample: true
+
+geometry_diagnostics:
+  matrix: window_standardized_gram_matrix_matching_the_pca_estimator
+  metrics:
+    - second_principal_cosine
+    - normalized_projector_distance
+    - gram_spectral_distance
+    - gram_normalized_frobenius_distance
+    - absolute_eigengap_lambda_2_minus_lambda_3_each_history
+    - relative_eigengap_each_history
+    - perturbation_to_minimum_eigengap_ratio
+    - upper_triangle_squared_gram_drift_contribution
+  contribution_interpretation:
+    diagonal: feature_specific_missingness_weight_effect
+    off_diagonal: feature_pair_comovement_drift
+  weak_relative_eigengap_cutoff: 0.20
+  high_perturbation_to_gap_ratio_cutoff: 1.00
+  minimum_coincidence_rate_for_weak_identification_flag: 0.50
+  interpretation: finite_dimensional_descriptive_diagnostics_not_large_n_inference
+
+reused_run_008_reference_thresholds:
+  second_principal_cosine_failure: below_0.75
+  second_principal_cosine_tenth_percentile_reference: 0.90
+  projector_distance_failure: above_0.35
+  projector_distance_ninetieth_percentile_reference: 0.35
+  weak_anchor_capture: below_0.35
+  weak_policy_anchor_definition: >-
+    minimum_policy_minus_inflation_anchor_capture_across_expanding_and_rolling_below_0.35
+  note: references_diagnose_existing_failure_and_do_not_reselect_a_state
+
+episode_rule:
+  core_breach: second_principal_cosine_below_0.75_or_projector_distance_above_0.35
+  primary_minimum_consecutive_breach_months: 3
+  primary_recovery_consecutive_stable_months: 3
+  sensitivity_pairs:
+    - [1, 1]
+    - [6, 6]
+  monthly_calendar_must_be_consecutive: true
+
+monetary_regime_stratification:
+  source: point_in_time_deposit_facility_rate_already_in_panel
+  negative: rate_below_minus_1e_12
+  zero: absolute_rate_at_most_1e_12
+  positive: rate_above_1e_12
+  report_per_regime:
+    - observations
+    - core_breach_rate
+    - weak_policy_anchor_rate
+    - median_second_principal_cosine
+    - median_projector_distance
+  inferential_or_causal_label: prohibited
+
+standardization_drift:
+  location_shift: rolling_minus_expanding_mean_divided_by_pooled_scale
+  scale_shift: log_rolling_scale_divided_by_expanding_scale
+  summaries: [median_absolute, ninetieth_percentile_absolute, maximum_absolute]
+  role: factor_score_interpretation_not_explanation_of_window_standardized_pca_geometry
+
+fixed_scalar_sign_materiality:
+  source: frozen_run_008_expanding_and_rolling_120_standardized_scalar_outputs
+  reporting_sample: common_origin_sample
+  primary_minimum_absolute_standardized_factor: 0.25
+  sensitivity_minimum_absolute_standardized_factor: [0.10, 0.50]
+  substantive_disagreement: signs_differ_and_both_absolute_values_meet_cutoff
+  report_rates_over_all_origins_and_share_of_all_sign_disagreements: true
+  state_gate_recalculation_allowed: false
+
+cross_window_classification:
+  window_specific_geometry_failure: >-
+    common_origin_second_cosine_p10_below_0.90_and_projector_distance_p90_above_0.35
+  pervasive_geometry_failure: window_specific_geometry_failure_true_for_96_120_and_144
+  weak_identification_coincidence: >-
+    at_least_50_percent_of_core_breach_months_have_min_relative_eigengap_below_0.20
+    and_perturbation_to_gap_ratio_above_1.00
+  classification_is_descriptive: true
+
+leave_one_feature_out_sensitivity:
+  approved: true
+  variants:
+    - omit_hicp_yoy
+    - omit_industrial_production_yoy
+    - omit_unemployment_rate
+    - omit_deposit_facility_rate
+  retained_features_per_variant: 3
+  factor_dimension: 2
+  rolling_months: [96, 120, 144]
+  common_origin_sample_matches_full_panel: true
+  full_eligible_origin_rows_retained: true
+  metrics:
+    - second_principal_cosine
+    - normalized_projector_distance
+    - gram_spectral_distance
+    - gram_normalized_frobenius_distance
+    - relative_eigengap_each_history
+    - perturbation_to_minimum_eigengap_ratio
+  reuse_full_panel_geometry_failure_references: true
+  standardization_anchor_regime_and_sign_diagnostics_recomputed: false
+  aggregate_driver_or_causal_label: prohibited
+  state_selection_or_rescue_allowed: false
+  interpretation: descriptive_single_series_dominance_sensitivity_only
+
+implementation:
+  component_path: src/shockbridge_state_risk/state/instability.py
+  test_path: tests/test_instability.py
+  status: IMPLEMENTED_AND_SOFTWARE_TESTED_WITH_SYNTHETIC_ARRAYS_ONLY
+
+run_009_state_diagnostic_execution_authorized: true
+transmission_outcome_execution_authorized: false

@@ -1,0 +1,88 @@
+schema_version: 1
+protocol_id: run-013-sanitized-public-export-v1
+created_on: 2026-10-04
+status: APPROVED_AND_FROZEN
+approval_basis: >-
+  User approved the recommended local-only public-export preparation after
+  Run 012, including dual licensing, blueprint exclusion, a sanitized squashed
+  export, high-entropy scanning, and verification before any GitHub action.
+
+scientific_role:
+  purpose: >-
+    Convert the accepted Run 012 current tree into a deliberately bounded,
+    independently auditable public reproducibility candidate without changing
+    empirical results, reopening state selection, or exposing protected inputs.
+  evidence_class: RELEASE_ENGINEERING_NO_NEW_EMPIRICAL_ESTIMATION
+  new_empirical_estimation_allowed: false
+  state_model_search_allowed: false
+  transmission_outcome_access_allowed: false
+  threshold_change_allowed: false
+  canonical_scientific_history_rewrite_allowed: false
+
+license_decision:
+  code: Apache-2.0
+  owner_authored_documentation_and_figures: CC-BY-4.0
+  copyright_holder: Rodolfo Pereira
+  third_party_material_relicensed: false
+  external_data_relicensed: false
+  legal_opinion_provided: false
+
+public_export:
+  proposed_repository_name: shockbridge-state-reliability
+  local_output: artifacts/public-export/shockbridge-state-reliability
+  full_history_included: false
+  single_sanitized_root_commit_required: true
+  source_commit_must_be_recorded: true
+  blueprint_paths_excluded:
+    - shockbridge_state_risk_flagship_blueprint_v1.md
+    - shockbridge_state_risk_flagship_blueprint_v2.md
+  raw_and_processed_data_allowed: false
+  ignored_local_artifacts_allowed: false
+  local_workstation_paths_allowed: false
+  public_author_email_required_before_remote_publication: true
+
+verification_contract:
+  - source_tree_clean_before_export
+  - exact_exclusion_set_verified
+  - tracked_export_manifest_with_sha256_per_file
+  - known_credential_pattern_scan
+  - privacy_path_scan
+  - candidate_high_entropy_token_scan_without_secret_values_in_report
+  - prohibited_data_path_scan
+  - single_commit_and_parentless_history_check
+  - public_quality_gate
+  - public_test_gate
+  - archive_and_git_bundle_recovery_artifacts
+  - canonical_local_inventory_update
+
+repository_governance:
+  recommended_structure: SEPARATE_PRIVATE_CANONICAL_AND_PUBLIC_REPRODUCIBILITY_REPOSITORIES
+  private_candidate_name: shockbridge-state-reliability-research-archive
+  private_repository_role: >-
+    Preserve full scientific history, blueprints, local manifests, and private
+    intellectual-property records, subject to third-party rights and secret
+    exclusions.
+  public_repository_role: >-
+    Publish only the sanitized reproducibility surface, manuscript evidence,
+    source metadata, tests, and legally bounded aggregate displays.
+  private_visibility_does_not_override_third_party_rights: true
+  credentials_allowed_in_either_repository: false
+
+completion_gates:
+  - dual_license_and_notice_files_are_unambiguous
+  - citation_metadata_names_the_research_owner
+  - public_export_contains_neither_blueprint
+  - public_export_contains_no_protected_data_file
+  - current_and_single_commit_history_scans_pass
+  - high_entropy_candidate_scan_passes_or_every_finding_is_explicitly_adjudicated
+  - public_quality_and_test_gates_pass
+  - export_archive_and_bundle_hashes_are_recorded
+  - github_remote_remains_absent
+
+not_authorized:
+  - github_repository_creation
+  - remote_creation_or_push
+  - publication_or_external_upload
+  - rewriting_or_deleting_the_canonical_local_history
+  - adding_raw_or_processed_external_data_to_any_repository
+  - transmission_estimation

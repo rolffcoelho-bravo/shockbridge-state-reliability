@@ -1,0 +1,48 @@
+schema_version: 1
+protocol_id: monthly-state-engine-v1
+approved_on: 2026-10-02
+status: MODEL_COMPARISON_COMPLETED_KILL_GATE_REDESIGN_REQUIRED
+
+purpose: >-
+  Remove the equal-spacing assumption of the event-indexed HMM and distinguish
+  recurrent macro-financial states from historical policy eras.
+
+calendar:
+  frequency: monthly
+  historical_cutoff: first_calendar_day_at_23_59_59_europe_berlin
+  event_projection: filtered_state_using_information_strictly_before_event_cutoff
+  gap_handling: retain_each_calendar_month
+
+features:
+  admitted:
+    - hicp_yoy
+    - industrial_production_yoy
+    - unemployment_rate
+    - deposit_facility_rate
+  excluded:
+    - id: ciss
+      reason: historical_vintage_availability_not_established
+  prohibited:
+    - synthetic_observations
+    - retrospective_imputation
+    - outcome_selected_features
+
+comparison:
+  protocol: research/methodology/state_model_evaluation_protocol_v1.yaml
+  report_all_candidates: true
+  selection_before_outcomes: true
+
+required_outputs:
+  - point_in_time_monthly_feature_panel_COMPLETED_V2
+  - filtered_monthly_state_probabilities
+  - event_cutoff_state_probabilities
+  - model_comparison_table
+  - stability_and_support_audit
+  - immutable_manifest
+
+calendar_artifact:
+  path: data/processed/monthly_state_panel_v2.csv
+  sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  months: 286
+  rows: 1144
+  point_in_time_violations: 0

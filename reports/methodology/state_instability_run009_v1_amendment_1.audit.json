@@ -1,0 +1,35 @@
+{
+  "added_field": "open_at_sample_end",
+  "amendment_id": "state-instability-run009-v1-amendment-1",
+  "approved_protocol_sha256": "028e3393d24fd235fe09178b913f108364adae501561580e471f2c0d727af581",
+  "config_sha256": "7e158eecf835acdddaf74dbbebca58d36dac12e45330b0dfc5352bcdb7cc0e3a",
+  "diagnostic_sha256": "c177cfac7fe553d48ada0509d95d665c9c424aa93d339fa3a96ae69bb6553af4",
+  "episode_rows": 44,
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_RUN_009_EPISODE_AMENDMENT",
+  "numerical_classifications_changed": false,
+  "open_episode_rows": 1,
+  "open_episodes": [
+    {
+      "breach_months": 55,
+      "duration_months": 60,
+      "end_month": "month-2025-10",
+      "episode_number": 1,
+      "minimum_consecutive_breaches": 6,
+      "omitted_feature": "industrial_production_yoy",
+      "open_at_sample_end": true,
+      "panel_variant": "omit_industrial_production_yoy",
+      "primary_rule": false,
+      "recovery_consecutive_stable": 6,
+      "rolling_months": 144,
+      "start_month": "month-2020-11"
+    }
+  ],
+  "original_artifacts_overwritten": false,
+  "original_episode_sha256": "baed3f89be85284c9162ce681480bbac89d793ee53469a9627d882609b6c6d3b",
+  "original_fields_exact_match": true,
+  "outcomes_accessed": false,
+  "source_audit_sha256": "0ee8a3b3637e4c45d83edeb7c08412d646e9f099698b925713b38f7fd6430301",
+  "source_manifest_sha256": "9ff27f2b27d2de008be2ffce09d2c551680679f00ac102ed4de1ca9d8889c9aa",
+  "synthetic_observations_used": false,
+  "transmission_estimation_authorized": false
+}

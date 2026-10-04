@@ -1,0 +1,53 @@
+schema_version: 3
+protocol_id: state-model-evaluation-v3
+created_on: 2026-10-03
+status: FROZEN_FOR_RUN_008_STATE_ONLY_EXECUTION
+supersedes_for_future_runs: state-model-evaluation-v2-draft
+outcome_firewall: true
+
+motivation:
+  run_007_result: KILL_GATE_CONTINUOUS_FACTOR_UNSTABLE
+  diagnosed_failure: rolling_first_component_rotates_and_loses_economic_anchor
+  prohibited_response: relax_run_007_thresholds_or_promote_diagnostic_hmm_post_hoc
+  prospective_response: distinguish_factor_space_instability_from_within_space_rotation
+
+evidence_boundary:
+  empirical_inputs: real_point_in_time_state_data_only
+  synthetic_arrays: software_tests_only
+  transmission_outcomes_accessed: false
+  run_007_results_known: true
+  run_008_character: prospective_post_run_007_redesign_not_independent_external_replication
+
+source_extension:
+  desired_end: 2026-10
+  status: BLOCKED_AS_COMPLETE_FOUR_FEATURE_PANEL
+  reason: admitted_rtd_industrial_production_history_ends_2025_08
+  frozen_staleness_rule_relaxed: false
+  allowed_next_action: periodically_reaudit_same_official_series_or_a_prospectively_approved_vintage_equivalent
+
+run_008_candidates:
+  factor_subspace:
+    dimension: 2
+    role: necessary_rotation_invariant_diagnostic
+    true_factor_count_claimed: false
+  fixed_loading_scalar:
+    role: primary_eligible_candidate
+    loading_source: 2002_01_through_2011_12_development_block_only
+    evaluation_period: 2012_01_through_2025_10
+    dynamic_parameter_rule: each_origin_history_only
+  anchored_two_factor:
+    role: diagnostic_only
+    downstream_eligibility: false
+
+implementation:
+  component_path: src/shockbridge_state_risk/state/subspace.py
+  test_path: tests/test_subspace.py
+  status: COMPONENTS_TESTED_NOT_EMPIRICALLY_EXECUTED
+
+numerical_contract:
+  proposal: research/methodology/run_008_subspace_design_proposal_v1.yaml
+  approval_status: APPROVED_2026_10_03
+
+state_model_execution_authorized: true
+transmission_outcome_execution_authorized: false
+authorization_boundary: state_only_no_shock_or_transmission_outcomes

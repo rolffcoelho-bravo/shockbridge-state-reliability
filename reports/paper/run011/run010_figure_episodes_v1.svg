@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="570" viewBox="0 0 1240 570">
+<title>Run 010 persistent full-panel geometry-breach episodes</title>
+<desc>Six timelines compare point-in-time and latest-vintage breach episodes for 96, 120, and 144 month rolling histories.</desc>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="620.00" y="35.00" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#202124">Run 010: persistent full-panel geometry-breach episodes</text>
+<text x="620.00" y="62.00" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" text-anchor="middle" fill="#4A4A4A">Primary 3-month onset / 3-month recovery; episodes are descriptive, not causal break dates</text>
+<line x1="308.46" y1="90.00" x2="308.46" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="308.46" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 308.46 513.00)">2015</text>
+<line x1="388.61" y1="90.00" x2="388.61" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="388.61" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 388.61 513.00)">2016</text>
+<line x1="468.75" y1="90.00" x2="468.75" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="468.75" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 468.75 513.00)">2017</text>
+<line x1="548.89" y1="90.00" x2="548.89" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="548.89" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 548.89 513.00)">2018</text>
+<line x1="629.04" y1="90.00" x2="629.04" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="629.04" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 629.04 513.00)">2019</text>
+<line x1="709.18" y1="90.00" x2="709.18" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="709.18" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 709.18 513.00)">2020</text>
+<line x1="789.32" y1="90.00" x2="789.32" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="789.32" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 789.32 513.00)">2021</text>
+<line x1="869.46" y1="90.00" x2="869.46" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="869.46" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 869.46 513.00)">2022</text>
+<line x1="949.61" y1="90.00" x2="949.61" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="949.61" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 949.61 513.00)">2023</text>
+<line x1="1029.75" y1="90.00" x2="1029.75" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="1029.75" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 1029.75 513.00)">2024</text>
+<line x1="1109.89" y1="90.00" x2="1109.89" y2="485.00" stroke="#E0E0E0" stroke-width="1"/>
+<text x="1109.89" y="513.00" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" text-anchor="end" fill="#202124" transform="rotate(-45 1109.89 513.00)">2025</text>
+<text x="220.00" y="127.92" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" text-anchor="end" fill="#202124">96m · point in time</text>
+<line x1="235.00" y1="122.92" x2="1170.00" y2="122.92" stroke="#EEEEEE" stroke-width="1"/>
+<line x1="522.18" y1="122.92" x2="962.96" y2="122.92" stroke="#1F77B4" stroke-width="12" stroke-linecap="round"/>
+<circle cx="522.18" cy="122.92" r="5" fill="#1F77B4"/>
+<circle cx="962.96" cy="122.92" r="5" fill="#1F77B4"/>
+<text x="742.57" y="110.92" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#1F77B4">2017-09-2023-03</text>
+<text x="220.00" y="193.75" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" text-anchor="end" fill="#202124">96m · latest vintage</text>
+<line x1="235.00" y1="188.75" x2="1170.00" y2="188.75" stroke="#EEEEEE" stroke-width="1"/>
+<line x1="482.11" y1="188.75" x2="956.29" y2="188.75" stroke="#D95F02" stroke-width="12" stroke-linecap="round"/>
+<circle cx="482.11" cy="188.75" r="5" fill="#D95F02"/>
+<circle cx="956.29" cy="188.75" r="5" fill="#D95F02"/>
+<text x="719.20" y="176.75" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#D95F02">2017-03-2023-02</text>
+<text x="220.00" y="259.58" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" text-anchor="end" fill="#202124">120m · point in time</text>
+<line x1="235.00" y1="254.58" x2="1170.00" y2="254.58" stroke="#EEEEEE" stroke-width="1"/>
+<line x1="642.39" y1="254.58" x2="976.32" y2="254.58" stroke="#1F77B4" stroke-width="12" stroke-linecap="round"/>
+<circle cx="642.39" cy="254.58" r="5" fill="#1F77B4"/>
+<circle cx="976.32" cy="254.58" r="5" fill="#1F77B4"/>
+<text x="809.36" y="242.58" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#1F77B4">2019-03-2023-05</text>
+<text x="220.00" y="325.42" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" text-anchor="end" fill="#202124">120m · latest vintage</text>
+<line x1="235.00" y1="320.42" x2="1170.00" y2="320.42" stroke="#EEEEEE" stroke-width="1"/>
+<line x1="635.71" y1="320.42" x2="976.32" y2="320.42" stroke="#D95F02" stroke-width="12" stroke-linecap="round"/>
+<circle cx="635.71" cy="320.42" r="5" fill="#D95F02"/>
+<circle cx="976.32" cy="320.42" r="5" fill="#D95F02"/>
+<text x="806.02" y="308.42" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#D95F02">2019-02-2023-05</text>
+<text x="220.00" y="391.25" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" text-anchor="end" fill="#202124">144m · point in time</text>
+<line x1="235.00" y1="386.25" x2="1170.00" y2="386.25" stroke="#EEEEEE" stroke-width="1"/>
+<line x1="796.00" y1="386.25" x2="989.68" y2="386.25" stroke="#1F77B4" stroke-width="12" stroke-linecap="round"/>
+<circle cx="796.00" cy="386.25" r="5" fill="#1F77B4"/>
+<circle cx="989.68" cy="386.25" r="5" fill="#1F77B4"/>
+<text x="892.84" y="374.25" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#1F77B4">2021-02-2023-07</text>
+<text x="220.00" y="457.08" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" text-anchor="end" fill="#202124">144m · latest vintage</text>
+<line x1="235.00" y1="452.08" x2="1170.00" y2="452.08" stroke="#EEEEEE" stroke-width="1"/>
+<line x1="789.32" y1="452.08" x2="989.68" y2="452.08" stroke="#D95F02" stroke-width="12" stroke-linecap="round"/>
+<circle cx="789.32" cy="452.08" r="5" fill="#D95F02"/>
+<circle cx="989.68" cy="452.08" r="5" fill="#D95F02"/>
+<text x="889.50" y="440.08" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#D95F02">2021-01-2023-07</text>
+<line x1="235.00" y1="485.00" x2="1170.00" y2="485.00" stroke="#202124" stroke-width="1.2"/>
+<text x="702.50" y="546.00" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" text-anchor="middle" fill="#202124">Calendar month</text>
+</svg>

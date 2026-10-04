@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its research materials, please cite the project
+  using this metadata and the archived release identifier when available.
+title: >-
+  When a State Is Not Stable Enough: Real-Time Measurement Reliability in
+  Euro-Area Monetary-Policy Research
+type: software
+authors:
+  - family-names: Pereira
+    given-names: Rodolfo
+version: 0.1.0
+date-released: 2026-10-04
+license: Apache-2.0
+abstract: >-
+  Reproducible controls and empirical evidence for auditing the real-time
+  measurement reliability of euro-area macroeconomic state representations.

@@ -1,0 +1,19 @@
+{
+  "coverage_by_feature": {
+    "deposit_facility_rate": 1.0,
+    "hicp_yoy": 0.9965034965034965,
+    "industrial_production_yoy": 0.958041958041958,
+    "unemployment_rate": 0.9440559440559441
+  },
+  "duplicate_event_feature_keys": 0,
+  "events": 286,
+  "features": 4,
+  "missing_by_feature": {
+    "deposit_facility_rate": 0,
+    "hicp_yoy": 1,
+    "industrial_production_yoy": 12,
+    "unemployment_rate": 16
+  },
+  "point_in_time_violations": 0,
+  "rows": 1144
+}

@@ -1,0 +1,43 @@
+schema_version: 1
+artifact_id: state-model-comparison-v1-amendment-1
+created_on: 2026-10-02
+evidence_status: REAL_DATA_OUTCOME_BLIND_IMPLEMENTATION_AUDIT
+amends_artifact_id: state-model-comparison-v1
+
+frozen_inputs:
+  config_path: experiments/state_model_comparison_v1.yaml
+  config_sha256: dfa3f82845980e9f67cc886d725ed84ec6d66706a0ebce435f7e5693cbdf1d42
+  panel_path: data/processed/monthly_state_panel_v2.csv
+  panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  outcomes_accessed: false
+
+preserved_outputs:
+  comparison_path: data/processed/state_model_comparison_v1.csv
+  comparison_sha256: 26525d26df664f936ae52f7c34308f1caabef74f3b5c0cb766cd289175bdaa63
+  audit_path: reports/methodology/state_model_comparison_v1.audit.json
+  audit_sha256: 1def39c5ca012f27c0724ce563692b046ced66a657f094259437a46b50143f7c
+  modified: false
+
+corrected_implementation:
+  hmm_path: src/shockbridge_state_risk/state/hmm.py
+  hmm_sha256: 7447eb6b26864522a2b9f3789207973ac7af97bfc0c43cbcab82918430592b5e
+  comparison_path: src/shockbridge_state_risk/state/comparison.py
+  comparison_sha256: 86852977c19cbf9cff61c156bf1d0de83fc36f5978adb2326170d3d6aa47c40d
+  replay_path: src/shockbridge_state_risk/state/replay.py
+  replay_sha256: d39783658ed3ec2e8fc4a5ba9e10fc55e7966f0622bec4f308d531a4fbd88740
+
+amendment_outputs:
+  audit_path: reports/methodology/state_model_comparison_v1_amendment_1.audit.json
+  audit_sha256: 9aba1815eceb162673e10ab6719cf3a7f87ba450d5318c3bf093c35660920f29
+  audit_bytes: 1241
+  report_path: reports/methodology/run_007_preflight_code_audit_2026-10-02.md
+  report_sha256: 92afe92bf7ec65d7cec943110000d7870dba2895cd190283fd3f451ea61b4d09
+  report_bytes: 3899
+
+impact:
+  compared_hmm_rows: 904
+  changed_hmm_rows_exact_serialization: 678
+  primary_hmm_log_score_change: -0.0000826362113
+  primary_hmm_hard_counts_changed: false
+  primary_hmm_failed_gates_changed: false
+  run_006_selection_decision_changed: false

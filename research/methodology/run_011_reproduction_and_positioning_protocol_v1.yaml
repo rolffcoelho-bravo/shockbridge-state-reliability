@@ -1,0 +1,70 @@
+schema_version: 1
+protocol_id: run-011-reproduction-and-positioning-v1
+created_on: 2026-10-04
+status: APPROVED_AND_FROZEN
+approval_basis: user_approved_recommended_paper_positioning_and_reproducibility_stage
+
+scientific_role:
+  purpose: >-
+    Establish the closest-prior-art boundary for the Run 007-010 negative
+    measurement result, reproduce Run 010 from a clean checkout and isolated
+    runtime, and create paper-ready descriptive evidence artifacts without
+    reopening model selection or transmission outcomes.
+  empirical_estimation_allowed: false
+  new_state_model_search_allowed: false
+  threshold_or_classification_change_allowed: false
+  transmission_outcome_access_allowed: false
+  novelty_claim_allowed_before_completion: false
+
+frozen_reproduction_target:
+  source_git_commit: 02fdfd1
+  target_manifest_path: reports/methodology/state_vintage_robustness_run010_v1.manifest.yaml
+  target_manifest_sha256: 1ad29e239d9f9b4075d56f86bb248f03124e1999cccf9d23177e0cb79ae31910
+  target_outputs:
+    comparison_sha256: 9044465d54cc51c1a7885c48d7228ba90e52747c814222cde0a0413f56ffb0df
+    geometry_sha256: 7a639d4b2b9a4bed73ded627961bdd8c08cdfba13889adaab3f652ef6f24be32
+    episodes_sha256: 67dec146bae186bc9e5680be36ec6caf80443bbc3449af99601c4a8c53e5001b
+    audit_sha256: 6631f7ad8fd2bffc2d1d606e39a187029ea96d5adac61269af4c25f3d6584b81
+
+clean_reproduction_contract:
+  checkout_source: git_archive_of_frozen_commit
+  runtime: new_temporary_virtual_environment
+  dependency_install: editable_install_from_clean_checkout
+  network_use: package_install_only
+  input_hydration:
+    - data/processed/monthly_state_panel_v2.csv
+    - data/processed/state_instability_run009_v1.csv
+    - data/raw/ecb_state/run010_latest_hicp.csv
+    - data/raw/ecb_state/run010_latest_ip.csv
+    - data/raw/ecb_state/run010_latest_unemployment.csv
+  each_hydrated_input_must_match_registered_hash: true
+  canonical_outputs_must_not_be_modified: true
+  reproduced_output_paths_must_be_temporary: true
+  exact_byte_hash_match_required_for_all_four_outputs: true
+  temporary_checkout_removed_after_audit: true
+
+focused_prior_art_families:
+  - euro_area_real_time_data_and_revision_processes
+  - real_time_factor_estimation_and_forecasting
+  - factor_loading_and_subspace_instability
+  - forecast_breakdowns_and_model_selection_uncertainty
+  - prospective_validation_and_negative_result_governance
+
+paper_artifact_contract:
+  source_tables_must_be_generated_from_registered_outputs: true
+  figures_must_be_descriptive_and_reproducible: true
+  every_number_must_link_to_manifest_or_literature_ledger: true
+  prohibited_language:
+    - novel_factor_method
+    - causal_revision_effect
+    - structural_break_estimate
+    - decision_time_validity_of_latest_vintage
+    - state_dependent_transmission_result
+
+completion_gates:
+  - focused_primary_source_literature_audit_complete
+  - exact_clean_reproduction_passes
+  - paper_claim_boundary_updated
+  - descriptive_table_and_figure_bundle_verified
+  - local_artifact_inventory_passes
+  - full_software_quality_suite_passes

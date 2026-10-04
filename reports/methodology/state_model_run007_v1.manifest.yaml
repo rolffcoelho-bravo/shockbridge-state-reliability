@@ -1,0 +1,75 @@
+schema_version: 1
+artifact_id: state-model-run007-v1
+created_on: 2026-10-03
+evidence_status: REAL_DATA_OUTCOME_BLIND_STATE_EVALUATION
+selection_status: KILL_GATE_CONTINUOUS_FACTOR_UNSTABLE
+
+frozen_design:
+  config_path: experiments/state_model_run007_v1.yaml
+  config_sha256: cce1972a3a057943c805f2e3bdac0f909ad996e5b99bf41fcecc885e132d006d
+  pre_result_git_commit: d6979df83592f8bc822bff69d2361d51074d5862
+  panel_path: data/processed/monthly_state_panel_v2.csv
+  panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  outcomes_accessed: false
+  synthetic_observations_used: false
+
+implementation:
+  orchestration_path: src/shockbridge_state_risk/state/run007.py
+  orchestration_sha256: 393edbcc58f6399ee6d5082bd1b817705a100401e307f724a59c6610328e19e0
+  cli_path: src/shockbridge_state_risk/cli.py
+  cli_sha256: dea95a3c5941788420ea51b8edc07b57a3c207d2237f1dbcaa12c93a1ab2ade3
+  preflight_report_path: reports/methodology/run_007_execution_preflight_audit_2026-10-03.md
+  preflight_report_sha256: 89907d6dbd050cddb0fd0eb6ea2e7010e03213f4cb9a8918776a0d8eef34a464
+
+execution:
+  command: >-
+    state-risk run-state-redesign experiments/state_model_run007_v1.yaml
+    --factor-output data/processed/state_factor_run007_v1.csv
+    --challenger-output data/processed/state_challengers_run007_v1.csv
+    --restart-output data/processed/state_restart_provenance_run007_v1.jsonl
+    --audit-output reports/methodology/state_model_run007_v1.audit.json
+  elapsed_seconds: 609.99
+
+outputs:
+  factor:
+    path: data/processed/state_factor_run007_v1.csv
+    sha256: f5b58b82a118f1607818e2114565f3b15899c2ea944b50d375a7abab8a677eb2
+    bytes: 244666
+    rows: 452
+    repository_disposition: LOCAL_IGNORED
+  challengers:
+    path: data/processed/state_challengers_run007_v1.csv
+    sha256: e41c6ef579cafcec1037b3db8f5179c1e57f5519a068cbf7aaccbd9f90434597
+    bytes: 492119
+    rows: 2712
+    repository_disposition: LOCAL_IGNORED
+  restart_provenance:
+    path: data/processed/state_restart_provenance_run007_v1.jsonl
+    sha256: 79d5637d759231ea599a5423e74d8c1c8644ad0bec4e58ce340a292b4c51900e
+    bytes: 18750327
+    records: 27120
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/state_model_run007_v1.audit.json
+    sha256: 455765726113d20c6f2c864816dcce4a400086d1f6bad9f3142112939a78294f
+    bytes: 6413
+    repository_disposition: COMMITTABLE
+
+integrity:
+  probability_maximum_sum_error: 0.000000000000006439293542825908
+  nonfinite_factor_values: 0
+  nonfinite_challenger_values: 0
+  incomplete_temporary_files: 0
+  independent_stability_recomputation: EXACT_MATCH
+  exact_repeat_software_test: PASS
+  no_future_information_software_test: PASS
+
+decision:
+  selected_primary_state_representation: null
+  failed_gates:
+    - sign_disagreement_rate
+    - minimum_loading_cosine
+    - anchor_tenth_percentile
+    - weak_anchor_rate
+  transmission_estimation_authorized: false
+  next_action: AWAIT_APPROVAL_FOR_PROSPECTIVE_STATE_ONLY_REDESIGN

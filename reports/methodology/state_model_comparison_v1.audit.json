@@ -1,0 +1,1486 @@
+{
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_MODEL_COMPARISON",
+  "important_comparability_note": "All density scores use the same expanding standardization and observed feature dimensions, but model likelihoods are approximations specific to each benchmark family; support and stability gates remain co-primary.",
+  "months": 286,
+  "outcomes_accessed": false,
+  "panel_sha256": "80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e",
+  "primary_candidates_passing_all_gates": [],
+  "selected_primary_model": null,
+  "selection_status": "KILL_GATE_NO_ELIGIBLE_MODEL",
+  "synthetic_observations_used": false,
+  "variants": {
+    "change_point__k2__expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1685.2921254088615,
+      "eligible_months": 226,
+      "mean_entropy": 0.04620540005317321,
+      "mean_state_profiles": [
+        [
+          2.2169825292216676,
+          0.09470105496998026,
+          8.397270988839466,
+          1.5762461897787137
+        ],
+        [
+          1.4867274913612636,
+          0.02227722953747271,
+          9.629311415846967,
+          0.47025208428481696
+        ]
+      ],
+      "minimum_restart_agreement": 0.6,
+      "score_gain_vs_single_gaussian": 254.21181684397766,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": true,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 28,
+              "weighted_count": 29.364663218135885,
+              "weighted_ess": 30.769556232284792
+            },
+            "2": {
+              "hard_count": 0,
+              "weighted_count": 0.08809591263096347,
+              "weighted_ess": 22.5145055848617
+            },
+            "3": {
+              "hard_count": 38,
+              "weighted_count": 36.88894047876001,
+              "weighted_ess": 37.94850445772556
+            }
+          },
+          "hard_count": 66,
+          "weighted_count": 66.34169960952686,
+          "weighted_ess": 68.894790221387
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 48,
+              "weighted_count": 46.63533678186411,
+              "weighted_ess": 48.01577138582357
+            },
+            "2": {
+              "hard_count": 75,
+              "weighted_count": 74.91190408736904,
+              "weighted_ess": 74.99975820540553
+            },
+            "3": {
+              "hard_count": 37,
+              "weighted_count": 38.11105952123999,
+              "weighted_ess": 39.16964846376839
+            }
+          },
+          "hard_count": 160,
+          "weighted_count": 159.65830039047313,
+          "weighted_ess": 162.15522766112852
+        }
+      }
+    },
+    "change_point__k2__rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1679.7551965842604,
+      "eligible_months": 226,
+      "mean_entropy": 0.02543122441896276,
+      "mean_state_profiles": [
+        [
+          2.653622959584029,
+          -0.1744191217252346,
+          7.914206187536485,
+          1.6254264943433876
+        ],
+        [
+          1.521304982993366,
+          -0.2266594003869993,
+          9.886738907647425,
+          0.3436067518141627
+        ]
+      ],
+      "minimum_restart_agreement": 0.5416666666666666,
+      "score_gain_vs_single_gaussian": 483.26791658479317,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 29,
+              "weighted_count": 30.041892729415103,
+              "weighted_ess": 31.14821067684009
+            },
+            "2": {
+              "hard_count": 6,
+              "weighted_count": 6.128336364838745,
+              "weighted_ess": 6.342223969958107
+            },
+            "3": {
+              "hard_count": 75,
+              "weighted_count": 74.98584972767988,
+              "weighted_ess": 74.99996630148453
+            }
+          },
+          "hard_count": 110,
+          "weighted_count": 111.15607882193373,
+          "weighted_ess": 112.45898600015755
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 47,
+              "weighted_count": 45.95810727058491,
+              "weighted_ess": 47.05049344113839
+            },
+            "2": {
+              "hard_count": 69,
+              "weighted_count": 68.87166363516126,
+              "weighted_ess": 69.07896008034639
+            },
+            "3": {
+              "hard_count": 0,
+              "weighted_count": 0.014150272320129472,
+              "weighted_ess": 5.5075551124504605
+            }
+          },
+          "hard_count": 116,
+          "weighted_count": 114.8439211780663,
+          "weighted_ess": 116.14633813221556
+        }
+      }
+    },
+    "change_point__k3__expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1685.2921254088615,
+      "eligible_months": 226,
+      "mean_entropy": 0.10852280346491339,
+      "mean_state_profiles": [
+        [
+          2.2164002123593867,
+          0.40414380594692473,
+          8.283047817551564,
+          1.6377476364804942
+        ],
+        [
+          1.9896173917172353,
+          -0.5380618933534905,
+          8.732578375923516,
+          1.2233253225432312
+        ],
+        [
+          1.4095848504711006,
+          -0.7305141977694181,
+          9.88115439197119,
+          0.5023057920383378
+        ]
+      ],
+      "minimum_restart_agreement": 0.2727272727272727,
+      "score_gain_vs_single_gaussian": 254.21181684397766,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": false,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 23,
+              "weighted_count": 23.157179818570945,
+              "weighted_ess": 23.555996325136455
+            },
+            "2": {
+              "hard_count": 0,
+              "weighted_count": 5.606180476524847,
+              "weighted_ess": 20.250300667644684
+            },
+            "3": {
+              "hard_count": 42,
+              "weighted_count": 38.92917228711402,
+              "weighted_ess": 41.6511659002673
+            }
+          },
+          "hard_count": 65,
+          "weighted_count": 67.69253258220982,
+          "weighted_ess": 75.48782984826475
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 2,
+              "weighted_count": 2.212726418519168,
+              "weighted_ess": 2.408970284365235
+            },
+            "2": {
+              "hard_count": 0,
+              "weighted_count": 0.04125062642599679,
+              "weighted_ess": 28.939185351349863
+            },
+            "3": {
+              "hard_count": 18,
+              "weighted_count": 20.435912384158353,
+              "weighted_ess": 22.618173321371934
+            }
+          },
+          "hard_count": 20,
+          "weighted_count": 22.689889429103523,
+          "weighted_ess": 25.117718094550842
+        },
+        "2": {
+          "blocks": {
+            "1": {
+              "hard_count": 51,
+              "weighted_count": 50.63009376290989,
+              "weighted_ess": 51.17602956470443
+            },
+            "2": {
+              "hard_count": 75,
+              "weighted_count": 69.35256889704915,
+              "weighted_ess": 73.69089517201083
+            },
+            "3": {
+              "hard_count": 15,
+              "weighted_count": 15.634915328727619,
+              "weighted_ess": 16.270523171426458
+            }
+          },
+          "hard_count": 141,
+          "weighted_count": 135.61757798868666,
+          "weighted_ess": 141.06148166152715
+        }
+      }
+    },
+    "change_point__k3__rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1679.7551965842604,
+      "eligible_months": 226,
+      "mean_entropy": 0.06582417214507032,
+      "mean_state_profiles": [
+        [
+          2.7728934944431156,
+          0.6033029277186248,
+          7.775849630836605,
+          1.7707165444862654
+        ],
+        [
+          2.049508431353878,
+          0.05912930241595439,
+          9.12110547585262,
+          0.6439653793570217
+        ],
+        [
+          1.365206721144098,
+          -1.5117983931873742,
+          10.116841627359571,
+          0.36563734061518033
+        ]
+      ],
+      "minimum_restart_agreement": 0.15,
+      "score_gain_vs_single_gaussian": 483.26791658479317,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 23,
+              "weighted_count": 24.049460886299677,
+              "weighted_ess": 25.290721671073367
+            },
+            "2": {
+              "hard_count": 6,
+              "weighted_count": 7.354868724994683,
+              "weighted_ess": 8.837254589694991
+            },
+            "3": {
+              "hard_count": 72,
+              "weighted_count": 71.97782266929146,
+              "weighted_ess": 72.00003518899577
+            }
+          },
+          "hard_count": 101,
+          "weighted_count": 103.3821522805858,
+          "weighted_ess": 105.87722239700064
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 3,
+              "weighted_count": 3.1183407039124034,
+              "weighted_ess": 3.461168669001039
+            },
+            "2": {
+              "hard_count": 34,
+              "weighted_count": 32.923468289315174,
+              "weighted_ess": 34.168974598026566
+            },
+            "3": {
+              "hard_count": 1,
+              "weighted_count": 1.00360716993839,
+              "weighted_ess": 1.0074474140083831
+            }
+          },
+          "hard_count": 38,
+          "weighted_count": 37.04541616316597,
+          "weighted_ess": 38.622626208611756
+        },
+        "2": {
+          "blocks": {
+            "1": {
+              "hard_count": 50,
+              "weighted_count": 48.83219840978793,
+              "weighted_ess": 50.31690402501488
+            },
+            "2": {
+              "hard_count": 35,
+              "weighted_count": 34.72166298569014,
+              "weighted_ess": 37.31583545236783
+            },
+            "3": {
+              "hard_count": 2,
+              "weighted_count": 2.0185701607701727,
+              "weighted_ess": 2.0371196666817752
+            }
+          },
+          "hard_count": 87,
+          "weighted_count": 85.57243155624825,
+          "weighted_ess": 89.62914721344592
+        }
+      }
+    },
+    "dynamic_factor__k2__expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1586.1899804852776,
+      "eligible_months": 226,
+      "mean_entropy": 0.18114382080358343,
+      "mean_state_profiles": [
+        [
+          2.551734505612519,
+          1.7150392893890207,
+          8.035860174871411,
+          1.9614850671545867
+        ],
+        [
+          1.3341060785817493,
+          -1.7221225176229265,
+          9.814412982833963,
+          0.2983351450779843
+        ]
+      ],
+      "minimum_restart_agreement": 0.391304347826087,
+      "score_gain_vs_single_gaussian": 353.313961767561,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": true,
+        "block_weighted_ess": true,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 30,
+              "weighted_count": 30.95362776657593,
+              "weighted_ess": 34.67521911130147
+            },
+            "2": {
+              "hard_count": 5,
+              "weighted_count": 8.434284707245526,
+              "weighted_ess": 21.69060114800494
+            },
+            "3": {
+              "hard_count": 51,
+              "weighted_count": 49.93488422854013,
+              "weighted_ess": 54.538633570567676
+            }
+          },
+          "hard_count": 86,
+          "weighted_count": 89.32279670236159,
+          "weighted_ess": 104.11684879288894
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 46,
+              "weighted_count": 45.04637223342407,
+              "weighted_ess": 48.633053118599655
+            },
+            "2": {
+              "hard_count": 70,
+              "weighted_count": 66.56571529275445,
+              "weighted_ess": 72.15303512659311
+            },
+            "3": {
+              "hard_count": 24,
+              "weighted_count": 25.065115771459862,
+              "weighted_ess": 30.132402923960615
+            }
+          },
+          "hard_count": 140,
+          "weighted_count": 136.6772032976384,
+          "weighted_ess": 150.66838831715998
+        }
+      }
+    },
+    "dynamic_factor__k2__rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1856.9267301221466,
+      "eligible_months": 226,
+      "mean_entropy": 0.09853007299143941,
+      "mean_state_profiles": [
+        [
+          2.927540531970604,
+          1.5074960092994845,
+          7.9092130990826055,
+          1.7562724588998184
+        ],
+        [
+          1.4257832388008398,
+          -1.0792077238226294,
+          9.906393354480196,
+          0.29229674305459274
+        ]
+      ],
+      "minimum_restart_agreement": 0.391304347826087,
+      "score_gain_vs_single_gaussian": 306.09638304690594,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 30,
+              "weighted_count": 30.895415499957988,
+              "weighted_ess": 34.596346113386616
+            },
+            "2": {
+              "hard_count": 3,
+              "weighted_count": 2.123209322089938,
+              "weighted_ess": 4.232830098853148
+            },
+            "3": {
+              "hard_count": 71,
+              "weighted_count": 67.23317790175362,
+              "weighted_ess": 69.8952307662246
+            }
+          },
+          "hard_count": 104,
+          "weighted_count": 100.25180272380155,
+          "weighted_ess": 107.68936427329072
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 46,
+              "weighted_count": 45.104584500042016,
+              "weighted_ess": 48.670932602433666
+            },
+            "2": {
+              "hard_count": 72,
+              "weighted_count": 72.87679067791007,
+              "weighted_ess": 73.9505790819794
+            },
+            "3": {
+              "hard_count": 4,
+              "weighted_count": 7.766822098246389,
+              "weighted_ess": 11.586958445575508
+            }
+          },
+          "hard_count": 122,
+          "weighted_count": 125.74819727619848,
+          "weighted_ess": 133.07553847203533
+        }
+      }
+    },
+    "dynamic_factor__k3__expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1586.1899804852776,
+      "eligible_months": 226,
+      "mean_entropy": 0.1598450936602838,
+      "mean_state_profiles": [
+        [
+          2.8274264363389645,
+          2.059282528396168,
+          7.451423455779401,
+          2.5664476066400734
+        ],
+        [
+          2.109248706881865,
+          1.3720421617847882,
+          8.855418861287799,
+          0.9497359188922517
+        ],
+        [
+          0.9209264474392879,
+          -4.419330331420342,
+          10.215177125207079,
+          0.15348506297036932
+        ]
+      ],
+      "minimum_restart_agreement": 0.5333333333333333,
+      "score_gain_vs_single_gaussian": 353.313961767561,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": true,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 25,
+              "weighted_count": 24.86136184956986,
+              "weighted_ess": 24.99390360808936
+            },
+            "2": {
+              "hard_count": 0,
+              "weighted_count": 0.13396159027723853,
+              "weighted_ess": 14.84702731382828
+            },
+            "3": {
+              "hard_count": 37,
+              "weighted_count": 35.97424597304992,
+              "weighted_ess": 39.86340811540985
+            }
+          },
+          "hard_count": 62,
+          "weighted_count": 60.96956941289701,
+          "weighted_ess": 64.99295564221062
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 21,
+              "weighted_count": 19.20502651027412,
+              "weighted_ess": 24.187749637076355
+            },
+            "2": {
+              "hard_count": 22,
+              "weighted_count": 21.368330219232483,
+              "weighted_ess": 24.35798807084108
+            },
+            "3": {
+              "hard_count": 29,
+              "weighted_count": 28.865619399499202,
+              "weighted_ess": 34.224413167030015
+            }
+          },
+          "hard_count": 72,
+          "weighted_count": 69.43897612900581,
+          "weighted_ess": 82.64911413501963
+        },
+        "2": {
+          "blocks": {
+            "1": {
+              "hard_count": 30,
+              "weighted_count": 31.93361164015602,
+              "weighted_ess": 36.278951506576966
+            },
+            "2": {
+              "hard_count": 53,
+              "weighted_count": 53.49770819049027,
+              "weighted_ess": 56.114945452589374
+            },
+            "3": {
+              "hard_count": 9,
+              "weighted_count": 10.160134627450882,
+              "weighted_ess": 11.289317278506841
+            }
+          },
+          "hard_count": 92,
+          "weighted_count": 95.59145445809719,
+          "weighted_ess": 103.53756877989764
+        }
+      }
+    },
+    "dynamic_factor__k3__rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1856.9267301221466,
+      "eligible_months": 226,
+      "mean_entropy": 0.139199171250939,
+      "mean_state_profiles": [
+        [
+          3.0821671739131187,
+          2.185694252299132,
+          7.676706190493009,
+          2.0474181209899887
+        ],
+        [
+          1.9624417956689453,
+          0.7113145721872074,
+          8.904070615449774,
+          0.5493673220716949
+        ],
+        [
+          0.9795352141725147,
+          -3.4127105361838357,
+          10.338210584437743,
+          0.14882103014824782
+        ]
+      ],
+      "minimum_restart_agreement": 0.25,
+      "score_gain_vs_single_gaussian": 306.09638304690594,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 25,
+              "weighted_count": 24.861617247369917,
+              "weighted_ess": 24.994420057997868
+            },
+            "2": {
+              "hard_count": 0,
+              "weighted_count": 0.07715218767693277,
+              "weighted_ess": 2.1092398672611092
+            },
+            "3": {
+              "hard_count": 42,
+              "weighted_count": 40.457219530935525,
+              "weighted_ess": 43.7058625967702
+            }
+          },
+          "hard_count": 67,
+          "weighted_count": 65.39598896598238,
+          "weighted_ess": 68.7756682512288
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 21,
+              "weighted_count": 19.87803667147503,
+              "weighted_ess": 24.2787731605445
+            },
+            "2": {
+              "hard_count": 26,
+              "weighted_count": 25.292055519637465,
+              "weighted_ess": 27.68257207883256
+            },
+            "3": {
+              "hard_count": 30,
+              "weighted_count": 32.232431955139525,
+              "weighted_ess": 36.19051529728736
+            }
+          },
+          "hard_count": 77,
+          "weighted_count": 77.40252414625203,
+          "weighted_ess": 87.98847146664602
+        },
+        "2": {
+          "blocks": {
+            "1": {
+              "hard_count": 30,
+              "weighted_count": 31.26034608115505,
+              "weighted_ess": 35.16535308861847
+            },
+            "2": {
+              "hard_count": 49,
+              "weighted_count": 49.6307922926856,
+              "weighted_ess": 51.83686129495387
+            },
+            "3": {
+              "hard_count": 3,
+              "weighted_count": 2.310348513924949,
+              "weighted_ess": 3.282586280276048
+            }
+          },
+          "hard_count": 82,
+          "weighted_count": 83.20148688776558,
+          "weighted_ess": 89.9799617902508
+        }
+      }
+    },
+    "hidden_markov__k2__expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1629.2101765145949,
+      "eligible_months": 226,
+      "mean_entropy": 0.008227170990122018,
+      "mean_state_profiles": [
+        [
+          2.487881704354076,
+          1.2498169793062603,
+          8.027938906052134,
+          1.9910055525463746
+        ],
+        [
+          1.4619080755662066,
+          -0.8124786639861347,
+          9.793821472747624,
+          0.28043093419857684
+        ]
+      ],
+      "minimum_restart_agreement": 0.7375,
+      "score_gain_vs_single_gaussian": 310.2937657382437,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 28,
+              "weighted_count": 28.000024040452562,
+              "weighted_ess": 28.00004808082987
+            },
+            "2": {
+              "hard_count": 4,
+              "weighted_count": 3.8452645277187996,
+              "weighted_ess": 4.1400264720124325
+            },
+            "3": {
+              "hard_count": 42,
+              "weighted_count": 41.72468846741561,
+              "weighted_ess": 41.942075820112606
+            }
+          },
+          "hard_count": 74,
+          "weighted_count": 73.56997703558696,
+          "weighted_ess": 74.06332341172313
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 48,
+              "weighted_count": 47.99997595954744,
+              "weighted_ess": 47.999999999916156
+            },
+            "2": {
+              "hard_count": 71,
+              "weighted_count": 71.15473547228122,
+              "weighted_ess": 71.4295683805156
+            },
+            "3": {
+              "hard_count": 33,
+              "weighted_count": 33.275311532584396,
+              "weighted_ess": 33.49298685905026
+            }
+          },
+          "hard_count": 152,
+          "weighted_count": 152.43002296441304,
+          "weighted_ess": 152.9216637071225
+        }
+      }
+    },
+    "hidden_markov__k2__rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1798.7693496103311,
+      "eligible_months": 226,
+      "mean_entropy": 0.0012653888757281505,
+      "mean_state_profiles": [
+        [
+          2.701631862803652,
+          1.3197926123899697,
+          7.956291260219733,
+          1.5555973125931468
+        ],
+        [
+          1.3916541292640325,
+          -0.6771006011977428,
+          9.97316825958656,
+          0.260135646574823
+        ]
+      ],
+      "minimum_restart_agreement": 0.6083333333333333,
+      "score_gain_vs_single_gaussian": 364.25376355872095,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 28,
+              "weighted_count": 28.000027222687198,
+              "weighted_ess": 28.000054445301338
+            },
+            "2": {
+              "hard_count": 14,
+              "weighted_count": 13.99171949347144,
+              "weighted_ess": 14.011184189298756
+            },
+            "3": {
+              "hard_count": 72,
+              "weighted_count": 71.9717017299472,
+              "weighted_ess": 71.99961185223695
+            }
+          },
+          "hard_count": 114,
+          "weighted_count": 113.96344844610584,
+          "weighted_ess": 114.01083231994416
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 48,
+              "weighted_count": 47.99997277731279,
+              "weighted_ess": 47.99999999991589
+            },
+            "2": {
+              "hard_count": 61,
+              "weighted_count": 61.00828050652857,
+              "weighted_ess": 61.02772435644548
+            },
+            "3": {
+              "hard_count": 3,
+              "weighted_count": 3.0282982700528134,
+              "weighted_ess": 3.0564569957261996
+            }
+          },
+          "hard_count": 112,
+          "weighted_count": 112.03655155389417,
+          "weighted_ess": 112.08393576657458
+        }
+      }
+    },
+    "hidden_markov__k3__expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1478.2922732280915,
+      "eligible_months": 226,
+      "mean_entropy": 0.021946800618558575,
+      "mean_state_profiles": [
+        [
+          2.764622917194012,
+          1.6138689203945684,
+          7.566282862406986,
+          2.4339228266259463
+        ],
+        [
+          2.117837649390937,
+          0.9409233708871361,
+          8.703503107779877,
+          1.1525185076730533
+        ],
+        [
+          1.2619663060157167,
+          -1.9643485226902688,
+          9.929271372754213,
+          0.21741881759444906
+        ]
+      ],
+      "minimum_restart_agreement": 0.5720930232558139,
+      "score_gain_vs_single_gaussian": 461.21166902474795,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 19,
+              "weighted_count": 19.46787473661489,
+              "weighted_ess": 19.720069693027927
+            },
+            "2": {
+              "hard_count": 0,
+              "weighted_count": 5.754440502137208e-09,
+              "weighted_ess": 1.8144522194711692
+            },
+            "3": {
+              "hard_count": 41,
+              "weighted_count": 40.391655281512634,
+              "weighted_ess": 40.9374560976845
+            }
+          },
+          "hard_count": 60,
+          "weighted_count": 59.85953002388196,
+          "weighted_ess": 60.65752176091797
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 8,
+              "weighted_count": 7.53212885395154,
+              "weighted_ess": 7.7896092951318625
+            },
+            "2": {
+              "hard_count": 9,
+              "weighted_count": 8.327522704110779,
+              "weighted_ess": 8.762636206686022
+            },
+            "3": {
+              "hard_count": 25,
+              "weighted_count": 25.18927600905523,
+              "weighted_ess": 25.83727516583513
+            }
+          },
+          "hard_count": 42,
+          "weighted_count": 41.04892756711755,
+          "weighted_ess": 42.38528601156435
+        },
+        "2": {
+          "blocks": {
+            "1": {
+              "hard_count": 49,
+              "weighted_count": 48.99999640943358,
+              "weighted_ess": 48.99999999999678
+            },
+            "2": {
+              "hard_count": 66,
+              "weighted_count": 66.6724772901348,
+              "weighted_ess": 67.08856560086086
+            },
+            "3": {
+              "hard_count": 9,
+              "weighted_count": 9.419068709432135,
+              "weighted_ess": 10.02198732135109
+            }
+          },
+          "hard_count": 124,
+          "weighted_count": 125.09154240900051,
+          "weighted_ess": 126.07944169175806
+        }
+      }
+    },
+    "hidden_markov__k3__rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1581.6274171146197,
+      "eligible_months": 226,
+      "mean_entropy": 0.007399607524681502,
+      "mean_state_profiles": [
+        [
+          2.906737755096213,
+          1.5770412234747446,
+          7.5725670430795535,
+          1.8532099397759927
+        ],
+        [
+          1.8104693813236932,
+          0.7391855979554495,
+          9.188530298592084,
+          0.594129207952637
+        ],
+        [
+          1.0637660262691755,
+          -1.502247775484777,
+          10.275020718128905,
+          0.17108497833837336
+        ]
+      ],
+      "minimum_restart_agreement": 0.6166666666666667,
+      "score_gain_vs_single_gaussian": 581.3956960544338,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 19,
+              "weighted_count": 19.467873981283038,
+              "weighted_ess": 19.720068162795073
+            },
+            "2": {
+              "hard_count": 8,
+              "weighted_count": 8.036984745034854,
+              "weighted_ess": 8.085929993205635
+            },
+            "3": {
+              "hard_count": 69,
+              "weighted_count": 68.99933443363697,
+              "weighted_ess": 68.99999967163754
+            }
+          },
+          "hard_count": 96,
+          "weighted_count": 96.5041931599549,
+          "weighted_ess": 96.80340112806516
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 8,
+              "weighted_count": 7.532129430091107,
+              "weighted_ess": 7.789610486833467
+            },
+            "2": {
+              "hard_count": 19,
+              "weighted_count": 19.13535350726139,
+              "weighted_ess": 19.37020624375441
+            },
+            "3": {
+              "hard_count": 6,
+              "weighted_count": 6.000656483291032,
+              "weighted_ess": 6.001312705788863
+            }
+          },
+          "hard_count": 33,
+          "weighted_count": 32.668139420643534,
+          "weighted_ess": 33.1569780477527
+        },
+        "2": {
+          "blocks": {
+            "1": {
+              "hard_count": 49,
+              "weighted_count": 48.99999658862586,
+              "weighted_ess": 48.999999999997
+            },
+            "2": {
+              "hard_count": 48,
+              "weighted_count": 47.827661747703765,
+              "weighted_ess": 48.01182834980476
+            },
+            "3": {
+              "hard_count": 0,
+              "weighted_count": 9.08307199674362e-06,
+              "weighted_ess": 3.6345063532829816
+            }
+          },
+          "hard_count": 97,
+          "weighted_count": 96.8276674194016,
+          "weighted_ess": 97.01148838961103
+        }
+      }
+    },
+    "pca_cluster__k2__expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1798.943548768271,
+      "eligible_months": 226,
+      "mean_entropy": 0.10103891548858535,
+      "mean_state_profiles": [
+        [
+          2.5518399570645682,
+          1.7295582208203488,
+          8.034691133069826,
+          1.9807659708062983
+        ],
+        [
+          1.3315815857341853,
+          -1.9259321954673683,
+          9.795977269802375,
+          0.3051658396892495
+        ]
+      ],
+      "minimum_restart_agreement": 0.3656716417910448,
+      "score_gain_vs_single_gaussian": 140.56039348456946,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": true,
+        "block_weighted_ess": true,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 28,
+              "weighted_count": 29.600390435393454,
+              "weighted_ess": 30.71835222892838
+            },
+            "2": {
+              "hard_count": 7,
+              "weighted_count": 8.50348231293334,
+              "weighted_ess": 17.9071034792218
+            },
+            "3": {
+              "hard_count": 47,
+              "weighted_count": 46.60783964802276,
+              "weighted_ess": 48.32328752980868
+            }
+          },
+          "hard_count": 82,
+          "weighted_count": 84.71171239634955,
+          "weighted_ess": 92.57727696537907
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 48,
+              "weighted_count": 46.399609564606536,
+              "weighted_ess": 47.502490264797345
+            },
+            "2": {
+              "hard_count": 68,
+              "weighted_count": 66.49651768706666,
+              "weighted_ess": 71.28343955181178
+            },
+            "3": {
+              "hard_count": 28,
+              "weighted_count": 28.39216035197724,
+              "weighted_ess": 30.149096126170868
+            }
+          },
+          "hard_count": 144,
+          "weighted_count": 141.28828760365047,
+          "weighted_ess": 148.8718889738217
+        }
+      }
+    },
+    "pca_cluster__k2__rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1974.742383582504,
+      "eligible_months": 226,
+      "mean_entropy": 0.017212073578782437,
+      "mean_state_profiles": [
+        [
+          2.8798648074508226,
+          1.4670243987871836,
+          7.852676740274093,
+          1.7713913214773906
+        ],
+        [
+          1.433025709445177,
+          -1.3410380530200186,
+          9.846467908021552,
+          0.32711826431440716
+        ]
+      ],
+      "minimum_restart_agreement": 0.14166666666666666,
+      "score_gain_vs_single_gaussian": 188.2807295865495,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": true,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 28,
+              "weighted_count": 29.600424864542397,
+              "weighted_ess": 30.718423677344504
+            },
+            "2": {
+              "hard_count": 9,
+              "weighted_count": 8.911669268029904,
+              "weighted_ess": 9.001837714527259
+            },
+            "3": {
+              "hard_count": 68,
+              "weighted_count": 68.01977765168719,
+              "weighted_ess": 68.04207355293825
+            }
+          },
+          "hard_count": 105,
+          "weighted_count": 106.5318717842595,
+          "weighted_ess": 107.73415189712392
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 48,
+              "weighted_count": 46.3995751354576,
+              "weighted_ess": 47.50249193012182
+            },
+            "2": {
+              "hard_count": 66,
+              "weighted_count": 66.08833073197007,
+              "weighted_ess": 66.17771672412928
+            },
+            "3": {
+              "hard_count": 7,
+              "weighted_count": 6.980222348312803,
+              "weighted_ess": 7.00258234153018
+            }
+          },
+          "hard_count": 121,
+          "weighted_count": 119.46812821574049,
+          "weighted_ess": 120.66894089679965
+        }
+      }
+    },
+    "pca_cluster__k3__expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1711.1536186127958,
+      "eligible_months": 226,
+      "mean_entropy": 0.10719050142213529,
+      "mean_state_profiles": [
+        [
+          2.5795179273264024,
+          1.6522301387106186,
+          7.880813150875816,
+          2.135437570872702
+        ],
+        [
+          1.6934768805503946,
+          1.4707998165206637,
+          9.752687871838619,
+          0.4968093739529687
+        ],
+        [
+          0.6132021378697058,
+          -12.26822509261324,
+          8.977696049617162,
+          0.3818675213924327
+        ]
+      ],
+      "minimum_restart_agreement": 0.21839080459770116,
+      "score_gain_vs_single_gaussian": 228.35032364004184,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": true,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 21,
+              "weighted_count": 20.30546378304581,
+              "weighted_ess": 20.738551624418946
+            },
+            "2": {
+              "hard_count": 2,
+              "weighted_count": 4.665144347787234,
+              "weighted_ess": 14.166316935623204
+            },
+            "3": {
+              "hard_count": 45,
+              "weighted_count": 44.36311367222704,
+              "weighted_ess": 45.793058487168246
+            }
+          },
+          "hard_count": 68,
+          "weighted_count": 69.33372180306007,
+          "weighted_ess": 74.65059936212519
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 37,
+              "weighted_count": 37.84014572575234,
+              "weighted_ess": 38.54154372252559
+            },
+            "2": {
+              "hard_count": 73,
+              "weighted_count": 69.97675038791753,
+              "weighted_ess": 73.53017542476448
+            },
+            "3": {
+              "hard_count": 18,
+              "weighted_count": 19.775589413869383,
+              "weighted_ess": 24.090682959262345
+            }
+          },
+          "hard_count": 128,
+          "weighted_count": 127.59248552753928,
+          "weighted_ess": 135.68800083578742
+        },
+        "2": {
+          "blocks": {
+            "1": {
+              "hard_count": 18,
+              "weighted_count": 17.85439049120184,
+              "weighted_ess": 18.12296087985672
+            },
+            "2": {
+              "hard_count": 0,
+              "weighted_count": 0.35810526429522915,
+              "weighted_ess": 1.2206729914739125
+            },
+            "3": {
+              "hard_count": 12,
+              "weighted_count": 10.86129691390358,
+              "weighted_ess": 13.635076777053719
+            }
+          },
+          "hard_count": 30,
+          "weighted_count": 29.07379266940064,
+          "weighted_ess": 32.0832308043838
+        }
+      }
+    },
+    "pca_cluster__k3__rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1734.9765357219146,
+      "eligible_months": 226,
+      "mean_entropy": 0.038431605694203654,
+      "mean_state_profiles": [
+        [
+          3.220391940033786,
+          2.0094071485204883,
+          7.584551827884313,
+          1.8692828398705534
+        ],
+        [
+          1.7874561131571853,
+          1.1732429953248218,
+          9.447289388387421,
+          0.514073306242622
+        ],
+        [
+          0.7979720745322958,
+          -8.170079093399183,
+          9.46463228103759,
+          0.3666388447892716
+        ]
+      ],
+      "minimum_restart_agreement": 0.23333333333333334,
+      "score_gain_vs_single_gaussian": 428.046577447138,
+      "screening_gates": {
+        "all_fits_converged": true,
+        "block_hard_count": false,
+        "block_weighted_ess": false,
+        "global_hard_count": true,
+        "global_weighted_ess": false,
+        "restart_agreement": false,
+        "score_gain_vs_single_gaussian": true
+      },
+      "screening_pass": false,
+      "states": {
+        "0": {
+          "blocks": {
+            "1": {
+              "hard_count": 21,
+              "weighted_count": 20.30546372487337,
+              "weighted_ess": 20.738551505592607
+            },
+            "2": {
+              "hard_count": 5,
+              "weighted_count": 5.314231940316468,
+              "weighted_ess": 6.240697822743436
+            },
+            "3": {
+              "hard_count": 61,
+              "weighted_count": 62.355892638336705,
+              "weighted_ess": 63.38157956745814
+            }
+          },
+          "hard_count": 87,
+          "weighted_count": 87.97558830352654,
+          "weighted_ess": 90.25522560460632
+        },
+        "1": {
+          "blocks": {
+            "1": {
+              "hard_count": 37,
+              "weighted_count": 37.840195470333654,
+              "weighted_ess": 38.541541856116964
+            },
+            "2": {
+              "hard_count": 70,
+              "weighted_count": 69.20040490826872,
+              "weighted_ess": 70.23980765062868
+            },
+            "3": {
+              "hard_count": 8,
+              "weighted_count": 7.008855832976021,
+              "weighted_ess": 7.760191353307483
+            }
+          },
+          "hard_count": 115,
+          "weighted_count": 114.04945621157839,
+          "weighted_ess": 116.49186191397618
+        },
+        "2": {
+          "blocks": {
+            "1": {
+              "hard_count": 18,
+              "weighted_count": 17.854340804792976,
+              "weighted_ess": 18.122860024118275
+            },
+            "2": {
+              "hard_count": 0,
+              "weighted_count": 0.48536315141482145,
+              "weighted_ess": 1.5979866370478248
+            },
+            "3": {
+              "hard_count": 6,
+              "weighted_count": 5.635251528687275,
+              "weighted_ess": 5.987748536933358
+            }
+          },
+          "hard_count": 24,
+          "weighted_count": 23.974955484895077,
+          "weighted_ess": 24.947063519922214
+        }
+      }
+    }
+  },
+  "warmup_months": 60
+}

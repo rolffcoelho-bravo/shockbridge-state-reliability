@@ -1,0 +1,218 @@
+schema_version: 1
+proposal_id: run-010-vintage-robustness-proposal-v1
+created_on: 2026-10-03
+status: APPROVED_AND_FROZEN_FOR_OUTCOME_BLIND_EXECUTION
+general_design_authorized_on: 2026-10-03
+exact_contract_approved_on: 2026-10-04
+outcomes_accessed: false
+empirical_run_010_executed: false
+synthetic_observations_allowed_in_empirical_artifacts: false
+
+scientific_role:
+  purpose: >-
+    Test whether the Run 009 conclusion of pervasive state-measurement geometry
+    failure survives replacement of point-in-time macro values with the latest
+    official ECB RTD vintage while holding calendar origins, selected observation
+    periods, and the point-in-time missingness mask fixed.
+  primary_label: matched_period_latest_vintage_sensitivity
+  pure_value_revision_claim_allowed: false
+  reason_pure_revision_is_not_claimed: >-
+    The official latest RTD vintage may embed rebasing, benchmark, seasonal-adjustment,
+    and euro-area-composition changes as well as numerical data revisions.
+  state_selection_allowed: false
+  transmission_eligibility_allowed: false
+  threshold_relaxation_allowed: false
+  causal_revision_effect_claimed: false
+
+frozen_inputs:
+  point_in_time_panel_path: data/processed/monthly_state_panel_v2.csv
+  point_in_time_panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  run_009_manifest_path: reports/methodology/state_instability_run009_v1.manifest.yaml
+  run_009_manifest_sha256: 9ff27f2b27d2de008be2ffce09d2c551680679f00ac102ed4de1ca9d8889c9aa
+  run_009_amendment_manifest_path: reports/methodology/state_instability_run009_v1_amendment_1.manifest.yaml
+  run_009_amendment_manifest_sha256: e2301aec9475a27c5e2a829552a139c96173d5de38836acbabd02b5e5738801a
+  panel_start: month-2002-01
+  panel_end: month-2025-10
+  common_origin_start: month-2014-02
+  common_origin_end: month-2025-10
+  features:
+    - hicp_yoy
+    - industrial_production_yoy
+    - unemployment_rate
+    - deposit_facility_rate
+
+source_metadata_audit:
+  path: data/manifests/run_010_source_metadata_audit_2026-10-03.yaml
+  evidence_class: OFFICIAL_SOURCE_METADATA_ONLY
+  observation_data_retrieved: false
+
+proposed_latest_vintage_sources:
+  retrieval_date_must_be_recorded: true
+  transport: https
+  certificate_verification_required: true
+  format: csvdata
+  include_history: false
+  request_start_period: 2000-01
+  request_end_period: 2025-10
+  retry_policy:
+    maximum_attempts: 3
+    backoff_seconds: [0, 5, 20]
+    connect_timeout_seconds: 20
+    read_timeout_seconds: 120
+    retryable_conditions: [timeout, http_429, http_500, http_502, http_503, http_504]
+    every_attempt_must_be_audited: true
+    insecure_tls_or_partial_response_allowed: false
+  raw_response_must_be_retained_and_hashed: true
+  no_fallback_or_source_substitution: true
+  series:
+    hicp_index:
+      url: >-
+        https://data-api.ecb.europa.eu/service/data/RTD/M.S0.N.P_C_OV.X?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+      series_key: RTD.M.S0.N.P_C_OV.X
+      reference_area: S0
+      adjustment: N
+      concept: P_C_OV
+      denomination: X
+      expected_unit: index
+      transformation: 100_times_level_t_divided_by_level_t_minus_12_minus_1
+    industrial_production_index:
+      url: >-
+        https://data-api.ecb.europa.eu/service/data/RTD/M.S0.Y.I_XCONS.X?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+      series_key: RTD.M.S0.Y.I_XCONS.X
+      reference_area: S0
+      adjustment: Y
+      concept: I_XCONS
+      denomination: X
+      expected_unit: index
+      transformation: 100_times_level_t_divided_by_level_t_minus_12_minus_1
+    unemployment_rate:
+      url: >-
+        https://data-api.ecb.europa.eu/service/data/RTD/M.S0.S.L_UNETO.F?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+      series_key: RTD.M.S0.S.L_UNETO.F
+      reference_area: S0
+      adjustment: S
+      concept: L_UNETO
+      denomination: F
+      expected_unit: percent
+      transformation: level
+    deposit_facility_rate:
+      source: exact_copy_from_frozen_point_in_time_panel
+      series_key: FM.D.U2.EUR.4F.KR.DFR.LEV
+      reason: policy_rate_history_is_not_replaced_in_the_revision_comparison
+
+source_admission_gates:
+  exactly_one_series_per_response: true
+  exact_series_key_match: true
+  exact_frequency_reference_area_adjustment_concept_and_denomination_match: true
+  finite_unique_observation_per_period: true
+  no_deleted_or_duplicate_current_observations: true
+  coverage_of_every_required_latest_level_and_yoy_lag: 1.0
+  coverage_failure_action: STOP_RUN_WITH_NO_EMPIRICAL_CLASSIFICATION
+  metadata_change_action: STOP_AND_REQUIRE_REAUDIT
+  rights_status: FREE_TO_RETRIEVE__PROJECT_RAW_ARTIFACT_REMAINS_FETCH_ONLY
+  attribution_required: true
+  transformation_disclosure_required: true
+
+matched_period_construction:
+  row_keys_must_match_point_in_time_panel_exactly:
+    - event_id
+    - feature_id
+  point_in_time_observation_period_preserved_exactly: true
+  point_in_time_missingness_mask_preserved_exactly: true
+  point_in_time_age_and_staleness_selection_preserved_exactly: true
+  latest_vintage_may_choose_a_different_period: false
+  macro_value_replacement_rule: >-
+    For each originally observed macro row, retrieve the latest-vintage value for
+    that row's already selected observation period. For HICP and industrial
+    production, compute year-over-year growth from latest-vintage levels at the
+    selected period and exactly twelve months earlier. For unemployment, use the
+    latest-vintage level at the selected period.
+  originally_missing_rows_rule: remain_missing_even_if_latest_vintage_is_available
+  deposit_facility_rule: copy_every_field_and_value_exactly
+  output_evidence_label: EX_POST_LATEST_VINTAGE_NOT_DECISION_TIME
+  decision_time_or_causal_state_use_allowed: false
+  revised_panel_must_fail_point_in_time_eligibility_by_design: true
+
+value_revision_summaries:
+  scope: three_macro_features_on_originally_observed_rows
+  development_scale_period: month-2002-01_through_month-2011-12
+  standardization_scale: sample_standard_deviation_of_point_in_time_values_by_feature
+  report_per_feature:
+    - compared_rows
+    - unique_observation_periods
+    - mean_signed_difference
+    - median_absolute_difference
+    - ninetieth_percentile_absolute_difference
+    - maximum_absolute_difference
+    - root_mean_squared_difference
+    - pearson_correlation
+    - spearman_correlation
+    - median_absolute_difference_in_development_standard_deviations
+    - ninetieth_percentile_absolute_difference_in_development_standard_deviations
+  inferential_or_causal_label: prohibited
+
+geometry_replication:
+  estimator_and_missing_history_rule: exact_run_009_contract
+  factor_dimension: 2
+  rolling_months: [96, 120, 144]
+  common_origin_sample: month-2014-02_through_month-2025-10
+  thresholds: exact_run_009_frozen_thresholds
+  full_panel_primary: true
+  leave_one_feature_out_secondary: true
+  state_rescue_or_reselection_allowed: false
+  compare_per_window:
+    - second_principal_cosine_tenth_percentile
+    - projector_distance_ninetieth_percentile
+    - core_breach_rate
+    - weak_identification_coincidence_rate
+    - mean_off_diagonal_gram_drift_share
+    - window_specific_geometry_failure
+  episode_comparison:
+    primary_rule: three_consecutive_breaches_and_three_consecutive_stable_months
+    report:
+      - breach_month_jaccard_similarity
+      - episode_count
+      - onset_month_difference_when_defined
+      - end_month_difference_when_defined
+      - open_at_sample_end
+
+dependent_summary_uncertainty:
+  role: conditional_uncertainty_for_paired_diagnostic_sequences
+  full_factor_estimation_uncertainty_claimed: false
+  method: paired_circular_moving_block_bootstrap_of_common_origin_diagnostic_rows
+  replications: 1999
+  random_seed: 10092026
+  primary_block_months: 12
+  sensitivity_block_months: [24, 36]
+  interval: percentile_95
+  paired_statistics:
+    - latest_minus_point_in_time_second_principal_cosine_tenth_percentile
+    - latest_minus_point_in_time_projector_distance_ninetieth_percentile
+    - latest_minus_point_in_time_core_breach_rate
+  p_values_or_confirmatory_tests: prohibited
+  report_all_windows_and_block_lengths: true
+
+primary_classification:
+  latest_vintage_robust_instability: >-
+    Full-panel latest-vintage geometry fails the unchanged Run 009 window-specific
+    classification at all 96-, 120-, and 144-month windows.
+  vintage_sensitive_instability: >-
+    At least one full-panel latest-vintage window changes its Run 009 failure
+    classification.
+  indeterminate: source_or_coverage_gate_fails
+  interpretation_boundary: >-
+    Robustness would show that the negative measurement result is not an artifact
+    of point-in-time vintages alone. Sensitivity would not validate the latest-vintage
+    state for decision-time use because it contains information unavailable then.
+
+implementation_and_execution:
+  source_download_authorized: true
+  implementation_authorized: true
+  empirical_execution_authorized: true
+  transmission_outcome_execution_authorized: false
+  required_before_execution:
+    - explicit_user_approval_of_this_exact_contract
+    - dedicated_source_registry_with_response_hashes
+    - hostile_schema_and_leakage_tests
+    - full_quality_preflight
+    - clean_local_git_checkpoint

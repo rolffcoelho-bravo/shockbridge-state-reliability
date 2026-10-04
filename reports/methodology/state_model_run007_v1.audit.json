@@ -1,0 +1,180 @@
+{
+  "challenger_rows": 2712,
+  "challengers": {
+    "exact_factor__k2__expanding": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -458.76178940754403,
+      "minimum_restart_agreement": null,
+      "origins": 226,
+      "score_domain": "standardized_scalar_factor_not_cross_candidate_comparable"
+    },
+    "exact_factor__k2__rolling_120": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -426.9727263741441,
+      "minimum_restart_agreement": null,
+      "origins": 226,
+      "score_domain": "standardized_scalar_factor_not_cross_candidate_comparable"
+    },
+    "exact_factor__k3__expanding": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -443.3889662714947,
+      "minimum_restart_agreement": null,
+      "origins": 226,
+      "score_domain": "standardized_scalar_factor_not_cross_candidate_comparable"
+    },
+    "exact_factor__k3__rolling_120": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -416.84446783911443,
+      "minimum_restart_agreement": null,
+      "origins": 226,
+      "score_domain": "standardized_scalar_factor_not_cross_candidate_comparable"
+    },
+    "hidden_markov_diagnostic__k2__expanding": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -1629.2107391456993,
+      "minimum_restart_agreement": 0.8259611535315396,
+      "origins": 226,
+      "score_domain": "observed_standardized_feature_dimensions"
+    },
+    "hidden_markov_diagnostic__k2__rolling_120": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -1805.1235737002114,
+      "minimum_restart_agreement": 0.8259611575878548,
+      "origins": 226,
+      "score_domain": "observed_standardized_feature_dimensions"
+    },
+    "hidden_markov_diagnostic__k3__expanding": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -1481.4177593973723,
+      "minimum_restart_agreement": 0.8733930099114182,
+      "origins": 226,
+      "score_domain": "observed_standardized_feature_dimensions"
+    },
+    "hidden_markov_diagnostic__k3__rolling_120": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -1585.6499074734693,
+      "minimum_restart_agreement": 0.8733932851515895,
+      "origins": 226,
+      "score_domain": "observed_standardized_feature_dimensions"
+    },
+    "pca_full_rank__k2__expanding": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -1959.5585921175868,
+      "minimum_restart_agreement": 0.36059479553903345,
+      "origins": 226,
+      "score_domain": "observed_standardized_feature_dimensions"
+    },
+    "pca_full_rank__k2__rolling_120": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -2112.7292855307687,
+      "minimum_restart_agreement": 0.14166666666666666,
+      "origins": 226,
+      "score_domain": "observed_standardized_feature_dimensions"
+    },
+    "pca_full_rank__k3__expanding": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -1999.1632077952258,
+      "minimum_restart_agreement": 0.25,
+      "origins": 226,
+      "score_domain": "observed_standardized_feature_dimensions"
+    },
+    "pca_full_rank__k3__rolling_120": {
+      "all_converged": true,
+      "cumulative_log_predictive_score": -2019.965854794855,
+      "minimum_restart_agreement": 0.20833333333333334,
+      "origins": 226,
+      "score_domain": "observed_standardized_feature_dimensions"
+    }
+  },
+  "config_sha256": "cce1972a3a057943c805f2e3bdac0f909ad996e5b99bf41fcecc885e132d006d",
+  "continuous_factor": {
+    "expanding": {
+      "cumulative_gaussian_log_predictive_score": -1939.5039422528398,
+      "cumulative_log_predictive_score": -1651.1357032474668,
+      "origins": 226,
+      "score_gain_vs_diagonal_gaussian": 288.36823900537297
+    },
+    "rolling_120": {
+      "cumulative_gaussian_log_predictive_score": -2163.0231131690525,
+      "cumulative_log_predictive_score": -1971.9424189926867,
+      "origins": 226,
+      "score_gain_vs_diagonal_gaussian": 191.08069417636585
+    }
+  },
+  "cross_window_distinct_origins": 165,
+  "cross_window_shared_origins_excluded": 61,
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_RUN_007_STATE_EVALUATION",
+  "experiment_id": "state-model-run007-v1",
+  "factor_rows": 452,
+  "features": [
+    "hicp_yoy",
+    "industrial_production_yoy",
+    "unemployment_rate",
+    "deposit_facility_rate"
+  ],
+  "history_windows": [
+    "expanding",
+    "rolling_120"
+  ],
+  "months": 286,
+  "numerical_contract": {
+    "hmm_max_iterations": 150,
+    "hmm_objective_gap_grid": [
+      0.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "hmm_restarts": 6,
+    "hmm_tolerance": 1e-06,
+    "pca_components": 2,
+    "pca_restarts": 20,
+    "random_seed": 73107,
+    "stability_thresholds": {
+      "maximum_sign_disagreement_rate": 0.1,
+      "maximum_standardized_mean_absolute_difference": 0.35,
+      "maximum_weak_anchor_rate": 0.05,
+      "minimum_anchor_tenth_percentile": 0.2,
+      "minimum_loading_cosine": 0.75,
+      "minimum_median_loading_cosine": 0.9,
+      "minimum_pearson_correlation": 0.8,
+      "minimum_spearman_correlation": 0.8,
+      "weak_anchor_cutoff": 0.1
+    },
+    "transition_prior": 0.5,
+    "variance_floor": 0.05
+  },
+  "outcomes_accessed": false,
+  "panel_sha256": "80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e",
+  "restart_records": 27120,
+  "rolling_months": 120,
+  "selected_primary_state_representation": null,
+  "selection_status": "KILL_GATE_CONTINUOUS_FACTOR_UNSTABLE",
+  "stability": {
+    "anchor_tenth_percentile": 0.09321042413373619,
+    "gates": {
+      "anchor_tenth_percentile": false,
+      "median_loading_cosine": true,
+      "minimum_loading_cosine": false,
+      "pearson_correlation": true,
+      "sign_disagreement_rate": false,
+      "spearman_correlation": true,
+      "standardized_mean_absolute_difference": true,
+      "weak_anchor_rate": false
+    },
+    "median_loading_cosine": 0.9873056937033449,
+    "minimum_loading_cosine": -0.6002396324665338,
+    "pearson_correlation": 0.8961796205552521,
+    "sign_disagreement_rate": 0.10909090909090909,
+    "spearman_correlation": 0.8713247669168915,
+    "standardized_mean_absolute_difference": 0.29747389246746636,
+    "weak_anchor_rate": 0.10909090909090909
+  },
+  "state_counts": [
+    2,
+    3
+  ],
+  "synthetic_observations_used": false,
+  "transmission_estimation_authorized": false,
+  "warmup_months": 60
+}

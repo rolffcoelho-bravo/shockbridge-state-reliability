@@ -1,0 +1,168 @@
+schema_version: 2
+protocol_id: state-model-evaluation-v2-draft
+created_on: 2026-10-02
+status: RUN_007_EXECUTED_KILL_GATE_NO_SELECTION
+supersedes_for_future_runs: state-model-evaluation-v1
+outcome_firewall: true
+
+evidence_boundary:
+  empirical_inputs: real_point_in_time_state_data_only
+  synthetic_observations: prohibited_from_empirical_estimation
+  synthetic_arrays: software_tests_only
+  transmission_outcomes_accessed: false
+
+continuous_factor_candidate:
+  input_panel: data/processed/monthly_state_panel_v2.csv
+  input_panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  histories:
+    - expanding
+    - rolling_120
+  standardization: estimation_window_only
+  extraction: first_principal_component_with_ar1_filter
+  sign_anchor: positive_unemployment_minus_industrial_production_loading
+  scale: estimation_window_factor_z_score
+  required_outputs:
+    - filtered_factor_mean
+    - filtered_factor_variance
+    - factor_loadings
+    - sign_anchor_value
+    - estimation_window_moments
+    - factor_innovation_variance
+    - idiosyncratic_variances
+    - prequential_feature_density_score
+  event_projection: last_monthly_filtered_estimate_strictly_before_event_cutoff
+  implementation:
+    path: src/shockbridge_state_risk/state/redesign.py
+    status: EXECUTED_IN_RUN_007_NOT_SELECTED
+
+prospective_pca_challenger:
+  clustering_geometry: leading_principal_components
+  emission_geometry: diagonal_full_principal_component_rotation
+  likelihood_geometry: standardized_raw_feature_axes
+  missing_current_features: exact_gaussian_marginalization_to_observed_dimensions
+  density_comparability: same_observed_feature_dimensions_as_other_benchmarks
+  historical_run_006_definition_preserved: true
+  implementation:
+    path: src/shockbridge_state_risk/state/pca_emission.py
+    status: EXECUTED_IN_RUN_007_DIAGNOSTIC_ONLY
+
+discrete_challenger:
+  representation: continuous_filtered_factor
+  clustering: exact_one_dimensional_dynamic_programming
+  state_counts: [2, 3]
+  stochastic_restarts: none
+  interpretation: descriptive_challenger_not_evidence_of_true_regimes
+  implementation:
+    path: src/shockbridge_state_risk/state/exact_1d.py
+    status: EXECUTED_IN_RUN_007_DESCRIPTIVE_ONLY
+
+hmm_restart_provenance:
+  retain_each_restart:
+    - seed
+    - converged
+    - iterations
+    - raw_log_likelihood
+    - regularized_map_objective
+    - objective_gap_from_best
+    - aligned_hard_assignments
+    - agreement_with_best
+  all_start_minimum_agreement: report_only_conservative_diagnostic
+  primary_consensus: objective_weighted_aligned_agreement
+  weight_interpretation: numerical_diagnostic_not_posterior_probability
+  effective_restart_count: required
+  objective_gap_sensitivity:
+    implementation_status: IMPLEMENTED_AND_SOFTWARE_TESTED
+    approved_grid: [0.0, 2.0, 5.0, 10.0]
+  implementation_status: EXECUTED_IN_RUN_007_DIAGNOSTIC_ONLY
+
+stability:
+  no_future_information: required
+  exact_repeat_determinism: required
+  label_or_sign_alignment: required
+  expanding_rolling_consistency:
+    metrics:
+      - pearson_correlation
+      - spearman_rank_correlation
+      - sign_disagreement_rate
+      - standardized_mean_absolute_difference
+    numerical_gate: APPROVED_IN_RUN_007_THRESHOLD_PROPOSAL_V1
+  subsample_robustness: required
+  loading_stability: required
+  sign_anchor_strength:
+    weaker_window_tenth_percentile: required
+    weaker_window_weak_anchor_rate: required
+  implementation:
+    path: src/shockbridge_state_risk/state/stability.py
+    status: EXECUTED_IN_RUN_007_KILL_GATE_FAILED
+
+finite_dose_response_surface:
+  primary_basis: standardized_quadratic_shock_by_state_tensor
+  basis_terms: 9
+  hierarchy_preserved: true
+  benchmark: linear_shock_by_state_interaction
+  baseline_dose: zero
+  support_rule:
+    rectangular_range_check: diagnostic_only
+    primary_joint_support_gate: convex_hull_plus_local_gaussian_kernel_ess
+    numerical_parameters: APPROVED_AND_FROZEN_IN_RUN_007_DOWNSTREAM_DESIGN_PROPOSAL_V1
+  state_uncertainty_propagation:
+    primary_quadratic_surface: exact_first_two_moment_integration
+    inference: refit_state_and_transmission_stages_inside_moving_block_bootstrap
+    block_parameters: APPROVED_AND_FROZEN_IN_RUN_007_DOWNSTREAM_DESIGN_PROPOSAL_V1
+  spline_robustness:
+    marginal_basis: minimal_cubic_bspline_with_one_interior_knot
+    curvature_penalty: tensor_second_difference
+    tuning: expanding_forward_validation_with_outer_development_basis_freeze
+    numerical_parameters: APPROVED_AND_FROZEN_IN_RUN_007_DOWNSTREAM_DESIGN_PROPOSAL_V1
+  implementation:
+    path: src/shockbridge_state_risk/transmission/finite_dose.py
+    supporting_paths:
+      - src/shockbridge_state_risk/transmission/spline.py
+      - src/shockbridge_state_risk/transmission/bootstrap.py
+    status: COMPONENTS_SOFTWARE_TESTED_NOT_EMPIRICALLY_EXECUTED
+
+run_007_orchestration:
+  configuration: experiments/state_model_run007_v1.yaml
+  implementation: src/shockbridge_state_risk/state/run007.py
+  score_domains:
+    continuous_factor: standardized_observed_feature_joint_density
+    pca_full_rank: standardized_observed_feature_joint_density
+    hidden_markov_diagnostic: standardized_observed_feature_joint_density
+    exact_factor: standardized_scalar_factor_density_not_cross_candidate_comparable
+  cross_window_gate_origins: only_after_rolling_120_history_first_truncates
+  retained_origins_for_prequential_scores: all_origins_after_60_month_warmup
+  implementation_status: EXECUTED_AND_INDEPENDENTLY_RECOMPUTED_KILL_GATE_NO_SELECTION
+
+pending_decisions:
+  R1:
+    approval_status: APPROVED_FROZEN_AND_COMPONENT_IMPLEMENTED
+    question: none
+    affects: downstream_estimand_and_causal_interpretation
+  R2:
+    approval_status: APPROVED_AND_COMPONENT_IMPLEMENTED
+    question: none
+    affects: hmm_stability_reporting
+  R3:
+    approval_status: FULL_RANK_PCA_EMISSION_APPROVED_AND_COMPONENT_IMPLEMENTED
+    question: none
+    affects: prospective_pca_benchmark_definition
+  cross_window_gate:
+    approval_status: APPROVED_AND_FROZEN
+    question: none
+    affects: state_candidate_eligibility
+  joint_support_gate:
+    approval_status: APPROVED_FROZEN_AND_COMPONENT_IMPLEMENTED
+    question: none
+    affects: finite_dose_contrast_eligibility
+  state_uncertainty:
+    approval_status: APPROVED_FROZEN_AND_COMPONENT_IMPLEMENTED
+    question: none
+    affects: downstream_contrast_and_inference
+  spline_robustness:
+    approval_status: APPROVED_FROZEN_AND_COMPONENT_IMPLEMENTED
+    question: none
+    affects: robustness_model_complexity
+
+state_model_execution_authorized: false
+transmission_outcome_execution_authorized: false
+reason_transmission_blocked: continuous_factor_failed_four_frozen_run_007_gates

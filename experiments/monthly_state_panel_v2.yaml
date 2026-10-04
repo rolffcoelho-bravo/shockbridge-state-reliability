@@ -1,0 +1,23 @@
+schema_version: 1
+experiment_id: monthly-state-panel-v2
+evidence_status: REAL_DATA_OUTCOME_BLIND
+
+source_registry: research/state_sources_v1.yaml
+source_registry_sha256: 88fd827be0cb0086717e261a0fec5fac38035c8ce32204869d8095e9138ae54d
+start_month: 2002-01
+end_month: 2025-10
+cutoff_rule: month_start_23_59_59_europe_berlin
+
+features:
+  - hicp_yoy
+  - industrial_production_yoy
+  - unemployment_rate
+  - deposit_facility_rate
+
+outcomes_accessed: false
+synthetic_observations_allowed: false
+supersedes_for_modeling: monthly-state-panel-v1
+change_reason: >-
+  Month-end cutoffs interact mechanically with the conservative archive-availability
+  rule and frozen staleness caps. Month-start checkpoints retain regular spacing and
+  use the latest vintage already available without relaxing any data-quality gate.

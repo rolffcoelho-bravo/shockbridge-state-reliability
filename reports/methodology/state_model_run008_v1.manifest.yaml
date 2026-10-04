@@ -1,0 +1,87 @@
+schema_version: 1
+artifact_id: state-model-run008-v1
+created_on: 2026-10-03
+evidence_status: REAL_DATA_OUTCOME_BLIND_STATE_EVALUATION
+selection_status: KILL_GATE_RUN_008_REQUIRED_GATES_FAILED
+
+frozen_design:
+  config_path: experiments/state_model_run008_v1.yaml
+  config_sha256: 5649f7a0c8bd5d0adff7d98998d3f7de04f33a399bf4d5e33c7d9e296788ce44
+  approved_design_path: research/methodology/run_008_subspace_design_proposal_v1.yaml
+  approved_design_sha256: 2c43effad56a6135e2b13d7a0287c40da8837e728eb8cfe433bd65f2055e2ee2
+  pre_result_git_commit: c1383ee3d0cd8eb900b0f67bcb5a6dfffff28cca
+  panel_path: data/processed/monthly_state_panel_v2.csv
+  panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  outcomes_accessed: false
+  synthetic_observations_used: false
+
+implementation:
+  orchestration_path: src/shockbridge_state_risk/state/run008.py
+  orchestration_sha256: 518d7c5acf44fe7884d053ced100fe78f9f8f0fcf2e07fd43572c435c5c3d2ec
+  subspace_path: src/shockbridge_state_risk/state/subspace.py
+  subspace_sha256: 12916ee63c787443bf156561161f392fe77adc541e89392e60309bf111c23986
+  cli_path: src/shockbridge_state_risk/cli.py
+  cli_sha256: 827419ea933cab90d4babfbe52638afc38fd012ae82225279cda83d08a83363b
+  preflight_report_path: reports/methodology/run_008_execution_preflight_audit_2026-10-03.md
+  preflight_report_sha256: 71c9fead513a7382ed35a8c9973499e6681a21b9a4b25545d5f3f84933f1d024
+
+execution:
+  command: >-
+    state-risk run-state-subspace experiments/state_model_run008_v1.yaml
+    --subspace-output data/processed/state_subspace_run008_v1.csv
+    --fixed-factor-output data/processed/state_fixed_factor_run008_v1.csv
+    --two-factor-output data/processed/state_two_factor_run008_v1.csv
+    --audit-output reports/methodology/state_model_run008_v1.audit.json
+  elapsed_seconds: 1.94
+
+outputs:
+  subspace:
+    path: data/processed/state_subspace_run008_v1.csv
+    sha256: d42acf37290e7858b47ea51ff97fd53c8b0feed2f2a8e03236235f0a39957608
+    bytes: 299444
+    rows: 452
+    repository_disposition: LOCAL_IGNORED
+  fixed_factor:
+    path: data/processed/state_fixed_factor_run008_v1.csv
+    sha256: 2afdaba561833a16d18bda92cc22534c55b5516cc7f5714b8212ae40c3691d95
+    bytes: 145151
+    rows: 332
+    repository_disposition: LOCAL_IGNORED
+  two_factor:
+    path: data/processed/state_two_factor_run008_v1.csv
+    sha256: 6967dac1674d4839f158f39f4acce84a539c5522cb303e5317b0f6288269b23f
+    bytes: 335438
+    rows: 452
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/state_model_run008_v1.audit.json
+    sha256: 4b8806c2c8a51fe120af10aa3d6f3809c98d08b696af776f48bddd337515735a
+    bytes: 5288
+    repository_disposition: COMMITTABLE
+
+integrity:
+  nonfinite_serialized_fields: 0
+  duplicate_month_window_keys: 0
+  incomplete_temporary_files: 0
+  fixed_loading_serializations: 1
+  minimum_two_factor_filtered_covariance_eigenvalue: 0.02500410094393995
+  projectors_symmetric_idempotent_rank_two: true
+  anchored_bases_orthonormal: true
+  independent_metric_recomputation: EXACT_TO_PERSISTED_PRECISION
+  byte_identical_repeat_execution: PASS
+  no_future_information_software_test: PASS
+
+decision:
+  selected_primary_state_representation: null
+  required_subspace_failed_gates:
+    - minimum_second_principal_cosine
+    - tenth_percentile_second_principal_cosine
+    - ninetieth_percentile_projector_distance
+    - anchor_capture_tenth_percentile_factor_2
+    - weak_anchor_capture_rate_factor_2
+    - anchored_loading_cosine_tenth_percentile_factor_2
+  fixed_scalar_failed_gates:
+    - sign_disagreement_rate
+  two_factor_diagnostic_passed: false
+  transmission_estimation_authorized: false
+  next_action: AWAIT_APPROVAL_FOR_POST_RUN_008_RESEARCH_DIRECTION

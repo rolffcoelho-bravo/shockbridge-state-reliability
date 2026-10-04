@@ -1,0 +1,31 @@
+schema_version: 1
+amendment_id: state-instability-run009-v1-amendment-1
+evidence_status: REAL_DATA_OUTCOME_BLIND_AMENDMENT
+
+approved_protocol_path: research/methodology/run_009_episode_amendment_1_protocol.yaml
+approved_protocol_sha256: 028e3393d24fd235fe09178b913f108364adae501561580e471f2c0d727af581
+source_manifest_path: reports/methodology/state_instability_run009_v1.manifest.yaml
+source_manifest_sha256: 9ff27f2b27d2de008be2ffce09d2c551680679f00ac102ed4de1ca9d8889c9aa
+diagnostic_path: data/processed/state_instability_run009_v1.csv
+diagnostic_sha256: c177cfac7fe553d48ada0509d95d665c9c424aa93d339fa3a96ae69bb6553af4
+original_episode_path: data/processed/state_instability_episodes_run009_v1.csv
+original_episode_sha256: baed3f89be85284c9162ce681480bbac89d793ee53469a9627d882609b6c6d3b
+source_audit_path: reports/methodology/state_instability_run009_v1.audit.json
+source_audit_sha256: 0ee8a3b3637e4c45d83edeb7c08412d646e9f099698b925713b38f7fd6430301
+
+common_origin_start: month-2014-02
+common_origin_end: month-2025-10
+episode_rules:
+  - minimum_consecutive_breaches: 3
+    recovery_consecutive_stable: 3
+    primary: true
+  - minimum_consecutive_breaches: 1
+    recovery_consecutive_stable: 1
+    primary: false
+  - minimum_consecutive_breaches: 6
+    recovery_consecutive_stable: 6
+    primary: false
+
+outcomes_accessed: false
+amendment_execution_authorized: true
+transmission_outcome_execution_authorized: false

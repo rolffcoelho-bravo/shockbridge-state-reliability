@@ -1,0 +1,58 @@
+schema_version: 1
+protocol_id: state-model-evaluation-v1
+frozen_on: 2026-10-02
+applies_from_run: state-calendar-v2
+outcome_firewall: true
+
+required_benchmarks:
+  - pca_plus_clustering
+  - dynamic_factor
+  - hidden_markov
+  - change_point
+
+decision_time_rules:
+  probabilities: filtered_only
+  smoothing: prohibited
+  refit: expanding_or_prespecified_rolling
+  labels: aligned_without_outcomes
+  event_sampling: last_information_strictly_before_event_cutoff
+
+minimum_screening:
+  global_hard_count_per_state: 20
+  global_probability_weighted_ess_per_state: 30.0
+  chronological_blocks: 3
+  block_hard_count_per_state: 5
+  block_probability_weighted_ess_per_state: 10.0
+  restart_hard_agreement_each_event: 0.85
+  selected_fits_converged: true
+  prequential_benchmark_required: true
+
+stability_grid:
+  state_counts: [2, 3]
+  initialization_restarts_minimum: 6
+  expanding_and_rolling_comparison: true
+  label_permutation_check: true
+  transition_stability_check: true
+  subsample_check: true
+
+selection_rule: >-
+  A model may be considered primary only if it passes temporal integrity,
+  minimum screening, stability, interpretability, and prequential comparison.
+  Failure of all candidates triggers the Blueprint V2 kill gate and redesign;
+  it does not authorize choosing the least-bad model.
+
+status_note: >-
+  Thresholds are prospective from state-calendar-v2. They were adopted after
+  state-replay-v1 exposed the inadequacy of global support alone and must not be
+  described as prespecified for that earlier run.
+
+execution_record:
+  run_id: state-model-comparison-v1
+  executed_on: 2026-10-02
+  result: KILL_GATE_NO_ELIGIBLE_MODEL
+  selected_primary_model: null
+  outcomes_accessed: false
+  redesign_required: true
+  post_run_gap: >-
+    Expanding-versus-rolling consistency was reported but had no frozen numerical
+    threshold. Any such threshold must be prospective in the redesign.

@@ -1,0 +1,157 @@
+{
+  "anchored_two_factor_diagnostic": {
+    "factorwise_metrics": {
+      "factor_1": {
+        "pearson_correlation": 0.942320322946,
+        "sign_disagreement_rate": 0.175757575758,
+        "spearman_correlation": 0.951115326049,
+        "standardized_mean_absolute_difference": 0.316616927099
+      },
+      "factor_2": {
+        "pearson_correlation": 0.323336074136,
+        "sign_disagreement_rate": 0.290909090909,
+        "spearman_correlation": 0.220361712927,
+        "standardized_mean_absolute_difference": 0.756918774535
+      }
+    },
+    "gates": {
+      "pearson_correlation__factor_1": true,
+      "pearson_correlation__factor_2": false,
+      "sign_disagreement_rate__factor_1": false,
+      "sign_disagreement_rate__factor_2": false,
+      "spearman_correlation__factor_1": true,
+      "spearman_correlation__factor_2": false,
+      "standardized_mean_absolute_difference__factor_1": true,
+      "standardized_mean_absolute_difference__factor_2": false
+    },
+    "passed": false,
+    "score_summary": {
+      "expanding": {
+        "cumulative_log_score_gain_vs_diagonal_gaussian": 398.358597839,
+        "mean_log_score_gain_vs_diagonal_gaussian": 1.762648663,
+        "origins": 226
+      },
+      "rolling_120": {
+        "cumulative_log_score_gain_vs_diagonal_gaussian": 351.307838162,
+        "mean_log_score_gain_vs_diagonal_gaussian": 1.5544594609,
+        "origins": 226
+      }
+    },
+    "transmission_eligible": false
+  },
+  "approved_design_sha256": "2c43effad56a6135e2b13d7a0287c40da8837e728eb8cfe433bd65f2055e2ee2",
+  "config_sha256": "5649f7a0c8bd5d0adff7d98998d3f7de04f33a399bf4d5e33c7d9e296788ce44",
+  "cross_window_distinct_origins": 165,
+  "cross_window_shared_origins_excluded": 61,
+  "development_fixed_loading": [
+    -0.586121391002,
+    -0.46433781669,
+    0.423295594359,
+    -0.51153978027
+  ],
+  "development_months": 120,
+  "development_period": [
+    "month-2002-01",
+    "month-2011-12"
+  ],
+  "evaluation_period": [
+    "month-2012-01",
+    "month-2025-10"
+  ],
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_RUN_008_STATE_EVALUATION",
+  "experiment_id": "state-model-run008-v1",
+  "features": [
+    "hicp_yoy",
+    "industrial_production_yoy",
+    "unemployment_rate",
+    "deposit_facility_rate"
+  ],
+  "fixed_factor_rows": 332,
+  "fixed_loading_scalar": {
+    "gates": {
+      "pearson_correlation": true,
+      "positive_mean_log_score_gain__expanding": true,
+      "positive_mean_log_score_gain__rolling_120": true,
+      "sign_disagreement_rate": false,
+      "spearman_correlation": true,
+      "standardized_mean_absolute_difference": true
+    },
+    "metrics": {
+      "pearson_correlation": 0.972097530361,
+      "sign_disagreement_rate": 0.139393939394,
+      "spearman_correlation": 0.987708706222,
+      "standardized_mean_absolute_difference": 0.256255142254
+    },
+    "passed": false,
+    "score_summary": {
+      "expanding": {
+        "cumulative_log_score_gain_vs_diagonal_gaussian": 94.3892259154,
+        "mean_log_score_gain_vs_diagonal_gaussian": 0.568609794671,
+        "origins": 166
+      },
+      "rolling_120": {
+        "cumulative_log_score_gain_vs_diagonal_gaussian": 192.22657412,
+        "mean_log_score_gain_vs_diagonal_gaussian": 1.15799141036,
+        "origins": 166
+      }
+    }
+  },
+  "history_windows": [
+    "expanding",
+    "rolling_120"
+  ],
+  "months": 286,
+  "outcomes_accessed": false,
+  "output_serialization": {
+    "absolute_zero_cutoff": 1e-12,
+    "raw_unidentified_pca_basis_persisted": false,
+    "rotation_invariant_projector_persisted": true,
+    "significant_digits": 12
+  },
+  "panel_sha256": "80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e",
+  "selected_primary_state_representation": null,
+  "selection_status": "KILL_GATE_RUN_008_REQUIRED_GATES_FAILED",
+  "subspace": {
+    "gates": {
+      "anchor_capture_tenth_percentile_factor_1": true,
+      "anchor_capture_tenth_percentile_factor_2": false,
+      "anchored_loading_cosine_median_factor_1": true,
+      "anchored_loading_cosine_median_factor_2": true,
+      "anchored_loading_cosine_tenth_percentile_factor_1": true,
+      "anchored_loading_cosine_tenth_percentile_factor_2": false,
+      "median_projector_distance": true,
+      "minimum_second_principal_cosine": false,
+      "ninetieth_percentile_projector_distance": false,
+      "tenth_percentile_second_principal_cosine": false,
+      "weak_anchor_capture_rate_factor_1": true,
+      "weak_anchor_capture_rate_factor_2": false
+    },
+    "metrics": {
+      "anchor_capture_tenth_percentile": [
+        0.556842955639,
+        0.260367538497
+      ],
+      "anchored_loading_cosine_median": [
+        0.990298004467,
+        0.994448964065
+      ],
+      "anchored_loading_cosine_tenth_percentile": [
+        0.902466877916,
+        -0.538612017974
+      ],
+      "median_projector_distance": 0.0966794841548,
+      "minimum_second_principal_cosine": 0.0127435650559,
+      "ninetieth_percentile_projector_distance": 0.715296000122,
+      "tenth_percentile_second_principal_cosine": 0.150133750747,
+      "weak_anchor_capture_rate": [
+        0.0,
+        0.69696969697
+      ]
+    },
+    "passed": false
+  },
+  "subspace_rows": 452,
+  "synthetic_observations_used": false,
+  "transmission_estimation_authorized": false,
+  "two_factor_rows": 452
+}

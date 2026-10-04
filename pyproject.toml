@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shockbridge-state-risk"
+version = "0.1.0"
+description = "Reproducible controls for real-time macro-state measurement reliability"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+  { name = "Rodolfo Pereira" },
+]
+requires-python = ">=3.9"
+dependencies = [
+  "certifi>=2024.2.2",
+  "numpy>=1.26,<2",
+  "openpyxl>=3.1,<4",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "coverage[toml]>=7.4,<8",
+  "mypy>=1.10,<2",
+  "ruff>=0.6,<1",
+  "types-PyYAML>=6.0,<7",
+]
+
+[project.scripts]
+state-risk = "shockbridge_state_risk.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]
+ignore = ["UP045"] # PEP 604 syntax would drop the declared Python 3.9 support.
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+files = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["shockbridge_state_risk"]
+omit = ["*/__main__.py"]
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true

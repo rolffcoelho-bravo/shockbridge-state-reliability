@@ -1,0 +1,125 @@
+schema_version: 1
+artifact_id: state-vintage-robustness-run010-v1
+created_on: 2026-10-04
+evidence_status: REAL_DATA_OUTCOME_BLIND_EX_POST_LATEST_VINTAGE
+classification_status: LATEST_VINTAGE_ROBUST_INSTABILITY
+
+frozen_design:
+  config_path: experiments/state_vintage_robustness_run010_v1.yaml
+  config_sha256: d749faaa408e7d3602dbf3b0c093ff899fc7c244e04179dbf21cc61698e3e07f
+  approved_design_path: research/methodology/run_010_vintage_robustness_proposal_v1.yaml
+  approved_design_sha256: f85116d407019b9386101242e94381fa2973a1e39addfb24e4255653444db457
+  pre_result_git_commit: 5e6e52ebdbf11a1fd0b9862f647baaf1868b6948
+  panel_path: data/processed/monthly_state_panel_v2.csv
+  panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  run_009_diagnostic_path: data/processed/state_instability_run009_v1.csv
+  run_009_diagnostic_sha256: c177cfac7fe553d48ada0509d95d665c9c424aa93d339fa3a96ae69bb6553af4
+  source_manifest_path: data/manifests/run010_latest_sources_v1.yaml
+  source_manifest_sha256: 6a6b0a8f37637d2680940d827a6bdf88cdadb43e68fb4ec849eb03db647ccf80
+  outcomes_accessed: false
+  synthetic_observations_used: false
+
+implementation:
+  orchestration_path: src/shockbridge_state_risk/state/run010.py
+  orchestration_sha256: 58dc0c6a9a9fc21d6ae865d7415e6e6cdf25c584773c234f034c369bcf7715db
+  geometry_component_path: src/shockbridge_state_risk/state/instability.py
+  geometry_component_sha256: 1d062b1840627aebad9fc830efe3ba78064f1ed1593f21d316708ca07d88f388
+  cli_path: src/shockbridge_state_risk/cli.py
+  cli_sha256: c43e2fd5affccb174dd1d3f844c601a4fc5eaeb9175e437556273d9a48f53c31
+  implementation_preflight_path: reports/methodology/run_010_implementation_preflight_2026-10-04.md
+  implementation_preflight_sha256: 6d867c4a18cd3084d43fb3772545121093b0a747634cf05c6bfd4590cae5bb3d
+  execution_preflight_path: reports/methodology/run_010_execution_preflight_2026-10-04.md
+  execution_preflight_sha256: fc7a17c1eb7492681da9d535d82aa11f1963b1d15ae7432bfed503488363f5e8
+
+execution:
+  command: >-
+    .venv/bin/python -m shockbridge_state_risk run-vintage-robustness
+    experiments/state_vintage_robustness_run010_v1.yaml
+    --comparison-output data/processed/state_vintage_comparison_run010_v1.csv
+    --geometry-output data/processed/state_vintage_geometry_run010_v1.csv
+    --episode-output data/processed/state_vintage_episodes_run010_v1.csv
+    --audit-output reports/methodology/state_vintage_robustness_run010_v1.audit.json
+  elapsed_seconds: 11.6
+
+outputs:
+  comparison:
+    path: data/processed/state_vintage_comparison_run010_v1.csv
+    sha256: 9044465d54cc51c1a7885c48d7228ba90e52747c814222cde0a0413f56ffb0df
+    bytes: 280404
+    rows: 1144
+    repository_disposition: LOCAL_IGNORED
+  geometry:
+    path: data/processed/state_vintage_geometry_run010_v1.csv
+    sha256: 7a639d4b2b9a4bed73ded627961bdd8c08cdfba13889adaab3f652ef6f24be32
+    bytes: 1144941
+    rows: 4950
+    repository_disposition: LOCAL_IGNORED
+  episodes:
+    path: data/processed/state_vintage_episodes_run010_v1.csv
+    sha256: 67dec146bae186bc9e5680be36ec6caf80443bbc3449af99601c4a8c53e5001b
+    bytes: 3124
+    rows: 31
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/state_vintage_robustness_run010_v1.audit.json
+    sha256: 6631f7ad8fd2bffc2d1d606e39a187029ea96d5adac61269af4c25f3d6584b81
+    bytes: 26862
+    repository_disposition: COMMITTABLE
+  interpretation:
+    path: reports/methodology/run_010_vintage_robustness_result_2026-10-04.md
+    sha256: a5dfa127d4a2885775159420468699363538ef2f595af81e4cdb9b774bbf8c1e
+    bytes: 7342
+    repository_disposition: COMMITTABLE
+
+integrity:
+  comparison_unique_month_feature_keys: 1144
+  originally_missing_rows: 29
+  missingness_mask_exactly_preserved: true
+  deposit_facility_rows_exactly_copied: 286
+  observed_macro_rows_with_finite_difference: 829
+  geometry_unique_vintage_variant_window_month_keys: 4950
+  point_in_time_geometry_rows: 2475
+  latest_vintage_geometry_rows: 2475
+  point_in_time_geometry_exactly_reproduced: true
+  required_latest_level_and_yoy_lag_coverage: 1.0
+  bootstrap_replications_per_window_block: 1999
+  no_outcome_columns_present: true
+  independent_persisted_row_integrity_audit: PASS
+  independent_full_panel_summary_recomputation: PASS
+  deterministic_software_repeat_test: PASS
+
+frozen_results:
+  primary_classification: LATEST_VINTAGE_ROBUST_INSTABILITY
+  full_panel_window_failure:
+    rolling_96:
+      point_in_time: true
+      latest_vintage: true
+    rolling_120:
+      point_in_time: true
+      latest_vintage: true
+    rolling_144:
+      point_in_time: true
+      latest_vintage: true
+  full_panel_primary_episode:
+    rolling_96:
+      point_in_time: [month-2017-09, month-2023-03]
+      latest_vintage: [month-2017-03, month-2023-02]
+      breach_month_jaccard_similarity: 0.904109589041
+    rolling_120:
+      point_in_time: [month-2019-03, month-2023-05]
+      latest_vintage: [month-2019-02, month-2023-05]
+      breach_month_jaccard_similarity: 0.980769230769
+    rolling_144:
+      point_in_time: [month-2021-02, month-2023-07]
+      latest_vintage: [month-2021-01, month-2023-07]
+      breach_month_jaccard_similarity: 0.967741935484
+  deletion_window_classifications_unchanged: 15_of_15
+  pure_numerical_revision_claim_allowed: false
+  decision_time_state_use_allowed: false
+
+decision:
+  state_selected: false
+  run_008_or_run_009_decision_changed: false
+  causal_revision_effect_claimed: false
+  transmission_estimation_authorized: false
+  next_action: AWAIT_APPROVAL_FOR_PAPER_POSITIONING_AND_INDEPENDENT_REPRODUCTION_STAGE

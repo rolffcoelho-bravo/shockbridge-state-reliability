@@ -1,0 +1,31 @@
+schema_version: 1
+experiment_id: state-support-power-v1
+evidence_status: SYNTHETIC_DESIGN_ONLY
+seed: 20261002
+replicates: 300
+alpha: 0.05
+power_target: 0.80
+workers: 4
+
+sample_sizes:
+  candidate_final_block: 47
+  candidate_development_block: 155
+  full_replication_sample: 242
+
+minority_prevalences:
+  - 0.10
+  - 0.20
+  - 0.30
+  - 0.40
+
+misclassification_rates:
+  - 0.00
+  - 0.10
+  - 0.20
+
+standardized_interactions:
+  - 0.00
+  - 0.25
+  - 0.50
+  - 0.75
+  - 1.00

@@ -1,0 +1,20 @@
+artifact_id: ea_mpd_official_2025_11_04
+source_url: https://www.ecb.europa.eu/pub/pdf/annex/Dataset_EA-MPD.xlsx
+provider: European Central Bank
+workbook_last_update: 2025-11-04
+retrieved_on: 2026-10-02
+sha256: f417fb861a305e3cbb871a7571c4899ba6bca003d9e087024d2f3f0744426cef
+bytes: 377116
+storage: ignored_local_raw
+redistribution_decision: FETCH_ONLY_NO_RAW_BUNDLING
+required_attribution: Source ECB; Altavilla et al. (2019)
+transformation_disclosure_required: true
+audit:
+  sheets: 3
+  event_dates_per_sheet: 315
+  first_event: 1999-01-07
+  last_event: 2025-10-30
+  duplicate_dates: 0
+  usable_columns: 46
+  structural_timing_break: 2022-07
+

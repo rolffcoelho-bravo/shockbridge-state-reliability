@@ -1,0 +1,32 @@
+schema_version: 1
+protocol_id: run-009-episode-amendment-1
+created_on: 2026-10-03
+status: APPROVED_AND_FROZEN_FOR_OUTCOME_BLIND_AMENDMENT
+approved_on: 2026-10-03
+reason: add_explicit_right_censoring_status_without_changing_run_009_v1_results
+
+source_run:
+  manifest_path: reports/methodology/state_instability_run009_v1.manifest.yaml
+  manifest_sha256: 9ff27f2b27d2de008be2ffce09d2c551680679f00ac102ed4de1ca9d8889c9aa
+  diagnostic_path: data/processed/state_instability_run009_v1.csv
+  diagnostic_sha256: c177cfac7fe553d48ada0509d95d665c9c424aa93d339fa3a96ae69bb6553af4
+  original_episode_path: data/processed/state_instability_episodes_run009_v1.csv
+  original_episode_sha256: baed3f89be85284c9162ce681480bbac89d793ee53469a9627d882609b6c6d3b
+  audit_path: reports/methodology/state_instability_run009_v1.audit.json
+  audit_sha256: 0ee8a3b3637e4c45d83edeb7c08412d646e9f099698b925713b38f7fd6430301
+
+amendment_rule:
+  reconstruct_from_primary_common_sample_core_breach_flags: true
+  episode_rules:
+    - [3, 3]
+    - [1, 1]
+    - [6, 6]
+  match_every_original_episode_field_before_writing: true
+  added_field: open_at_sample_end
+  open_definition: no_complete_recovery_sequence_before_common_sample_end
+  original_artifacts_overwritten: false
+  numerical_classifications_recomputed_or_changed: false
+
+outcomes_accessed: false
+amendment_execution_authorized: true
+transmission_outcome_execution_authorized: false

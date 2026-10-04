@@ -1,0 +1,77 @@
+schema_version: 1
+audit_id: run-010-source-metadata-audit-2026-10-03
+audit_date: 2026-10-03
+evidence_class: OFFICIAL_SOURCE_METADATA_ONLY
+request_detail: nodata
+certificate_verification: required_and_used
+observation_data_retrieved: false
+response_body_retained: false
+exact_response_hash_required_at_empirical_retrieval: true
+repeat_check_note: >-
+  Initial no-data requests succeeded. Later repeated checks encountered intermittent
+  read timeouts; no insecure TLS, partial response, or fallback source was accepted.
+
+series:
+  hicp_index:
+    metadata_url: >-
+      https://data-api.ecb.europa.eu/service/data/RTD/M.S0.N.P_C_OV.X?detail=nodata&format=csvdata
+    status_observed: 200
+    key: RTD.M.S0.N.P_C_OV.X
+    frequency: M
+    reference_area: S0
+    adjustment: N
+    concept: P_C_OV
+    denomination: X
+    downstream_series_id_observed: HICP.M.U2.N.000000.4D0.INX
+    unit_observed: IX
+    index_base_observed: 2025 = 100
+    title_observed: HICP Inflation rate - Total - Index
+  industrial_production_index:
+    metadata_url: >-
+      https://data-api.ecb.europa.eu/service/data/RTD/M.S0.Y.I_XCONS.X?detail=nodata&format=csvdata
+    status_observed: 200
+    key: RTD.M.S0.Y.I_XCONS.X
+    frequency: M
+    reference_area: S0
+    adjustment: Y
+    concept: I_XCONS
+    denomination: X
+    downstream_series_id_observed: STBS.M.I10.Y.PROD.NS0020.4D0.N.IX
+    unit_observed: IX
+    index_base_observed: 2021=100
+    title_observed: >-
+      Total industrial production (excluding construction) - Working day and
+      seasonally adjusted
+  unemployment_rate:
+    metadata_url: >-
+      https://data-api.ecb.europa.eu/service/data/RTD/M.S0.S.L_UNETO.F?detail=nodata&format=csvdata
+    status_observed: 200
+    key: RTD.M.S0.S.L_UNETO.F
+    frequency: M
+    reference_area: S0
+    adjustment: S
+    concept: L_UNETO
+    denomination: F
+    downstream_series_id_observed: LFSI.M.I10.S.UNEHRT.TOTAL0.15_74.T
+    unit_observed: PC
+    title_observed: Unemployment rate, age 15 to 74, total
+
+rejected_direct_substitution:
+  industrial_production_u2_stbs:
+    attempted_key: STBS.M.U2.Y.PROD.NS0020.4D0.N.IX
+    status_observed: 404
+    reason: no_current_u2_series_returned
+  industrial_production_i10_stbs:
+    key: STBS.M.I10.Y.PROD.NS0020.4D0.N.IX
+    reason: fixed_composition_headline_series_would_change_the_registered_rtd_contract
+  unemployment_i10_lfsi:
+    key: LFSI.M.I10.S.UNEHRT.TOTAL0.15_74.T
+    reason: fixed_composition_headline_series_would_change_the_registered_rtd_contract
+
+rights_and_release:
+  access: FREE_OFFICIAL_API
+  reuse_policy_url: >-
+    https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html
+  attribution_required: true
+  modified_statistics_must_be_disclosed: true
+  project_raw_release_policy: FETCH_ONLY

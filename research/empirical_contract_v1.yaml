@@ -1,0 +1,144 @@
+schema_version: 1
+contract_id: shockbridge-ecb-state-transmission-v1
+status: BLOCKED
+audit_date: 2026-10-02
+freeze_date: TBD_AFTER_SOURCE_AND_OUTCOME_AUDIT
+
+region: euro_area
+
+claim_lane: causal_transmission
+
+shock:
+  family: ECB high-frequency monetary-policy surprise
+  primary_component: target_factor_candidate
+  primary_status: FROZEN_REPLICATION_VINTAGE_PENDING_IDENTIFICATION_FREEZE
+  event_window: press_release_window_only
+  source_name: ABGMR monetary policy factors
+  source_url: https://gragusa.org/factors/
+  inspected_vintage: 2025-10-30
+  inspected_artifact_url: https://gragusa.org/factors/data/press_release_factors_2025-10-30.csv
+  inspected_sha256: 48c91fc9f52346bb564b49a29940b90c74b3b3a9edcce843a4aa269ae52bddd4
+  inspected_events: 242
+  inspected_first_event: 2002-01-03
+  inspected_last_event: 2025-10-30
+  normalization: target factor normalized to a unit effect on the one-month OIS surprise
+  sign_convention: positive_is_tightening_candidate_to_verify
+  scheduled_event_replication_artifact:
+    source_url: https://www.ecb.europa.eu/pub/pdf/annex/Dataset_EA-MPD.xlsx
+    source_update: 2025-11-04
+    sha256: f417fb861a305e3cbb871a7571c4899ba6bca003d9e087024d2f3f0744426cef
+    event_dates: 315
+    first_event: 1999-01-07
+    last_event: 2025-10-30
+  extended_event_artifact:
+    source_url: https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3157-annex-EA-EMPD~8b94679d77.en.xlsx
+    source_publication_date: 2026-06-10
+    sha256: b4bdc1b90b9842227e74ff013eb79c71edce5dff9da1d5e02ac75b5d45c5e129
+    rows: 4926
+    first_event: 1999-01-07T13:45:00
+    last_event: 2026-03-28T10:00:00
+    governing_council_press_release_events: 318
+  current_final_artifact: FROZEN_EA_MPD_REPLICATION_PLUS_SEPARATE_EA_EMPD_EXTENSION
+  local_artifact_sha256: RECORDED_IN_SOURCE_MANIFESTS
+  exclusions: TBD_AFTER_EVENT_AND_CONCURRENT_NEWS_AUDIT
+
+state:
+  clock: immediately_before_announcement
+  estimator: TBD_AFTER_OUTCOME_BLIND_STATE_REPLAY_AND_SUPPORT_AUDIT
+  candidate_panel:
+    registry: research/state_sources_v1.yaml
+    audit: reports/methodology/state_panel_v1.audit.json
+    events: 242
+    features: 5
+    rows: 1210
+    point_in_time_violations: 0
+    duplicate_event_feature_keys: 0
+    admitted_features:
+      - hicp_yoy
+      - industrial_production_yoy
+      - unemployment_rate
+      - deposit_facility_rate
+    conditional_challenger:
+      - yield_curve_10y_minus_2y
+    excluded:
+      CISS: no_auditable_historical_vintage_before_event_cutoffs
+  required_output: filtered_probabilities_not_smoothed_labels
+  minimum_support_rule: TBD_AFTER_ECONOMIC_UNIT_SESOI_AND_OBSERVED_STATE_SUPPORT
+  design_power_experiment: state-support-power-v1
+  preliminary_power_decision: FORTY_SEVEN_EVENT_BLOCK_INELIGIBLE_AS_SOLE_PRIMARY_TRANSMISSION_TEST
+  required_support_metrics:
+    - hard_state_event_counts
+    - probability_weighted_effective_sample_size
+    - centered_probability_contrast_information
+    - posterior_entropy
+    - shock_sign_and_dose_overlap
+    - leverage_and_influence
+  hard_state_role: descriptive_only
+
+outcomes:
+  primary:
+    - IT10Y_minus_DE10Y_change_bps
+    - STOXX50_change_percentage_points
+    - EURUSD_change_percentage_points
+  secondary:
+    - SX7E_change_percentage_points
+    - DE2Y_change_bps
+  candidate_domains:
+    - sovereign_yield_or_spread
+    - credit
+    - equity
+    - foreign_exchange
+  selection_rule: compact_prespecified_family_only
+  units:
+    sovereign_yields_and_spreads: basis_points
+    equity_and_fx: percentage_points
+  joined_target_factor_events: 242
+  joined_primary_outcome_missing_cells: 0
+  multiplicity_rule: three_primary_outcomes_form_one_confirmatory_family
+
+horizons:
+  primary: contemporaneous_press_release_event_window
+  event_time_and_daily_must_be_separate: true
+  overlapping_horizon_policy: TBD_IF_DAILY_HORIZONS_ARE_RETAINED
+
+estimand:
+  target: state-conditional response to a normalized identified shock
+  notation: E[Y(delta)-Y(0) | S_pre=s]
+  causal_status: PROVISIONAL_PENDING_IDENTIFICATION_REVIEW
+  primary_challenger: state-independent response on identical sample and timing
+
+evaluation:
+  split_method: chronological_by_event
+  development_block: TBD_AFTER_CURRENT_EVENT_UNIVERSE
+  calibration_block: TBD_AFTER_CURRENT_EVENT_UNIVERSE
+  final_block: TBD_UNTOUCHED_FINAL_BLOCK
+  event_clustering: required
+  multiplicity_family: outcomes_x_horizons_x_prespecified_state_contrasts
+  lane_separation:
+    reliability: chronological_development_calibration_and_untouched_final_required
+    transmission: FULL_ELIGIBLE_SAMPLE_CANDIDATE_AFTER_OUTCOME_BLIND_PROTOCOL_FREEZE
+    transmission_status: PROVISIONAL_DESIGN_SCREEN_COMPLETE
+
+reliability:
+  task: event_response_model
+  failure_event: TBD_AFTER_OUTCOME_AND_LOSS_SCALE_FREEZE
+  label_maturity_rule: outcome_must_be_observable_before_meta_model_fit_origin
+  primary_baseline: uncertainty_only_rule_at_matched_participation
+  calibrated_probability_allowed_only_if: sufficient_independent_matured_failures
+
+rights:
+  retrieval_status: RESEARCH_RETRIEVAL_OBSERVED
+  redistribution_status: FETCH_ONLY_NO_RAW_BUNDLING
+  artifact_decisions:
+    ECB_statistics: reusable_with_attribution_and_transformation_disclosure_subject_to_third_party_exception
+    ECB_authored_documents: fetch_only
+    ABGMR_factor_CSV: fetch_only_no_explicit_redistribution_license_found
+  raw_data_commit_allowed: false
+  derived_display_allowed: true_with_ECB_attribution_and_transformation_disclosure
+
+stop_rules:
+  - no_current_and_versioned_shock_artifact
+  - insufficient_event_support_within_prespecified_states
+  - shock_interpretation_not_defensible_after_information_effect_checks
+  - outcome_rights_or_timing_not_auditable
+  - final_block_touched_during_model_selection

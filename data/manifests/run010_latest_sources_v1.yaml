@@ -1,0 +1,40 @@
+schema_version: 1
+manifest_id: run010-latest-sources-v1
+approved_design_path: research/methodology/run_010_vintage_robustness_proposal_v1.yaml
+approved_design_sha256: f85116d407019b9386101242e94381fa2973a1e39addfb24e4255653444db457
+evidence_status: REAL_OFFICIAL_DATA_EX_POST_LATEST_VINTAGE
+outcomes_accessed: false
+sources:
+  hicp_yoy:
+    path: data/raw/ecb_state/run010_latest_hicp.csv
+    url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.N.P_C_OV.X?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+    final_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.N.P_C_OV.X?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+    series_key: RTD.M.S0.N.P_C_OV.X
+    sha256: d04f0211cc9ab2a0d0dea254c3d814b17e74366b484c59fb62085f27cf7ce154
+    bytes: 117477
+    retrieved_at_utc: '2026-10-04T08:05:24.109884+00:00'
+    attempts:
+    - attempt: 1
+      status: success
+  industrial_production_yoy:
+    path: data/raw/ecb_state/run010_latest_ip.csv
+    url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.Y.I_XCONS.X?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+    final_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.Y.I_XCONS.X?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+    series_key: RTD.M.S0.Y.I_XCONS.X
+    sha256: 48825eaff5ec41c8653f53a97803e4c705f11bc34daff3a54633b8ed84914064
+    bytes: 151556
+    retrieved_at_utc: '2026-10-04T08:05:24.915690+00:00'
+    attempts:
+    - attempt: 1
+      status: success
+  unemployment_rate:
+    path: data/raw/ecb_state/run010_latest_unemployment.csv
+    url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.S.L_UNETO.F?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+    final_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.S.L_UNETO.F?includeHistory=false&format=csvdata&startPeriod=2000-01&endPeriod=2025-10
+    series_key: RTD.M.S0.S.L_UNETO.F
+    sha256: db2bac035fdb4c3497a7ced0e08f53626a88d99b925c28834328b6431c580dc0
+    bytes: 135223
+    retrieved_at_utc: '2026-10-04T08:05:25.636944+00:00'
+    attempts:
+    - attempt: 1
+      status: success

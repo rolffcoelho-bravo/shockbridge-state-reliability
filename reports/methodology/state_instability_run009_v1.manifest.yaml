@@ -1,0 +1,113 @@
+schema_version: 1
+artifact_id: state-instability-run009-v1
+created_on: 2026-10-03
+evidence_status: REAL_DATA_OUTCOME_BLIND_STATE_DIAGNOSTIC
+classification_status: PERVASIVE_FULL_PANEL_GEOMETRY_FAILURE
+
+frozen_design:
+  config_path: experiments/state_instability_run009_v1.yaml
+  config_sha256: 2206cc98b815c93c0d85b0d8acca9db91cbdec131c33413d3d2a09f6ea50d022
+  approved_design_path: research/methodology/run_009_instability_diagnostic_proposal_v1.yaml
+  approved_design_sha256: b88a0bd9f945d2662f716cb129bb7aba0279be1b8955e8e4be3475dc9a4b45cf
+  pre_result_git_commit: 235323b2a4e422e8316bdcb0698d7a4257f993e6
+  panel_path: data/processed/monthly_state_panel_v2.csv
+  panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  run_008_manifest_path: reports/methodology/state_model_run008_v1.manifest.yaml
+  run_008_manifest_sha256: cdddd08dfff175726afccdd8c8e89c6d3bd1addf0db5f711999998b2ffd02237
+  run_008_fixed_scalar_path: data/processed/state_fixed_factor_run008_v1.csv
+  run_008_fixed_scalar_sha256: 2afdaba561833a16d18bda92cc22534c55b5516cc7f5714b8212ae40c3691d95
+  outcomes_accessed: false
+  synthetic_observations_used: false
+
+implementation:
+  orchestration_path: src/shockbridge_state_risk/state/run009.py
+  orchestration_sha256: ec6c0fd80f5d6e1192cdeb0424ef73e7882fc959c653f559a400ff6c3d40e127
+  diagnostic_component_path: src/shockbridge_state_risk/state/instability.py
+  diagnostic_component_sha256: 1d062b1840627aebad9fc830efe3ba78064f1ed1593f21d316708ca07d88f388
+  cli_path: src/shockbridge_state_risk/cli.py
+  cli_sha256: 3a5a5fa8a931c9eb97bba1c4ebf057e7435c488c5a8ba4d9a6ceb851cd95f8d7
+  preflight_report_path: reports/methodology/run_009_execution_preflight_audit_2026-10-03.md
+  preflight_report_sha256: 3f7da989197d0ff4956ab26849d15046852e115f8773a25132e8075079a450c8
+
+execution:
+  command: >-
+    .venv/bin/python -m shockbridge_state_risk run-state-instability
+    experiments/state_instability_run009_v1.yaml
+    --diagnostic-output data/processed/state_instability_run009_v1.csv
+    --episode-output data/processed/state_instability_episodes_run009_v1.csv
+    --audit-output reports/methodology/state_instability_run009_v1.audit.json
+  elapsed_seconds: 3.06
+
+outputs:
+  diagnostics:
+    path: data/processed/state_instability_run009_v1.csv
+    sha256: c177cfac7fe553d48ada0509d95d665c9c424aa93d339fa3a96ae69bb6553af4
+    bytes: 846213
+    rows: 2475
+    repository_disposition: LOCAL_IGNORED
+  episodes:
+    path: data/processed/state_instability_episodes_run009_v1.csv
+    sha256: baed3f89be85284c9162ce681480bbac89d793ee53469a9627d882609b6c6d3b
+    bytes: 3885
+    rows: 44
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/state_instability_run009_v1.audit.json
+    sha256: 0ee8a3b3637e4c45d83edeb7c08412d646e9f099698b925713b38f7fd6430301
+    bytes: 17943
+    repository_disposition: COMMITTABLE
+  interpretation:
+    path: reports/methodology/run_009_state_instability_result_2026-10-03.md
+    sha256: 330733fe416c88705e2f19d5943d5d812ad8514d9292202f6faf556b58181db0
+    bytes: 6778
+    repository_disposition: COMMITTABLE
+
+integrity:
+  diagnostic_unique_variant_window_month_keys: 2475
+  complete_common_origins_per_variant_window: 141
+  nonfinite_serialized_geometry_fields: 0
+  full_panel_contribution_matrices_valid: true
+  leave_one_out_nonapplicable_fields_empty: true
+  episode_count_recomputed: 44
+  monetary_regime_counts_each_window:
+    negative: 97
+    zero: 7
+    positive: 37
+  no_outcome_columns_present: true
+  independent_summary_recomputation: EXACT_TO_PERSISTED_PRECISION
+  byte_identical_repeat_execution: PASS
+  no_future_information_software_test: PASS
+
+frozen_results:
+  full_panel_pervasive_geometry_failure: true
+  full_panel_window_failure:
+    rolling_96: true
+    rolling_120: true
+    rolling_144: true
+  full_panel_weak_identification_flag:
+    rolling_96: false
+    rolling_120: false
+    rolling_144: false
+  full_panel_primary_episode:
+    rolling_96: [month-2017-09, month-2023-03]
+    rolling_120: [month-2019-03, month-2023-05]
+    rolling_144: [month-2021-02, month-2023-07]
+  leave_one_feature_out_window_failures:
+    omit_hicp_yoy: [rolling_96, rolling_120, rolling_144]
+    omit_industrial_production_yoy: [rolling_96, rolling_120, rolling_144]
+    omit_unemployment_rate: [rolling_96]
+    omit_deposit_facility_rate: [rolling_96]
+  primary_sign_materiality:
+    threshold: 0.25
+    raw_sign_disagreement_rate: 0.16312056737588654
+    substantive_disagreement_rate: 0.0070921985815602835
+    substantive_disagreements: 1
+    observations: 141
+
+decision:
+  state_selected: false
+  run_008_kill_gate_changed: false
+  causal_driver_identified: false
+  large_n_structural_break_inference_performed: false
+  transmission_estimation_authorized: false
+  next_action: AWAIT_APPROVAL_FOR_POST_RUN_009_RESEARCH_DIRECTION

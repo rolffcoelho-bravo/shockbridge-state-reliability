@@ -1,0 +1,40 @@
+schema_version: 1
+artifact_id: monthly-state-panel-v2
+created_on: 2026-10-02
+evidence_status: REAL_DATA_OUTCOME_BLIND
+decision_status: ACCEPTED_FOR_STATE_MODEL_COMPARISON
+
+build:
+  command: >-
+    state-risk build-monthly-state-panel experiments/monthly_state_panel_v2.yaml
+    data/processed/monthly_state_panel_v2.csv
+    --audit-output reports/methodology/monthly_state_panel_v2.audit.json
+  config_sha256: 0e94f9ac7a2e044e88df25e7344fc13f416432d12091faba25c523e58607d36c
+  implementation_sha256: e45dc1ff97926db523b5fb8a13697f965b0c00862b04bd947b2ad3d684c98c3d
+  source_registry_sha256: 88fd827be0cb0086717e261a0fec5fac38035c8ce32204869d8095e9138ae54d
+  outcomes_accessed: false
+  synthetic_observations_used: false
+
+outputs:
+  panel:
+    path: data/processed/monthly_state_panel_v2.csv
+    sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+    bytes: 490466
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/monthly_state_panel_v2.audit.json
+    sha256: 1349da382f6ee5acf23d5c690d91373af03ee41ce2034e981767fe898fd3562e
+    bytes: 468
+
+integrity:
+  months: 286
+  rows: 1144
+  point_in_time_violations: 0
+  duplicate_month_feature_keys: 0
+  coverage:
+    hicp_yoy: 0.9965034965034965
+    industrial_production_yoy: 0.958041958041958
+    unemployment_rate: 0.9440559440559441
+    deposit_facility_rate: 1.0
+  transmission_estimation_authorized: false
+  state_model_comparison_authorized: true

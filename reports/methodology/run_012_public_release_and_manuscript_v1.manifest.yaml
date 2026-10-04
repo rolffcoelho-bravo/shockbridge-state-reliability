@@ -1,0 +1,126 @@
+schema_version: 1
+artifact_id: run-012-public-release-and-manuscript-v1
+created_on: 2026-10-04
+status: LOCKED_REPRODUCTION_PASS_PUBLICATION_BLOCKED
+evidence_status: RELEASE_REPRODUCIBILITY_AND_MANUSCRIPT_GOVERNANCE
+
+frozen_design:
+  protocol_path: research/methodology/run_012_public_release_and_manuscript_protocol_v1.yaml
+  protocol_sha256: 7565eac6718beff692484c5314a6393ca2229d81f96fb37776054c9c23051637
+  protocol_git_commit: 256c3cd
+  release_audit_git_commit: 01d9246
+  new_empirical_estimation_performed: false
+  outcomes_accessed: false
+  github_repository_created: false
+  remote_created: false
+  license_selected: false
+
+working_title: >-
+  When a State Is Not Stable Enough: Real-Time Measurement Reliability in
+  Euro-Area Monetary-Policy Research
+
+dependency_locks:
+  build:
+    path: requirements/build-py39.lock
+    sha256: bbe2cece9ba286b426b092006ae93779682d3f2e19bf1ed93d6c630c28d8b56e
+    bytes: 141
+  runtime:
+    path: requirements/runtime-py39.lock
+    sha256: 980a3ddb3f8f0925d5103101cdf9373899a69b47e015c5c2360abb0d2e68144b
+    bytes: 228
+  development:
+    path: requirements/dev-py39.lock
+    sha256: 9d4713efafe523795e3b7dffe15293799d3124773fbe8885c58a83bd8e20a5cb
+    bytes: 345
+  exact_versions: true
+  distribution_hashes_pinned: false
+
+locked_reproduction:
+  script:
+    path: scripts/reproduce_run010_locked.py
+    sha256: fea90abdeaea39cfe3cd2b6144ec6b6412a7c4e046e5b0575ba38dfe82703597
+  tests:
+    path: tests/test_locked_reproduction.py
+    sha256: f7399a9e3ced20f4a61efa180b5c9aecc5599bc2f8e6ebd4119aa2164bf4fb1e
+  audit:
+    path: reports/methodology/run_012_locked_reproduction.audit.json
+    sha256: 74fdc7d0b2e4b8a6c5adfe3c40dda00b4c19533e8d3955e52bc21bcab3d8a833
+    bytes: 3059
+  source_git_commit: 7be05cf8aee990e9ee547dc60ed4ed55f7c0f796
+  result: LOCKED_EXACT_REPRODUCTION_PASS
+  exact_run010_hash_matches: 4_of_4
+  isolated_python: 3.9.6
+  platform: macOS-13.6.7-x86_64-i386-64bit
+  hydrated_untracked_artifacts: 35
+  full_test_count: 140
+  full_coverage_percent: 90
+  second_runtime_or_operating_system_tested: false
+
+public_release_audit:
+  script:
+    path: scripts/audit_public_release.py
+    sha256: 68a95ea7e4f23caf20a4dbc1f8cc07556a349538cabc59173bca5c48906beb50
+  tests:
+    path: tests/test_public_release_audit.py
+    sha256: 1104723978015e095c083b854e05781f9c21dfa1254fb7bf27c588d8ae3e7fb4
+  audit:
+    path: reports/methodology/run_012_public_release.audit.json
+    sha256: fee1cbac48c279d2fd41da2676f7221736a9dff301a3656c1b1587820af72e91
+    bytes: 6224
+  tracked_files: 204
+  historical_commits: 45
+  unique_historical_blobs: 407
+  credential_scan: PASS
+  current_tree_privacy: PASS
+  full_history_privacy: FAIL_28_HOME_PATH_BLOB_FINDINGS
+  tracked_data_boundary: PASS
+  suspicious_filenames: 0
+  public_author_identity_records: 0
+  high_entropy_scan_performed: false
+  status: PUBLICATION_BLOCKED
+
+rights_audit:
+  path: reports/methodology/run_012_release_rights_audit_2026-10-04.md
+  sha256: 51e9ae8c0d6d4baea0f89ee6de85a477c212859641cbc36c799834a8a05c8903
+  bytes: 5176
+  legal_opinion_provided: false
+  raw_and_processed_data_disposition: FETCH_ONLY_OR_LOCAL_REBUILD
+  license_blocker: true
+  blueprint_owner_review_blocker: true
+  sanitized_public_export_required: true
+
+public_ci:
+  workflow_path: .github/workflows/ci.yml
+  workflow_sha256: 05e8ad3d8ac7a64ea93d95b446049cfbf9d656d05c9453a95959968037e49311
+  runner_path: scripts/run_public_tests.py
+  runner_sha256: 7f91e6f2c665b48fa01f5e7373e01c4347d1d1be5ca6eb83d3aed7003fe59e51
+  discovered_tests: 144
+  executed_tests: 137
+  exact_evidence_bound_skips: 7
+  public_coverage_percent: 87
+  full_evidence_gate_replaced: false
+
+manuscript:
+  architecture_path: research/paper/manuscript_architecture_v1.md
+  architecture_sha256: 929bcdf40c1beeb6ddd6e52b5525653e4f4f636cd6a6647d2aaf7557c51fd906
+  architecture_bytes: 10956
+  readme_path: README.md
+  readme_sha256: 2d00e6239a8715ede0b23618d0089c93158a2106c5584813aa0da16a8d71c979
+  proposed_main_tables: 6
+  proposed_main_figures: 4
+  proposed_appendix_groups: 8
+  transmission_claim_allowed: false
+  method_novelty_claim_allowed: false
+
+interpretation:
+  path: reports/methodology/run_012_public_release_and_manuscript_result_2026-10-04.md
+  sha256: 14f23a95db2be95994879d87e2176fdc3e5b497aa6d7c08351303a16a1c107e2
+  bytes: 6068
+
+decision:
+  decision_id: D035
+  state_selected: false
+  transmission_estimation_authorized: false
+  public_repository_authorized: false
+  proposed_repository_name: shockbridge-state-reliability
+  next_action: AWAIT_OWNER_LICENSE_BLUEPRINT_AND_SANITIZED_EXPORT_DECISIONS

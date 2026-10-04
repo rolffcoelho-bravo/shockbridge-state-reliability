@@ -1,0 +1,33 @@
+schema_version: 1
+experiment_id: state-replay-v1
+evidence_status: REAL_DATA_OUTCOME_BLIND
+estimator_role: EVENT_INDEXED_HMM_BENCHMARK
+
+panel_path: data/processed/state_panel_v1.csv
+panel_sha256: b3e15765a656009c369a1151959dd00eae072a01467f9641967d52403cb61079
+shock_path: data/raw/abgmr/press_release_factors_2025-10-30.csv
+shock_sha256: 48c91fc9f52346bb564b49a29940b90c74b3b3a9edcce843a4aa269ae52bddd4
+
+# Only real, freely retrievable, point-in-time-eligible variables admitted by
+# research/state_panel_contract_v1.yaml. No synthetic observations or imputation.
+features:
+  - hicp_yoy
+  - industrial_production_yoy
+  - unemployment_rate
+  - deposit_facility_rate
+
+n_states: 2
+minimum_training_events: 40
+restarts: 6
+max_iterations: 150
+tolerance: 0.000001
+variance_floor: 0.05
+transition_prior: 0.5
+random_seed: 90210
+
+# Frozen screening gates for this benchmark. These are not causal-effect power
+# guarantees and cannot justify opening transmission outcomes.
+minimum_hard_count: 20
+minimum_weighted_ess: 30.0
+maximum_mean_entropy: 0.60
+minimum_restart_agreement: 0.85

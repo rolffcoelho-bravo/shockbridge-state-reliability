@@ -1,0 +1,42 @@
+{
+  "amends_run_id": "state-model-comparison-v1",
+  "changed_hmm_rows_exact_serialization": 678,
+  "compared_hmm_rows": 904,
+  "correction": "select HMM restart by the regularized MAP objective optimized by EM",
+  "decision_changed": false,
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_IMPLEMENTATION_AUDIT",
+  "new_primary_hmm": {
+    "cumulative_log_predictive_score": -1629.2102591508062,
+    "hard_counts": [
+      74,
+      152
+    ],
+    "minimum_restart_agreement": 0.7375,
+    "score_gain_vs_single_gaussian": 310.29368310203273,
+    "screening_gates_failed": [
+      "block_hard_count",
+      "block_weighted_ess",
+      "restart_agreement"
+    ],
+    "screening_pass": false
+  },
+  "original_artifacts_modified": false,
+  "outcomes_accessed": false,
+  "preserved_primary_hmm": {
+    "cumulative_log_predictive_score": -1629.2101765145949,
+    "hard_counts": [
+      74,
+      152
+    ],
+    "minimum_restart_agreement": 0.7375,
+    "score_gain_vs_single_gaussian": 310.2937657382437,
+    "screening_gates_failed": [
+      "block_hard_count",
+      "block_weighted_ess",
+      "restart_agreement"
+    ],
+    "screening_pass": false
+  },
+  "run_id": "state-model-comparison-v1-amendment-1",
+  "synthetic_observations_used": false
+}

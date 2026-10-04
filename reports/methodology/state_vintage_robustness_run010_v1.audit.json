@@ -1,0 +1,720 @@
+{
+  "approved_design_sha256": "f85116d407019b9386101242e94381fa2973a1e39addfb24e4255653444db457",
+  "comparison_rows": 1144,
+  "config_sha256": "d749faaa408e7d3602dbf3b0c093ff899fc7c244e04179dbf21cc61698e3e07f",
+  "decision_time_state_use_allowed": false,
+  "dependent_summary_uncertainty": {
+    "120": {
+      "12": {
+        "core_breach_rate_difference": {
+          "lower_95": 0.0,
+          "upper_95": 0.0212765957447
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": -0.00331080735275,
+          "upper_95": 0.0263423208415
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.151913792298,
+          "upper_95": 0.0155665772933
+        }
+      },
+      "24": {
+        "core_breach_rate_difference": {
+          "lower_95": 0.0,
+          "upper_95": 0.0212765957447
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": -0.00514960510148,
+          "upper_95": 0.0369144842363
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.152231046553,
+          "upper_95": 0.00401488102482
+        }
+      },
+      "36": {
+        "core_breach_rate_difference": {
+          "lower_95": 0.0,
+          "upper_95": 0.0212765957447
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": -0.00794898878947,
+          "upper_95": 0.0313143093207
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.11545439669,
+          "upper_95": 0.00401488102482
+        }
+      }
+    },
+    "144": {
+      "12": {
+        "core_breach_rate_difference": {
+          "lower_95": 0.0,
+          "upper_95": 0.0212765957447
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": 0.000213999575208,
+          "upper_95": 0.251133618595
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.490139522625,
+          "upper_95": -0.00599684143329
+        }
+      },
+      "24": {
+        "core_breach_rate_difference": {
+          "lower_95": 0.0,
+          "upper_95": 0.0212765957447
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": -0.00973972926796,
+          "upper_95": 0.192109054183
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.430270772053,
+          "upper_95": 0.000809046932392
+        }
+      },
+      "36": {
+        "core_breach_rate_difference": {
+          "lower_95": 0.0,
+          "upper_95": 0.0212765957447
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": -0.0110819708346,
+          "upper_95": 0.189411812146
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.428576057207,
+          "upper_95": 0.00123557045748
+        }
+      }
+    },
+    "96": {
+      "12": {
+        "core_breach_rate_difference": {
+          "lower_95": -0.0141843971631,
+          "upper_95": 0.120921985816
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": -0.0128183048907,
+          "upper_95": 0.03415749458
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.0884368230356,
+          "upper_95": 0.00961765092846
+        }
+      },
+      "24": {
+        "core_breach_rate_difference": {
+          "lower_95": -0.0141843971631,
+          "upper_95": 0.127659574468
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": -0.0123150953882,
+          "upper_95": 0.03415749458
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.0884368230356,
+          "upper_95": 0.0104166416118
+        }
+      },
+      "36": {
+        "core_breach_rate_difference": {
+          "lower_95": -0.0212765957447,
+          "upper_95": 0.120567375887
+        },
+        "projector_distance_p90_difference": {
+          "lower_95": -0.0128183048907,
+          "upper_95": 0.03415749458
+        },
+        "second_principal_cosine_p10_difference": {
+          "lower_95": -0.0871903963786,
+          "upper_95": 0.0104149027554
+        }
+      }
+    }
+  },
+  "episode_comparison": {
+    "full": {
+      "120": {
+        "breach_month_jaccard_similarity": 0.980769230769,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": 0,
+            "episode_number": 1,
+            "onset_month_difference": -1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      },
+      "144": {
+        "breach_month_jaccard_similarity": 0.967741935484,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": 0,
+            "episode_number": 1,
+            "onset_month_difference": -1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      },
+      "96": {
+        "breach_month_jaccard_similarity": 0.904109589041,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": -1,
+            "episode_number": 1,
+            "onset_month_difference": -6
+          }
+        ],
+        "point_in_time_episode_count": 1
+      }
+    },
+    "omit_deposit_facility_rate": {
+      "120": {
+        "breach_month_jaccard_similarity": 0.272727272727,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": 6,
+            "episode_number": 1,
+            "onset_month_difference": -2
+          }
+        ],
+        "point_in_time_episode_count": 1
+      },
+      "144": {
+        "breach_month_jaccard_similarity": 1.0,
+        "latest_vintage_episode_count": 0,
+        "paired_episode_boundaries": [],
+        "point_in_time_episode_count": 0
+      },
+      "96": {
+        "breach_month_jaccard_similarity": 0.975,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": 0,
+            "episode_number": 1,
+            "onset_month_difference": -1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      }
+    },
+    "omit_hicp_yoy": {
+      "120": {
+        "breach_month_jaccard_similarity": 0.981481481481,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": 0,
+            "episode_number": 1,
+            "onset_month_difference": -1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      },
+      "144": {
+        "breach_month_jaccard_similarity": 0.972222222222,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": 0,
+            "episode_number": 1,
+            "onset_month_difference": -1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      },
+      "96": {
+        "breach_month_jaccard_similarity": 0.984848484848,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": 0,
+            "episode_number": 1,
+            "onset_month_difference": -1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      }
+    },
+    "omit_industrial_production_yoy": {
+      "120": {
+        "breach_month_jaccard_similarity": 0.746478873239,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": -17,
+            "episode_number": 1,
+            "onset_month_difference": 1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      },
+      "144": {
+        "breach_month_jaccard_similarity": 0.6,
+        "latest_vintage_episode_count": 2,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": -23,
+            "episode_number": 1,
+            "onset_month_difference": 2
+          }
+        ],
+        "point_in_time_episode_count": 1
+      },
+      "96": {
+        "breach_month_jaccard_similarity": 0.802469135802,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": -16,
+            "episode_number": 1,
+            "onset_month_difference": 0
+          }
+        ],
+        "point_in_time_episode_count": 1
+      }
+    },
+    "omit_unemployment_rate": {
+      "120": {
+        "breach_month_jaccard_similarity": 0.846153846154,
+        "latest_vintage_episode_count": 2,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": -1,
+            "episode_number": 1,
+            "onset_month_difference": 0
+          },
+          {
+            "end_month_difference": -1,
+            "episode_number": 2,
+            "onset_month_difference": 0
+          }
+        ],
+        "point_in_time_episode_count": 2
+      },
+      "144": {
+        "breach_month_jaccard_similarity": 0.428571428571,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": -3,
+            "episode_number": 1,
+            "onset_month_difference": 1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      },
+      "96": {
+        "breach_month_jaccard_similarity": 0.96875,
+        "latest_vintage_episode_count": 1,
+        "paired_episode_boundaries": [
+          {
+            "end_month_difference": 0,
+            "episode_number": 1,
+            "onset_month_difference": 1
+          }
+        ],
+        "point_in_time_episode_count": 1
+      }
+    }
+  },
+  "episode_rows": 31,
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_EX_POST_LATEST_VINTAGE",
+  "experiment_id": "state-vintage-robustness-run010-v1",
+  "geometry_rows": 4950,
+  "geometry_summary": {
+    "latest_vintage": {
+      "full": {
+        "omitted_feature": null,
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.368794326241,
+            "mean_off_diagonal_gram_drift_share": 0.992693439905,
+            "projector_distance_p90": 0.719431643179,
+            "second_principal_cosine_p10": 0.0916156615883,
+            "weak_identification_coincidence_rate_among_breaches": 0.230769230769,
+            "window_specific_geometry_failure": true
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.219858156028,
+            "mean_off_diagonal_gram_drift_share": 0.996052539267,
+            "projector_distance_p90": 0.703833251947,
+            "second_principal_cosine_p10": 0.189614454762,
+            "weak_identification_coincidence_rate_among_breaches": 0.161290322581,
+            "window_specific_geometry_failure": true
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.510638297872,
+            "mean_off_diagonal_gram_drift_share": 0.993861285325,
+            "projector_distance_p90": 0.735681805566,
+            "second_principal_cosine_p10": 0.170225167128,
+            "weak_identification_coincidence_rate_among_breaches": 0.0555555555556,
+            "window_specific_geometry_failure": true
+          }
+        }
+      },
+      "omit_deposit_facility_rate": {
+        "omitted_feature": "deposit_facility_rate",
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.0780141843972,
+            "mean_off_diagonal_gram_drift_share": 0.97117247315,
+            "projector_distance_p90": 0.3205385871,
+            "second_principal_cosine_p10": 0.891352920206,
+            "weak_identification_coincidence_rate_among_breaches": 0.454545454545,
+            "window_specific_geometry_failure": false
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.0,
+            "mean_off_diagonal_gram_drift_share": 0.978680105724,
+            "projector_distance_p90": 0.139050865743,
+            "second_principal_cosine_p10": 0.980474228867,
+            "weak_identification_coincidence_rate_among_breaches": 0.0,
+            "window_specific_geometry_failure": false
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.283687943262,
+            "mean_off_diagonal_gram_drift_share": 0.977830479348,
+            "projector_distance_p90": 0.677411417963,
+            "second_principal_cosine_p10": 0.28675345094,
+            "weak_identification_coincidence_rate_among_breaches": 0.025,
+            "window_specific_geometry_failure": true
+          }
+        }
+      },
+      "omit_hicp_yoy": {
+        "omitted_feature": "hicp_yoy",
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.382978723404,
+            "mean_off_diagonal_gram_drift_share": 0.989548982096,
+            "projector_distance_p90": 0.7069990958,
+            "second_principal_cosine_p10": 0.0174515637226,
+            "weak_identification_coincidence_rate_among_breaches": 0.0925925925926,
+            "window_specific_geometry_failure": true
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.255319148936,
+            "mean_off_diagonal_gram_drift_share": 0.99477250483,
+            "projector_distance_p90": 0.704769412156,
+            "second_principal_cosine_p10": 0.0812413157182,
+            "weak_identification_coincidence_rate_among_breaches": 0.138888888889,
+            "window_specific_geometry_failure": true
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.468085106383,
+            "mean_off_diagonal_gram_drift_share": 0.991505586419,
+            "projector_distance_p90": 0.707032199775,
+            "second_principal_cosine_p10": 0.0145236690742,
+            "weak_identification_coincidence_rate_among_breaches": 0.0757575757576,
+            "window_specific_geometry_failure": true
+          }
+        }
+      },
+      "omit_industrial_production_yoy": {
+        "omitted_feature": "industrial_production_yoy",
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.375886524823,
+            "mean_off_diagonal_gram_drift_share": 0.990697429709,
+            "projector_distance_p90": 0.550322153581,
+            "second_principal_cosine_p10": 0.62792599449,
+            "weak_identification_coincidence_rate_among_breaches": 0.0943396226415,
+            "window_specific_geometry_failure": true
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.234042553191,
+            "mean_off_diagonal_gram_drift_share": 0.993281176506,
+            "projector_distance_p90": 0.471115832613,
+            "second_principal_cosine_p10": 0.745720956205,
+            "weak_identification_coincidence_rate_among_breaches": 0.212121212121,
+            "window_specific_geometry_failure": true
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.460992907801,
+            "mean_off_diagonal_gram_drift_share": 0.991653459649,
+            "projector_distance_p90": 0.622050986521,
+            "second_principal_cosine_p10": 0.475505142281,
+            "weak_identification_coincidence_rate_among_breaches": 0.0461538461538,
+            "window_specific_geometry_failure": true
+          }
+        }
+      },
+      "omit_unemployment_rate": {
+        "omitted_feature": "unemployment_rate",
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.0780141843972,
+            "mean_off_diagonal_gram_drift_share": 0.989311091948,
+            "projector_distance_p90": 0.302043278328,
+            "second_principal_cosine_p10": 0.904179028751,
+            "weak_identification_coincidence_rate_among_breaches": 0.181818181818,
+            "window_specific_geometry_failure": false
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.0212765957447,
+            "mean_off_diagonal_gram_drift_share": 0.995879538623,
+            "projector_distance_p90": 0.193096182766,
+            "second_principal_cosine_p10": 0.961991542791,
+            "weak_identification_coincidence_rate_among_breaches": 1.0,
+            "window_specific_geometry_failure": false
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.219858156028,
+            "mean_off_diagonal_gram_drift_share": 0.982023658922,
+            "projector_distance_p90": 0.668962411121,
+            "second_principal_cosine_p10": 0.324003989197,
+            "weak_identification_coincidence_rate_among_breaches": 0.290322580645,
+            "window_specific_geometry_failure": true
+          }
+        }
+      }
+    },
+    "point_in_time": {
+      "full": {
+        "omitted_feature": null,
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.36170212766,
+            "mean_off_diagonal_gram_drift_share": 0.993808328002,
+            "projector_distance_p90": 0.717531590027,
+            "second_principal_cosine_p10": 0.123097850699,
+            "weak_identification_coincidence_rate_among_breaches": 0.176470588235,
+            "window_specific_geometry_failure": true
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.212765957447,
+            "mean_off_diagonal_gram_drift_share": 0.996836848594,
+            "projector_distance_p90": 0.694744341208,
+            "second_principal_cosine_p10": 0.251066103998,
+            "weak_identification_coincidence_rate_among_breaches": 0.2,
+            "window_specific_geometry_failure": true
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.475177304965,
+            "mean_off_diagonal_gram_drift_share": 0.994136133999,
+            "projector_distance_p90": 0.722988664789,
+            "second_principal_cosine_p10": 0.219186025412,
+            "weak_identification_coincidence_rate_among_breaches": 0.0597014925373,
+            "window_specific_geometry_failure": true
+          }
+        }
+      },
+      "omit_deposit_facility_rate": {
+        "omitted_feature": "deposit_facility_rate",
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.0212765957447,
+            "mean_off_diagonal_gram_drift_share": 0.979084758292,
+            "projector_distance_p90": 0.221098001706,
+            "second_principal_cosine_p10": 0.949858593309,
+            "weak_identification_coincidence_rate_among_breaches": 0.0,
+            "window_specific_geometry_failure": false
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.0,
+            "mean_off_diagonal_gram_drift_share": 0.985452291621,
+            "projector_distance_p90": 0.151068433461,
+            "second_principal_cosine_p10": 0.976911795826,
+            "weak_identification_coincidence_rate_among_breaches": 0.0,
+            "window_specific_geometry_failure": false
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.276595744681,
+            "mean_off_diagonal_gram_drift_share": 0.983246182013,
+            "projector_distance_p90": 0.663998779478,
+            "second_principal_cosine_p10": 0.343818617447,
+            "weak_identification_coincidence_rate_among_breaches": 0.025641025641,
+            "window_specific_geometry_failure": true
+          }
+        }
+      },
+      "omit_hicp_yoy": {
+        "omitted_feature": "hicp_yoy",
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.375886524823,
+            "mean_off_diagonal_gram_drift_share": 0.991389238381,
+            "projector_distance_p90": 0.707096037005,
+            "second_principal_cosine_p10": 0.00551261324759,
+            "weak_identification_coincidence_rate_among_breaches": 0.0943396226415,
+            "window_specific_geometry_failure": true
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.248226950355,
+            "mean_off_diagonal_gram_drift_share": 0.995847309792,
+            "projector_distance_p90": 0.703649314695,
+            "second_principal_cosine_p10": 0.0987688405238,
+            "weak_identification_coincidence_rate_among_breaches": 0.171428571429,
+            "window_specific_geometry_failure": true
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.460992907801,
+            "mean_off_diagonal_gram_drift_share": 0.992182151637,
+            "projector_distance_p90": 0.707072852055,
+            "second_principal_cosine_p10": 0.00979611006794,
+            "weak_identification_coincidence_rate_among_breaches": 0.0461538461538,
+            "window_specific_geometry_failure": true
+          }
+        }
+      },
+      "omit_industrial_production_yoy": {
+        "omitted_feature": "industrial_production_yoy",
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.503546099291,
+            "mean_off_diagonal_gram_drift_share": 0.992233412636,
+            "projector_distance_p90": 0.613921060075,
+            "second_principal_cosine_p10": 0.496187327522,
+            "weak_identification_coincidence_rate_among_breaches": 0.239436619718,
+            "window_specific_geometry_failure": true
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.390070921986,
+            "mean_off_diagonal_gram_drift_share": 0.996292855171,
+            "projector_distance_p90": 0.565382095482,
+            "second_principal_cosine_p10": 0.600571537968,
+            "weak_identification_coincidence_rate_among_breaches": 0.309090909091,
+            "window_specific_geometry_failure": true
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.574468085106,
+            "mean_off_diagonal_gram_drift_share": 0.987400252939,
+            "projector_distance_p90": 0.649520058229,
+            "second_principal_cosine_p10": 0.395281403455,
+            "weak_identification_coincidence_rate_among_breaches": 0.172839506173,
+            "window_specific_geometry_failure": true
+          }
+        }
+      },
+      "omit_unemployment_rate": {
+        "omitted_feature": "unemployment_rate",
+        "windows": {
+          "120": {
+            "common_origins": 141,
+            "core_breach_rate": 0.0921985815603,
+            "mean_off_diagonal_gram_drift_share": 0.988651910865,
+            "projector_distance_p90": 0.327676098932,
+            "second_principal_cosine_p10": 0.88614713698,
+            "weak_identification_coincidence_rate_among_breaches": 0.230769230769,
+            "window_specific_geometry_failure": false
+          },
+          "144": {
+            "common_origins": 141,
+            "core_breach_rate": 0.0496453900709,
+            "mean_off_diagonal_gram_drift_share": 0.996161212016,
+            "projector_distance_p90": 0.196101365971,
+            "second_principal_cosine_p10": 0.960774952072,
+            "weak_identification_coincidence_rate_among_breaches": 1.0,
+            "window_specific_geometry_failure": false
+          },
+          "96": {
+            "common_origins": 141,
+            "core_breach_rate": 0.22695035461,
+            "mean_off_diagonal_gram_drift_share": 0.989068451025,
+            "projector_distance_p90": 0.669955876125,
+            "second_principal_cosine_p10": 0.319872237139,
+            "weak_identification_coincidence_rate_among_breaches": 0.25,
+            "window_specific_geometry_failure": true
+          }
+        }
+      }
+    }
+  },
+  "missingness_mask_exactly_preserved": true,
+  "outcomes_accessed": false,
+  "point_in_time_geometry_exactly_reproduced": true,
+  "point_in_time_panel_sha256": "80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e",
+  "primary_classification": "LATEST_VINTAGE_ROBUST_INSTABILITY",
+  "pure_numerical_revision_claim_allowed": false,
+  "required_latest_level_and_yoy_lag_coverage": 1.0,
+  "run008_or_run009_decision_recalculated": false,
+  "run009_diagnostic_sha256": "c177cfac7fe553d48ada0509d95d665c9c424aa93d339fa3a96ae69bb6553af4",
+  "source_hashes": {
+    "hicp_yoy": "d04f0211cc9ab2a0d0dea254c3d814b17e74366b484c59fb62085f27cf7ce154",
+    "industrial_production_yoy": "48825eaff5ec41c8653f53a97803e4c705f11bc34daff3a54633b8ed84914064",
+    "unemployment_rate": "db2bac035fdb4c3497a7ced0e08f53626a88d99b925c28834328b6431c580dc0"
+  },
+  "source_manifest_sha256": "6a6b0a8f37637d2680940d827a6bdf88cdadb43e68fb4ec849eb03db647ccf80",
+  "state_selection_performed": false,
+  "synthetic_observations_used": false,
+  "transmission_estimation_authorized": false,
+  "value_revision_summary": {
+    "hicp_yoy": {
+      "compared_rows": 285,
+      "maximum_absolute_difference": 0.292522463563,
+      "mean_signed_difference": 0.0067300900315,
+      "median_absolute_difference": 0.0129413571399,
+      "median_absolute_difference_in_development_standard_deviations": 0.0157632708612,
+      "ninetieth_percentile_absolute_difference": 0.0619686900448,
+      "ninetieth_percentile_absolute_difference_in_development_standard_deviations": 0.0754812061462,
+      "pearson_correlation": 0.999565862307,
+      "root_mean_squared_difference": 0.0546117547107,
+      "spearman_correlation": 0.99836797673,
+      "unique_observation_periods": 240
+    },
+    "industrial_production_yoy": {
+      "compared_rows": 274,
+      "maximum_absolute_difference": 3.8555111849,
+      "mean_signed_difference": 0.365852688882,
+      "median_absolute_difference": 0.619162044354,
+      "median_absolute_difference_in_development_standard_deviations": 0.100490239697,
+      "ninetieth_percentile_absolute_difference": 1.51079541719,
+      "ninetieth_percentile_absolute_difference_in_development_standard_deviations": 0.245202681577,
+      "pearson_correlation": 0.98684950533,
+      "root_mean_squared_difference": 0.974704543223,
+      "spearman_correlation": 0.966842799393,
+      "unique_observation_periods": 233
+    },
+    "unemployment_rate": {
+      "compared_rows": 270,
+      "maximum_absolute_difference": 0.82038,
+      "mean_signed_difference": 0.233442055556,
+      "median_absolute_difference": 0.192,
+      "median_absolute_difference_in_development_standard_deviations": 0.204076537762,
+      "ninetieth_percentile_absolute_difference": 0.610479,
+      "ninetieth_percentile_absolute_difference_in_development_standard_deviations": 0.648877295295,
+      "pearson_correlation": 0.98788435922,
+      "root_mean_squared_difference": 0.341095314158,
+      "spearman_correlation": 0.985323596585,
+      "unique_observation_periods": 218
+    }
+  }
+}

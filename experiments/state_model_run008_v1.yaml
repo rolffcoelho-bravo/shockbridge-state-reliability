@@ -1,0 +1,56 @@
+schema_version: 1
+experiment_id: state-model-run008-v1
+evidence_status: REAL_DATA_OUTCOME_BLIND
+
+approved_design_path: research/methodology/run_008_subspace_design_proposal_v1.yaml
+approved_design_sha256: 2c43effad56a6135e2b13d7a0287c40da8837e728eb8cfe433bd65f2055e2ee2
+
+panel_path: data/processed/monthly_state_panel_v2.csv
+panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+features:
+  - hicp_yoy
+  - industrial_production_yoy
+  - unemployment_rate
+  - deposit_facility_rate
+history_windows:
+  - expanding
+  - rolling_120
+minimum_training_months: 60
+rolling_months: 120
+development_months: 120
+development_start: month-2002-01
+development_end: month-2011-12
+evaluation_start: month-2012-01
+evaluation_end: month-2025-10
+factor_dimension: 2
+variance_floor: 0.05
+transition_ridge: 0.000001
+maximum_transition_spectral_radius: 0.98
+
+subspace_gates:
+  minimum_second_principal_cosine: 0.75
+  minimum_tenth_percentile_second_principal_cosine: 0.90
+  maximum_median_projector_distance: 0.20
+  maximum_ninetieth_percentile_projector_distance: 0.35
+  minimum_tenth_percentile_anchor_capture_each_target: 0.50
+  weak_anchor_capture_cutoff: 0.35
+  maximum_weak_anchor_capture_rate_each_target: 0.10
+  minimum_median_anchored_loading_cosine_each_factor: 0.90
+  minimum_tenth_percentile_anchored_loading_cosine_each_factor: 0.75
+
+fixed_scalar_gates:
+  minimum_pearson_correlation: 0.80
+  minimum_spearman_correlation: 0.80
+  maximum_sign_disagreement_rate: 0.10
+  maximum_standardized_mean_absolute_difference: 0.35
+  require_positive_mean_log_score_gain_each_history: true
+
+two_factor_diagnostic_gates:
+  minimum_pearson_correlation: 0.75
+  minimum_spearman_correlation: 0.75
+  maximum_sign_disagreement_rate: 0.15
+  maximum_standardized_mean_absolute_difference: 0.50
+
+outcomes_accessed: false
+state_model_execution_authorized: true
+transmission_outcome_execution_authorized: false

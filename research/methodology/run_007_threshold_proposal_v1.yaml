@@ -1,0 +1,35 @@
+schema_version: 1
+proposal_id: run-007-threshold-proposal-v1
+created_on: 2026-10-03
+status: APPROVED_AND_FROZEN_PRE_EMPIRICAL
+outcomes_accessed: false
+empirical_state_panel_evaluated: false
+
+continuous_factor_cross_window:
+  minimum_pearson_correlation: 0.80
+  minimum_spearman_correlation: 0.80
+  maximum_sign_disagreement_rate: 0.10
+  maximum_standardized_mean_absolute_difference: 0.35
+
+loading_stability:
+  minimum_median_loading_cosine: 0.90
+  minimum_loading_cosine: 0.75
+
+sign_anchor_strength:
+  aggregation: worse_of_expanding_and_rolling_windows
+  minimum_tenth_percentile: 0.20
+  weak_anchor_cutoff: 0.10
+  maximum_weak_anchor_rate: 0.05
+  scale_note: loadings_have_unit_euclidean_norm
+
+hmm_restart_objective_gap_sensitivity:
+  maximum_gap_grid: [0.0, 2.0, 5.0, 10.0]
+  retain_all_start_minimum: true
+  weight_interpretation: NUMERICAL_DIAGNOSTIC_NOT_POSTERIOR_PROBABILITY
+
+decision_rule:
+  all_factor_and_loading_gates_required: true
+  no_compensation_by_predictive_score: true
+  threshold_changes_after_state_panel_evaluation: require_new_version_and_deviation_record
+
+execution_authorized: false

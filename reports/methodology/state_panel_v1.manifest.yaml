@@ -1,0 +1,32 @@
+schema_version: 1
+artifact_id: state-panel-v1
+created_at_utc: 2026-10-02T09:45:00Z
+evidence_status: OUTCOME_BLIND_CANDIDATE_STATE_PANEL
+
+build:
+  command: state-risk build-state-panel research/state_sources_v1.yaml data/processed/state_panel_v1.csv --audit-output reports/methodology/state_panel_v1.audit.json
+  implementation: src/shockbridge_state_risk/data/state_panel.py
+  source_registry: research/state_sources_v1.yaml
+  source_registry_sha256: 88fd827be0cb0086717e261a0fec5fac38035c8ce32204869d8095e9138ae54d
+  outcome_columns_parsed: false
+
+outputs:
+  panel:
+    path: data/processed/state_panel_v1.csv
+    sha256: b3e15765a656009c369a1151959dd00eae072a01467f9641967d52403cb61079
+    bytes: 583109
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/state_panel_v1.audit.json
+    sha256: bec8a57396eb02ea0697059467721bd5d9d9556148be491233d1c5a4afe02b2b
+    bytes: 555
+    repository_disposition: COMMITTABLE
+
+integrity:
+  events: 242
+  features: 5
+  rows: 1210
+  point_in_time_violations: 0
+  duplicate_event_feature_keys: 0
+  ciss_primary_admission: REJECTED
+  transmission_estimation_authorized: false

@@ -1,0 +1,10 @@
+rolling_months,block_months,statistic,latest_minus_point_estimate,lower_95,upper_95,full_factor_uncertainty_claimed
+96,12,second_principal_cosine_p10_difference,-0.048960858284,-0.0884368230356,0.00961765092846,False
+96,12,projector_distance_p90_difference,0.012693140777,-0.0128183048907,0.03415749458,False
+96,12,core_breach_rate_difference,0.035460992907,-0.0141843971631,0.120921985816,False
+120,12,second_principal_cosine_p10_difference,-0.0314821891107,-0.151913792298,0.0155665772933,False
+120,12,projector_distance_p90_difference,0.001900053152,-0.00331080735275,0.0263423208415,False
+120,12,core_breach_rate_difference,0.007092198581,0.0,0.0212765957447,False
+144,12,second_principal_cosine_p10_difference,-0.061451649236,-0.490139522625,-0.00599684143329,False
+144,12,projector_distance_p90_difference,0.009088910739,0.000213999575208,0.251133618595,False
+144,12,core_breach_rate_difference,0.007092198581,0.0,0.0212765957447,False

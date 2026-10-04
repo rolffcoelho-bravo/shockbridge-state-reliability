@@ -1,0 +1,53 @@
+schema_version: 1
+experiment_id: state-instability-run009-v1
+evidence_status: REAL_DATA_OUTCOME_BLIND
+
+approved_design_path: research/methodology/run_009_instability_diagnostic_proposal_v1.yaml
+approved_design_sha256: b88a0bd9f945d2662f716cb129bb7aba0279be1b8955e8e4be3475dc9a4b45cf
+panel_path: data/processed/monthly_state_panel_v2.csv
+panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+run_008_manifest_path: reports/methodology/state_model_run008_v1.manifest.yaml
+run_008_manifest_sha256: cdddd08dfff175726afccdd8c8e89c6d3bd1addf0db5f711999998b2ffd02237
+run_008_fixed_factor_path: data/processed/state_fixed_factor_run008_v1.csv
+run_008_fixed_factor_sha256: 2afdaba561833a16d18bda92cc22534c55b5516cc7f5714b8212ae40c3691d95
+
+features:
+  - hicp_yoy
+  - industrial_production_yoy
+  - unemployment_rate
+  - deposit_facility_rate
+factor_dimension: 2
+rolling_months: [96, 120, 144]
+panel_start: month-2002-01
+panel_end: month-2025-10
+common_origin_start: month-2014-02
+common_origin_end: month-2025-10
+
+geometry_references:
+  core_second_cosine: 0.75
+  summary_second_cosine_p10: 0.90
+  core_projector_distance: 0.35
+  summary_projector_distance_p90: 0.35
+  weak_policy_anchor_capture: 0.35
+  weak_relative_eigengap: 0.20
+  high_perturbation_to_gap_ratio: 1.00
+  weak_identification_coincidence_rate: 0.50
+
+episode_rules:
+  - minimum_consecutive_breaches: 3
+    recovery_consecutive_stable: 3
+    primary: true
+  - minimum_consecutive_breaches: 1
+    recovery_consecutive_stable: 1
+    primary: false
+  - minimum_consecutive_breaches: 6
+    recovery_consecutive_stable: 6
+    primary: false
+
+policy_rate_zero_tolerance: 0.000000000001
+sign_materiality_thresholds: [0.25, 0.10, 0.50]
+leave_one_feature_out: true
+
+outcomes_accessed: false
+run_009_state_diagnostic_execution_authorized: true
+transmission_outcome_execution_authorized: false

@@ -1,0 +1,48 @@
+schema_version: 1
+experiment_id: state-model-comparison-v1
+evidence_status: REAL_DATA_OUTCOME_BLIND
+
+panel_path: data/processed/monthly_state_panel_v2.csv
+panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+features:
+  - hicp_yoy
+  - industrial_production_yoy
+  - unemployment_rate
+  - deposit_facility_rate
+
+models:
+  - pca_cluster
+  - dynamic_factor
+  - hidden_markov
+  - change_point
+state_counts: [2, 3]
+history_windows:
+  - expanding
+  - rolling_120
+minimum_training_months: 60
+
+random_seed: 61103
+kmeans_restarts: 20
+hmm_restarts: 6
+hmm_max_iterations: 150
+hmm_tolerance: 0.000001
+variance_floor: 0.05
+transition_prior: 0.5
+pca_components: 2
+change_point_threshold: 3.5
+change_point_minimum_segment: 12
+
+screening:
+  minimum_global_hard_count: 20
+  minimum_global_weighted_ess: 30.0
+  minimum_block_hard_count: 5
+  minimum_block_weighted_ess: 10.0
+  minimum_restart_agreement: 0.85
+  require_score_gain_vs_single_gaussian: true
+
+selection:
+  primary_state_count: 2
+  primary_history_window: expanding
+  outcomes_accessed: false
+  select_only_if_all_gates_pass: true
+  retain_all_failed_candidates: true

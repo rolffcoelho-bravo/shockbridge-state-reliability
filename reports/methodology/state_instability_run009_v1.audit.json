@@ -1,0 +1,449 @@
+{
+  "approved_design_sha256": "b88a0bd9f945d2662f716cb129bb7aba0279be1b8955e8e4be3475dc9a4b45cf",
+  "common_origin_period": [
+    "month-2014-02",
+    "month-2025-10"
+  ],
+  "common_origins": 141,
+  "config_sha256": "2206cc98b815c93c0d85b0d8acca9db91cbdec131c33413d3d2a09f6ea50d022",
+  "diagnostic_rows": 2475,
+  "episode_counts": {
+    "full__rolling_120__1_1": 1,
+    "full__rolling_120__3_3": 1,
+    "full__rolling_120__6_6": 1,
+    "full__rolling_144__1_1": 1,
+    "full__rolling_144__3_3": 1,
+    "full__rolling_144__6_6": 1,
+    "full__rolling_96__1_1": 1,
+    "full__rolling_96__3_3": 1,
+    "full__rolling_96__6_6": 1,
+    "omit_deposit_facility_rate__rolling_120__1_1": 1,
+    "omit_deposit_facility_rate__rolling_120__3_3": 1,
+    "omit_deposit_facility_rate__rolling_120__6_6": 0,
+    "omit_deposit_facility_rate__rolling_144__1_1": 0,
+    "omit_deposit_facility_rate__rolling_144__3_3": 0,
+    "omit_deposit_facility_rate__rolling_144__6_6": 0,
+    "omit_deposit_facility_rate__rolling_96__1_1": 1,
+    "omit_deposit_facility_rate__rolling_96__3_3": 1,
+    "omit_deposit_facility_rate__rolling_96__6_6": 1,
+    "omit_hicp_yoy__rolling_120__1_1": 1,
+    "omit_hicp_yoy__rolling_120__3_3": 1,
+    "omit_hicp_yoy__rolling_120__6_6": 1,
+    "omit_hicp_yoy__rolling_144__1_1": 1,
+    "omit_hicp_yoy__rolling_144__3_3": 1,
+    "omit_hicp_yoy__rolling_144__6_6": 1,
+    "omit_hicp_yoy__rolling_96__1_1": 1,
+    "omit_hicp_yoy__rolling_96__3_3": 1,
+    "omit_hicp_yoy__rolling_96__6_6": 1,
+    "omit_industrial_production_yoy__rolling_120__1_1": 1,
+    "omit_industrial_production_yoy__rolling_120__3_3": 1,
+    "omit_industrial_production_yoy__rolling_120__6_6": 1,
+    "omit_industrial_production_yoy__rolling_144__1_1": 1,
+    "omit_industrial_production_yoy__rolling_144__3_3": 1,
+    "omit_industrial_production_yoy__rolling_144__6_6": 1,
+    "omit_industrial_production_yoy__rolling_96__1_1": 1,
+    "omit_industrial_production_yoy__rolling_96__3_3": 1,
+    "omit_industrial_production_yoy__rolling_96__6_6": 1,
+    "omit_unemployment_rate__rolling_120__1_1": 2,
+    "omit_unemployment_rate__rolling_120__3_3": 2,
+    "omit_unemployment_rate__rolling_120__6_6": 1,
+    "omit_unemployment_rate__rolling_144__1_1": 1,
+    "omit_unemployment_rate__rolling_144__3_3": 1,
+    "omit_unemployment_rate__rolling_144__6_6": 1,
+    "omit_unemployment_rate__rolling_96__1_1": 2,
+    "omit_unemployment_rate__rolling_96__3_3": 1,
+    "omit_unemployment_rate__rolling_96__6_6": 1
+  },
+  "episode_rows": 44,
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_RUN_009_DIAGNOSTIC",
+  "experiment_id": "state-instability-run009-v1",
+  "features": [
+    "hicp_yoy",
+    "industrial_production_yoy",
+    "unemployment_rate",
+    "deposit_facility_rate"
+  ],
+  "fixed_scalar_sign_materiality": {
+    "0.1": {
+      "disagreement_rate": 0.16312056737588654,
+      "disagreements": 23,
+      "observations": 141,
+      "substantive_disagreement_rate": 0.12056737588652482,
+      "substantive_disagreements": 17,
+      "substantive_share_of_disagreements": 0.7391304347826086
+    },
+    "0.25": {
+      "disagreement_rate": 0.16312056737588654,
+      "disagreements": 23,
+      "observations": 141,
+      "substantive_disagreement_rate": 0.0070921985815602835,
+      "substantive_disagreements": 1,
+      "substantive_share_of_disagreements": 0.043478260869565216
+    },
+    "0.5": {
+      "disagreement_rate": 0.16312056737588654,
+      "disagreements": 23,
+      "observations": 141,
+      "substantive_disagreement_rate": 0.0,
+      "substantive_disagreements": 0,
+      "substantive_share_of_disagreements": 0.0
+    }
+  },
+  "full_panel_pervasive_geometry_failure": true,
+  "geometry_summary": {
+    "full": {
+      "omitted_feature": null,
+      "windows": {
+        "120": {
+          "common_origins": 141,
+          "core_breach_rate": 0.36170212766,
+          "projector_distance_p90": 0.717531590027,
+          "second_principal_cosine_p10": 0.123097850699,
+          "weak_identification_coincidence_rate_among_breaches": 0.176470588235,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        },
+        "144": {
+          "common_origins": 141,
+          "core_breach_rate": 0.212765957447,
+          "projector_distance_p90": 0.694744341208,
+          "second_principal_cosine_p10": 0.251066103998,
+          "weak_identification_coincidence_rate_among_breaches": 0.2,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        },
+        "96": {
+          "common_origins": 141,
+          "core_breach_rate": 0.475177304965,
+          "projector_distance_p90": 0.722988664789,
+          "second_principal_cosine_p10": 0.219186025412,
+          "weak_identification_coincidence_rate_among_breaches": 0.0597014925373,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        }
+      }
+    },
+    "omit_deposit_facility_rate": {
+      "omitted_feature": "deposit_facility_rate",
+      "windows": {
+        "120": {
+          "common_origins": 141,
+          "core_breach_rate": 0.0212765957447,
+          "projector_distance_p90": 0.221098001706,
+          "second_principal_cosine_p10": 0.949858593309,
+          "weak_identification_coincidence_rate_among_breaches": 0.0,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": false
+        },
+        "144": {
+          "common_origins": 141,
+          "core_breach_rate": 0.0,
+          "projector_distance_p90": 0.151068433461,
+          "second_principal_cosine_p10": 0.976911795826,
+          "weak_identification_coincidence_rate_among_breaches": 0.0,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": false
+        },
+        "96": {
+          "common_origins": 141,
+          "core_breach_rate": 0.276595744681,
+          "projector_distance_p90": 0.663998779478,
+          "second_principal_cosine_p10": 0.343818617447,
+          "weak_identification_coincidence_rate_among_breaches": 0.025641025641,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        }
+      }
+    },
+    "omit_hicp_yoy": {
+      "omitted_feature": "hicp_yoy",
+      "windows": {
+        "120": {
+          "common_origins": 141,
+          "core_breach_rate": 0.375886524823,
+          "projector_distance_p90": 0.707096037005,
+          "second_principal_cosine_p10": 0.00551261324759,
+          "weak_identification_coincidence_rate_among_breaches": 0.0943396226415,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        },
+        "144": {
+          "common_origins": 141,
+          "core_breach_rate": 0.248226950355,
+          "projector_distance_p90": 0.703649314695,
+          "second_principal_cosine_p10": 0.0987688405238,
+          "weak_identification_coincidence_rate_among_breaches": 0.171428571429,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        },
+        "96": {
+          "common_origins": 141,
+          "core_breach_rate": 0.460992907801,
+          "projector_distance_p90": 0.707072852055,
+          "second_principal_cosine_p10": 0.00979611006794,
+          "weak_identification_coincidence_rate_among_breaches": 0.0461538461538,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        }
+      }
+    },
+    "omit_industrial_production_yoy": {
+      "omitted_feature": "industrial_production_yoy",
+      "windows": {
+        "120": {
+          "common_origins": 141,
+          "core_breach_rate": 0.503546099291,
+          "projector_distance_p90": 0.613921060075,
+          "second_principal_cosine_p10": 0.496187327522,
+          "weak_identification_coincidence_rate_among_breaches": 0.239436619718,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        },
+        "144": {
+          "common_origins": 141,
+          "core_breach_rate": 0.390070921986,
+          "projector_distance_p90": 0.565382095482,
+          "second_principal_cosine_p10": 0.600571537968,
+          "weak_identification_coincidence_rate_among_breaches": 0.309090909091,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        },
+        "96": {
+          "common_origins": 141,
+          "core_breach_rate": 0.574468085106,
+          "projector_distance_p90": 0.649520058229,
+          "second_principal_cosine_p10": 0.395281403455,
+          "weak_identification_coincidence_rate_among_breaches": 0.172839506173,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        }
+      }
+    },
+    "omit_unemployment_rate": {
+      "omitted_feature": "unemployment_rate",
+      "windows": {
+        "120": {
+          "common_origins": 141,
+          "core_breach_rate": 0.0921985815603,
+          "projector_distance_p90": 0.327676098932,
+          "second_principal_cosine_p10": 0.88614713698,
+          "weak_identification_coincidence_rate_among_breaches": 0.230769230769,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": false
+        },
+        "144": {
+          "common_origins": 141,
+          "core_breach_rate": 0.0496453900709,
+          "projector_distance_p90": 0.196101365971,
+          "second_principal_cosine_p10": 0.960774952072,
+          "weak_identification_coincidence_rate_among_breaches": 1.0,
+          "weak_identification_flag": true,
+          "window_specific_geometry_failure": false
+        },
+        "96": {
+          "common_origins": 141,
+          "core_breach_rate": 0.22695035461,
+          "projector_distance_p90": 0.669955876125,
+          "second_principal_cosine_p10": 0.319872237139,
+          "weak_identification_coincidence_rate_among_breaches": 0.25,
+          "weak_identification_flag": false,
+          "window_specific_geometry_failure": true
+        }
+      }
+    }
+  },
+  "large_n_structural_break_inference_performed": false,
+  "leave_one_feature_out_interpretation": "descriptive_sensitivity_not_causal_driver_attribution_or_state_rescue",
+  "monetary_regime_summary_descriptive_only": {
+    "120": {
+      "negative": {
+        "core_breach_rate": 0.422680412371,
+        "median_projector_distance": 0.131852224993,
+        "median_second_principal_cosine": 0.982462967604,
+        "observations": 97,
+        "weak_policy_anchor_rate": 0.783505154639
+      },
+      "positive": {
+        "core_breach_rate": 0.216216216216,
+        "median_projector_distance": 0.116378554253,
+        "median_second_principal_cosine": 0.987840096604,
+        "observations": 37,
+        "weak_policy_anchor_rate": 1.0
+      },
+      "zero": {
+        "core_breach_rate": 0.285714285714,
+        "median_projector_distance": 0.020580642167,
+        "median_second_principal_cosine": 0.999653497767,
+        "observations": 7,
+        "weak_policy_anchor_rate": 0.285714285714
+      }
+    },
+    "144": {
+      "negative": {
+        "core_breach_rate": 0.185567010309,
+        "median_projector_distance": 0.0467706893621,
+        "median_second_principal_cosine": 0.997924249564,
+        "observations": 97,
+        "weak_policy_anchor_rate": 0.783505154639
+      },
+      "positive": {
+        "core_breach_rate": 0.27027027027,
+        "median_projector_distance": 0.157711745746,
+        "median_second_principal_cosine": 0.979441312895,
+        "observations": 37,
+        "weak_policy_anchor_rate": 1.0
+      },
+      "zero": {
+        "core_breach_rate": 0.285714285714,
+        "median_projector_distance": 0.0111662307374,
+        "median_second_principal_cosine": 0.999885376442,
+        "observations": 7,
+        "weak_policy_anchor_rate": 0.285714285714
+      }
+    },
+    "96": {
+      "negative": {
+        "core_breach_rate": 0.60824742268,
+        "median_projector_distance": 0.684127626073,
+        "median_second_principal_cosine": 0.279640877032,
+        "observations": 97,
+        "weak_policy_anchor_rate": 0.835051546392
+      },
+      "positive": {
+        "core_breach_rate": 0.162162162162,
+        "median_projector_distance": 0.116069508523,
+        "median_second_principal_cosine": 0.9864388131,
+        "observations": 37,
+        "weak_policy_anchor_rate": 1.0
+      },
+      "zero": {
+        "core_breach_rate": 0.285714285714,
+        "median_projector_distance": 0.0255450728751,
+        "median_second_principal_cosine": 0.999493214286,
+        "observations": 7,
+        "weak_policy_anchor_rate": 0.285714285714
+      }
+    }
+  },
+  "outcomes_accessed": false,
+  "panel_period": [
+    "month-2002-01",
+    "month-2025-10"
+  ],
+  "panel_sha256": "80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e",
+  "rolling_months": [
+    96,
+    120,
+    144
+  ],
+  "run_008_decision_recalculated": false,
+  "run_008_fixed_factor_sha256": "2afdaba561833a16d18bda92cc22534c55b5516cc7f5714b8212ae40c3691d95",
+  "run_008_manifest_sha256": "cdddd08dfff175726afccdd8c8e89c6d3bd1addf0db5f711999998b2ffd02237",
+  "standardization_drift_summary": {
+    "120": {
+      "deposit_facility_rate": {
+        "location_shift_absolute_maximum": 1.09708138719,
+        "location_shift_absolute_median": 0.538194884199,
+        "location_shift_absolute_p90": 1.05597662338,
+        "log_scale_ratio_absolute_maximum": 1.79118077598,
+        "log_scale_ratio_absolute_median": 0.190838003509,
+        "log_scale_ratio_absolute_p90": 1.43791125556
+      },
+      "hicp_yoy": {
+        "location_shift_absolute_maximum": 0.485052508917,
+        "location_shift_absolute_median": 0.214587148581,
+        "location_shift_absolute_p90": 0.451162155977,
+        "log_scale_ratio_absolute_maximum": 0.35204746369,
+        "log_scale_ratio_absolute_median": 0.133994163832,
+        "log_scale_ratio_absolute_p90": 0.347379542117
+      },
+      "industrial_production_yoy": {
+        "location_shift_absolute_maximum": 0.266974293409,
+        "location_shift_absolute_median": 0.0304428933112,
+        "location_shift_absolute_p90": 0.120539977885,
+        "log_scale_ratio_absolute_maximum": 0.427690733432,
+        "log_scale_ratio_absolute_median": 0.127979643593,
+        "log_scale_ratio_absolute_p90": 0.219621568255
+      },
+      "unemployment_rate": {
+        "location_shift_absolute_maximum": 0.681172885391,
+        "location_shift_absolute_median": 0.327330447727,
+        "location_shift_absolute_p90": 0.621715734582,
+        "log_scale_ratio_absolute_maximum": 0.205997551286,
+        "log_scale_ratio_absolute_median": 0.102432656983,
+        "log_scale_ratio_absolute_p90": 0.175570706107
+      }
+    },
+    "144": {
+      "deposit_facility_rate": {
+        "location_shift_absolute_maximum": 0.929657651612,
+        "location_shift_absolute_median": 0.310256973822,
+        "location_shift_absolute_p90": 0.915298540465,
+        "log_scale_ratio_absolute_maximum": 1.25650111571,
+        "log_scale_ratio_absolute_median": 0.0680923142796,
+        "log_scale_ratio_absolute_p90": 1.22290024904
+      },
+      "hicp_yoy": {
+        "location_shift_absolute_maximum": 0.459387202571,
+        "location_shift_absolute_median": 0.102796082933,
+        "location_shift_absolute_p90": 0.368353457949,
+        "log_scale_ratio_absolute_maximum": 0.296024479024,
+        "log_scale_ratio_absolute_median": 0.0982601729622,
+        "log_scale_ratio_absolute_p90": 0.272247739599
+      },
+      "industrial_production_yoy": {
+        "location_shift_absolute_maximum": 0.154644025552,
+        "location_shift_absolute_median": 0.0257217700588,
+        "location_shift_absolute_p90": 0.128614410766,
+        "log_scale_ratio_absolute_maximum": 0.182108837286,
+        "log_scale_ratio_absolute_median": 0.11147256403,
+        "log_scale_ratio_absolute_p90": 0.164797032122
+      },
+      "unemployment_rate": {
+        "location_shift_absolute_maximum": 0.439907138538,
+        "location_shift_absolute_median": 0.175151402218,
+        "location_shift_absolute_p90": 0.401568303238,
+        "log_scale_ratio_absolute_maximum": 0.204092171623,
+        "log_scale_ratio_absolute_median": 0.0712623054408,
+        "log_scale_ratio_absolute_p90": 0.187678630929
+      }
+    },
+    "96": {
+      "deposit_facility_rate": {
+        "location_shift_absolute_maximum": 1.20620114088,
+        "location_shift_absolute_median": 1.07499531271,
+        "location_shift_absolute_p90": 1.1885373607,
+        "log_scale_ratio_absolute_maximum": 2.31472638035,
+        "log_scale_ratio_absolute_median": 1.26572980799,
+        "log_scale_ratio_absolute_p90": 1.93595214187
+      },
+      "hicp_yoy": {
+        "location_shift_absolute_maximum": 0.900179315215,
+        "location_shift_absolute_median": 0.362717291515,
+        "location_shift_absolute_p90": 0.775351803067,
+        "log_scale_ratio_absolute_maximum": 0.408710147909,
+        "log_scale_ratio_absolute_median": 0.207349548461,
+        "log_scale_ratio_absolute_p90": 0.393421028508
+      },
+      "industrial_production_yoy": {
+        "location_shift_absolute_maximum": 0.355211282044,
+        "location_shift_absolute_median": 0.0661400560879,
+        "location_shift_absolute_p90": 0.209260029083,
+        "log_scale_ratio_absolute_maximum": 0.821458130288,
+        "log_scale_ratio_absolute_median": 0.206464740687,
+        "log_scale_ratio_absolute_p90": 0.691033973883
+      },
+      "unemployment_rate": {
+        "location_shift_absolute_maximum": 1.10267247824,
+        "location_shift_absolute_median": 0.568711028629,
+        "location_shift_absolute_p90": 0.991428384727,
+        "log_scale_ratio_absolute_maximum": 0.688418095727,
+        "log_scale_ratio_absolute_median": 0.154976434326,
+        "log_scale_ratio_absolute_p90": 0.509848760035
+      }
+    }
+  },
+  "state_selection_performed": false,
+  "synthetic_observations_used": false,
+  "transmission_estimation_authorized": false
+}

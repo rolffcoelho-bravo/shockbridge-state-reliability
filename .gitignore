@@ -1,0 +1,27 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# External data are not redistribution-cleared by default.
+data/raw/**
+data/interim/**
+data/processed/**
+data/feature_store/**
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/feature_store/.gitkeep
+
+# Local experiment outputs.
+artifacts/
+mlruns/
+

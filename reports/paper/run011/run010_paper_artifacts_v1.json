@@ -1,0 +1,46 @@
+{
+  "artifact_id": "run010-paper-artifacts-v1",
+  "boundaries": {
+    "causal_revision_effect_claimed": false,
+    "decision_time_latest_vintage_use_allowed": false,
+    "structural_break_inference_claimed": false,
+    "transmission_outcomes_accessed": false
+  },
+  "captions": {
+    "episode_figure": "Persistent full-panel geometry-breach episodes under the primary 3/3 rule. Intervals are descriptive and are not causal break estimates.",
+    "geometry_figure": "Full-panel expanding-versus-rolling factor geometry under point-in-time and matched-period latest ECB RTD values. Dashed lines are frozen failure references."
+  },
+  "evidence_status": "REAL_DATA_OUTCOME_BLIND_DESCRIPTIVE_PRESENTATION",
+  "outputs": {
+    "bootstrap_table": {
+      "bytes": 942,
+      "path": "run010_table_bootstrap_primary_v1.csv",
+      "sha256": "a70c1c38e89f37f67d4813442856a802c2ed1efc7fd7a21a8123c9ab93dd896f"
+    },
+    "episode_figure": {
+      "bytes": 8026,
+      "path": "run010_figure_episodes_v1.svg",
+      "sha256": "cdd7f761209c823935892482e237264c2ba3ff05c48a5cf79531084ab0a128fc"
+    },
+    "geometry_figure": {
+      "bytes": 13971,
+      "path": "run010_figure_geometry_v1.svg",
+      "sha256": "53796230d3ac10f070dbfadc6759a8890c66cbcd6084ab623ab345f70e659c68"
+    },
+    "geometry_table": {
+      "bytes": 815,
+      "path": "run010_table_geometry_v1.csv",
+      "sha256": "5643d8afc9f19973dcf8aa0eda96069c4ddc1d599b526b8177e639767e47e524"
+    },
+    "value_table": {
+      "bytes": 839,
+      "path": "run010_table_value_differences_v1.csv",
+      "sha256": "6290697be9d980d3e201b577b05f2aa61c5d1bd2ab7667e9f1c2792d2b922a22"
+    }
+  },
+  "schema_version": 1,
+  "source_audit_path": "reports/methodology/state_vintage_robustness_run010_v1.audit.json",
+  "source_audit_sha256": "6631f7ad8fd2bffc2d1d606e39a187029ea96d5adac61269af4c25f3d6584b81",
+  "source_episode_path": "data/processed/state_vintage_episodes_run010_v1.csv",
+  "source_episode_sha256": "67dec146bae186bc9e5680be36ec6caf80443bbc3449af99601c4a8c53e5001b"
+}

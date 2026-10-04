@@ -1,0 +1,44 @@
+schema_version: 1
+experiment_id: state-model-run007-v1
+evidence_status: REAL_DATA_OUTCOME_BLIND
+
+panel_path: data/processed/monthly_state_panel_v2.csv
+panel_sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+features:
+  - hicp_yoy
+  - industrial_production_yoy
+  - unemployment_rate
+  - deposit_facility_rate
+history_windows:
+  - expanding
+  - rolling_120
+minimum_training_months: 60
+rolling_months: 120
+variance_floor: 0.05
+random_seed: 73107
+state_counts: [2, 3]
+
+pca_challenger:
+  components: 2
+  restarts: 20
+
+hmm_diagnostic:
+  restarts: 6
+  max_iterations: 150
+  tolerance: 0.000001
+  transition_prior: 0.5
+  objective_gap_grid: [0.0, 2.0, 5.0, 10.0]
+
+stability_gates:
+  minimum_pearson_correlation: 0.80
+  minimum_spearman_correlation: 0.80
+  maximum_sign_disagreement_rate: 0.10
+  maximum_standardized_mean_absolute_difference: 0.35
+  minimum_median_loading_cosine: 0.90
+  minimum_loading_cosine: 0.75
+  minimum_anchor_tenth_percentile: 0.20
+  weak_anchor_cutoff: 0.10
+  maximum_weak_anchor_rate: 0.05
+
+outcomes_accessed: false
+execution_authorized: true

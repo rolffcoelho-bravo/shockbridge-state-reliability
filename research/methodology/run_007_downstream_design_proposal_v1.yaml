@@ -1,0 +1,56 @@
+schema_version: 1
+proposal_id: run-007-downstream-design-proposal-v1
+created_on: 2026-10-03
+status: APPROVED_AND_FROZEN_PRE_OUTCOME
+outcomes_accessed: false
+empirical_state_panel_evaluated: false
+
+joint_shock_state_support:
+  coordinate_system: analysis_sample_standardized_shock_and_state
+  require_both_contrast_endpoints_inside_convex_hull: true
+  local_kernel: isotropic_gaussian
+  primary_bandwidth_standard_deviations: 0.75
+  minimum_local_effective_sample_size: 20.0
+  sensitivity_bandwidths: [0.50, 1.00]
+  sensitivity_minimum_effective_sample_sizes: [15.0, 25.0]
+  rectangular_range_check: diagnostic_only
+
+quadratic_state_uncertainty:
+  method: exact_first_two_moment_integration
+  use_filtered_state_mean: true
+  use_filtered_state_variance: true
+  plug_in_mean_only_primary: false
+
+spline_robustness:
+  degree: 3
+  marginal_interior_knot_quantiles: [0.50]
+  marginal_basis_count: 5
+  tensor_basis_count: 25
+  penalty: tensor_second_difference
+  penalty_grid: [0.01, 0.10, 1.0, 10.0, 100.0]
+  basis_freeze: outer_development_block_only
+  initial_training_events: 120
+  validation_block_events: 20
+  selection_loss: validation_observation_weighted_mean_squared_error
+
+dependence_aware_bootstrap:
+  method: circular_moving_block
+  primary_block_length_events: 6
+  block_length_sensitivity_events: [4, 8]
+  replications: 1999
+  random_seed: 73129
+  refit_state_model_each_replication: true
+  refit_transmission_model_each_replication: true
+  note: final_block_length_must_also_cover_any_longer_overlapping_outcome_horizon
+
+pca_restart_provenance:
+  retain_each_restart:
+    - seed
+    - inertia
+    - objective_gap_from_best
+    - semantically_aligned_hard_assignments
+    - agreement_with_best
+  status: IMPLEMENTED_AND_SOFTWARE_TESTED
+
+state_model_execution_authorized: true
+transmission_outcome_execution_authorized: false

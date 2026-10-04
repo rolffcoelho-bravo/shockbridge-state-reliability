@@ -1,0 +1,101 @@
+schema_version: 1
+proposal_id: run-008-subspace-design-proposal-v1
+created_on: 2026-10-03
+status: APPROVED_AND_FROZEN_FOR_STATE_ONLY_EXECUTION
+approved_on: 2026-10-03
+approval_scope: exact_numerical_contract_and_outcome_blind_state_execution_only
+outcomes_accessed: false
+empirical_run_008_executed: false
+
+input_panel:
+  path: data/processed/monthly_state_panel_v2.csv
+  sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+  months: 286
+  start: 2002-01
+  end: 2025-10
+  extension_status: BLOCKED_AS_COMPLETE_VALIDATION_PANEL_BY_IP_VINTAGE_COVERAGE
+
+factor_subspace:
+  dimension: 2
+  interpretation: diagnostic_factor_space_not_estimated_number_of_true_factors
+  histories: [expanding, rolling_120]
+  minimum_training_months: 60
+  cross_window_origins: only_after_rolling_window_first_truncates
+  standardization: estimation_window_only
+  missing_history_rule: estimation_window_standardized_mean
+  comparison_geometry:
+    - principal_cosines
+    - root_mean_square_projector_distance
+    - procrustes_aligned_loading_cosines
+
+economic_rotation:
+  method: orthogonal_procrustes_with_prespecified_targets
+  targets:
+    slack:
+      hicp_yoy: 0.0
+      industrial_production_yoy: -0.7071067811865475
+      unemployment_rate: 0.7071067811865475
+      deposit_facility_rate: 0.0
+    policy_minus_inflation_proxy:
+      hicp_yoy: -0.7071067811865475
+      industrial_production_yoy: 0.0
+      unemployment_rate: 0.0
+      deposit_facility_rate: 0.7071067811865475
+  interpretation_boundary: second_target_is_a_point_in_time_proxy_not_expected_real_rate
+
+proposed_subspace_gates:
+  minimum_second_principal_cosine: 0.75
+  minimum_tenth_percentile_second_principal_cosine: 0.90
+  maximum_median_projector_distance: 0.20
+  maximum_ninetieth_percentile_projector_distance: 0.35
+  minimum_tenth_percentile_anchor_capture_each_target: 0.50
+  weak_anchor_capture_cutoff: 0.35
+  maximum_weak_anchor_capture_rate_each_target: 0.10
+  minimum_median_anchored_loading_cosine_each_factor: 0.90
+  minimum_tenth_percentile_anchored_loading_cosine_each_factor: 0.75
+
+fixed_loading_scalar_candidate:
+  development_months: 120
+  development_start: 2002-01
+  development_end: 2011-12
+  evaluation_start: 2012-01
+  evaluation_end: 2025-10
+  loading: slack_column_of_development_anchored_two_factor_basis
+  loading_reestimated_after_development: false
+  dynamic_parameters: reestimated_from_each_origin_history_only
+  filter: scalar_ar1_with_joint_feature_density
+  proposed_gates:
+    minimum_pearson_correlation: 0.80
+    minimum_spearman_correlation: 0.80
+    maximum_sign_disagreement_rate: 0.10
+    maximum_standardized_mean_absolute_difference: 0.35
+    require_positive_mean_log_score_gain_vs_diagonal_gaussian_in_each_history: true
+
+anchored_two_factor_diagnostic:
+  transition: var1
+  transition_ridge: 0.000001
+  maximum_transition_spectral_radius: 0.98
+  variance_floor: 0.05
+  filtered_covariance_retained: true
+  joint_feature_density: true
+  proposed_factorwise_gates:
+    minimum_pearson_correlation: 0.75
+    minimum_spearman_correlation: 0.75
+    maximum_sign_disagreement_rate: 0.15
+    maximum_standardized_mean_absolute_difference: 0.50
+  transmission_eligibility: false_in_run_008_due_dimensional_support_burden
+
+decision_hierarchy:
+  - two_factor_subspace_must_pass_every_subspace_and_anchor_gate
+  - fixed_loading_scalar_must_pass_every_scalar_gate_and_score_gate
+  - predictive_score_cannot_compensate_for_stability_failure
+  - anchored_two_factor_remains_diagnostic_in_run_008
+  - no_run_007_challenger_can_be_promoted_post_hoc
+  - failure_selects_no_state_and_keeps_transmission_sealed
+
+implementation:
+  path: src/shockbridge_state_risk/state/subspace.py
+  status: IMPLEMENTED_AND_SOFTWARE_TESTED_WITH_SYNTHETIC_ARRAYS_ONLY
+
+state_model_execution_authorized: true
+transmission_outcome_execution_authorized: false

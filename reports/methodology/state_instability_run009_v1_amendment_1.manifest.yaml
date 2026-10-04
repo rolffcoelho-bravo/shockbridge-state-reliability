@@ -1,0 +1,66 @@
+schema_version: 1
+artifact_id: state-instability-run009-v1-amendment-1
+created_on: 2026-10-03
+evidence_status: REAL_DATA_OUTCOME_BLIND_AMENDMENT
+amendment_status: ORIGINAL_FIELDS_EXACT_ADD_CENSORING_FLAG
+
+frozen_design:
+  config_path: experiments/state_instability_run009_v1_amendment_1.yaml
+  config_sha256: 7e158eecf835acdddaf74dbbebca58d36dac12e45330b0dfc5352bcdb7cc0e3a
+  protocol_path: research/methodology/run_009_episode_amendment_1_protocol.yaml
+  protocol_sha256: 028e3393d24fd235fe09178b913f108364adae501561580e471f2c0d727af581
+  pre_result_git_commit: 1395a7294ef3ae1d938ca5ba8468f4ea2b88af93
+  source_manifest_path: reports/methodology/state_instability_run009_v1.manifest.yaml
+  source_manifest_sha256: 9ff27f2b27d2de008be2ffce09d2c551680679f00ac102ed4de1ca9d8889c9aa
+  source_episode_sha256: baed3f89be85284c9162ce681480bbac89d793ee53469a9627d882609b6c6d3b
+  outcomes_accessed: false
+
+implementation:
+  amendment_path: src/shockbridge_state_risk/state/run009_amendment.py
+  amendment_sha256: 0e453c5ad6ff1c086b382688569e2c4b8195e6e380fa0150012741c3e33692b7
+  episode_component_path: src/shockbridge_state_risk/state/instability.py
+  episode_component_sha256: 4a9442c583047d1756d3e8f3b82476cbf0f176fa3eb755cf56aaa9834e7f4973
+  preflight_path: reports/methodology/run_009_episode_amendment_1_preflight_2026-10-03.md
+  preflight_sha256: 6d74bbbcccf403e8d5224151bac2811d239d522433bcdd59b3a1f91c6d1ad50d
+
+execution:
+  command: >-
+    .venv/bin/python -m shockbridge_state_risk amend-state-instability-episodes
+    experiments/state_instability_run009_v1_amendment_1.yaml
+    --episode-output data/processed/state_instability_episodes_run009_v1_amendment_1.csv
+    --audit-output reports/methodology/state_instability_run009_v1_amendment_1.audit.json
+  elapsed_seconds: 0.60
+
+outputs:
+  amended_episodes:
+    path: data/processed/state_instability_episodes_run009_v1_amendment_1.csv
+    sha256: fc00cab4da60eba28d372cbc5a1d9f964c96209e4c74c6dab46d5b18256ccbd9
+    bytes: 4167
+    rows: 44
+    repository_disposition: LOCAL_IGNORED
+  audit:
+    path: reports/methodology/state_instability_run009_v1_amendment_1.audit.json
+    sha256: 0003541ae8773b061365927dae7096d80d473b3d540d0c2f098818af39d44aa8
+    bytes: 1510
+    repository_disposition: COMMITTABLE
+  interpretation:
+    path: reports/methodology/run_009_episode_amendment_1_result_2026-10-03.md
+    sha256: b9524f208c102be01b01c8786e1abbc0301cd8fab0f9529187f586b4dea4930c
+    bytes: 1194
+    repository_disposition: COMMITTABLE
+
+integrity:
+  original_rows: 44
+  amended_rows: 44
+  original_fields_exact_match: true
+  fields_added: [open_at_sample_end]
+  open_episode_rows: 1
+  byte_identical_repeat_execution: PASS
+  original_artifacts_overwritten: false
+  numerical_classifications_changed: false
+
+decision:
+  primary_result_changed: false
+  state_selected: false
+  run_008_or_run_009_decision_changed: false
+  transmission_estimation_authorized: false

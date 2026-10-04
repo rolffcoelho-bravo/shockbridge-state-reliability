@@ -71,6 +71,26 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("two independent repositories", boundary)
         self.assertNotIn("No open-source license is selected", boundary)
 
+    def test_public_security_and_runner_contract_is_explicit(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+        ci = (root / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+        codeql = (root / ".github/workflows/codeql.yml").read_text(encoding="utf-8")
+        dependabot = (root / ".github/dependabot.yml").read_text(encoding="utf-8")
+        security = (root / "SECURITY.md").read_text(encoding="utf-8")
+
+        self.assertNotIn("ubuntu-latest", ci)
+        self.assertIn("runs-on: ubuntu-24.04", ci)
+        self.assertIn("runs-on: ubuntu-26.04", ci)
+        self.assertIn("continue-on-error: true", ci)
+        self.assertIn(
+            "github.repository == 'rolffcoelho-bravo/shockbridge-state-reliability'", codeql
+        )
+        self.assertIn("security-events: write", codeql)
+        self.assertIn("queries: security-extended", codeql)
+        self.assertIn("package-ecosystem: pip", dependabot)
+        self.assertIn("package-ecosystem: github-actions", dependabot)
+        self.assertIn("private vulnerability reporting", security)
+
     def test_failed_export_receipts_are_private_only(self) -> None:
         from scripts.audit_public_export import PRIVATE_ONLY_PATHS
         from scripts.build_public_export import EXCLUDED_PATHS

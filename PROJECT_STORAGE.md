@@ -49,7 +49,7 @@ All research documents, source code, tests, reports, contracts, manifests, downl
 - Recheck Run 010 from a clean temporary checkout with `scripts/reproduce_run010_clean.py`; the script validates every hydrated input, refuses to modify canonical outputs, and records exact hash equality.
 - Rebuild the Run 011 paper presentation only under a new versioned output directory; `scripts/build_run011_paper_artifacts.py` treats the published bundle as immutable.
 - Recheck the exact Python 3.9 environment with `scripts/reproduce_run010_locked.py` only under a new versioned audit path; the Run 012 v1 audit is immutable.
-- Audit a proposed current tree and its history with `scripts/audit_public_release.py`; a public export still requires owner license and boundary decisions.
+- Audit a proposed current tree and its history with `scripts/audit_public_release.py`; use the published-repository checks for append-only corrections after the audited root release.
 - Validate code and artifacts with `make quality` and `make test`.
 - Verify local binary and derived artifacts with `make inventory-audit`; this checks canonical-root containment, duplicate registrations, byte sizes, and SHA-256 hashes against `data/manifests/local_artifact_inventory_2026-10-02.yaml`.
 
@@ -59,7 +59,7 @@ Cache directories, coverage files, virtual environments, package build metadata,
 
 ## Current storage condition
 
-The code and documentation layer is protected by local Git history; ignored data remain protected by cryptographic inventories and deterministic retrieval/build instructions. Local Git is not an off-device backup. A remote repository should be created only after the public-history, rights, secrets, license, and clean-reproduction gates; until then, device loss remains a residual risk.
+The code and documentation layer is protected by the private canonical GitHub repository; the independently sanitized public surface is also live on GitHub. Both remote `main` refs were verified against their local heads after the first push. Ignored evidence remains outside Git and is protected by cryptographic inventories plus deterministic retrieval/build instructions. The dedicated SSH credential is stored outside the project, and no private key or token is tracked. Public corrections must be appended without rewriting the audited root commit and must pass the local release boundary plus hosted CI.
 
 ## Scientific record protocol
 

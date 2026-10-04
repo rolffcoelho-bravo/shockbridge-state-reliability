@@ -8,6 +8,7 @@ from pathlib import Path
 
 from scripts.audit_public_export import audit, is_high_entropy_candidate, shannon_entropy
 from scripts.build_public_export import _safe_member
+from scripts.run_public_tests import _prepare_import_path
 from scripts.verify_public_export import _last_json_object
 
 
@@ -62,7 +63,9 @@ class PublicExportTests(unittest.TestCase):
         readme = (root / "README.md").read_text(encoding="utf-8")
         boundary = (root / "docs/governance/public_private_boundary.md").read_text(encoding="utf-8")
         self.assertIn("Apache-2.0", readme)
-        self.assertIn("local sanitized, single-commit public candidate", readme)
+        self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
+        self.assertIn("parentless root commit", readme)
+        self.assertNotIn("No GitHub remote exists", readme)
         self.assertNotIn("currently has no open-source license", readme)
         self.assertIn("Apache-2.0", boundary)
         self.assertIn("two independent repositories", boundary)
@@ -77,6 +80,17 @@ class PublicExportTests(unittest.TestCase):
     def test_public_runner_summary_is_parsed_after_unrelated_output(self) -> None:
         summary = _last_json_object('noise {not-json}\n{"tests_run": 152, "skipped": 7}\n')
         self.assertEqual(summary, {"tests_run": 152, "skipped": 7})
+
+    def test_public_runner_prepares_repository_import_path(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            original = sys.path.copy()
+            try:
+                sys.path[:] = [entry for entry in sys.path if entry != str(root)]
+                self.assertEqual(_prepare_import_path(root), root)
+                self.assertEqual(sys.path[0], str(root))
+            finally:
+                sys.path[:] = original
 
     def test_clean_single_commit_export_passes_structural_audit(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

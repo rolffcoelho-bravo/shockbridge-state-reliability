@@ -52,9 +52,14 @@ forks or visibility variants of one another:
 - <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility>
 - <https://docs.github.com/en/code-security/concepts/secret-security/push-protection>
 
-## Remaining publication decisions
+## Current publication state
 
-Before creating either remote, record the GitHub account or organization, the
-verified public commit email, collaborator access for the private repository,
-and the selected public repository name. Remote creation and pushing require a
-separate explicit authorization; Run 013 prepares local candidates only.
+The owner selected the recommended names and both independent repositories are
+live. The sanitized public root commit uses the owner's ID-based GitHub
+no-reply identity and preserves the accepted Run 013 tree. The canonical
+private repository preserves the full scientific history while external data
+and derived evidence remain ignored and hash-registered. Both first-push remote
+`main` refs were verified against their local heads. Subsequent public fixes
+must be appended without force, revalidate the manifest and data boundary, and
+pass GitHub Actions; hosted security results remain part of every release
+review.

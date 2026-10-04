@@ -1,0 +1,63 @@
+schema_version: 1
+protocol_id: run-013-publication-amendment-2
+created_on: 2026-10-04
+status: APPROVED_AND_FROZEN
+approval_basis: >-
+  The owner required immediate completion of GitHub authentication and remote
+  publication and has standing authorization to audit and correct detected
+  code and documentation anomalies.
+
+trigger_evidence:
+  public_repository: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability
+  initial_public_commit: 8a6469340aed7fd8b2df3a27fcf17ccae08d9df8
+  initial_actions_run_id: 37237281845
+  observed_failure: >-
+    The Python 3.12 public test job collected five import errors because the
+    repository-local scripts package was not on sys.path. The Python 3.9 job
+    passed. GitHub also warned that the pinned checkout and setup-python
+    actions targeted deprecated Node.js 20.
+  observed_documentation_defect: >-
+    Current-facing README and governance text still described the verified
+    local pre-publication state after both authorized pushes had completed.
+
+scientific_role:
+  purpose: >-
+    Repair the cross-version public test-runner import boundary, update pinned
+    GitHub Actions to Node.js-24-capable official releases, and synchronize
+    current-facing publication status without changing empirical evidence.
+  evidence_class: RELEASE_ENGINEERING_NO_NEW_EMPIRICAL_ESTIMATION
+  new_empirical_estimation_allowed: false
+  transmission_outcome_access_allowed: false
+  state_model_search_allowed: false
+  threshold_change_allowed: false
+  canonical_history_rewrite_allowed: false
+  public_history_rewrite_allowed: false
+
+authorized_changes:
+  - make_public_test_discovery_independent_of_python_sys_path_defaults
+  - add_a_regression_test_for_repository_root_import_preparation
+  - update_exact_official_action_commit_pins_after_source_verification
+  - replace_stale_current_publication_status_in_current_facing_documents
+  - update_the_public_export_manifest_for_every_changed_public_file
+  - add_versioned_deviation_result_manifest_and_decision_records
+  - append_one_normal_public_commit_and_push_without_force
+  - append_canonical_private_commits_and_push_without_force
+
+verification_contract:
+  - canonical_inventory_verifies_every_registered_artifact
+  - canonical_quality_and_all_tests_pass
+  - public_quality_and_exact_seven_skip_test_contract_pass
+  - public_manifest_matches_every_tracked_file_except_itself
+  - no_blueprint_or_protected_data_path_is_added_to_public_git
+  - current_public_secret_privacy_and_entropy_scans_have_zero_findings
+  - both_remote_main_refs_equal_their_local_heads
+  - replacement_github_actions_matrix_completes_successfully
+  - public_security_page_is_inspected_after_the_corrective_push
+
+not_authorized:
+  - force_push
+  - deleting_or_rewriting_the_initial_public_commit
+  - publishing_raw_or_processed_external_data
+  - weakening_the_exact_evidence_skip_or_coverage_contract
+  - changing_results_methods_thresholds_or_claim_boundaries
+  - opening_transmission_outcomes

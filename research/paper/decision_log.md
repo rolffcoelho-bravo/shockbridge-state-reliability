@@ -323,3 +323,13 @@
 **Reason:** The locked clean archive reproduces all four Run 010 hashes, runs the complete frozen-commit test suite at 90% coverage, and leaves canonical outputs unchanged. The current tree has no detected credential signature or tracked raw/processed data. Existing local history contains workstation-path metadata, no license is selected, and no second runtime is available.
 
 **Boundary:** This decision does not authorize GitHub creation, history rewriting, license selection, blueprint publication, raw/processed data distribution, external-validity estimation, state-model rescue, or transmission analysis. Exact version pins are not a cryptographic package lock, and same-host reproduction is not cross-platform evidence.
+
+## D038 — Preserve the failed hosted run and append a cross-version correction
+
+**Date:** 2026-10-04
+
+**Decision:** Treat GitHub Actions run `37237281845` as failed release evidence. Append, rather than rewrite, a correction that makes the public runner prepare the repository-root import path explicitly, pins official Node.js-24-capable GitHub actions by exact commit, and replaces stale current-facing pre-publication wording.
+
+**Reason:** Both remote refs exactly matched the authorized local heads, but the first hosted matrix exposed five Python 3.12 collection errors for imports from the repository-local `scripts` package while Python 3.9 passed. GitHub also emitted Node.js-20 deprecation warnings, and the rendered README still claimed that no remote existed. These are reproducibility and status-governance defects that must remain visible and be corrected under the unchanged public test and data-boundary gates.
+
+**Boundary:** The correction cannot rewrite the public root, weaken the exact-seven-skip or 87%-coverage contract, add protected evidence, change scientific code or results, select a state, or authorize transmission analysis. A successful replacement matrix is required before this release-engineering amendment is complete.

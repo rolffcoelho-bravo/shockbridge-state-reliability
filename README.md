@@ -23,10 +23,11 @@ tables, and figures are licensed under CC BY 4.0 unless a file or source note
 states otherwise. External data and third-party source material are not
 relicensed or redistributed; see `NOTICE` and `LICENSE-DOCS.md`.
 
-The public reproducibility surface is generated as a clean, single-commit
-export. It excludes the two flagship blueprints, ignored local evidence, raw
-and processed data, and the canonical repository's private development
-history. The canonical research archive and public repository are intentionally
+The public reproducibility surface began as a clean, parentless release commit;
+later release-engineering corrections are appended without rewriting that
+root. It excludes the two flagship blueprints, ignored local evidence, raw and
+processed data, and the canonical repository's private development history.
+The canonical research archive and public repository are intentionally
 separate.
 
 ## Why the negative result matters
@@ -140,12 +141,14 @@ SHA-256 hashes. ECB statistical transformations and attribution requirements
 are documented; authored ECB workbooks/documents and third-party factor files
 remain fetch-only under the conservative rights policy.
 
-The code and owner-authored documentation now have the explicit licenses stated
-above. A local sanitized, single-commit public candidate has passed the release
-security and source-only verification gates with both flagship blueprints and
-all protected data excluded. No GitHub remote exists. Publication still
-requires a verified public commit email, an explicit repository-creation
-decision, and GitHub's hosted secret scan after the first push. See
+The code and owner-authored documentation have the explicit licenses stated
+above. The sanitized release is public at
+[`rolffcoelho-bravo/shockbridge-state-reliability`](https://github.com/rolffcoelho-bravo/shockbridge-state-reliability).
+Its parentless root commit passed the release security and source-only
+verification gates with both flagship blueprints and all protected data
+excluded. Every subsequent public correction is appended, rechecked under the
+same data boundary, and subjected to the GitHub Actions matrix; current hosted
+results remain visible in the repository's Actions and Security pages. See
 [`docs/governance/public_private_boundary.md`](docs/governance/public_private_boundary.md).
 
 ## Original broader research question

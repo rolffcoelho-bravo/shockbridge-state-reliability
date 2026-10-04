@@ -36,4 +36,4 @@ Each manuscript claim links to a results-register row, manifest, code checkpoint
 
 Git tracks code, contracts, manifests, audits, and paper records. Raw and derived data remain local and ignored until redistribution rights are explicit; each is hash-registered with a deterministic recovery path. `make quality`, `make test`, and the local inventory verification are required before a checkpoint.
 
-Local Git is not an off-device backup. Before public release, create a remote after a rights, secrets, history, and reproducibility audit. Until then, loss of the device remains a residual storage risk despite local hashes.
+Local Git alone is not an off-device backup. The project therefore maintains an independent private canonical remote and a sanitized public remote created only after rights, secrets, history, and reproducibility audits. Raw and processed evidence remains outside Git and requires separate recoverability controls even after both repositories are live.

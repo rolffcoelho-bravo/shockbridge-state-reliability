@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/security/advisories/new
+    about: Report vulnerabilities without public disclosure.
+  - name: Evidence and claim boundaries
+    url: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/blob/main/research/paper/claim_matrix.md
+    about: Review the current facts, estimates, limitations, and prohibited claims.

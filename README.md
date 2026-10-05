@@ -2,6 +2,15 @@
 
 ## Real-Time Measurement Reliability in Euro-Area Monetary-Policy Research
 
+[![CI](https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/actions/workflows/codeql.yml)
+[![Python 3.9–3.12](https://img.shields.io/badge/Python-3.9%E2%80%933.12-3776AB?logo=python&logoColor=white)](pyproject.toml)
+[![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-6E4AFF)](LICENSE)
+[![Research materials: CC BY 4.0](https://img.shields.io/badge/research_materials-CC_BY_4.0-2B579A)](LICENSE-DOCS.md)
+
+> An outcome-blind reliability audit of whether a macro-financial state is
+> stable enough to support state-dependent monetary-policy research.
+
 This project asks a question that must be answered before estimating
 state-dependent monetary-policy effects: is the proposed pre-event state stable
 enough to be used as a conditioning variable?
@@ -15,6 +24,33 @@ project therefore selects no state and does not estimate transmission effects.
 **Evidence status:** clean-reproduced, outcome-blind negative measurement
 evidence. This repository contains no validated state-dependent transmission
 effect, amplification result, trading signal, or production model.
+
+## Project status
+
+| Dimension | Current verified status |
+|---|---|
+| Research gate | State measurement completed; transmission estimation remains blocked |
+| Main finding | No registered one- or two-dimensional state representation passes the prospective joint stability gates |
+| Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
+| Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
+| Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
+| Test contract | 157 tests: 150 public executions plus exactly seven evidence-bound skips; complete local suite at 90% coverage |
+| Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
+
+### Reviewer paths
+
+- **Understand the finding:** [main result](#main-result) and
+  [`research/paper/claim_matrix.md`](research/paper/claim_matrix.md)
+- **Inspect the evidence sequence:**
+  [`research/paper/results_register.md`](research/paper/results_register.md) and
+  [`research/paper/evidence_ledger.md`](research/paper/evidence_ledger.md)
+- **Reproduce the software gates:** [reproducibility](#reproducibility)
+- **Review tables and figures:**
+  [`reports/paper/run011/`](reports/paper/run011/)
+- **Audit changes and limitations:**
+  [`research/methodology/deviation_log.md`](research/methodology/deviation_log.md)
+- **Contribute or report a problem:** [`CONTRIBUTING.md`](CONTRIBUTING.md) and
+  [`SECURITY.md`](SECURITY.md)
 
 ## Licensing and public boundary
 
@@ -99,7 +135,10 @@ Paper-ready tables, vector figures, and provenance are in
 Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
-while also running static analysis, 140 tests, and the 90% coverage gate.
+while also running static analysis, the then-registered 140-test suite, and the
+90% coverage gate. The current repository contract contains 157 tests and adds
+cross-version, cross-runner, archive-safety, release-boundary, and hosted
+security regression coverage.
 
 Create a locked Python 3.9 environment:
 
@@ -118,10 +157,10 @@ environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
 Public CI cannot access ignored empirical artifacts. It requires exactly seven
-explicitly labeled evidence-bound skips, executes every remaining test, and
+explicitly labeled evidence-bound skips, executes the remaining 150 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates all hash-registered evidence, executes the complete suite, and retains
-the 90% coverage floor. These are separate, visible gates.
+hydrates all hash-registered evidence, executes all 157 tests, and retains the
+90% coverage floor. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:
 
@@ -132,6 +171,20 @@ make inventory-audit
 The empirical contract audit intentionally exits with status `2`: the
 transmission estimand remains blocked because no state passed the prospective
 measurement gates and transmission prerequisites remain unresolved.
+
+## Repository map
+
+| Path | Role |
+|---|---|
+| `src/shockbridge_state_risk/` | Typed analytical and validation library |
+| `tests/` | Unit, invariance, hostile-input, and evidence-bound tests |
+| `experiments/` | Frozen execution configurations |
+| `research/methodology/` | Prospective protocols and approved amendments |
+| `research/paper/` | Claim, novelty, decision, evidence, and result ledgers |
+| `reports/methodology/` | Immutable audits, manifests, and run interpretations |
+| `reports/paper/run011/` | Paper-ready tables, vector figures, and provenance |
+| `data/manifests/` | Source and artifact metadata; not redistributed datasets |
+| `.github/` | CI, CodeQL, dependency, issue, and review governance |
 
 ## Data availability and public boundary
 

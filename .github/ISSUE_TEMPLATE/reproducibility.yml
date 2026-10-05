@@ -1,0 +1,49 @@
+name: Reproducibility report
+description: Report a failure to reproduce a registered software or evidence contract.
+title: "[Reproducibility]: "
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      description: The exact commit SHA used for the reproduction attempt.
+    validations:
+      required: true
+  - type: input
+    id: contract
+    attributes:
+      label: Run, manifest, or contract
+      description: Identify the registered run, manifest, or verification target.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, architecture, Python version, and installation method.
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands
+      description: List the exact commands used.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: mismatch
+    attributes:
+      label: Mismatch
+      description: Report failing checks or hashes without attaching protected data.
+    validations:
+      required: true
+  - type: checkboxes
+    id: evidence
+    attributes:
+      label: Evidence handling
+      options:
+        - label: I did not attach restricted data, credentials, or personal information.
+          required: true
+        - label: I distinguished synthetic tests from empirical evidence.
+          required: true

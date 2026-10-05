@@ -114,6 +114,9 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("Apache-2.0", readme)
         self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
         self.assertIn("parentless root commit", readme)
+        self.assertIn("157 tests", readme)
+        self.assertIn("Reviewer paths", readme)
+        self.assertIn("Repository map", readme)
         self.assertNotIn("No GitHub remote exists", readme)
         self.assertNotIn("currently has no open-source license", readme)
         self.assertIn("Apache-2.0", boundary)
@@ -139,6 +142,30 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("package-ecosystem: pip", dependabot)
         self.assertIn("package-ecosystem: github-actions", dependabot)
         self.assertIn("private vulnerability reporting", security)
+
+    def test_public_contribution_templates_are_structured(self) -> None:
+        import yaml
+
+        root = Path(__file__).resolve().parents[1]
+        template_root = root / ".github/ISSUE_TEMPLATE"
+        for name in ("bug_report.yml", "reproducibility.yml"):
+            with self.subTest(name=name):
+                payload = yaml.safe_load((template_root / name).read_text(encoding="utf-8"))
+                self.assertIsInstance(payload, dict)
+                self.assertTrue(payload["name"])
+                self.assertTrue(payload["description"])
+                self.assertGreaterEqual(len(payload["body"]), 3)
+        config = yaml.safe_load((template_root / "config.yml").read_text(encoding="utf-8"))
+        self.assertFalse(config["blank_issues_enabled"])
+        self.assertEqual(len(config["contact_links"]), 2)
+        self.assertIn(
+            "Research-integrity requirements",
+            (root / "CONTRIBUTING.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "Scientific effect",
+            (root / ".github/pull_request_template.md").read_text(encoding="utf-8"),
+        )
 
     def test_failed_export_receipts_are_private_only(self) -> None:
         from scripts.audit_public_export import PRIVATE_ONLY_PATHS

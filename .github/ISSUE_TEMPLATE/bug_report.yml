@@ -1,0 +1,58 @@
+name: Software bug
+description: Report a reproducible defect in the code, tests, or automation.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not include credentials, private data, or restricted source
+        artifacts. Security vulnerabilities must use private reporting.
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or version
+      description: The full commit SHA or release version where the defect occurs.
+      placeholder: 40-character commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Locked Python 3.9 environment
+        - Supported Python 3.12 environment
+        - Other environment
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide commands and the smallest safe example that triggers the defect.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed and expected behavior
+      description: Explain what happened and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: scientific_effect
+    attributes:
+      label: Possible scientific effect
+      description: State whether results, timing, provenance, or claim boundaries may be affected.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Data boundary
+      options:
+        - label: I removed credentials, personal information, and non-public data from this report.
+          required: true

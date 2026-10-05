@@ -33,6 +33,7 @@ from scripts.reproduce_run010_clean import (  # noqa: E402
     sha256_file,
     verify_files,
 )
+from scripts.safe_tar import UnsafeTarError, extract_tar_safely  # noqa: E402
 
 AUDIT_PATH = ROOT / "reports/methodology/run_012_locked_reproduction.audit.json"
 LOCK_PATHS = {
@@ -148,7 +149,10 @@ def reproduce() -> dict[str, Any]:
             stdout=subprocess.PIPE,
         )
         with tarfile.open(fileobj=io.BytesIO(archive.stdout), mode="r:") as stream:
-            stream.extractall(checkout)
+            try:
+                extract_tar_safely(stream, checkout)
+            except UnsafeTarError as error:
+                raise ReproductionError(f"Unsafe locked-reproduction archive: {error}") from error
         if _lock_hashes(checkout) != lock_hashes:
             raise ReproductionError("Dependency locks changed in the clean archive.")
         hydrated_artifact_count = _hydrate_registered_artifacts(ROOT, checkout)

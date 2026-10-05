@@ -10,11 +10,21 @@ import io
 import json
 import os
 import subprocess
+import sys
 import tarfile
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.safe_tar import (  # noqa: E402
+    UnsafeTarError,
+    extract_tar_safely,
+    safe_tar_member,
+)
+
 DEFAULT_OUTPUT = ROOT / "artifacts/public-export/shockbridge-state-reliability"
 EXCLUDED_PATHS = {
     "reports/methodology/run_013_public_export_build_attempt1.audit.json",
@@ -52,13 +62,8 @@ def _git(arguments: list[str], *, cwd: Path = ROOT, text: bool = True) -> Any:
 
 
 def _safe_member(member: tarfile.TarInfo) -> bool:
-    path = Path(member.name)
-    return (
-        not path.is_absolute()
-        and ".." not in path.parts
-        and not member.issym()
-        and not member.islnk()
-    )
+    """Compatibility wrapper for the public-export structural audit."""
+    return safe_tar_member(member)
 
 
 def _file_hashes(root: Path) -> dict[str, str]:
@@ -150,11 +155,10 @@ def build(output: Path) -> dict[str, Any]:
     archive_bytes = _git(["archive", "--format=tar", "HEAD"], text=False)
     output.mkdir(parents=True)
     with tarfile.open(fileobj=io.BytesIO(archive_bytes), mode="r:") as archive:
-        members = archive.getmembers()
-        unsafe = [member.name for member in members if not _safe_member(member)]
-        if unsafe:
-            raise PublicExportBuildError(f"Unsafe Git archive members: {unsafe}")
-        archive.extractall(output)
+        try:
+            extract_tar_safely(archive, output)
+        except UnsafeTarError as error:
+            raise PublicExportBuildError(f"Unsafe Git archive: {error}") from error
 
     for relative in EXCLUDED_PATHS:
         candidate = output / relative

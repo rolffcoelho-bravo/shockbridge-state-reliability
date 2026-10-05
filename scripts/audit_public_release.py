@@ -187,6 +187,8 @@ def _atomic_json(payload: dict[str, Any], path: Path) -> None:
         raise PublicReleaseAuditError(f"Release audit is immutable and already exists: {path}")
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".part")
+    # Findings contain fixed detector names and repository-relative locations, never matched bytes.
+    # codeql[py/clear-text-storage-sensitive-data]
     temporary.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     temporary.replace(path)
 

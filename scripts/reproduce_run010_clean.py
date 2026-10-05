@@ -19,6 +19,11 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.safe_tar import UnsafeTarError, extract_tar_safely  # noqa: E402
+
 SOURCE_COMMIT = "02fdfd1"
 AUDIT_PATH = ROOT / "reports/methodology/run_011_clean_reproduction.audit.json"
 INPUT_HASHES = {
@@ -121,7 +126,10 @@ def reproduce() -> dict[str, Any]:
             stdout=subprocess.PIPE,
         )
         with tarfile.open(fileobj=io.BytesIO(archive.stdout), mode="r:") as stream:
-            stream.extractall(checkout)
+            try:
+                extract_tar_safely(stream, checkout)
+            except UnsafeTarError as error:
+                raise ReproductionError(f"Unsafe clean-reproduction archive: {error}") from error
         for relative in INPUT_HASHES:
             source = ROOT / relative
             target = checkout / relative

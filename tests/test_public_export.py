@@ -4,11 +4,13 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from io import BytesIO
 from pathlib import Path
 
 from scripts.audit_public_export import audit, is_high_entropy_candidate, shannon_entropy
 from scripts.build_public_export import _safe_member
 from scripts.run_public_tests import _prepare_import_path
+from scripts.safe_tar import UnsafeTarError, extract_tar_safely
 from scripts.verify_public_export import _last_json_object
 
 
@@ -50,6 +52,53 @@ class PublicExportTests(unittest.TestCase):
         link = tarfile.TarInfo("linked")
         link.type = tarfile.SYMTYPE
         self.assertFalse(_safe_member(link))
+        fifo = tarfile.TarInfo("pipe")
+        fifo.type = tarfile.FIFOTYPE
+        self.assertFalse(_safe_member(fifo))
+
+    def test_safe_tar_extraction_is_fail_closed_and_preserves_executable_mode(self) -> None:
+        import tarfile
+
+        valid_bytes = BytesIO()
+        content = b"#!/bin/sh\nexit 0\n"
+        with tarfile.open(fileobj=valid_bytes, mode="w") as archive:
+            directory = tarfile.TarInfo("bin")
+            directory.type = tarfile.DIRTYPE
+            directory.mode = 0o755
+            archive.addfile(directory)
+            executable = tarfile.TarInfo("bin/tool")
+            executable.size = len(content)
+            executable.mode = 0o755
+            archive.addfile(executable, BytesIO(content))
+        valid_bytes.seek(0)
+
+        with tempfile.TemporaryDirectory() as directory_text:
+            destination = Path(directory_text) / "valid"
+            destination.mkdir()
+            with tarfile.open(fileobj=valid_bytes, mode="r:") as archive:
+                self.assertEqual(extract_tar_safely(archive, destination), 1)
+            output = destination / "bin/tool"
+            self.assertEqual(output.read_bytes(), content)
+            self.assertEqual(output.stat().st_mode & 0o111, 0o111)
+
+        hostile_bytes = BytesIO()
+        with tarfile.open(fileobj=hostile_bytes, mode="w") as archive:
+            safe = tarfile.TarInfo("inside.txt")
+            safe.size = 4
+            archive.addfile(safe, BytesIO(b"safe"))
+            escape = tarfile.TarInfo("../escaped.txt")
+            escape.size = 6
+            archive.addfile(escape, BytesIO(b"escape"))
+        hostile_bytes.seek(0)
+
+        with tempfile.TemporaryDirectory() as directory_text:
+            destination = Path(directory_text) / "hostile"
+            destination.mkdir()
+            with tarfile.open(fileobj=hostile_bytes, mode="r:") as archive:
+                with self.assertRaisesRegex(UnsafeTarError, "Unsafe tar member"):
+                    extract_tar_safely(archive, destination)
+            self.assertEqual(list(destination.iterdir()), [])
+            self.assertFalse((destination.parent / "escaped.txt").exists())
 
     def test_required_license_files_are_plain_text(self) -> None:
         root = Path(__file__).resolve().parents[1]

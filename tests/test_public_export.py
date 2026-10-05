@@ -114,7 +114,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("Apache-2.0", readme)
         self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
         self.assertIn("parentless root commit", readme)
-        self.assertIn("157 tests", readme)
+        self.assertIn("158 tests", readme)
         self.assertIn("Reviewer paths", readme)
         self.assertIn("Repository map", readme)
         self.assertNotIn("No GitHub remote exists", readme)

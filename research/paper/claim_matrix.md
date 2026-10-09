@@ -13,7 +13,7 @@ For every manuscript revision, each substantive statement must be classified:
 
 Claims that do not meet their minimum support remain in the discussion as hypotheses, not findings.
 
-## Current claim boundary after Run 013
+## Current claim boundary after Run 015
 
 - **FACT:** the registered state panel contains 242 events, four admitted features, and no detected timing violations.
 - **ESTIMATE:** the event-indexed HMM's prequential score, filtered probabilities, state descriptions, entropy, and support statistics are sample-dependent estimates from an outcome-blind benchmark.
@@ -29,6 +29,10 @@ Claims that do not meet their minimum support remain in the discussion as hypoth
 - **LIMITATION:** the public source-only CI intentionally skips seven tests that require local hash-registered evidence and enforces an 87% rather than 90% coverage floor; it is a release-code gate, not the complete scientific reproduction.
 - **FACT:** the public repository began from the audited parentless Run 013 root with explicit Apache-2.0/CC BY 4.0 boundaries, no tracked protected data or flagship blueprint, and zero registered known-secret, privacy-path, or supplementary entropy findings. Its identity-only amendment preserved the accepted tree, message, and dates. The independent public and private `main` refs were verified after authenticated non-force pushes.
 - **FACT:** the append-only publication correction preserves the failed first hosted run and passes the replacement GitHub Actions matrix on Python 3.9 and 3.12 under the exact seven-skip and 87%-coverage public contract. GitHub secret scanning is enabled and reports no detected secret.
+- **FACT:** public research-profile baseline commit `e70e8c9` passes Python 3.9 and 3.12 on Ubuntu 24.04, the prospective Ubuntu 26.04/Python 3.12 compatibility lane, and advanced CodeQL. Code scanning reports zero open alerts after three archive-extraction corrections and one explicitly documented false-positive dismissal.
+- **FACT:** append-only public governance commit `0c695fc` adds separate reproduction and support routes, code ownership, a prospectively governed major-dependency boundary, and an explicit disclosure that the executed four-feature panel is not a large-`N` high-dimensional result. Hosted checks for that commit remain a distinct verification event.
+- **FACT:** the current source tree contains 158 tests; the public boundary executes 151 and skips exactly seven evidence-bound tests, while the registered local evidence-hydrated run executes all 158 at 90% coverage.
+- **FACT:** the public landing page, contribution guidance, issue forms, pull-request checklist, description, and topics accurately expose the current negative result and research boundaries; these are documentation and governance artifacts, not new empirical evidence.
 - **LIMITATION:** hosted CI is a source-only release gate rather than a complete empirical reproduction. The local scanner is not exhaustive, and no second-platform full-evidence reproduction has occurred.
 - **LIMITATION:** the closest literature establishes the project's component methods. Any incremental contribution is the prospectively governed validation sequence and application-specific negative evidence, not a novel factor estimator, stability statistic, break test, vintage comparison, or model-confidence-set procedure.
 - **PROHIBITED CURRENT CLAIM:** no result yet establishes state-dependent ECB transmission, amplification, prospective forecast reliability, or an economic mechanism.

@@ -8,6 +8,12 @@ updates:
       time: "07:00"
       timezone: Europe/Paris
     open-pull-requests-limit: 5
+    # Major scientific-computing migrations require a frozen protocol, lock
+    # refresh, and complete reproduction; they are not routine range widening.
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     labels:
       - dependencies
       - python

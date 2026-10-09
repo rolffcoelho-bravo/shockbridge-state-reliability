@@ -141,6 +141,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("queries: security-extended", codeql)
         self.assertIn("package-ecosystem: pip", dependabot)
         self.assertIn("package-ecosystem: github-actions", dependabot)
+        self.assertIn("version-update:semver-major", dependabot)
         self.assertIn("private vulnerability reporting", security)
 
     def test_public_contribution_templates_are_structured(self) -> None:
@@ -165,6 +166,20 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn(
             "Scientific effect",
             (root / ".github/pull_request_template.md").read_text(encoding="utf-8"),
+        )
+        readme = (root / "README.md").read_text(encoding="utf-8")
+        self.assertIn("four registered features", readme)
+        self.assertIn("large-*N*", readme)
+        self.assertIn(
+            "151 tests",
+            (root / "REPRODUCING.md").read_text(encoding="utf-8"),
+        )
+        support = (root / "SUPPORT.md").read_text(encoding="utf-8")
+        self.assertIn("private vulnerability", support)
+        self.assertIn("SECURITY.md", support)
+        self.assertIn(
+            "@rolffcoelho-bravo",
+            (root / ".github/CODEOWNERS").read_text(encoding="utf-8"),
         )
 
     def test_failed_export_receipts_are_private_only(self) -> None:

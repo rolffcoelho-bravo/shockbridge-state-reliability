@@ -37,6 +37,16 @@ effect, amplification result, trading signal, or production model.
 | Test contract | 158 tests: 151 public executions plus exactly seven evidence-bound skips; complete local suite at 90% coverage |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
+### Dimensional scope
+
+The flagship program is designed to study high-dimensional macro-financial
+state measurement. The executed and published empirical panel in this release,
+however, contains four registered features. It is therefore a disciplined
+low-dimensional stress test of the broader methodology—not a large-*N*
+high-dimensional result. Extensions to wider real-data panels remain
+prospective and will require their own frozen protocol, source audit, and
+multiple-testing controls before any result is reported.
+
 ### Reviewer paths
 
 - **Understand the finding:** [main result](#main-result) and
@@ -44,13 +54,14 @@ effect, amplification result, trading signal, or production model.
 - **Inspect the evidence sequence:**
   [`research/paper/results_register.md`](research/paper/results_register.md) and
   [`research/paper/evidence_ledger.md`](research/paper/evidence_ledger.md)
-- **Reproduce the software gates:** [reproducibility](#reproducibility)
+- **Reproduce the software gates:** [`REPRODUCING.md`](REPRODUCING.md) and
+  [reproducibility](#reproducibility)
 - **Review tables and figures:**
   [`reports/paper/run011/`](reports/paper/run011/)
 - **Audit changes and limitations:**
   [`research/methodology/deviation_log.md`](research/methodology/deviation_log.md)
-- **Contribute or report a problem:** [`CONTRIBUTING.md`](CONTRIBUTING.md) and
-  [`SECURITY.md`](SECURITY.md)
+- **Contribute or report a problem:** [`CONTRIBUTING.md`](CONTRIBUTING.md),
+  [`SUPPORT.md`](SUPPORT.md), and [`SECURITY.md`](SECURITY.md)
 
 ## Licensing and public boundary
 

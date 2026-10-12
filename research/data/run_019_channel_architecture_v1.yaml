@@ -1,0 +1,155 @@
+schema_version: 1
+architecture_id: run-019-channel-architecture-v1
+created_on: 2026-10-12
+status: PROPOSED_AFTER_OUTCOME_BLIND_SOURCE_AUDIT
+empirical_observations_retrieved: false
+transmission_outcomes_accessed: false
+
+measurement_target: >-
+  The information set that a euro-area monetary-policy researcher could have
+  assembled immediately before a policy event, represented as a family of
+  admissible panels rather than a single hindsight-completed matrix.
+
+tiers:
+  - tier_id: T1_VINTAGE_ANCHOR
+    source_rows: [ECB_RTD_MACRO, EUROSTAT_PEEI_VINTAGE]
+    role: >-
+      Anchor historical replay with explicit vintages. Overlapping GDP,
+      industrial-production, and unemployment concepts are validation pairs,
+      not separate dimensions.
+  - tier_id: T2_MONETARY_TRANSMISSION
+    source_rows: [ECB_EDP_MONETARY_BANKING]
+    role: >-
+      Add bank funding, deposit and lending rates, credit, money, securities,
+      and balance-sheet quantities after series-level history verification.
+  - tier_id: T3_FAST_FINANCIAL
+    source_rows: [ECB_EDP_MARKETS_CURVES, ECB_CISS]
+    role: >-
+      Represent money-market, sovereign-curve, external-value, and systemic-
+      stress conditions using event-cutoff-aware observations.
+  - tier_id: T4_REAL_AND_EXPECTATIONS
+    source_rows: [EUROSTAT_CURRENT_MACRO, DGECFIN_BCS_RAW]
+    role: >-
+      Add activity, prices, labour, trade, housing, and survey expectations
+      through frozen release-lag rules and explicit revision exposure.
+  - tier_id: T5_GLOBAL_CREDIT_COLLATERAL
+    source_rows: [BIS_RATES_AND_EER, BIS_CREDIT_BANKING_PROPERTY]
+    role: >-
+      Add nonduplicative cross-border funding, global liquidity, debt-market,
+      exchange-rate, and collateral conditions.
+  - tier_id: T6_FORWARD_VALIDATION
+    source_rows: [DGECFIN_BCS_SA]
+    role: >-
+      Accumulate prospective snapshots for future validation only; exclude
+      current retrospective histories from historical point-in-time claims.
+
+required_channel_families:
+  - prices_and_expectations
+  - real_activity_and_labour
+  - policy_stance_and_money_market
+  - sovereign_curve_and_term_structure
+  - bank_funding_and_lending_rates
+  - credit_and_money_quantities
+  - financial_conditions_and_systemic_stress
+  - external_value_and_cross_border_conditions
+
+panel_construction_rules:
+  decision_time:
+    rule: observation_release_timestamp_must_be_strictly_before_event_cutoff
+    fallback: >-
+      A frozen conservative release-lag rule may be used only for class B
+      series and must be perturbed in a bounded sensitivity envelope.
+  vintage_priority:
+    - archived_release_vintage
+    - nonrevisable_dated_observation_with_audited_cutoff
+    - frozen_release_lag_with_revision_exposure
+    - prospective_snapshot_only
+  transformations:
+    rule: >-
+      Freeze economic transformation, seasonal treatment, units, sign, and
+      permissible publication-age before model execution. Estimate scaling on
+      the historical information set only.
+  missingness:
+    rule: >-
+      Preserve ragged edges. No synthetic empirical observation, backward use
+      of later releases, or outcome-informed imputation is allowed.
+  redundancy:
+    rule: >-
+      Collapse exact source duplicates and near-duplicate grids before factor
+      estimation. Multiple maturities, countries, sectors, or transformations
+      enter only when their channel role is distinct and prespecified.
+  family_balance:
+    rule: >-
+      Report channel-level contributions and leave-one-family-out stability so
+      a dense dataflow cannot dominate merely through series count.
+  high_dimensional_language:
+    rule: >-
+      Reserve the term high dimensional for the executed panel after its
+      effective nonredundant cross section, time span, factor dimension, and
+      information-set scenarios are reported. No feature-count target alone
+      establishes the claim.
+
+admissible_information_set_axes:
+  source_axis:
+    levels: [vintage_anchor_only, anchor_plus_verified_ecb, all_replay_and_release_lag_eligible]
+  revision_axis:
+    levels: [first_release_or_archived_vintage, conservative_release_lag, matched_latest_vintage_sensitivity]
+  lag_axis:
+    levels: [registered_baseline, slower_release_sensitivity]
+  missingness_axis:
+    levels: [observed_ragged_edge, registered_filter, complete_case_sensitivity]
+  family_axis:
+    levels: [full_nonredundant_panel, leave_one_channel_family_out]
+  prohibition: >-
+    Scenarios may reflect documented information ambiguity; they may not be
+    chosen because they yield favorable transmission or state results.
+
+staged_execution:
+  - stage: 1
+    name: metadata_and_history_pilot
+    permitted_actions:
+      - retrieve_catalogues_and_series_keys_without_observations
+      - retrieve_small_prespecified_series_samples_to_verify_history_semantics
+      - record_release_timestamps_revisions_breaks_and_licences
+    gate: every_retained_series_has_a_machine_verified_timing_class
+  - stage: 2
+    name: freeze_series_manifest
+    permitted_actions:
+      - freeze_source_keys_channel_roles_transformations_and_cutoffs
+      - freeze_deduplication_and_family_balance_rules
+      - freeze_information_set_scenarios_and_compute_budget
+    gate: no_state_or_outcome_result_has_been_inspected
+  - stage: 3
+    name: build_real_point_in_time_panel
+    permitted_actions:
+      - retrieve_real_free_official_observations
+      - construct_and_hash_versioned_panel_scenarios
+      - run_timing_and_leakage_tests
+    gate: point_in_time_and_source_quality_audit_passes
+  - stage: 4
+    name: information_set_reliability_evaluation
+    permitted_actions:
+      - estimate_state_under_every_frozen_admissible_information_set
+      - compute_set_valued_state_and_subspace_reliability
+      - apply_authorize_or_abstain_rule
+    gate: transmission_outcomes_remain_sealed
+
+next_protocol_requirements:
+  - exact_series_keys_and_metadata_hashes
+  - official_source_and_rights_locators
+  - observation_and_release_calendars
+  - transformation_and_sign_map
+  - redundancy_clusters_and_channel_weights
+  - admissible_information_set_scenario_generator
+  - missingness_and_mixed_frequency_estimator
+  - factor_dimension_rule
+  - reliability_metrics_thresholds_and_multiplicity_control
+  - chronological_validation_split
+  - compute_and_storage_budget
+  - explicit_stop_and_abstention_rule
+
+decision: >-
+  The architecture is feasible in principle using only real, freely
+  retrievable official data. It is not yet authorized for observation
+  retrieval or empirical estimation; a series-level pilot and a new frozen
+  method protocol require owner approval.

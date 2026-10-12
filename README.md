@@ -22,19 +22,20 @@ persists under a matched-period latest official ECB real-time-data vintage. The
 project therefore selects no state and does not estimate transmission effects.
 
 **Evidence status:** clean-reproduced, outcome-blind negative measurement
-evidence. This repository contains no validated state-dependent transmission
-effect, amplification result, trading signal, or production model.
+evidence plus an outcome-blind feasibility design for a wider real-data study.
+This repository contains no validated state-dependent transmission effect,
+amplification result, trading signal, or production model.
 
 ## Project status
 
 | Dimension | Current verified status |
 |---|---|
-| Research gate | State measurement completed; transmission estimation remains blocked |
+| Research gate | Four-feature measurement rejected; wider-panel source feasibility complete; transmission remains blocked |
 | Main finding | No registered one- or two-dimensional state representation passes the prospective joint stability gates |
 | Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
 | Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
 | Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
-| Test contract | 165 tests: 158 public executions plus exactly seven evidence-bound skips; source-only suite at 87% coverage or better |
+| Test contract | Private canonical suite: 180/180 at 90% coverage; public repository: 168 tests, 161 executions plus exactly seven evidence-bound skips |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
 ### Dimensional scope
@@ -43,23 +44,29 @@ The flagship program is designed to study high-dimensional macro-financial
 state measurement. The executed and published empirical panel in this release,
 however, contains four registered features. It is therefore a disciplined
 low-dimensional stress test of the broader methodology—not a large-*N*
-high-dimensional result. Extensions to wider real-data panels remain
-prospective and will require their own frozen protocol, source audit, and
-multiple-testing controls before any result is reported.
+high-dimensional result. Run 019 now supplies a frozen source-feasibility audit
+and channel architecture for the prospective extension. It identifies ten
+real, zero-cost official source families across eight policy-relevant channels:
+two historical-replay anchors, seven release-lag candidates, and one forward-
+only source class. No wider observations have yet been retrieved or estimated.
+A series-level pilot, frozen panel manifest, missingness design, redundancy
+controls, and multiplicity plan remain mandatory before any high-dimensional
+result is reported.
 
 ### Reviewer paths
 
 - **Understand the finding:** [main result](#main-result) and
-  [`research/paper/claim_matrix.md`](research/paper/claim_matrix.md)
-- **Inspect the evidence sequence:**
-  [`research/paper/results_register.md`](research/paper/results_register.md) and
   [`research/paper/evidence_ledger.md`](research/paper/evidence_ledger.md)
+- **Inspect the wider-panel design:**
+  [`research/data/run_019_source_feasibility_matrix_v1.csv`](research/data/run_019_source_feasibility_matrix_v1.csv),
+  [`research/data/run_019_channel_architecture_v1.yaml`](research/data/run_019_channel_architecture_v1.yaml), and
+  [`research/methodology/run_019_information_set_reliability_concept_v1.md`](research/methodology/run_019_information_set_reliability_concept_v1.md)
 - **Reproduce the software gates:** [`REPRODUCING.md`](REPRODUCING.md) and
   [reproducibility](#reproducibility)
 - **Review tables and figures:**
   [`reports/paper/run011/`](reports/paper/run011/)
-- **Audit changes and limitations:**
-  [`research/methodology/deviation_log.md`](research/methodology/deviation_log.md)
+- **Audit the research contract:**
+  [`docs/governance/research_artifact_protocol.md`](docs/governance/research_artifact_protocol.md)
 - **Contribute or report a problem:** [`CONTRIBUTING.md`](CONTRIBUTING.md),
   [`SUPPORT.md`](SUPPORT.md), and [`SECURITY.md`](SECURITY.md)
 
@@ -91,6 +98,23 @@ governance sequence in a specific euro-area application. Principal components,
 factor-geometry diagnostics, vintage comparisons, loading-instability methods,
 and block resampling are established methods and are not claimed as novel.
 
+## Next research design
+
+The next candidate method is an **admissible information-set reliability
+envelope**. A later protocol would freeze a set of panels that differ only by
+documented source, vintage, publication-lag, ragged-edge, and channel-balance
+rules. It would authorize a state only when its economically relevant subspace
+is stable across that set; otherwise it would abstain before outcomes are
+opened.
+
+This is a candidate methodological synthesis, not an implemented or validated
+method. Real-time monetary-policy analysis, ragged-edge dynamic factors,
+vintage combination, model uncertainty, and robust PCA are established. The
+research value must come from a falsifiable comparison showing that the
+official-release-derived envelope provides useful nondegenerate authorization
+or detects consequential information-set fragility. Universal abstention,
+cosmetic feature expansion, or outcome-selected panels will count as failure.
+
 ## Evidence sequence
 
 ```text
@@ -108,23 +132,28 @@ matched latest-vintage sensitivity ─ classification unchanged
         ↓
 clean and locked reproduction ────── exact byte-hash equality
         ↓
-transmission outcomes remain sealed
+chronological buffer calibration ─── no improvement; original gate retained
+        ↓
+wider official-source audit ──────── feasible, heterogeneous timing classes
+        ↓
+transmission outcomes remain sealed; new empirical protocol required
 ```
 
-The main scientific records are:
+The main public scientific records are:
 
-- [`research/paper/results_register.md`](research/paper/results_register.md) —
-  every executed run, including failures;
 - [`research/paper/evidence_ledger.md`](research/paper/evidence_ledger.md) —
   candidate claims and remaining requirements;
-- [`research/paper/claim_matrix.md`](research/paper/claim_matrix.md) — current
-  fact, estimate, limitation, and prohibited-claim boundaries;
-- [`research/paper/novelty_ledger.md`](research/paper/novelty_ledger.md) —
-  closest-method and contribution discipline;
-- [`research/methodology/deviation_log.md`](research/methodology/deviation_log.md)
-  — defects and post-result changes without silent rewriting; and
 - [`reports/methodology/run_011_reproduction_and_positioning_result_2026-10-04.md`](reports/methodology/run_011_reproduction_and_positioning_result_2026-10-04.md)
-  — exact reproduction and literature-positioning result.
+  — exact reproduction and literature-positioning result;
+- [`reports/methodology/run_019_high_dimensional_source_feasibility_result_2026-10-12.md`](reports/methodology/run_019_high_dimensional_source_feasibility_result_2026-10-12.md)
+  — wider official-source and method-concept decision; and
+- [`docs/governance/research_artifact_protocol.md`](docs/governance/research_artifact_protocol.md)
+  — versioning, claim-chain, negative-result, and recovery controls.
+
+The private canonical archive retains the complete manuscript, claim,
+literature, novelty, decision, result, and deviation ledgers. The public
+repository exposes only the records needed to evaluate and reuse the released
+research surface.
 
 ## Main result
 
@@ -147,10 +176,10 @@ Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
 while also running static analysis, the then-registered 140-test suite, and the
-90% coverage gate. The current public repository contract contains 165 tests and adds
-cross-version, cross-runner, archive-safety, release-boundary, and hosted
-security regression coverage, including software-only selective-authorization
-and dependent-resampling invariants.
+90% coverage gate. The current private canonical contract contains 180 tests and adds
+cross-version, cross-runner, archive-safety, release-boundary, source-feasibility,
+and hosted security regression coverage. The public repository contains 168 tests; the
+difference is private evidence and unpublished research-bound material.
 
 Create a locked Python 3.9 environment:
 
@@ -169,10 +198,10 @@ environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
 Public CI cannot access ignored empirical artifacts. It requires exactly seven
-explicitly labeled evidence-bound skips, executes the remaining 158 tests, and
+explicitly labeled evidence-bound skips, executes the remaining 161 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates private hash-registered evidence and is deliberately outside this
-sanitized repository. These are separate, visible gates.
+hydrates all hash-registered evidence, executes all 180 tests, and retains the
+90% coverage floor. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:
 

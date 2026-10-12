@@ -14,10 +14,12 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _prepare_import_path(root: Path = REPOSITORY_ROOT) -> Path:
-    """Make repository-local support modules importable on every Python minor."""
+    """Bind tests to repository-local source and support modules."""
     resolved = root.resolve()
-    value = str(resolved)
-    if value not in sys.path:
+    for path in (resolved, resolved / "src"):
+        value = str(path)
+        if value in sys.path:
+            sys.path.remove(value)
         sys.path.insert(0, value)
     return resolved
 

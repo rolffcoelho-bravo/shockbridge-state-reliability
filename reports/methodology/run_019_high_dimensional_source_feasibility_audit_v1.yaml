@@ -1,0 +1,171 @@
+schema_version: 1
+audit_id: run-019-high-dimensional-source-feasibility-audit-v1
+created_on: 2026-10-12
+status: PASS_WITH_SERIES_LEVEL_PILOT_REQUIRED
+protocol: research/methodology/run_019_high_dimensional_source_feasibility_protocol_v1.yaml
+matrix: research/data/run_019_source_feasibility_matrix_v1.csv
+architecture: research/data/run_019_channel_architecture_v1.yaml
+concept: research/methodology/run_019_information_set_reliability_concept_v1.md
+
+executed_scope:
+  official_landing_pages_and_metadata: true
+  official_api_and_bulk_documentation: true
+  official_release_calendars: true
+  retrieval_and_redistribution_rights_reviewed_separately: true
+  focused_primary_prior_art_review: true
+  metadata_only_network_inspection: true
+  candidate_observation_level_data_downloaded: false
+  state_estimator_run_on_candidate_sources: false
+  transmission_outcomes_accessed: false
+
+machine_validation:
+  validator: src/shockbridge_state_risk/data/source_feasibility.py
+  tests: tests/test_source_feasibility.py
+  source_rows: 10
+  eligibility_counts:
+    A_REPLAY_ELIGIBLE: 2
+    B_RELEASE_LAG_ELIGIBLE: 7
+    C_BUILD_FORWARD_ONLY: 1
+    D_INELIGIBLE: 0
+  architecture_tiers: 6
+  required_monetary_policy_channels: 8
+  every_row_has_official_https_primary_locator: true
+  every_row_has_official_https_rights_locator: true
+  source_ids_unique_and_fully_mapped_to_one_tier: true
+  zero_cost_and_stable_identifier_checks: PASS
+  retrieval_and_redistribution_fields_distinct: true
+
+official_evidence:
+  ECB_DATA_API:
+    locator: https://data.ecb.europa.eu/help/api/data
+    verified_points:
+      - HTTPS_SDMX_DATA_SERVICE
+      - UPDATEDAFTER_FILTER_FOR_ADDED_REVISED_OR_DELETED_VALUES
+      - INCLUDEHISTORY_OPTION_FOR_PREVIOUS_RELEASE_REVISE_AND_DELETE_VERSIONS
+      - SERIESKEYSONLY_AND_NODATA_METADATA_OPTIONS
+    boundary: >-
+      API capability does not establish complete per-dataflow historical
+      release coverage; class B rows require a series-level pilot.
+  ECB_REAL_TIME_DATABASE:
+    locator: https://data.ecb.europa.eu/data/datasets/RTD/data-information
+    verified_points:
+      - OFFICIAL_EXPERIMENTAL_RELEASE_VINTAGE_DATASET
+      - EURO_AREA_MACROECONOMIC_VINTAGES
+    boundary: >-
+      Exact concept, vintage span, composition, and discontinuity must be
+      verified for every later retained series.
+  ECB_REUSE:
+    locator: https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html
+    verified_points:
+      - FREE_ACCESS_AND_REUSE_FOR_PUBLIC_ESCB_STATISTICS
+      - SOURCE_ATTRIBUTION_REQUIRED
+      - THIRD_PARTY_DATA_EXCEPTIONS
+      - REVISION_UPDATE_AND_CONTINUITY_CAVEATS
+  EUROSTAT_API:
+    locator: https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-getting-started
+    verified_points:
+      - PUBLIC_REST_AND_SDMX_SERVICES
+      - DATA_AND_METADATA_ACCESS
+      - MULTIPLE_MACHINE_READABLE_FORMATS
+  EUROSTAT_PEEI_VINTAGES:
+    locator: https://ec.europa.eu/eurostat/cache/metadata/en/euroind_vtg_esms.htm
+    verified_points:
+      - HISTORICAL_RELEASE_VINTAGES_WITH_RELEASE_DATE_DIMENSION
+      - COVERAGE_LIMITED_TO_GDP_UNEMPLOYMENT_AND_INDUSTRIAL_PRODUCTION
+      - VINTAGES_AVAILABLE_FROM_APRIL_2001
+    boundary: >-
+      This database cannot be generalized to the entire current Eurostat
+      dissemination catalogue.
+  EUROSTAT_REUSE:
+    locator: https://ec.europa.eu/eurostat/help/copyright-notice
+    verified_points:
+      - COMMERCIAL_AND_NONCOMMERCIAL_REUSE_PERMITTED_WITH_ATTRIBUTION
+      - THIRD_PARTY_RIGHTS_EXCEPTIONS
+  DG_ECFIN_BCS:
+    locator: https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/business-and-consumer-surveys/download-business-and-consumer-survey-data/time-series_en
+    verified_points:
+      - FREE_ZIP_AND_MACHINE_INTERFACE
+      - DETAILED_BALANCES_AND_COMPOSITE_INDICATORS
+      - BACKCAST_AND_CLASSIFICATION_CHANGE_DISCLOSURES
+    release_locator: https://economy-finance.ec.europa.eu/system/files/2023-02/bcs_user_guide.pdf
+    boundary: >-
+      Current seasonally adjusted and backcast histories are not presumed to be
+      historical release vintages.
+  BIS_DATA_PORTAL:
+    locator: https://data.bis.org/topics
+    verified_points:
+      - MACHINE_RETRIEVABLE_BANKING_CREDIT_DEBT_PROPERTY_EER_AND_RATE_TOPICS
+      - EURO_AREA_RELEVANT_HARMONISED_CROSS_BORDER_CHANNELS
+  BIS_RELEASE_CALENDAR:
+    locator: https://data.bis.org/release-calendar
+    verified_points:
+      - RELEASE_AND_REFERENCE_PERIOD_RECORDS
+      - PAST_AND_FUTURE_RELEASE_CALENDAR
+    boundary: >-
+      Archive depth and revision histories differ by topic and need exact
+      series-level verification.
+  BIS_REUSE:
+    locator: https://data.bis.org/help/legal
+    verified_points:
+      - FREE_STATISTICAL_USE_UNDER_STATED_TERMS
+      - ATTRIBUTION_AND_NONMISLEADING_USE_REQUIREMENTS
+      - API_AVAILABILITY_AND_CONTINUITY_CAVEATS
+
+focused_prior_art:
+  ledger_ids: [L033, L034, L035, L036, L037, L038, L039, L040]
+  established_components:
+    - real_time_monetary_policy_analysis
+    - euro_area_real_time_output_gap_uncertainty
+    - dynamic_factor_models_with_arbitrary_missingness
+    - vintage_and_model_combination
+    - panel_composition_and_redundancy_risk
+    - robust_control_under_model_uncertainty
+    - distributionally_robust_pca
+  exact_combination_found_in_focused_search: false
+  exact_combination_search_boundary: >-
+    A bounded focused search cannot establish absence or priority. A systematic
+    review and expert external assessment remain required.
+  permitted_positioning: CANDIDATE_METHODOLOGICAL_SYNTHESIS
+  prohibited_positioning:
+    - FIRST_METHOD
+    - PROVEN_NOVEL
+    - VALIDATED_POLICY_TOOL
+    - HIGH_DIMENSIONAL_EMPIRICAL_RESULT
+
+scientific_assessment:
+  feasibility: >-
+    A wider real and zero-cost official-data architecture is feasible in
+    principle, with genuine replay anchors and richer release-lag blocks.
+  main_risk: >-
+    Treating current official histories as point-in-time data or adding dense
+    near-duplicate grids would create hindsight leakage and pseudo-dimensionality.
+  proposed_value: >-
+    Evaluate state reliability over a frozen set of admissible decision-time
+    panels and abstain before transmission outcomes when the economic subspace
+    is information-set sensitive.
+  empirical_value_established: false
+  novelty_established: false
+  original_negative_result_changed: false
+
+verification_gates:
+  every_source_row_has_primary_official_locator: PASS
+  free_access_and_rights_are_separate_fields: PASS
+  point_in_time_classification_has_explicit_evidence: PASS_WITH_PILOT_CONDITIONS
+  no_observation_level_candidate_data_downloaded: PASS
+  no_transmission_outcome_accessed: PASS
+  no_empirical_state_or_positive_result_claimed: PASS
+  high_dimensional_claim_reserved_for_later_executed_panel: PASS
+  novelty_language_matches_focused_prior_art_audit: PASS
+  manuscript_v1_through_v1_4_unchanged: PASS
+  canonical_quality_tests: PASS_180_OF_180_AT_90_PERCENT_COVERAGE
+  local_artifact_inventory: PENDING_RUN019_REGISTRATION
+
+decision: >-
+  Approve Run 019 as a source-feasibility and method-concept result. Do not
+  retrieve candidate observations or implement the estimator until the owner
+  approves a new frozen series-level pilot and method protocol.
+
+next_owner_decision: >-
+  Whether to authorize Run 020: a small series-level metadata/history pilot
+  and frozen admissible-information-set reliability protocol, still without
+  transmission-outcome access.

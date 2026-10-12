@@ -114,7 +114,8 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("Apache-2.0", readme)
         self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
         self.assertIn("parentless root commit", readme)
-        self.assertIn("165 tests", readme)
+        self.assertIn("180 tests", readme)
+        self.assertIn("168 tests", readme)
         self.assertIn("Reviewer paths", readme)
         self.assertIn("Repository map", readme)
         self.assertNotIn("No GitHub remote exists", readme)
@@ -197,9 +198,11 @@ class PublicExportTests(unittest.TestCase):
             root = Path(directory).resolve()
             original = sys.path.copy()
             try:
-                sys.path[:] = [entry for entry in sys.path if entry != str(root)]
+                sys.path[:] = [
+                    entry for entry in sys.path if entry not in {str(root), str(root / "src")}
+                ]
                 self.assertEqual(_prepare_import_path(root), root)
-                self.assertEqual(sys.path[0], str(root))
+                self.assertEqual(sys.path[:2], [str(root / "src"), str(root)])
             finally:
                 sys.path[:] = original
 

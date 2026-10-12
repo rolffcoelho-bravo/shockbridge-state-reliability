@@ -1,0 +1,195 @@
+schema_version: 1
+protocol_id: run-019-high-dimensional-source-feasibility-v1
+created_on: 2026-10-12
+status: APPROVED_AND_FROZEN_BEFORE_SOURCE_INSPECTION
+approval_basis: >-
+  The owner approved the Run 018 recommendation for a feasibility, rights,
+  point-in-time availability, and free-retrievability audit of a substantially
+  wider real euro-area measurement panel. The owner further required that the
+  negative four-feature result be addressed through a meaningful and novel
+  research design rather than treated as a sufficient endpoint.
+
+purpose: >-
+  Determine whether a genuinely wider real-data euro-area information set can
+  be assembled at zero monetary cost with defensible decision-time timing,
+  stable retrieval, and lawful public/private handling. Produce a source and
+  variable-family architecture for a later prospectively frozen retrieval and
+  measurement run. This run performs no empirical estimation and cannot select
+  sources based on state-model performance.
+
+research_reframing:
+  retained_result: >-
+    The registered four-feature state failed its prospective measurement gates
+    and the Run 018 calibrated buffer did not improve the original gate.
+  prohibited_response: >-
+    Do not remove the negative result, tune its thresholds, inspect transmission
+    outcomes, or search source combinations for a favorable state.
+  intended_value: >-
+    Test whether the negative finding is specific to a narrow measurement or
+    reflects a broader decision-time information-set problem, and establish a
+    monetary-policy-relevant high-dimensional data foundation capable of
+    supporting a distinct future methodology.
+
+prespecified_source_families:
+  - source_id: ECB_DATA_PORTAL
+    institution: European Central Bank
+    scope: >-
+      Monetary, credit, bank-balance-sheet, interest-rate, market, yield-curve,
+      prices, activity, labour, external, securities, survey, and systemic-risk
+      series distributed through the ECB Data Portal and SDMX services.
+  - source_id: ECB_REAL_TIME_DATABASE
+    institution: European Central Bank
+    scope: >-
+      Archived release vintages for euro-area macroeconomic variables already
+      used by the project, assessed for wider concept and vintage coverage.
+  - source_id: EUROSTAT_DISSEMINATION
+    institution: Eurostat
+    scope: >-
+      Euro-area and member-state official statistics available through the
+      Statistics API, dissemination API, and bulk-download service.
+  - source_id: EC_BUSINESS_CONSUMER_SURVEYS
+    institution: European Commission Directorate-General for Economic and Financial Affairs
+    scope: >-
+      Harmonised business and consumer survey indicators and underlying balance
+      series relevant to contemporaneous activity, expectations, and uncertainty.
+  - source_id: BIS_DATA_PORTAL
+    institution: Bank for International Settlements
+    scope: >-
+      Cross-border banking, credit, debt-securities, property-price, effective-
+      exchange-rate, and policy-rate statistics with euro-area relevance.
+
+inspection_boundary:
+  allowed:
+    - official landing_pages_documentation_and_metadata
+    - official_terms_licences_and_reuse_notices
+    - API_and_bulk_service_documentation
+    - dataset_catalogues_series_dimensions_and_release_calendars
+    - literature_needed_to_assess_methodological_novelty
+  forbidden:
+    - download_or_cache_observation_level_candidate_data
+    - run_state_estimators_on_candidate_sources
+    - inspect_transmission_outcomes
+    - rank_sources_by_ex_post_model_performance
+    - call_a_four_feature_execution_high_dimensional
+
+audit_dimensions:
+  - institutional_provenance
+  - zero_cost_access
+  - machine_retrievability
+  - stable_identifiers_and_metadata
+  - frequency_and_historical_depth
+  - euro_area_or_defensible_aggregation_scope
+  - historical_point_in_time_reconstructibility
+  - release_timestamp_or_lag_reconstructibility
+  - revision_and_definition_break_risk
+  - retrieval_and_redistribution_rights
+  - dimensional_and_economic_channel_contribution
+  - reproducibility_and_public_release_boundary
+
+eligibility_classes:
+  A_REPLAY_ELIGIBLE:
+    definition: >-
+      Real, free, machine-retrievable data with either archived vintages or a
+      non-revisable observation object plus an auditable decision-time rule.
+    later_use: historical point-in-time state reconstruction
+  B_RELEASE_LAG_ELIGIBLE:
+    definition: >-
+      Real, free, machine-retrievable data with stable identifiers and a
+      defensible historical release-lag rule, but without complete archived
+      vintages. Revision exposure must remain explicit.
+    later_use: sensitivity or bounded information-set construction
+  C_BUILD_FORWARD_ONLY:
+    definition: >-
+      Real and free data whose past decision-time state cannot be reconstructed
+      defensibly; usable only for prospective snapshots collected after Run 019.
+    later_use: future external validation, not historical backfill
+  D_INELIGIBLE:
+    definition: >-
+      Fails cost, provenance, machine access, timing, rights, continuity, or
+      relevance requirements.
+    later_use: none unless a versioned protocol resolves the failure
+
+decision_rules:
+  - No source may be called historically point-in-time merely because the current API is official.
+  - Retrieval permission and redistribution permission must be assessed separately.
+  - A public-repository recommendation must not require redistribution of restricted raw data.
+  - Revisions, rebasing, seasonal adjustment, compositional changes, and series breaks must be recorded as separate risks.
+  - Series families must be selected for economic channel coverage before individual series are retrieved.
+  - The later panel must avoid mechanical duplication and pseudo-dimensionality from near-identical maturity, sector, or transformation grids.
+  - No minimum feature count alone establishes high dimensionality or research value.
+  - A later empirical run requires a new frozen series manifest, transformation map, release-time rule, missingness policy, and multiplicity plan.
+
+monetary_policy_channel_map:
+  required_families:
+    - prices_and_expectations
+    - real_activity_and_labour
+    - policy_stance_and_money_market
+    - sovereign_curve_and_term_structure
+    - bank_funding_and_lending_rates
+    - credit_and_money_quantities
+    - financial_conditions_and_systemic_stress
+    - external_value_and_cross_border_conditions
+  optional_families:
+    - firm_and_household_surveys
+    - securities_issuance_and_market_finance
+    - housing_and_collateral
+    - bank_balance_sheet_composition
+  rule: >-
+    Every retained family must have an explicit monetary-policy transmission or
+    measurement role. Dimensional expansion for its own sake is prohibited.
+
+methodological_novelty_audit:
+  candidate_question: >-
+    Can state reliability be defined over a set of admissible real-time
+    information panels—rather than one completed panel—so policy researchers
+    authorize state-dependent inference only when the economically relevant
+    subspace is stable across source, vintage, release-lag, and missingness
+    uncertainty?
+  established_areas_to_check:
+    - real_time_data_and_vintage_uncertainty
+    - high_dimensional_dynamic_factor_models_with_missing_data
+    - robust_and_distributionally_robust_pca_or_subspace_estimation
+    - factor_models_with_time_varying_loadings_and_breaks
+    - partial_identification_and_specification_robustness
+    - selective_inference_abstention_and_model_risk
+  prohibited_claims_before_focused_audit:
+    - novel_method
+    - first_high_dimensional_monetary_policy_state
+    - first_real_time_factor_reliability_framework
+    - validated_transmission_value
+    - stable_state_found
+
+required_outputs:
+  - research/data/run_019_source_feasibility_matrix_v1.csv
+  - research/data/run_019_channel_architecture_v1.yaml
+  - research/methodology/run_019_information_set_reliability_concept_v1.md
+  - reports/methodology/run_019_high_dimensional_source_feasibility_audit_v1.yaml
+  - reports/methodology/run_019_high_dimensional_source_feasibility_result_2026-10-12.md
+  - reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - research/paper/manuscript_v1_5.md
+  - reports/methodology/run_019_manuscript_v1_5_claim_audit.yaml
+  - reports/methodology/run_019_manuscript_v1_5_citation_locator_audit.yaml
+
+verification_gates:
+  - every_source_row_has_primary_official_locator
+  - free_access_and_rights_are_separate_fields
+  - point_in_time_classification_has_explicit_evidence
+  - no_observation_level_candidate_data_downloaded
+  - no_transmission_outcome_accessed
+  - no_empirical_state_or_positive_result_claimed
+  - high_dimensional_claim_reserved_for_later_executed_panel
+  - novelty_language_matches_focused_prior_art_audit
+  - manuscript_v1_through_v1_4_unchanged
+  - canonical_quality_tests_and_inventory_pass
+
+scientific_boundary:
+  synthetic_empirical_observations_allowed: false
+  candidate_observation_data_retrieval_allowed: false
+  transmission_outcomes_access_allowed: false
+  source_performance_search_allowed: false
+  state_selection_allowed: false
+  public_manuscript_release_allowed: false
+  later_retrieval_or_method_implementation_requires_new_owner_approval: true
+
+next_step_after_success: >-
+  OWNER_REVIEW_OF_FROZEN_HIGH_DIMENSIONAL_RETRIEVAL_AND_INFORMATION_SET_RELIABILITY_METHOD_PROTOCOL

@@ -34,7 +34,7 @@ effect, amplification result, trading signal, or production model.
 | Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
 | Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
 | Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
-| Test contract | 158 tests: 151 public executions plus exactly seven evidence-bound skips; complete local suite at 90% coverage |
+| Test contract | 165 tests: 158 public executions plus exactly seven evidence-bound skips; source-only suite at 87% coverage or better |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
 ### Dimensional scope
@@ -147,9 +147,10 @@ Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
 while also running static analysis, the then-registered 140-test suite, and the
-90% coverage gate. The current repository contract contains 158 tests and adds
+90% coverage gate. The current public repository contract contains 165 tests and adds
 cross-version, cross-runner, archive-safety, release-boundary, and hosted
-security regression coverage.
+security regression coverage, including software-only selective-authorization
+and dependent-resampling invariants.
 
 Create a locked Python 3.9 environment:
 
@@ -168,10 +169,10 @@ environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
 Public CI cannot access ignored empirical artifacts. It requires exactly seven
-explicitly labeled evidence-bound skips, executes the remaining 151 tests, and
+explicitly labeled evidence-bound skips, executes the remaining 158 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates all hash-registered evidence, executes all 158 tests, and retains the
-90% coverage floor. These are separate, visible gates.
+hydrates private hash-registered evidence and is deliberately outside this
+sanitized repository. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:
 

@@ -1,22 +1,23 @@
-# Project storage and recovery map
+# Public repository storage and recovery map
 
 **Canonical project root:** the repository root, resolved portably from the local inventory
-**Storage audit date:** 2026-10-04
+**Storage audit date:** 2026-10-14
 
-All research documents, source code, tests, reports, contracts, manifests, downloaded source artifacts, and derived outputs produced for this project are stored under the canonical project root.
+This repository is the curated public reproducibility surface. Public code,
+protocols, manifests, aggregate audits, result reports, and attributed derived
+displays are stored under its root. Raw external data, the working manuscript,
+rejected-attempt diagnostics, and internal claim, decision, deviation,
+literature, novelty, and complete-results ledgers are retained in the separate
+private canonical archive.
 
 ## Canonical locations
 
 | Material | Location | Persistence rule |
 |---|---|---|
-| Research blueprints | project root, `shockbridge_state_risk_flagship_blueprint_v1.md` and `v2.md` | Git checkpoint |
 | Python package | `src/shockbridge_state_risk/` | Git checkpoint |
 | Automated tests | `tests/` | Git checkpoint |
-| Empirical and state contracts | `research/` | Git checkpoint |
-| Paper evidence, decisions, and literature records | `research/paper/` | Git checkpoint |
-| Novelty and complete results registers | `research/paper/novelty_ledger.md` and `research/paper/results_register.md` | Git checkpoint; append-only in substance |
-| Method protocols and deviation history | `research/methodology/` | Git checkpoint; versioned and never silently rewritten after results |
-| Methodology and source audits | `reports/` | Git checkpoint |
+| Public empirical contracts and protocols | `research/` | Git checkpoint; immutable run IDs and prospective amendments |
+| Public methodology and source audits | `reports/` | Git checkpoint; aggregate and disclosure-safe artifacts only |
 | Source and output manifests | `data/manifests/`, `research/state_sources_v1.yaml`, and `reports/methodology/*.manifest.yaml` | Git checkpoint |
 | Downloaded source artifacts | `data/raw/` | Local, Git-ignored, hash-registered, recoverable from recorded HTTPS sources |
 | Derived point-in-time panel | `data/processed/state_panel_v1.csv` | Local, Git-ignored, hash-registered, deterministically rebuildable |
@@ -32,7 +33,8 @@ All research documents, source code, tests, reports, contracts, manifests, downl
 | Run 011 clean-reproduction evidence | `reports/methodology/run_011_clean_reproduction.audit.json` | Git checkpoint; exact hash comparison from a removed temporary checkout and isolated runtime |
 | Run 011 paper evidence bundle | `reports/paper/run011/` | Git checkpoint; deterministic CSV tables, SVG figures, and provenance generated only from registered Run 010 outputs |
 | Run 012 exact dependency locks | `requirements/*.lock` | Git checkpoint; exact verified Python 3.9 build, runtime, and development versions |
-| Run 012 release and manuscript records | `reports/methodology/run_012_*` and `research/paper/manuscript_architecture_v1.md` | Git checkpoint; locked reproduction, rights/privacy audit, public-CI boundary, and claim-controlled paper structure |
+| Run 012 public-release records | `reports/methodology/run_012_*` and `research/paper/manuscript_architecture_v1.md` | Git checkpoint; locked reproduction, rights/privacy audit, public-CI boundary, and claim-controlled paper structure |
+| Run 020 public reliability records | `research/data/run_020_*`, `research/methodology/run_020_*`, and `reports/methodology/run_020_series_history_*` | Git checkpoint; exact-series timing pilot and corrected common-space method, excluding raw responses and rejected attempts |
 | CI and build configuration | `.github/`, `Makefile`, and `pyproject.toml` | Git checkpoint |
 
 ## Critical recovery paths
@@ -59,8 +61,18 @@ Cache directories, coverage files, virtual environments, package build metadata,
 
 ## Current storage condition
 
-The code and documentation layer is protected by the private canonical GitHub repository; the independently sanitized public surface is also live on GitHub. Both remote `main` refs were verified against their local heads after the first push. Ignored evidence remains outside Git and is protected by cryptographic inventories plus deterministic retrieval/build instructions. The dedicated SSH credential is stored outside the project, and no private key or token is tracked. Public corrections must be appended without rewriting the audited root commit and must pass the local release boundary plus hosted CI.
+The independently sanitized public surface is live on GitHub and is maintained
+through protected pull requests. Ignored evidence remains outside this
+repository and is protected in the canonical archive by cryptographic
+inventories plus deterministic retrieval/build instructions. No credential,
+private key, raw response, working manuscript, or internal research-control
+ledger is tracked here. Public corrections are append-only in Git history and
+must pass the local release boundary plus hosted CI.
 
 ## Scientific record protocol
 
-`docs/governance/research_artifact_protocol.md` defines the mandatory run bundle, immutable run IDs, evidence classes, claim chain, and recovery requirements. Failed and null results are retained. Novelty claims require both the novelty ledger and a closest-prior-art entry in the literature ledger.
+`docs/governance/research_artifact_protocol.md` defines the mandatory run
+bundle, immutable run IDs, evidence classes, claim chain, and recovery
+requirements. Published failed and null results are retained. Novelty remains
+provisional until a focused closest-prior-art audit and empirical evidence both
+support it; the complete adjudication record is maintained privately.

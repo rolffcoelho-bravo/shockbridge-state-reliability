@@ -24,25 +24,8 @@ from scripts.audit_public_release import (  # noqa: E402
     _is_allowed_data_placeholder,
     _pattern_hits,
 )
+from scripts.public_boundary import is_private_only_path  # noqa: E402
 
-PRIVATE_ONLY_PATHS = {
-    "reports/methodology/run_013_public_export_build_attempt1.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt2.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt3.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt4.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt5.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt6.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt1.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt2.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt3.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt4.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt5.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt6.audit.json",
-    "reports/methodology/run_013_public_export_verification_attempt5.audit.json",
-    "reports/methodology/run_013_public_export_verification_attempt6.audit.json",
-    "shockbridge_state_risk_flagship_blueprint_v1.md",
-    "shockbridge_state_risk_flagship_blueprint_v2.md",
-}
 REQUIRED_RELEASE_FILES = {"CITATION.cff", "LICENSE", "LICENSE-DOCS.md", "NOTICE"}
 TOKEN_PATTERN = re.compile(rb"(?<![A-Za-z0-9])[A-Za-z0-9_+/=-]{24,160}(?![A-Za-z0-9])")
 HEX_PATTERN = re.compile(rb"[0-9a-fA-F]{32,128}")
@@ -155,7 +138,7 @@ def audit(root: Path) -> dict[str, Any]:
     head_with_parents = _git(root, ["rev-list", "--parents", "-n", "1", "HEAD"]).split()
     remotes = _git(root, ["remote"]).splitlines()
     prohibited_data = [path for path in tracked if not _is_allowed_data_placeholder(path)]
-    excluded_present = sorted(PRIVATE_ONLY_PATHS.intersection(tracked))
+    excluded_present = sorted(path for path in tracked if is_private_only_path(path))
     required_missing = sorted(REQUIRED_RELEASE_FILES.difference(tracked))
     manifest_failures = _verify_manifest(root, tracked)
     author_records = sorted(set(_git(root, ["log", "--format=%an%x00%ae"]).splitlines()))

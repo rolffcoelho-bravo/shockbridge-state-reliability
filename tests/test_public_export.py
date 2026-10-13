@@ -114,8 +114,9 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("Apache-2.0", readme)
         self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
         self.assertIn("parentless root commit", readme)
-        self.assertIn("180 tests", readme)
-        self.assertIn("168 tests", readme)
+        self.assertIn("196 tests", readme)
+        self.assertIn("184 tests", readme)
+        self.assertIn("177 tests", readme)
         self.assertIn("Reviewer paths", readme)
         self.assertIn("Repository map", readme)
         self.assertNotIn("No GitHub remote exists", readme)
@@ -172,7 +173,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("four registered features", readme)
         self.assertIn("large-*N*", readme)
         self.assertIn(
-            "158 tests",
+            "184 tests",
             (root / "REPRODUCING.md").read_text(encoding="utf-8"),
         )
         support = (root / "SUPPORT.md").read_text(encoding="utf-8")
@@ -184,10 +185,55 @@ class PublicExportTests(unittest.TestCase):
         )
 
     def test_failed_export_receipts_are_private_only(self) -> None:
-        from scripts.audit_public_export import PRIVATE_ONLY_PATHS
-        from scripts.build_public_export import EXCLUDED_PATHS
+        from scripts.build_public_export import EXCLUDED_PATHS, EXCLUDED_PREFIXES
+        from scripts.public_boundary import (
+            PRIVATE_ONLY_PATHS,
+            PRIVATE_ONLY_PREFIXES,
+            is_private_only_path,
+        )
 
         self.assertEqual(PRIVATE_ONLY_PATHS, EXCLUDED_PATHS)
+        self.assertEqual(PRIVATE_ONLY_PREFIXES, EXCLUDED_PREFIXES)
+        self.assertTrue(
+            is_private_only_path("private/evidence_capsules/run010_exact_v1/manifest.yaml")
+        )
+        self.assertTrue(is_private_only_path("research/paper/manuscript_v1_3.md"))
+        self.assertTrue(is_private_only_path("research/paper/manuscript_v1_4.md"))
+        self.assertTrue(is_private_only_path("research/paper/manuscript_v1_5.md"))
+        self.assertTrue(is_private_only_path("research/paper/manuscript_v1_6.md"))
+        self.assertTrue(
+            is_private_only_path("reports/methodology/run_019_manuscript_v1_5_claim_audit.yaml")
+        )
+        self.assertTrue(
+            is_private_only_path(
+                "reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml"
+            )
+        )
+        self.assertTrue(
+            is_private_only_path("reports/methodology/run_020_manuscript_v1_6_claim_audit.yaml")
+        )
+        self.assertTrue(
+            is_private_only_path(
+                "reports/methodology/run_020_series_history_pilot_attempt2.audit.json"
+            )
+        )
+        self.assertTrue(
+            is_private_only_path(
+                "reports/methodology/run_019_public_export_build_attempt1.audit.json"
+            )
+        )
+        self.assertTrue(is_private_only_path("research/paper/results_register.md"))
+        self.assertTrue(
+            is_private_only_path(
+                "reports/methodology/run_018_abstention_calibration_result_2026-10-12.md"
+            )
+        )
+        self.assertTrue(
+            is_private_only_path("reports/paper/run018/run018_table_1_policy_evaluation_v1.csv")
+        )
+        self.assertFalse(
+            is_private_only_path("reports/paper/run016/run016_table_1_data_timing_v1.csv")
+        )
 
     def test_public_runner_summary_is_parsed_after_unrelated_output(self) -> None:
         summary = _last_json_object('noise {not-json}\n{"tests_run": 152, "skipped": 7}\n')

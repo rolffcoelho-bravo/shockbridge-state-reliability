@@ -18,10 +18,10 @@ make quality
 make test-public
 ```
 
-The public contract executes 158 tests, permits exactly seven explicitly
-labelled evidence-bound skips, and enforces 87% branch-aware coverage of the
-released source. An additional Ubuntu 26.04 lane is prospective compatibility
-evidence and is not an empirical-reproduction claim.
+The public contract discovers 184 tests, executes 177, permits exactly seven
+explicitly labelled evidence-bound skips, and enforces 87% branch-aware
+coverage of the released source. An additional Ubuntu 26.04 lane is
+prospective compatibility evidence and is not an empirical-reproduction claim.
 
 ## 2. Canonical evidence reproduction
 
@@ -39,7 +39,7 @@ make test
 ```
 
 This tier requires the locally retained, hash-registered evidence inventory. It
-executes the complete canonical suite and enforces 90% coverage. Run 011 and Run 012 recorded
+executes all 196 tests and enforces 90% coverage. Run 011 and Run 012 recorded
 byte-for-byte equality for all four registered Run 010 outputs in clean and
 locked Python 3.9 environments.
 
@@ -56,11 +56,10 @@ locked Python 3.9 environments.
 
 ## Audit trail
 
-Start with `research/paper/results_register.md`,
-`research/paper/evidence_ledger.md`, and
-`research/methodology/deviation_log.md`. Artifact metadata, source URLs,
-retrieval timestamps, byte sizes, and SHA-256 hashes are retained under
-`data/manifests/`; datasets themselves are not redistributed.
+Start with the versioned result reports under `reports/methodology/`, then use
+their linked protocols, aggregate audits, and manifests. Artifact metadata,
+source URLs, retrieval timestamps, byte sizes, and SHA-256 hashes are retained
+in the published manifests; datasets themselves are not redistributed.
 
 If a command produces a different result, open the reproducibility issue form
 and include the operating system, Python version, command, exit status, and a

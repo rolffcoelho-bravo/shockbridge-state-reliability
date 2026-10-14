@@ -7,8 +7,7 @@ code contribution.
 
 ## Before opening a change
 
-1. Search the existing issues and the
-   [deviation log](research/methodology/deviation_log.md).
+1. Search the existing issues and published run reports for an existing record.
 2. Use the bug form for software defects and the reproducibility form for
    environment, provenance, or evidence-boundary failures.
 3. Report suspected security vulnerabilities privately under
@@ -38,8 +37,8 @@ the primary runner and Ubuntu 26.04 as a prospective compatibility lane.
 - Never relax a threshold, test, coverage floor, or exclusion merely to obtain
   a favorable result.
 - Add or update a prospective protocol before changing an empirical design.
-- Record defects and post-result corrections in the deviation and decision
-  logs; do not silently rewrite historical evidence.
+- Describe defects and post-result corrections explicitly in the pull request;
+  maintainers record accepted changes in the private append-only control ledgers.
 - Distinguish synthetic software tests from empirical evidence.
 - Do not describe descriptive stability results as causal effects.
 

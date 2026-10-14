@@ -1,0 +1,33 @@
+schema_version: 1
+protocol_id: run-020-reliability-definition-amendment-2
+created_on: 2026-10-12
+status: FROZEN_BEFORE_ANY_PANEL_BUILD_OR_STATE_ESTIMATION
+original_protocol: research/methodology/run_020_series_history_and_reliability_protocol_v1.yaml
+
+trigger: >-
+  The original protocol correctly replaces incomparable feature-space loading
+  projectors with projectors in common calendar and economic-channel spaces,
+  but its secondary score distance divides by square root of two k without
+  specifying how k is chosen when the frozen factor-count rule selects
+  different ranks for two admissible panels.
+
+authorized_correction: >-
+  For projectors H_a and H_b with ranks k_a and k_b, define the normalized
+  Frobenius distance as norm_F(H_a-H_b) divided by square root of k_a+k_b.
+  This reduces to the original square-root-two-k normalization when k_a=k_b=k
+  and remains defined for unequal selected ranks.
+
+unchanged:
+  - common_calendar_score_projector
+  - common_eight_channel_loading_projector
+  - spectral_norm_primary_distance
+  - factor_count_rule
+  - threshold_grid
+  - chronological_split
+  - outcome_firewall
+  - no_synthetic_empirical_observations
+
+scientific_effect: >-
+  Definition completion before implementation. No panel was built, no state
+  was estimated, no threshold was selected, and no transmission outcome was
+  accessed.

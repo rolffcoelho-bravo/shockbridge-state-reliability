@@ -19,6 +19,11 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from scripts.public_boundary import (  # noqa: E402
+    PRIVATE_ONLY_PATHS,
+    PRIVATE_ONLY_PREFIXES,
+    is_private_only_path,
+)
 from scripts.safe_tar import (  # noqa: E402
     UnsafeTarError,
     extract_tar_safely,
@@ -26,24 +31,8 @@ from scripts.safe_tar import (  # noqa: E402
 )
 
 DEFAULT_OUTPUT = ROOT / "artifacts/public-export/shockbridge-state-reliability"
-EXCLUDED_PATHS = {
-    "reports/methodology/run_013_public_export_build_attempt1.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt2.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt3.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt4.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt5.audit.json",
-    "reports/methodology/run_013_public_export_build_attempt6.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt1.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt2.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt3.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt4.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt5.audit.json",
-    "reports/methodology/run_013_public_export_security_attempt6.audit.json",
-    "reports/methodology/run_013_public_export_verification_attempt5.audit.json",
-    "reports/methodology/run_013_public_export_verification_attempt6.audit.json",
-    "shockbridge_state_risk_flagship_blueprint_v1.md",
-    "shockbridge_state_risk_flagship_blueprint_v2.md",
-}
+EXCLUDED_PATHS = PRIVATE_ONLY_PATHS
+EXCLUDED_PREFIXES = PRIVATE_ONLY_PREFIXES
 COMMIT_DATE = "2026-10-04T12:00:00+02:00"
 
 
@@ -88,6 +77,7 @@ def _write_export_manifest(output: Path, source_commit: str) -> None:
         "source_commit": source_commit,
         "history_policy": "single sanitized root commit; canonical history excluded",
         "excluded_paths": sorted(EXCLUDED_PATHS),
+        "excluded_prefixes": list(EXCLUDED_PREFIXES),
         "files": _file_hashes(output),
     }
     (output / "PUBLIC_EXPORT_MANIFEST.json").write_text(
@@ -167,6 +157,9 @@ def build(output: Path) -> dict[str, Any]:
                 f"Frozen exclusion missing from source archive: {relative}"
             )
         candidate.unlink()
+    for candidate in sorted(output.rglob("*"), reverse=True):
+        if candidate.is_file() and is_private_only_path(candidate.relative_to(output).as_posix()):
+            candidate.unlink()
     _write_export_manifest(output, source_commit)
     export_commit = _initialize_repository(output)
     _write_reproducible_archive(output, archive_path)

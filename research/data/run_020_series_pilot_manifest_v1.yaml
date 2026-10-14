@@ -1,0 +1,201 @@
+schema_version: 1
+manifest_id: run-020-series-pilot-v1
+created_on: 2026-10-12
+status: FROZEN_BEFORE_PILOT_OBSERVATION_RETRIEVAL
+provider: European Central Bank
+service: ECB Data Portal SDMX API
+service_root: https://data-api.ecb.europa.eu/service/data
+rights_locator: https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html
+zero_cost: true
+real_official_data_only: true
+synthetic_empirical_observations_allowed: false
+transmission_outcomes_allowed: false
+
+pilot_limits:
+  purpose: verify exact keys, metadata, history fields, revision exposure, and timing class
+  maximum_response_bytes_per_series: 5000000
+  retain_raw_responses: private_local_fetch_only
+  public_release: metadata_and_aggregate_audit_only
+  state_estimation: prohibited
+  source_performance_ranking: prohibited
+
+series:
+  - pilot_id: RTD_HICP
+    full_series_key: RTD.M.S0.N.P_C_OV.X
+    api_path: RTD/M.S0.N.P_C_OV.X
+    channel: prices_and_expectations
+    panel_role: core_replay
+    expected_frequency: M
+    expected_unit: IX
+    proposed_transformation: year_over_year_percent_change
+    sample_start: 2025-01
+    sample_end: 2025-03
+    expected_timing_class: A_REPLAY_ELIGIBLE
+    query_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.N.P_C_OV.X?includeHistory=true&format=csvdata&startPeriod=2025-01&endPeriod=2025-03
+    series_locator: https://data.ecb.europa.eu/data/datasets/RTD/RTD.M.S0.N.P_C_OV.X
+
+  - pilot_id: RTD_INDUSTRIAL_PRODUCTION
+    full_series_key: RTD.M.S0.Y.I_XCONS.X
+    api_path: RTD/M.S0.Y.I_XCONS.X
+    channel: real_activity_and_labour
+    panel_role: core_replay
+    expected_frequency: M
+    expected_unit: IX
+    proposed_transformation: year_over_year_percent_change
+    sample_start: 2025-01
+    sample_end: 2025-03
+    expected_timing_class: A_REPLAY_ELIGIBLE
+    query_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.Y.I_XCONS.X?includeHistory=true&format=csvdata&startPeriod=2025-01&endPeriod=2025-03
+    series_locator: https://data.ecb.europa.eu/data/datasets/RTD/RTD.M.S0.Y.I_XCONS.X
+
+  - pilot_id: RTD_UNEMPLOYMENT
+    full_series_key: RTD.M.S0.S.L_UNETO.F
+    api_path: RTD/M.S0.S.L_UNETO.F
+    channel: real_activity_and_labour
+    panel_role: core_replay
+    expected_frequency: M
+    expected_unit: PC_ACT
+    proposed_transformation: level
+    sample_start: 2025-01
+    sample_end: 2025-03
+    expected_timing_class: A_REPLAY_ELIGIBLE
+    query_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.S.L_UNETO.F?includeHistory=true&format=csvdata&startPeriod=2025-01&endPeriod=2025-03
+    series_locator: https://data.ecb.europa.eu/data/datasets/RTD/RTD.M.S0.S.L_UNETO.F
+
+  - pilot_id: ECB_DEPOSIT_FACILITY_RATE
+    full_series_key: FM.D.U2.EUR.4F.KR.DFR.LEV
+    api_path: FM/D.U2.EUR.4F.KR.DFR.LEV
+    channel: policy_stance_and_money_market
+    panel_role: core_fast
+    expected_frequency: D
+    expected_unit: PCPA
+    proposed_transformation: last_effective_level_strictly_before_cutoff
+    sample_start: 2025-01-01
+    sample_end: 2025-03-31
+    expected_timing_class: PILOT_TO_CLASSIFY
+    query_url: https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.DFR.LEV?includeHistory=true&format=csvdata&startPeriod=2025-01-01&endPeriod=2025-03-31
+    series_locator: https://data.ecb.europa.eu/data/datasets/FM/FM.D.U2.EUR.4F.KR.DFR.LEV
+
+  - pilot_id: ECB_YIELD_CURVE_2Y
+    full_series_key: YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y
+    api_path: YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y
+    channel: sovereign_curve_and_term_structure
+    panel_role: core_fast
+    expected_frequency: B
+    expected_unit: PCPA
+    proposed_transformation: level
+    sample_start: 2025-01-02
+    sample_end: 2025-01-10
+    expected_timing_class: PILOT_TO_CLASSIFY
+    query_url: https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y?includeHistory=true&format=csvdata&startPeriod=2025-01-02&endPeriod=2025-01-10
+    series_locator: https://data.ecb.europa.eu/data/datasets/YC/YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y
+
+  - pilot_id: ECB_YIELD_CURVE_10Y
+    full_series_key: YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y
+    api_path: YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y
+    channel: sovereign_curve_and_term_structure
+    panel_role: core_fast
+    expected_frequency: B
+    expected_unit: PCPA
+    proposed_transformation: ten_year_minus_two_year
+    sample_start: 2025-01-02
+    sample_end: 2025-01-10
+    expected_timing_class: PILOT_TO_CLASSIFY
+    query_url: https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y?includeHistory=true&format=csvdata&startPeriod=2025-01-02&endPeriod=2025-01-10
+    series_locator: https://data.ecb.europa.eu/data/datasets/YC/YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y
+
+  - pilot_id: ECB_USD_EUR_REFERENCE_RATE
+    full_series_key: EXR.D.USD.EUR.SP00.A
+    api_path: EXR/D.USD.EUR.SP00.A
+    channel: external_value_and_cross_border_conditions
+    panel_role: core_fast
+    expected_frequency: D
+    expected_unit: USD
+    proposed_transformation: log_monthly_change
+    sample_start: 2025-01-02
+    sample_end: 2025-01-10
+    expected_timing_class: PILOT_TO_CLASSIFY
+    query_url: https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?includeHistory=true&format=csvdata&startPeriod=2025-01-02&endPeriod=2025-01-10
+    series_locator: https://data.ecb.europa.eu/data/datasets/EXR/EXR.D.USD.EUR.SP00.A
+
+  - pilot_id: MIR_NFC_COST_OF_BORROWING
+    full_series_key: MIR.M.U2.B.A2I.AM.R.A.2240.EUR.N
+    api_path: MIR/M.U2.B.A2I.AM.R.A.2240.EUR.N
+    channel: bank_funding_and_lending_rates
+    panel_role: augmented_bank_credit
+    expected_frequency: M
+    expected_unit: PCPA
+    proposed_transformation: level
+    sample_start: 2025-09
+    sample_end: 2025-10
+    expected_timing_class: B_RELEASE_LAG_ELIGIBLE
+    query_url: https://data-api.ecb.europa.eu/service/data/MIR/M.U2.B.A2I.AM.R.A.2240.EUR.N?includeHistory=true&format=csvdata&startPeriod=2025-09&endPeriod=2025-10
+    series_locator: https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.U2.B.A2I.AM.R.A.2240.EUR.N
+
+  - pilot_id: BSI_NFC_ADJUSTED_LOANS
+    full_series_key: BSI.M.U2.Y.U.A20T.A.I.U2.2240.Z01.A
+    api_path: BSI/M.U2.Y.U.A20T.A.I.U2.2240.Z01.A
+    channel: credit_and_money_quantities
+    panel_role: augmented_bank_credit
+    expected_frequency: M
+    expected_unit: PCCH
+    proposed_transformation: published_annual_growth_rate
+    sample_start: 2025-09
+    sample_end: 2025-10
+    expected_timing_class: B_RELEASE_LAG_ELIGIBLE
+    query_url: https://data-api.ecb.europa.eu/service/data/BSI/M.U2.Y.U.A20T.A.I.U2.2240.Z01.A?includeHistory=true&format=csvdata&startPeriod=2025-09&endPeriod=2025-10
+    series_locator: https://data.ecb.europa.eu/data/datasets/BSI/BSI.M.U2.Y.U.A20T.A.I.U2.2240.Z01.A
+
+  - pilot_id: BSI_MONETARY_AGGREGATE_M3
+    full_series_key: BSI.M.U2.Y.V.M30.X.I.U2.2300.Z01.A
+    api_path: BSI/M.U2.Y.V.M30.X.I.U2.2300.Z01.A
+    channel: credit_and_money_quantities
+    panel_role: augmented_bank_credit
+    expected_frequency: M
+    expected_unit: PCCH
+    proposed_transformation: published_annual_growth_rate
+    sample_start: 2025-09
+    sample_end: 2025-10
+    expected_timing_class: B_RELEASE_LAG_ELIGIBLE
+    query_url: https://data-api.ecb.europa.eu/service/data/BSI/M.U2.Y.V.M30.X.I.U2.2300.Z01.A?includeHistory=true&format=csvdata&startPeriod=2025-09&endPeriod=2025-10
+    series_locator: https://data.ecb.europa.eu/data/datasets/BSI/BSI.M.U2.Y.V.M30.X.I.U2.2300.Z01.A
+
+  - pilot_id: ECB_NEW_CISS
+    full_series_key: CISS.D.U2.Z0Z.4F.EC.SS_CIN.IDX
+    api_path: CISS/D.U2.Z0Z.4F.EC.SS_CIN.IDX
+    channel: financial_conditions_and_systemic_stress
+    panel_role: timing_classification_only
+    expected_frequency: D
+    expected_unit: PURE_NUMB
+    proposed_transformation: monthly_mean
+    sample_start: 2025-09-01
+    sample_end: 2025-09-12
+    expected_timing_class: C_BUILD_FORWARD_ONLY
+    query_url: https://data-api.ecb.europa.eu/service/data/CISS/D.U2.Z0Z.4F.EC.SS_CIN.IDX?includeHistory=true&format=csvdata&startPeriod=2025-09-01&endPeriod=2025-09-12
+    series_locator: https://data.ecb.europa.eu/data/datasets/CISS/CISS.D.U2.Z0Z.4F.EC.SS_CIN.IDX
+
+candidate_panels:
+  - panel_id: P0_CORE_REPLAY_AND_FAST
+    series_ids:
+      - RTD_HICP
+      - RTD_INDUSTRIAL_PRODUCTION
+      - RTD_UNEMPLOYMENT
+      - ECB_DEPOSIT_FACILITY_RATE
+      - ECB_YIELD_CURVE_2Y
+      - ECB_YIELD_CURVE_10Y
+      - ECB_USD_EUR_REFERENCE_RATE
+    required_distinct_channels: 5
+  - panel_id: P1_AUGMENTED_BANK_CREDIT
+    extends: P0_CORE_REPLAY_AND_FAST
+    additional_series_ids:
+      - MIR_NFC_COST_OF_BORROWING
+      - BSI_NFC_ADJUSTED_LOANS
+      - BSI_MONETARY_AGGREGATE_M3
+    required_distinct_channels: 7
+
+pilot_success_rule: >-
+  Both candidate panels must resolve to distinct nonempty series sets, cover
+  their declared minimum channel counts, and contain only machine-verified
+  replay or release-lag series. CISS is a classification control and cannot
+  satisfy panel success. A current official history without usable historical
+  release evidence remains release-lag or forward-only.

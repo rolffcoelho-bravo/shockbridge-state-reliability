@@ -1,0 +1,384 @@
+{
+  "all_series": [
+    {
+      "actions": {
+        "Replace": 7
+      },
+      "channel": "prices_and_expectations",
+      "distinct_observation_periods": 3,
+      "distinct_valid_from_timestamps": 3,
+      "earliest_observation_period": "2025-01",
+      "earliest_valid_from": "2025-03-05T15:30:00.000+01:00",
+      "frequencies": [
+        "M"
+      ],
+      "full_series_key": "RTD.M.S0.N.P_C_OV.X",
+      "latest_observation_period": "2025-03",
+      "latest_valid_from": "2026-02-04T15:30:00.000+01:00",
+      "maximum_version_delay_days": 399,
+      "nonempty_valid_from_rows": 7,
+      "observed_timing_class": "A_REPLAY_ELIGIBLE",
+      "pilot_id": "RTD_HICP",
+      "response_bytes": 3279,
+      "response_path": "data/raw/run020_series_pilot_v1/rtd_hicp.csv",
+      "response_sha256": "72f418fda7bc01763284b0ed85a96305e5efaea7a80d9c9a661623c4252e2829",
+      "rows": 7,
+      "timing_reason": "archived/API history timestamps present on every row",
+      "units": [
+        "IX"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 14
+      },
+      "channel": "real_activity_and_labour",
+      "distinct_observation_periods": 3,
+      "distinct_valid_from_timestamps": 5,
+      "earliest_observation_period": "2025-01",
+      "earliest_valid_from": "2025-04-16T15:30:00.000+02:00",
+      "frequencies": [
+        "M"
+      ],
+      "full_series_key": "RTD.M.S0.Y.I_XCONS.X",
+      "latest_observation_period": "2025-03",
+      "latest_valid_from": "2025-10-29T15:30:00.000+01:00",
+      "maximum_version_delay_days": 301,
+      "nonempty_valid_from_rows": 14,
+      "observed_timing_class": "A_REPLAY_ELIGIBLE",
+      "pilot_id": "RTD_INDUSTRIAL_PRODUCTION",
+      "response_bytes": 7780,
+      "response_path": "data/raw/run020_series_pilot_v1/rtd_industrial_production.csv",
+      "response_sha256": "19ae58505d385edd10616065d7accfaaf473225951fadd0e25adc331580a70c8",
+      "rows": 14,
+      "timing_reason": "archived/API history timestamps present on every row",
+      "units": [
+        "IX"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 19
+      },
+      "channel": "real_activity_and_labour",
+      "distinct_observation_periods": 3,
+      "distinct_valid_from_timestamps": 7,
+      "earliest_observation_period": "2025-01",
+      "earliest_valid_from": "2025-07-23T15:30:00.000+02:00",
+      "frequencies": [
+        "M"
+      ],
+      "full_series_key": "RTD.M.S0.S.L_UNETO.F",
+      "latest_observation_period": "2025-03",
+      "latest_valid_from": "2026-06-10T15:30:00.000+02:00",
+      "maximum_version_delay_days": 466,
+      "nonempty_valid_from_rows": 19,
+      "observed_timing_class": "A_REPLAY_ELIGIBLE",
+      "pilot_id": "RTD_UNEMPLOYMENT",
+      "response_bytes": 9436,
+      "response_path": "data/raw/run020_series_pilot_v1/rtd_unemployment.csv",
+      "response_sha256": "83b38ebfb09b149ebf03f4deb015a9073a277580d6572435eb3fa609386636dc",
+      "rows": 19,
+      "timing_reason": "archived/API history timestamps present on every row",
+      "units": [
+        "PC"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 90
+      },
+      "channel": "policy_stance_and_money_market",
+      "distinct_observation_periods": 90,
+      "distinct_valid_from_timestamps": 90,
+      "earliest_observation_period": "2025-01-01",
+      "earliest_valid_from": "2025-01-01T01:31:57.000+01:00",
+      "frequencies": [
+        "D"
+      ],
+      "full_series_key": "FM.D.U2.EUR.4F.KR.DFR.LEV",
+      "latest_observation_period": "2025-03-31",
+      "latest_valid_from": "2025-03-31T01:32:04.000+02:00",
+      "maximum_version_delay_days": 2,
+      "nonempty_valid_from_rows": 90,
+      "observed_timing_class": "A_REPLAY_ELIGIBLE",
+      "pilot_id": "ECB_DEPOSIT_FACILITY_RATE",
+      "response_bytes": 30680,
+      "response_path": "data/raw/run020_series_pilot_v1/ecb_deposit_facility_rate.csv",
+      "response_sha256": "912def055e87baa69ad2a6e0a97d227cb40855d9ca9c6f6c83ed8293a76cc1dd",
+      "rows": 90,
+      "timing_reason": "dated market observations have history timestamps within seven days",
+      "units": [
+        "PCPA"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 7
+      },
+      "channel": "sovereign_curve_and_term_structure",
+      "distinct_observation_periods": 7,
+      "distinct_valid_from_timestamps": 7,
+      "earliest_observation_period": "2025-01-02",
+      "earliest_valid_from": "2025-01-03T11:57:46.000+01:00",
+      "frequencies": [
+        "B"
+      ],
+      "full_series_key": "YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y",
+      "latest_observation_period": "2025-01-10",
+      "latest_valid_from": "2025-01-13T11:57:42.000+01:00",
+      "maximum_version_delay_days": 3,
+      "nonempty_valid_from_rows": 7,
+      "observed_timing_class": "A_REPLAY_ELIGIBLE",
+      "pilot_id": "ECB_YIELD_CURVE_2Y",
+      "response_bytes": 4653,
+      "response_path": "data/raw/run020_series_pilot_v1/ecb_yield_curve_2y.csv",
+      "response_sha256": "d642aee6e9615b541564cf40a8baf60d9cbe0430e2e43af1626ffd438bb9af53",
+      "rows": 7,
+      "timing_reason": "dated market observations have history timestamps within seven days",
+      "units": [
+        "PCPA"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 7
+      },
+      "channel": "sovereign_curve_and_term_structure",
+      "distinct_observation_periods": 7,
+      "distinct_valid_from_timestamps": 7,
+      "earliest_observation_period": "2025-01-02",
+      "earliest_valid_from": "2025-01-03T11:57:46.000+01:00",
+      "frequencies": [
+        "B"
+      ],
+      "full_series_key": "YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y",
+      "latest_observation_period": "2025-01-10",
+      "latest_valid_from": "2025-01-13T11:57:42.000+01:00",
+      "maximum_version_delay_days": 3,
+      "nonempty_valid_from_rows": 7,
+      "observed_timing_class": "A_REPLAY_ELIGIBLE",
+      "pilot_id": "ECB_YIELD_CURVE_10Y",
+      "response_bytes": 4681,
+      "response_path": "data/raw/run020_series_pilot_v1/ecb_yield_curve_10y.csv",
+      "response_sha256": "1088351f333a35e73fd0e0c55d8f6c6e83a465646cbd1c780d185151a82f7ad3",
+      "rows": 7,
+      "timing_reason": "dated market observations have history timestamps within seven days",
+      "units": [
+        "PCPA"
+      ]
+    },
+    {
+      "actions": {
+        "NOT_REPORTED": 7
+      },
+      "channel": "external_value_and_cross_border_conditions",
+      "distinct_observation_periods": 7,
+      "distinct_valid_from_timestamps": 0,
+      "earliest_observation_period": "2025-01-02",
+      "earliest_valid_from": null,
+      "frequencies": [
+        "D"
+      ],
+      "full_series_key": "EXR.D.USD.EUR.SP00.A",
+      "latest_observation_period": "2025-01-10",
+      "latest_valid_from": null,
+      "maximum_version_delay_days": null,
+      "nonempty_valid_from_rows": 0,
+      "observed_timing_class": "B_RELEASE_LAG_ELIGIBLE",
+      "pilot_id": "ECB_USD_EUR_REFERENCE_RATE",
+      "response_bytes": 1782,
+      "response_path": "data/raw/run020_series_pilot_v1/ecb_usd_eur_reference_rate.csv",
+      "response_sha256": "c6711d4f3bd586dcb760d787baf5c027b592e02950141e47e002aa61a5048ce9",
+      "rows": 7,
+      "timing_reason": "exact decision-time history is incomplete; conservative release lag required",
+      "units": [
+        "USD"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 2
+      },
+      "channel": "bank_funding_and_lending_rates",
+      "distinct_observation_periods": 2,
+      "distinct_valid_from_timestamps": 1,
+      "earliest_observation_period": "2025-09",
+      "earliest_valid_from": "2025-12-03T10:00:00.000+01:00",
+      "frequencies": [
+        "M"
+      ],
+      "full_series_key": "MIR.M.U2.B.A2I.AM.R.A.2240.EUR.N",
+      "latest_observation_period": "2025-10",
+      "latest_valid_from": "2025-12-03T10:00:00.000+01:00",
+      "maximum_version_delay_days": 93,
+      "nonempty_valid_from_rows": 2,
+      "observed_timing_class": "B_RELEASE_LAG_ELIGIBLE",
+      "pilot_id": "MIR_NFC_COST_OF_BORROWING",
+      "response_bytes": 1780,
+      "response_path": "data/raw/run020_series_pilot_v1/mir_nfc_cost_of_borrowing.csv",
+      "response_sha256": "460a079e0945ede437912b05422f5c9898c149db0cb60d87d3d94f019c722d46",
+      "rows": 2,
+      "timing_reason": "frozen release-lag treatment retained",
+      "units": [
+        "PCPA"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 2
+      },
+      "channel": "credit_and_money_quantities",
+      "distinct_observation_periods": 2,
+      "distinct_valid_from_timestamps": 1,
+      "earliest_observation_period": "2025-09",
+      "earliest_valid_from": "2026-09-25T10:00:00.000+02:00",
+      "frequencies": [
+        "M"
+      ],
+      "full_series_key": "BSI.M.U2.Y.U.A20T.A.I.U2.2240.Z01.A",
+      "latest_observation_period": "2025-10",
+      "latest_valid_from": "2026-09-25T10:00:00.000+02:00",
+      "maximum_version_delay_days": 389,
+      "nonempty_valid_from_rows": 2,
+      "observed_timing_class": "B_RELEASE_LAG_ELIGIBLE",
+      "pilot_id": "BSI_NFC_ADJUSTED_LOANS",
+      "response_bytes": 1536,
+      "response_path": "data/raw/run020_series_pilot_v1/bsi_nfc_adjusted_loans.csv",
+      "response_sha256": "7b55547d3e70a4698ccae8c29f538ba5e58557f12f103f8d760e83cfb318caff",
+      "rows": 2,
+      "timing_reason": "frozen release-lag treatment retained",
+      "units": [
+        "PCCH"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 2
+      },
+      "channel": "credit_and_money_quantities",
+      "distinct_observation_periods": 2,
+      "distinct_valid_from_timestamps": 2,
+      "earliest_observation_period": "2025-09",
+      "earliest_valid_from": "2026-07-27T10:00:01.000+02:00",
+      "frequencies": [
+        "M"
+      ],
+      "full_series_key": "BSI.M.U2.Y.V.M30.X.I.U2.2300.Z01.A",
+      "latest_observation_period": "2025-10",
+      "latest_valid_from": "2026-09-25T10:00:00.000+02:00",
+      "maximum_version_delay_days": 359,
+      "nonempty_valid_from_rows": 2,
+      "observed_timing_class": "B_RELEASE_LAG_ELIGIBLE",
+      "pilot_id": "BSI_MONETARY_AGGREGATE_M3",
+      "response_bytes": 1509,
+      "response_path": "data/raw/run020_series_pilot_v1/bsi_monetary_aggregate_m3.csv",
+      "response_sha256": "f3f91507867fc71100b5f9c5f4133ed5a60df4a60dce3f7713f32e9e4ba69186",
+      "rows": 2,
+      "timing_reason": "frozen release-lag treatment retained",
+      "units": [
+        "PCCH"
+      ]
+    },
+    {
+      "actions": {
+        "Replace": 10
+      },
+      "channel": "financial_conditions_and_systemic_stress",
+      "distinct_observation_periods": 10,
+      "distinct_valid_from_timestamps": 1,
+      "earliest_observation_period": "2025-09-01",
+      "earliest_valid_from": "2026-10-01T09:15:45.000+02:00",
+      "frequencies": [
+        "D"
+      ],
+      "full_series_key": "CISS.D.U2.Z0Z.4F.EC.SS_CIN.IDX",
+      "latest_observation_period": "2025-09-12",
+      "latest_valid_from": "2026-10-01T09:15:45.000+02:00",
+      "maximum_version_delay_days": null,
+      "nonempty_valid_from_rows": 10,
+      "observed_timing_class": "C_BUILD_FORWARD_ONLY",
+      "pilot_id": "ECB_NEW_CISS",
+      "response_bytes": 3679,
+      "response_path": "data/raw/run020_series_pilot_v1/ecb_new_ciss.csv",
+      "response_sha256": "f9c205e72c78f70be05905615b4e2c3a6d3e2d62b6ba0961153e561bb57bc1fe",
+      "rows": 10,
+      "timing_reason": "frozen forward-only classification",
+      "units": [
+        "PURE_NUMB"
+      ]
+    }
+  ],
+  "audit_id": "run-020-series-history-pilot-v1",
+  "channel_count": 8,
+  "manifest_bytes": 9433,
+  "manifest_id": "run-020-series-pilot-v1-amendment-1",
+  "manifest_path": "research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml",
+  "manifest_sha256": "a93429cd1fe08009e7c01a6cb45a0197a67267f235348fa94f6048279c7a4d9e",
+  "panel_results": [
+    {
+      "declared_series": [
+        "RTD_HICP",
+        "RTD_INDUSTRIAL_PRODUCTION",
+        "RTD_UNEMPLOYMENT",
+        "ECB_DEPOSIT_FACILITY_RATE",
+        "ECB_YIELD_CURVE_2Y",
+        "ECB_YIELD_CURVE_10Y",
+        "ECB_USD_EUR_REFERENCE_RATE"
+      ],
+      "distinct_channels": 5,
+      "panel_id": "P0_CORE_REPLAY_AND_FAST",
+      "passed": true,
+      "required_distinct_channels": 5,
+      "retained_series": [
+        "RTD_HICP",
+        "RTD_INDUSTRIAL_PRODUCTION",
+        "RTD_UNEMPLOYMENT",
+        "ECB_DEPOSIT_FACILITY_RATE",
+        "ECB_YIELD_CURVE_2Y",
+        "ECB_YIELD_CURVE_10Y",
+        "ECB_USD_EUR_REFERENCE_RATE"
+      ]
+    },
+    {
+      "declared_series": [
+        "RTD_HICP",
+        "RTD_INDUSTRIAL_PRODUCTION",
+        "RTD_UNEMPLOYMENT",
+        "ECB_DEPOSIT_FACILITY_RATE",
+        "ECB_YIELD_CURVE_2Y",
+        "ECB_YIELD_CURVE_10Y",
+        "ECB_USD_EUR_REFERENCE_RATE",
+        "MIR_NFC_COST_OF_BORROWING",
+        "BSI_NFC_ADJUSTED_LOANS",
+        "BSI_MONETARY_AGGREGATE_M3"
+      ],
+      "distinct_channels": 7,
+      "panel_id": "P1_AUGMENTED_BANK_CREDIT",
+      "passed": true,
+      "required_distinct_channels": 7,
+      "retained_series": [
+        "RTD_HICP",
+        "RTD_INDUSTRIAL_PRODUCTION",
+        "RTD_UNEMPLOYMENT",
+        "ECB_DEPOSIT_FACILITY_RATE",
+        "ECB_YIELD_CURVE_2Y",
+        "ECB_YIELD_CURVE_10Y",
+        "ECB_USD_EUR_REFERENCE_RATE",
+        "MIR_NFC_COST_OF_BORROWING",
+        "BSI_NFC_ADJUSTED_LOANS",
+        "BSI_MONETARY_AGGREGATE_M3"
+      ]
+    }
+  ],
+  "passed": true,
+  "series_count": 11,
+  "state_estimation_performed": false,
+  "synthetic_empirical_observations_used": false,
+  "timing_class_counts": {
+    "A_REPLAY_ELIGIBLE": 6,
+    "B_RELEASE_LAG_ELIGIBLE": 4,
+    "C_BUILD_FORWARD_ONLY": 1
+  },
+  "transmission_outcomes_accessed": false
+}

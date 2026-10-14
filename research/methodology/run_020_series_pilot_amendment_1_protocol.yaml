@@ -1,0 +1,39 @@
+schema_version: 1
+protocol_id: run-020-series-pilot-amendment-1
+created_on: 2026-10-12
+status: FROZEN_BEFORE_AMENDED_REAUDIT
+original_protocol: research/methodology/run_020_series_history_and_reliability_protocol_v1.yaml
+original_manifest: research/data/run_020_series_pilot_manifest_v1.yaml
+amended_manifest: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+rejected_audit: reports/methodology/run_020_series_history_pilot_attempt1.audit.json
+
+trigger: >-
+  The first implementation recorded returned UNIT codes but did not compare
+  them with the frozen expected_unit field. It therefore accepted the RTD
+  unemployment response even though the manifest expected PC_ACT and the
+  official response reported PC. The attempt also labeled the maximum gap to
+  any returned version as a release delay, although later revisions make it a
+  version-delay statistic.
+
+authorized_corrections:
+  - enforce exact returned UNIT equality for every series
+  - change only RTD_UNEMPLOYMENT expected_unit from PC_ACT to PC
+  - rename maximum_release_delay_days to maximum_version_delay_days
+  - re-audit the exact same downloaded response bytes without network retrieval
+  - preserve the first audit as a rejected attempt
+
+prohibited_changes:
+  - series_keys
+  - query_urls
+  - sample_dates
+  - response_bytes
+  - panel_membership
+  - timing_classes
+  - transformations
+  - threshold_or_method_contract
+  - state_or_transmission_estimation
+
+scientific_effect: >-
+  Metadata validation and terminology correction only. No observation value,
+  series choice, panel definition, timing rule, state result, or transmission
+  outcome changes.

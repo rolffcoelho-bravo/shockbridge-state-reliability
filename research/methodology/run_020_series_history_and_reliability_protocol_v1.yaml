@@ -1,0 +1,226 @@
+schema_version: 1
+protocol_id: run-020-series-history-and-reliability-v1
+created_on: 2026-10-12
+status: APPROVED_AND_FROZEN_BEFORE_PILOT_OBSERVATION_RETRIEVAL
+approval_basis: >-
+  The owner approved the Run 019 recommendation for a small series-level
+  metadata/history pilot and a complete outcome-blind reliability-method
+  protocol using only real, freely retrievable official sources.
+
+research_question: >-
+  Can two substantively different decision-time euro-area panels be assembled
+  from the frozen official series without hindsight substitution, and can
+  information-set reliability be defined in a mathematically comparable space
+  when panels contain different variables?
+
+frozen_inputs:
+  source_architecture: research/data/run_019_channel_architecture_v1.yaml
+  source_matrix: research/data/run_019_source_feasibility_matrix_v1.csv
+  pilot_manifest: research/data/run_020_series_pilot_manifest_v1.yaml
+  prior_negative_result: run-018-retain-original-gate
+
+scientific_boundary:
+  real_official_data_only: true
+  zero_cost_sources_only: true
+  synthetic_empirical_observations_allowed: false
+  transmission_outcomes_access_allowed: false
+  state_estimation_during_pilot_allowed: false
+  source_selection_by_model_performance_allowed: false
+  positive_result_required: false
+  original_four_feature_result_may_be_changed: false
+
+stage_1_series_history_pilot:
+  permitted:
+    - retrieve_the_exact_small_samples_in_the_frozen_manifest
+    - verify_series_key_dimensions_units_and_frequency
+    - inspect_ACTION_VALID_FROM_and_VALID_TO_history_fields
+    - count_versions_replacements_deletions_and_release_timestamps
+    - classify_each_series_as_replay_release_lag_forward_only_or_ineligible
+    - retain_raw_responses_privately_with_size_and_sha256
+  prohibited:
+    - retrieve_full_candidate_panel
+    - estimate_factors_states_or_responses
+    - inspect_any_transmission_outcome
+    - expand_the_manifest_after_observing_pilot_values
+  success_gate: >-
+    P0 and P1 remain distinct, nondegenerate, and machine-timed after
+    classification; every retained series has an exact key, unit, frequency,
+    rights locator, and timing rule; no query exceeds the frozen byte limit.
+
+methodological_correction:
+  run_019_problem: >-
+    Loading projectors from panels with different variables occupy different
+    feature spaces and cannot be subtracted directly. The unqualified Run 019
+    projector diameter is therefore undefined across unequal manifests.
+  correction: >-
+    Compare factor-score projectors over one common calendar window and compare
+    loading projectors only after mapping every panel into the same frozen
+    eight-channel economic-anchor space.
+  claim_effect: >-
+    This fixes a definition error. It does not establish novelty, empirical
+    performance, or a stable state.
+
+stage_2_future_panel_contract:
+  decision_clock:
+    monthly_origin: first_calendar_day_23_59_59_Europe_Berlin
+    event_use: latest_monthly_state_strictly_before_policy_event_cutoff
+    equality_at_cutoff: rejected
+  sample_boundary:
+    earliest_candidate_month: 2003-01
+    latest_candidate_month: 2025-10
+    reason: common availability of the augmented monthly bank block and the frozen shock vintage
+  publication_timing:
+    class_A: exact_archived_or_API_history_VALID_FROM
+    class_B_baseline: documented_release_rule_plus_one_working_day
+    class_B_slow_sensitivity: baseline_plus_one_calendar_month
+    class_C: prospective_snapshots_only
+  transformations:
+    freeze_before_full_retrieval: true
+    rates: levels
+    price_and_activity_indexes: year_over_year_log_difference_times_100
+    published_growth_rates: use_published_rate_without_retransformation
+    exchange_rate: end_of_month_log_change_times_100
+    curve: ten_year_minus_two_year_spot_rate
+    stress_index: monthly_mean_only_if_prospectively_available
+  missingness:
+    preserve_ragged_edges: true
+    later_release_backfill: prohibited
+    backward_fill: prohibited
+    synthetic_imputation: prohibited
+    series_minimum_training_coverage: 0.80
+    origin_minimum_channel_coverage: 5
+  standardization:
+    expanding_only: true
+    minimum_history_months: 60
+    center: expanding_mean
+    scale: expanding_standard_deviation
+    zero_or_nonfinite_scale: series_ineligible_at_origin
+  redundancy:
+    exact_duplicates: collapse
+    within_channel_absolute_correlation_threshold: 0.98
+    minimum_pairwise_months: 60
+    tie_break_order:
+      - stronger_timing_class
+      - earlier_first_usable_month
+      - lower_missingness
+      - manifest_order
+    dense_maturity_or_sector_grids_without_distinct_role: prohibited
+  channel_balance:
+    channel_total_weight: equal
+    within_channel_series_weight: inverse_square_root_of_retained_series_count
+
+factor_estimation_contract:
+  estimator: weighted_EM_principal_components_with_ragged_edges
+  maximum_factors: 3
+  factor_count_rule: Bai_Ng_ICp2_on_each_training_origin
+  factor_count_tie_break: smaller_dimension
+  minimum_factors: 1
+  estimator_implementation_status: NOT_YET_IMPLEMENTED
+  internal_benchmarks:
+    - frozen_four_feature_continuous_factor
+    - one_uniquely_completed_augmented_panel
+    - archived_vintage_anchor_only_panel
+
+common_space_reliability_objects:
+  common_window_months: 120
+  score_space:
+    definition: >-
+      For panel a, let F_a be the centered factor-score matrix over the same
+      120 monthly rows and let H_a = F_a(F_a'F_a)^(-1)F_a'. H_a is a projector
+      in common calendar space and remains comparable when the panels contain
+      different variables.
+    primary_distance: spectral_norm_of_H_a_minus_H_b
+    secondary_distance: frobenius_norm_divided_by_square_root_two_k
+  economic_channel_space:
+    channel_order:
+      - prices_and_expectations
+      - real_activity_and_labour
+      - policy_stance_and_money_market
+      - sovereign_curve_and_term_structure
+      - bank_funding_and_lending_rates
+      - credit_and_money_quantities
+      - financial_conditions_and_systemic_stress
+      - external_value_and_cross_border_conditions
+    definition: >-
+      Aggregate sign-oriented loadings within each frozen channel, normalize
+      the resulting 8 by k matrix, and form its rotation-invariant projector
+      Q_a in the common eight-channel space.
+    primary_distance: spectral_norm_of_Q_a_minus_Q_b
+    orientation_floor: minimum_absolute_alignment_with_frozen_channel_anchors
+  state_score_set:
+    alignment: sign_or_orthogonal_Procrustes_using_training_window_only
+    output: per_origin_minimum_median_maximum_and_interquartile_range
+    prohibited: align_using_future_or_transmission_outcomes
+
+admissible_information_set_generator:
+  base_panels:
+    - P0_CORE_REPLAY_AND_FAST
+    - P1_AUGMENTED_BANK_CREDIT
+  timing_scenarios:
+    - registered_baseline
+    - class_B_slow_sensitivity
+  missingness_scenarios:
+    - observed_ragged_edge
+    - complete_case_common_window_sensitivity
+  family_scenarios:
+    - full_panel
+    - leave_one_eligible_channel_out
+  exclusions:
+    - scenario_selected_after_state_or_outcome_results
+    - current_history_labeled_as_archived_vintage_without_evidence
+    - scenario_differing_only_by_duplicate_series_count
+
+chronological_validation:
+  calibration_end: 2017-12
+  embargo_months: 12
+  evaluation_start: 2019-01
+  evaluation_end: 2025-10
+  threshold_grid:
+    score_projector_distance: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+    channel_projector_distance: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+    orientation_floor: [0.50, 0.60, 0.70, 0.80]
+  selection_loss:
+    false_authorization_cost: 1.0
+    abstention_cost: 0.25
+    tie_break: higher_participation_then_more_conservative_distances
+  evaluation_once_only: true
+  future_failure_label: any_internal_geometry_breach_within_12_months
+
+inference_and_multiplicity:
+  primary_metrics:
+    - matched_participation_future_breach_difference_vs_single_augmented_panel
+    - participation_rate
+    - information_set_fragility_rate
+  resampling: moving_block_bootstrap_over_evaluation_origins
+  draws: 1999
+  primary_block_months: 12
+  sensitivity_block_months: [6, 18, 24]
+  simultaneous_interval: max_absolute_studentized_statistic_across_primary_metrics
+  p_value_language_without_valid_test: prohibited
+
+falsification_and_stop_rules:
+  - identical_series_requery_must_produce_zero_envelope_distance
+  - panel_order_and_factor_rotation_must_not_change_projector_distances
+  - adding_an_exact_duplicate_must_not_change_channel_balanced_results
+  - no_authorization_if_fewer_than_two_non_degenerate_admissible_panels
+  - stop_if_evaluation_participation_is_below_0.10
+  - stop_if_envelope_differs_only_under_scenarios_without_timing_evidence
+  - report_non_improvement_if_matched_participation_breach_risk_does_not_improve
+  - keep_transmission_sealed_until_measurement_authorization_passes
+
+required_run_020_outputs:
+  - reports/methodology/run_020_series_history_pilot.audit.json
+  - reports/methodology/run_020_series_history_and_reliability_result_2026-10-12.md
+  - reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - research/methodology/run_020_information_set_reliability_method_v1.md
+  - research/paper/manuscript_v1_6.md
+  - reports/methodology/run_020_manuscript_v1_6_claim_audit.yaml
+  - reports/methodology/run_020_manuscript_v1_6_citation_locator_audit.yaml
+
+decision_after_run_020:
+  success: >-
+    Freeze a later full retrieval/build protocol only if two nondegenerate
+    admissible panels and all timing/rights gates survive the pilot.
+  failure: >-
+    Preserve the pilot as a negative feasibility result and do not retrieve a
+    wider panel or implement the estimator.

@@ -1,0 +1,24 @@
+{
+  "audit_id": "run-021-protocol-preflight-v1",
+  "bound_inputs_verified": 5,
+  "channel_count": 7,
+  "evaluation_labels_matured": true,
+  "full_history_retrieval_performed": false,
+  "manifest_id": "run-021-full-panel-manifest-v1",
+  "manifest_path": "research/data/run_021_full_panel_manifest_v1.yaml",
+  "manifest_sha256": "3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b",
+  "maximum_scenarios_before_deduplication": 56,
+  "panel_count": 2,
+  "passed": true,
+  "protocol_id": "run-021-full-panel-build-protocol-v1",
+  "protocol_path": "research/methodology/run_021_full_panel_build_protocol_v1.yaml",
+  "protocol_sha256": "0c1eb20d0ff5879623fad2655a2edf8f5f499e8440d896e57b91e013dae40493",
+  "series_count": 10,
+  "state_estimation_performed": false,
+  "synthetic_empirical_observations_used": false,
+  "timing_class_counts": {
+    "A_REPLAY_ELIGIBLE": 6,
+    "B_RELEASE_LAG_ELIGIBLE": 4
+  },
+  "transmission_outcomes_accessed": false
+}

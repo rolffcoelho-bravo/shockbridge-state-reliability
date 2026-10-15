@@ -1,0 +1,324 @@
+schema_version: 1
+protocol_id: run-021-full-panel-build-protocol-v1
+created_on: 2026-10-14
+status: APPROVED_AND_FROZEN_BEFORE_FULL_RETRIEVAL
+approval_scope: >-
+  Design, audit, and freeze the full-panel build and reliability-evaluation
+  protocol. Do not retrieve the registered full histories, estimate a state,
+  or access a transmission outcome during Run 021.
+
+research_question: >-
+  Can the ten pilot-qualified official ECB series be converted into auditable
+  monthly decision-time panels, and can a prospectively frozen
+  information-set reliability envelope improve future internal measurement
+  stability at useful participation relative to transparent single-panel
+  benchmarks?
+
+bound_inputs:
+  - path: research/data/run_019_channel_architecture_v1.yaml
+    sha256: 5fa79e56b60255c2146bcf3ca92ed67035e048870949598975a6921b39f1a16b
+  - path: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+    sha256: a93429cd1fe08009e7c01a6cb45a0197a67267f235348fa94f6048279c7a4d9e
+  - path: reports/methodology/run_020_series_history_pilot.audit.json
+    sha256: ffad1ae89f9c2598c998ca5918be51b8460c904af5f8b77d01f7af0d39d65345
+  - path: research/methodology/run_020_information_set_reliability_method_v1.md
+    sha256: 5b90faf36b4679cf2bdb955f76a748a560cc4f98fbbd30ea78a753512a8a79bb
+  - path: research/data/run_021_full_panel_manifest_v1.yaml
+    sha256: 3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b
+
+scientific_boundary:
+  real_official_data_only: true
+  zero_cost_sources_only: true
+  synthetic_empirical_observations_allowed: false
+  transmission_outcomes_access_allowed: false
+  full_history_retrieval_allowed_in_run_021: false
+  state_estimation_allowed_in_run_021: false
+  high_dimensional_claim_allowed_in_run_021: false
+  positive_result_required: false
+  original_negative_result_may_be_rewritten: false
+
+corrected_design_anomalies:
+  - id: RUN021-C01
+    issue: class_B_release_lag_was_not_series_specific
+    correction: >-
+      Freeze the exact FX publication clock and require reference-period keyed,
+      hash-registered ECB release-calendar evidence for MIR and BSI. Missing
+      calendar evidence produces a missing value, never an inferred release.
+  - id: RUN021-C02
+    issue: transformation_lookbacks_were_not_bound_to_retrieval_start
+    correction: >-
+      Retrieve HICP and industrial-production levels from January 2002 for
+      January 2003 year-over-year transformations and retrieve daily FX with a
+      prior-month lookback.
+  - id: RUN021-C03
+    issue: ragged_edge_factor_count_rule_was_underdefined
+    correction: >-
+      Define the observed-entry ICp2 adaptation, deterministic initialization,
+      convergence rule, and fixed-rank sensitivity explicitly.
+  - id: RUN021-C04
+    issue: future_failure_labels_were_immature_at_the_declared_evaluation_end
+    correction: >-
+      Keep the diagnostic panel through October 2025 but end one-time
+      authorization evaluation in October 2024, so every twelve-month future
+      label is observed without extrapolation.
+  - id: RUN021-C05
+    issue: future_failure_event_and_matched_benchmark_were_ambiguous
+    correction: >-
+      Define the future failure independently of candidate envelope thresholds
+      and match the benchmark participation using calibration data only.
+  - id: RUN021-C06
+    issue: draft_scenario_count_double_counted_the_base_panel_axis
+    correction: >-
+      Count each panel's full and leave-one-channel-out family variants once,
+      then cross them with two timing and two missingness settings: (6 + 8)
+      times 2 times 2 equals 56 before exact deduplication.
+
+build_stage:
+  manifest: research/data/run_021_full_panel_manifest_v1.yaml
+  pre_retrieval_requirements:
+    - manifest_and_protocol_preflight_pass
+    - every_bound_input_hash_matches
+    - all_release_evidence_locators_use_official_HTTPS_hosts
+    - owner_approves_execution_as_a_separate_run
+  download:
+    retries_only_for: [timeout, HTTP_429, HTTP_500, HTTP_502, HTTP_503, HTTP_504]
+    maximum_attempts: 4
+    atomic_staging_suffix: .part
+    reject_unregistered_redirect_host: true
+    record_response_bytes_sha256_final_url_and_retrieval_utc: true
+    immutable_after_acceptance: true
+  panel_writer:
+    output_directory: data/processed/run021_full_panel_v1
+    write_only_to_empty_staging_directory: true
+    publish_complete_bundle_atomically: true
+    required_keys: [origin_month, scenario_id, series_id]
+    unique_required_keys: true
+    sorted_serialization: true
+    floating_point_significant_digits: 12
+
+decision_clock:
+  timezone: Europe/Berlin
+  monthly_origin: first_calendar_day_23_59_59
+  availability_operator: first_usable_timestamp_strictly_less_than_origin
+  equality_at_origin: reject
+  event_mapping: latest_authorized_monthly_state_strictly_before_event_cutoff
+
+transformation_and_missingness:
+  transformation_source: research/data/run_021_full_panel_manifest_v1.yaml
+  transform_only_with_values_available_at_origin: true
+  later_release_backfill: prohibited
+  backward_fill: prohibited
+  synthetic_imputation: prohibited
+  interpolation_of_empirical_values: prohibited
+  preserve_ragged_edges: true
+  add_missingness_indicators_to_factor_input: false
+  series_minimum_training_coverage: 0.80
+  minimum_training_months: 60
+  common_geometry_window_months: 120
+  origin_minimum_distinct_channels: 5
+  complete_case_sensitivity_minimum_rows: 60
+  standardization:
+    expanding_only: true
+    center: observed_training_mean
+    scale: observed_training_sample_standard_deviation
+    zero_nonfinite_or_fewer_than_24_observations: ineligible_at_origin
+
+redundancy_and_channel_balance:
+  exact_duplicate_rule: collapse_equal_available_value_and_missingness_paths
+  near_duplicate_threshold_absolute_correlation: 0.98
+  near_duplicate_minimum_pairwise_months: 60
+  near_duplicate_statistics_use_training_data_only: true
+  tie_break_order:
+    - stronger_timing_class
+    - lower_revision_exposure
+    - earlier_first_usable_month
+    - lower_training_missingness
+    - manifest_order
+  channel_map:
+    rows: 8
+    column_weight: frozen_sign_divided_by_square_root_of_retained_series_in_channel
+    zero_row_for_unavailable_channel: true
+    recompute_from_retained_manifest_only: true
+  dense_grid_without_distinct_prespecified_role: prohibited
+
+factor_estimator:
+  name: deterministic_channel_weighted_EM_PCA
+  implementation_status: NOT_IMPLEMENTED
+  candidate_ranks: [1, 2, 3]
+  maximum_rank_also_bounded_by: min_of_series_minus_one_and_observed_training_rank
+  initialization:
+    missing_entries: observed_training_series_mean
+    deterministic_svd: true
+    random_initialization: prohibited
+  iteration:
+    update_only_missing_entries_from_low_rank_reconstruction: true
+    preserve_observed_entries_exactly: true
+    apply_channel_weights_before_svd: true
+    relative_observed_loss_tolerance: 0.00000001
+    maximum_iterations: 1000
+    nonconvergence: scenario_nondegenerate_false
+  rank_selection:
+    name: observed_entry_ICp2_adaptation
+    residual_variance: channel_weighted_observed_entry_SSE_divided_by_observed_weight_sum
+    penalty: k_times_N_plus_T_over_NT_times_log_NT_over_N_plus_T
+    selection_sample: training_only
+    tie_break: smaller_rank
+    language_boundary: adaptation_not_textbook_Bai_Ng_under_balanced_data
+  fixed_rank_sensitivities: [1, 2]
+
+admissible_information_set_generator:
+  base_panels: [P0_CORE_REPLAY_AND_FAST, P1_AUGMENTED_BANK_CREDIT]
+  timing_scenarios:
+    - registered_release_timestamps
+    - class_B_plus_one_calendar_month
+  missingness_scenarios:
+    - observed_ragged_edge
+    - complete_case_common_window
+  family_scenarios:
+    - full_panel
+    - leave_one_available_channel_out
+  maximum_scenarios_before_deduplication: 56
+  deduplication_key: exact_eligibility_mask_plus_standardized_observed_matrix_sha256
+  scenario_order: lexical_id
+  prohibited:
+    - scenario_selected_by_state_path
+    - scenario_selected_by_authorization_rate
+    - scenario_selected_by_transmission_result
+    - current_value_relabelled_as_first_release
+    - duplicate_count_treated_as_information_set_evidence
+
+geometry:
+  common_calendar_score_projector:
+    definition: H_equals_F_times_pseudoinverse_FprimeF_times_Fprime
+    primary_distance: spectral_norm_of_projector_difference
+    secondary_distance: frobenius_norm_divided_by_square_root_rank_a_plus_rank_b
+  common_channel_projector:
+    definition: Q_equals_G_times_pseudoinverse_GprimeG_times_Gprime
+    G_definition: frozen_eight_channel_map_times_loading_matrix
+    primary_distance: spectral_norm_of_projector_difference
+  orientation:
+    alignment: sign_or_orthogonal_Procrustes_on_training_window_only
+    anchor: frozen_signed_eight_channel_direction
+    output: minimum_absolute_anchor_cosine
+  state_score_set:
+    output: [minimum, first_quartile, median, third_quartile, maximum]
+    align_with_future_or_outcomes: prohibited
+
+within_panel_reference_failure:
+  reference_panel: P1_AUGMENTED_BANK_CREDIT
+  reference_scenario: registered_release_timestamps_observed_ragged_edge_full_panel
+  histories: [expanding, rolling_120_month]
+  one_month_breach_if_any:
+    - score_projector_spectral_distance_greater_than_0.35
+    - channel_projector_spectral_distance_greater_than_0.35
+    - absolute_anchor_cosine_less_than_0.20
+    - eligible_channel_count_less_than_5
+    - estimator_or_rank_selection_nondegenerate_false
+  future_failure_label: any_one_month_breach_in_months_t_plus_1_through_t_plus_12
+  candidate_envelope_thresholds_do_not_enter_label: true
+
+chronological_validation:
+  first_possible_geometry_origin: 2013-01
+  calibration_start: 2013-01
+  calibration_end: 2017-12
+  embargo_start: 2018-01
+  embargo_end: 2018-12
+  evaluation_start: 2019-01
+  evaluation_end: 2024-10
+  diagnostic_tail_end: 2025-10
+  every_evaluation_label_matured: true
+  evaluation_once_only: true
+  threshold_grid:
+    score_projector_distance: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+    channel_projector_distance: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+    orientation_floor: [0.50, 0.60, 0.70, 0.80]
+  selection_loss:
+    false_authorization_cost: 1.0
+    abstention_cost: 0.25
+    tie_break_order:
+      - lower_loss
+      - higher_participation
+      - lower_distance_thresholds
+      - higher_orientation_floor
+
+benchmarks:
+  candidates:
+    - id: B0_ALWAYS_ABSTAIN
+      role: loss_floor_under_high_failure_cost
+    - id: B1_SINGLE_AUGMENTED_PANEL
+      role: registered_P1_within_panel_quality_only
+    - id: B2_VINTAGE_PANEL_COMBINATION
+      role: equal_weight_aligned_scores_across_nondegenerate_panels
+    - id: B3_ROBUST_PCA
+      role: principal_component_pursuit_sensitivity_with_penalty_frozen_in_calibration
+  matched_participation_rule: >-
+    Choose each benchmark cutoff using calibration data only to minimize the
+    same loss, then report evaluation comparisons both at its frozen cutoff and
+    at the nearest calibration participation to the envelope. Never rematch on
+    evaluation outcomes.
+
+primary_metrics:
+  - evaluation_decision_loss_difference_vs_B1
+  - evaluation_future_failure_rate_difference_vs_B1_at_calibration_matched_participation
+  - evaluation_participation_rate
+  - evaluation_information_set_fragility_rate
+primary_success_requires_all:
+  - participation_rate_at_least_0.10
+  - at_least_two_nondegenerate_admissible_panels_at_authorized_origins
+  - decision_loss_strictly_lower_than_B1
+  - future_failure_rate_not_higher_than_B1_at_calibration_matched_participation
+  - no_invariance_or_negative_control_failure
+
+inference_and_multiplicity:
+  resampling: paired_non_circular_moving_blocks_over_evaluation_origins
+  draws: 1999
+  primary_block_months: 12
+  sensitivity_block_months: [6, 18, 24]
+  simultaneous_interval: maximum_absolute_studentized_statistic_across_primary_contrasts
+  condition_on_selected_thresholds_and_observed_paths: true
+  finite_sample_guarantee_claim: prohibited
+  p_value_language_without_a_valid_test: prohibited
+
+invariance_and_negative_controls:
+  required_invariances:
+    - identical_immutable_input_requery_has_zero_distance
+    - scenario_order_has_no_effect
+    - factor_rotation_has_no_effect
+    - exact_duplicate_has_no_effect_after_deduplication
+    - serialization_is_byte_identical_in_locked_reproduction
+  negative_controls:
+    - channel_labels_permuted_before_frozen_map
+    - timing_scenario_cyclically_shifted_within_calibration_and_evaluation
+  interpretation: >-
+    Controls diagnose whether the registered structure carries information;
+    they do not prove causality or method novelty.
+
+stop_rules:
+  - stop_if_any_bound_input_hash_fails
+  - stop_if_any_series_key_unit_frequency_or_official_host_differs
+  - stop_if_release_calendar_evidence_is_missing_for_required_MIR_or_BSI_month
+  - stop_if_full_history_changes_a_pilot_timing_class_without_approved_amendment
+  - stop_if_fewer_than_two_nondegenerate_scenarios_exist
+  - stop_if_evaluation_participation_is_below_0.10
+  - report_non_improvement_if_primary_success_is_not_met
+  - keep_transmission_outcomes_sealed_until_separate_authorization
+
+required_run_021_outputs:
+  - research/data/run_021_full_panel_manifest_v1.yaml
+  - research/methodology/run_021_full_panel_build_protocol_v1.yaml
+  - reports/methodology/run_021_protocol_preflight.audit.json
+  - reports/methodology/run_021_closest_prior_art_audit_2026-10-14.md
+  - reports/methodology/run_021_protocol_design_result_2026-10-14.md
+  - reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - research/paper/manuscript_v1_7.md
+  - reports/methodology/run_021_manuscript_v1_7_claim_audit.yaml
+  - reports/methodology/run_021_manuscript_v1_7_citation_locator_audit.yaml
+
+next_decision:
+  success: >-
+    Request separate approval to implement and test the build engine before
+    any full-history retrieval. Implementation tests may use schema-only or
+    synthetic software fixtures, never synthetic empirical evidence.
+  failure: >-
+    Preserve the design failure, revise through an explicit amendment, and do
+    not retrieve the full histories or estimate the wider state.

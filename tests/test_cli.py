@@ -42,6 +42,28 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result, 0)
         self.assertEqual(payload["evidence_status"], "SYNTHETIC_ONLY")
 
+    def test_run021_contract_command_returns_registered_preflight(self) -> None:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            result = main(
+                [
+                    "audit-run021-contract",
+                    str(
+                        ROOT
+                        / "research"
+                        / "methodology"
+                        / "run_021_full_panel_build_protocol_v1.yaml"
+                    ),
+                    str(ROOT / "research" / "data" / "run_021_full_panel_manifest_v1.yaml"),
+                ]
+            )
+        payload = json.loads(output.getvalue())
+        self.assertEqual(result, 0)
+        self.assertTrue(payload["passed"])
+        self.assertEqual(payload["series_count"], 10)
+        self.assertEqual(payload["maximum_scenarios_before_deduplication"], 56)
+        self.assertFalse(payload["full_history_retrieval_performed"])
+
     @patch("shockbridge_state_risk.cli.audit_ea_mpd")
     def test_event_workbook_audit_command(self, audit_ea_mpd) -> None:
         audit_ea_mpd.return_value = EAMPDAudit(

@@ -11,6 +11,10 @@ from typing import Optional
 from shockbridge_state_risk.contracts import audit_contract, load_contract
 from shockbridge_state_risk.data.download import download_https
 from shockbridge_state_risk.data.ecb_events import audit_ea_empd, audit_ea_mpd
+from shockbridge_state_risk.data.full_panel_contract import (
+    audit_full_panel_contract,
+    write_full_panel_contract_audit,
+)
 from shockbridge_state_risk.data.inventory import verify_inventory
 from shockbridge_state_risk.data.monthly_state_panel import (
     build_monthly_state_panel,
@@ -92,6 +96,10 @@ def _parser() -> argparse.ArgumentParser:
     state_replay.add_argument("--audit-output", type=Path)
     inventory = subparsers.add_parser("verify-artifacts")
     inventory.add_argument("manifest", type=Path)
+    run021_contract = subparsers.add_parser("audit-run021-contract")
+    run021_contract.add_argument("protocol", type=Path)
+    run021_contract.add_argument("manifest", type=Path)
+    run021_contract.add_argument("--output", type=Path)
     monthly_panel = subparsers.add_parser("build-monthly-state-panel")
     monthly_panel.add_argument("config", type=Path)
     monthly_panel.add_argument("output", type=Path)
@@ -197,6 +205,14 @@ def main(argv: Optional[list[str]] = None) -> int:
         inventory_audit = verify_inventory(args.manifest)
         print(json.dumps(asdict(inventory_audit), indent=2, sort_keys=True))
         return 0 if inventory_audit.passed else 2
+    if args.command == "audit-run021-contract":
+        contract_audit = audit_full_panel_contract(args.protocol, args.manifest)
+        if args.output is None:
+            print(json.dumps(asdict(contract_audit), indent=2, sort_keys=True))
+        else:
+            write_full_panel_contract_audit(contract_audit, args.output)
+            print(str(args.output))
+        return 0
     if args.command == "build-monthly-state-panel":
         monthly_config = load_monthly_panel_config(args.config)
         rows = build_monthly_state_panel(

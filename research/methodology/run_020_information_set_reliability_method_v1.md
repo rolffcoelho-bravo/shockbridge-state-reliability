@@ -1,7 +1,7 @@
 # Information-set reliability for decision-time monetary-policy states
 
-**Status:** frozen candidate method before full-panel retrieval or estimation
-**Date:** 2026-10-12
+**Status:** frozen candidate method before full-panel retrieval or estimation  
+**Date:** 2026-10-12  
 **Empirical boundary:** real, freely retrievable official observations only;
 no synthetic empirical observations; no transmission outcomes
 

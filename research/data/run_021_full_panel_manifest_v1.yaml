@@ -1,0 +1,242 @@
+schema_version: 1
+manifest_id: run-021-full-panel-manifest-v1
+created_on: 2026-10-14
+status: FROZEN_BEFORE_FULL_RETRIEVAL
+amends: null
+provider: European Central Bank
+service: ECB Data Portal SDMX API
+service_root: https://data-api.ecb.europa.eu/service/data
+rights_locator: https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html
+real_official_data_only: true
+zero_cost_sources_only: true
+synthetic_empirical_observations_allowed: false
+transmission_outcomes_allowed: false
+
+retrieval_contract:
+  retrieval_allowed_in_run_021: false
+  next_stage_requires_separate_owner_approval: true
+  atomic_download: true
+  immutable_destination: data/raw/run021_full_panel_v1
+  maximum_response_bytes_per_series: 50000000
+  response_hash_state_before_retrieval: PENDING_NOT_INVENTED
+  hash_algorithm_after_retrieval: sha256
+  capture_final_url_and_utc_timestamp: true
+  refuse_redirect_off_official_host: true
+  refuse_overwrite: true
+
+calendar:
+  raw_lookback_start: 2002-01-01
+  panel_start: 2003-01
+  panel_end: 2025-10
+  monthly_origin: first_calendar_day_23_59_59_Europe_Berlin
+  availability_rule: first_usable_timestamp_strictly_before_origin
+  equality_at_origin: rejected
+
+release_sources:
+  rtd_information: https://data.ecb.europa.eu/data/datasets/RTD/data-information
+  fx_methodology: https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html
+  mir_calendar: https://www.ecb.europa.eu/press/calendars/statscal/mfm/html/stprmf.en.html
+  mir_archive: https://www.ecb.europa.eu/press/stats/mfi/html/index.en.html
+  bsi_calendar: https://www.ecb.europa.eu/press/calendars/statscal/mfm/html/stprmp.en.html
+  bsi_information: https://data.ecb.europa.eu/data/datasets/BSI/data-information
+  rule: >-
+    Release-calendar pages and any historical release index used in the build
+    must be stored privately and hash-registered before series values are
+    transformed. If an exact MIR or BSI reference-period release cannot be
+    verified, that series-month remains missing.
+
+series:
+  - series_id: RTD_HICP
+    full_series_key: RTD.M.S0.N.P_C_OV.X
+    api_path: RTD/M.S0.N.P_C_OV.X
+    filename: rtd_hicp.csv
+    frequency: M
+    unit: IX
+    channel: prices_and_expectations
+    timing_class: A_REPLAY_ELIGIBLE
+    revision_exposure: archived_policy_concept_vintages
+    availability_algorithm: latest_row_with_VALID_FROM_strictly_before_origin
+    transformation: yoy_log_difference_times_100_within_selected_vintage
+    sign: 1
+    transformation_lookback_periods: 12
+    query_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.N.P_C_OV.X?includeHistory=true&format=csvdata&startPeriod=2002-01&endPeriod=2025-10
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: RTD_INDUSTRIAL_PRODUCTION
+    full_series_key: RTD.M.S0.Y.I_XCONS.X
+    api_path: RTD/M.S0.Y.I_XCONS.X
+    filename: rtd_industrial_production.csv
+    frequency: M
+    unit: IX
+    channel: real_activity_and_labour
+    timing_class: A_REPLAY_ELIGIBLE
+    revision_exposure: archived_policy_concept_vintages
+    availability_algorithm: latest_row_with_VALID_FROM_strictly_before_origin
+    transformation: yoy_log_difference_times_100_within_selected_vintage
+    sign: 1
+    transformation_lookback_periods: 12
+    query_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.Y.I_XCONS.X?includeHistory=true&format=csvdata&startPeriod=2002-01&endPeriod=2025-10
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: RTD_UNEMPLOYMENT
+    full_series_key: RTD.M.S0.S.L_UNETO.F
+    api_path: RTD/M.S0.S.L_UNETO.F
+    filename: rtd_unemployment.csv
+    frequency: M
+    unit: PC
+    channel: real_activity_and_labour
+    timing_class: A_REPLAY_ELIGIBLE
+    revision_exposure: archived_policy_concept_vintages
+    availability_algorithm: latest_row_with_VALID_FROM_strictly_before_origin
+    transformation: level
+    sign: -1
+    transformation_lookback_periods: 0
+    query_url: https://data-api.ecb.europa.eu/service/data/RTD/M.S0.S.L_UNETO.F?includeHistory=true&format=csvdata&startPeriod=2002-01&endPeriod=2025-10
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: ECB_DEPOSIT_FACILITY_RATE
+    full_series_key: FM.D.U2.EUR.4F.KR.DFR.LEV
+    api_path: FM/D.U2.EUR.4F.KR.DFR.LEV
+    filename: ecb_deposit_facility_rate.csv
+    frequency: D
+    unit: PCPA
+    channel: policy_stance_and_money_market
+    timing_class: A_REPLAY_ELIGIBLE
+    revision_exposure: dated_effective_rate_with_history_timestamp
+    availability_algorithm: last_effective_level_with_VALID_FROM_strictly_before_origin
+    transformation: level
+    sign: 1
+    transformation_lookback_periods: 0
+    query_url: https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.DFR.LEV?includeHistory=true&format=csvdata&startPeriod=2002-01-01&endPeriod=2025-10-31
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: ECB_YIELD_CURVE_2Y
+    full_series_key: YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y
+    api_path: YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y
+    filename: ecb_yield_curve_2y.csv
+    frequency: B
+    unit: PCPA
+    channel: sovereign_curve_and_term_structure
+    timing_class: A_REPLAY_ELIGIBLE
+    revision_exposure: dated_curve_estimate_with_history_timestamp
+    availability_algorithm: last_observation_with_VALID_FROM_strictly_before_origin
+    transformation: level
+    sign: 1
+    transformation_lookback_periods: 0
+    query_url: https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_2Y?includeHistory=true&format=csvdata&startPeriod=2002-01-01&endPeriod=2025-10-31
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: ECB_YIELD_CURVE_10Y
+    full_series_key: YC.B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y
+    api_path: YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y
+    filename: ecb_yield_curve_10y.csv
+    frequency: B
+    unit: PCPA
+    channel: sovereign_curve_and_term_structure
+    timing_class: A_REPLAY_ELIGIBLE
+    revision_exposure: dated_curve_estimate_with_history_timestamp
+    availability_algorithm: last_observation_with_VALID_FROM_strictly_before_origin
+    transformation: ten_year_minus_two_year_same_information_set
+    sign: 1
+    transformation_lookback_periods: 0
+    query_url: https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_C.SV_C_YM.SR_10Y?includeHistory=true&format=csvdata&startPeriod=2002-01-01&endPeriod=2025-10-31
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: ECB_USD_EUR_REFERENCE_RATE
+    full_series_key: EXR.D.USD.EUR.SP00.A
+    api_path: EXR/D.USD.EUR.SP00.A
+    filename: ecb_usd_eur_reference_rate.csv
+    frequency: D
+    unit: USD
+    channel: external_value_and_cross_border_conditions
+    timing_class: B_RELEASE_LAG_ELIGIBLE
+    revision_exposure: nonrevisable_dated_reference_rate_assumption_to_be_audited
+    availability_algorithm: observation_date_at_17_00_Europe_Berlin_then_strict_origin_filter
+    transformation: end_of_month_log_change_times_100
+    sign: -1
+    transformation_lookback_periods: 1
+    query_url: https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?includeHistory=true&format=csvdata&startPeriod=2002-01-01&endPeriod=2025-10-31
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: MIR_NFC_COST_OF_BORROWING
+    full_series_key: MIR.M.U2.B.A2I.AM.R.A.2240.EUR.N
+    api_path: MIR/M.U2.B.A2I.AM.R.A.2240.EUR.N
+    filename: mir_nfc_cost_of_borrowing.csv
+    frequency: M
+    unit: PCPA
+    channel: bank_funding_and_lending_rates
+    timing_class: B_RELEASE_LAG_ELIGIBLE
+    revision_exposure: current_history_shifted_to_verified_release_calendar
+    availability_algorithm: exact_archived_MIR_release_timestamp_for_reference_period_plus_one_second
+    transformation: level
+    sign: 1
+    transformation_lookback_periods: 0
+    query_url: https://data-api.ecb.europa.eu/service/data/MIR/M.U2.B.A2I.AM.R.A.2240.EUR.N?includeHistory=true&format=csvdata&startPeriod=2003-01&endPeriod=2025-10
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: BSI_NFC_ADJUSTED_LOANS
+    full_series_key: BSI.M.U2.Y.U.A20T.A.I.U2.2240.Z01.A
+    api_path: BSI/M.U2.Y.U.A20T.A.I.U2.2240.Z01.A
+    filename: bsi_nfc_adjusted_loans.csv
+    frequency: M
+    unit: PCCH
+    channel: credit_and_money_quantities
+    timing_class: B_RELEASE_LAG_ELIGIBLE
+    revision_exposure: current_history_shifted_to_verified_release_calendar
+    availability_algorithm: exact_archived_BSI_release_timestamp_for_reference_period_plus_one_second
+    transformation: use_published_annual_growth_rate
+    sign: 1
+    transformation_lookback_periods: 0
+    query_url: https://data-api.ecb.europa.eu/service/data/BSI/M.U2.Y.U.A20T.A.I.U2.2240.Z01.A?includeHistory=true&format=csvdata&startPeriod=2003-01&endPeriod=2025-10
+    response_sha256: PENDING_NOT_INVENTED
+
+  - series_id: BSI_MONETARY_AGGREGATE_M3
+    full_series_key: BSI.M.U2.Y.V.M30.X.I.U2.2300.Z01.A
+    api_path: BSI/M.U2.Y.V.M30.X.I.U2.2300.Z01.A
+    filename: bsi_monetary_aggregate_m3.csv
+    frequency: M
+    unit: PCCH
+    channel: credit_and_money_quantities
+    timing_class: B_RELEASE_LAG_ELIGIBLE
+    revision_exposure: current_history_shifted_to_verified_release_calendar
+    availability_algorithm: exact_archived_BSI_release_timestamp_for_reference_period_plus_one_second
+    transformation: use_published_annual_growth_rate
+    sign: 1
+    transformation_lookback_periods: 0
+    query_url: https://data-api.ecb.europa.eu/service/data/BSI/M.U2.Y.V.M30.X.I.U2.2300.Z01.A?includeHistory=true&format=csvdata&startPeriod=2003-01&endPeriod=2025-10
+    response_sha256: PENDING_NOT_INVENTED
+
+panels:
+  - panel_id: P0_CORE_REPLAY_AND_FAST
+    role: primary_replay_anchor
+    series_ids:
+      - RTD_HICP
+      - RTD_INDUSTRIAL_PRODUCTION
+      - RTD_UNEMPLOYMENT
+      - ECB_DEPOSIT_FACILITY_RATE
+      - ECB_YIELD_CURVE_2Y
+      - ECB_YIELD_CURVE_10Y
+      - ECB_USD_EUR_REFERENCE_RATE
+    minimum_distinct_channels: 5
+  - panel_id: P1_AUGMENTED_BANK_CREDIT
+    role: revision_exposed_augmented_sensitivity
+    series_ids:
+      - RTD_HICP
+      - RTD_INDUSTRIAL_PRODUCTION
+      - RTD_UNEMPLOYMENT
+      - ECB_DEPOSIT_FACILITY_RATE
+      - ECB_YIELD_CURVE_2Y
+      - ECB_YIELD_CURVE_10Y
+      - ECB_USD_EUR_REFERENCE_RATE
+      - MIR_NFC_COST_OF_BORROWING
+      - BSI_NFC_ADJUSTED_LOANS
+      - BSI_MONETARY_AGGREGATE_M3
+    minimum_distinct_channels: 7
+
+scientific_language:
+  executed_panel_label: wider_multichannel_panel
+  high_dimensional_claim_allowed_before_execution: false
+  condition_for_later_high_dimensional_language: >-
+    Report the executed nonredundant cross section, time span, missingness,
+    selected factor rank, effective channel count, and scenario count first;
+    ten registered series alone do not establish a high-dimensional result.

@@ -72,7 +72,7 @@
   "result": "PASS_IMPLEMENTATION_ONLY_NO_EMPIRICAL_VALIDATION",
   "static_analysis": {
     "mypy": "PASS_40_SOURCE_FILES",
-    "ruff_format": "PASS_191_FILES",
+    "ruff_format": "PASS_192_FILES",
     "ruff_lint": "PASS"
   },
   "synthetic_empirical_observations_used": false,

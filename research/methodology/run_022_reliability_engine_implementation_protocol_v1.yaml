@@ -1,0 +1,135 @@
+schema_version: 1
+protocol_id: run-022-reliability-engine-implementation-v1
+created_on: 2026-10-15
+status: APPROVED_AND_FROZEN_BEFORE_IMPLEMENTATION
+approval_basis: >-
+  Owner approval in the research thread following acceptance of Run 021.
+  Run 022 may implement and test the value-free reliability engine. It may not
+  retrieve full histories, construct the empirical panel, fit an empirical
+  state, inspect transmission outcomes, or report an empirical performance
+  result.
+
+bound_inputs:
+  - path: research/methodology/run_021_full_panel_build_protocol_v1.yaml
+    sha256: 0c1eb20d0ff5879623fad2655a2edf8f5f499e8440d896e57b91e013dae40493
+  - path: research/methodology/run_021_information_set_reliability_method_v2.md
+    sha256: 5a9ca4156683500a436a793f5acfbc6f782d0b31926846b807843b09c88ebc65
+  - path: research/data/run_021_full_panel_manifest_v1.yaml
+    sha256: 3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b
+  - path: reports/methodology/run_021_protocol_preflight.audit.json
+    sha256: a53368a1c40877c3399604a186c0d97bf09b5db3a402c78752c060dd20151d6a
+
+scientific_boundary:
+  full_history_retrieval_allowed: false
+  network_access_from_engine_allowed: false
+  empirical_panel_construction_allowed: false
+  empirical_state_estimation_allowed: false
+  transmission_outcomes_access_allowed: false
+  synthetic_empirical_observations_allowed: false
+  software_only_fixture_values_allowed: true
+  software_fixture_values_are_empirical_evidence: false
+  high_dimensional_empirical_claim_allowed: false
+  methodological_novelty_claim_allowed: false
+  positive_result_required: false
+
+implementation_objective: >-
+  Implement the deterministic numerical kernel required to evaluate the
+  admissible information-set reliability envelope after a separately approved
+  real-data build. The kernel accepts in-memory matrices and metadata only and
+  performs no retrieval, calendar inference, or outcome access.
+
+resolved_implementation_details:
+  channel_weighting_coordinates:
+    fit_matrix: standardized series multiplied by signed channel weights
+    returned_loadings: original standardized-series coordinates
+    channel_projection: apply the frozen signed channel map exactly once to returned loadings
+    prohibited: double_application_of_channel_weights
+  missing_initialization:
+    rule: zero_after_observed_mean_standardization
+    interpretation: observed_training_mean_in_standardized_coordinates
+  observed_variance:
+    numerator: squared residuals of the channel-weighted observed entries
+    denominator: sum of squared channel weights over observed entries
+  observed_rank:
+    rule: numerical_rank_of_zero_initialized_channel_weighted_matrix
+    tolerance: numpy_matrix_rank_default
+  convergence:
+    metric: relative_change_in_observed_weighted_residual_variance
+    zero_denominator_floor: machine_epsilon
+  deterministic_ties:
+    singular_vector_sign: largest_absolute_loading_positive
+    rank_selection: lower_rank
+    scenario_representative: lexical_scenario_id
+  canonical_scenario_hash:
+    include: [matrix_shape, exact_eligibility_mask, observed_values_formatted_to_12_significant_digits]
+    missing_values: represented_only_by_mask
+    nonfinite_observed_values: reject
+
+required_public_api:
+  module: shockbridge_state_risk.state.reliability_engine
+  objects:
+    - standardize_observed_matrix
+    - build_channel_map
+    - fit_em_pca_rank
+    - select_em_pca_rank
+    - score_projector
+    - channel_projector
+    - compare_projectors
+    - align_scores_procrustes
+    - canonical_scenario_key
+    - deduplicate_scenarios
+
+minimum_fail_closed_checks:
+  - matrix_is_two_dimensional_and_contains_no_infinity
+  - every_retained_series_meets_count_coverage_and_positive_scale_rules
+  - channel_ids_signs_and_weights_have_exact_compatible_shapes
+  - rank_is_positive_below_series_count_and_not_above_observed_rank
+  - observed_entries_never_change_during_EM_updates
+  - nonconvergence_returns_no_estimate
+  - projector_inputs_are_finite_and_nonzero_rank
+  - Procrustes_alignment_requires_equal_rows_and_ranks
+  - scenario_masks_and_matrices_have_equal_shapes
+  - scenario_ids_are_unique_nonempty_and_order_independent
+
+required_invariances:
+  - identical_input_produces_byte_identical_numeric_arrays
+  - factor_rotation_does_not_change_score_or_channel_projectors
+  - scenario_order_does_not_change_representatives_or_keys
+  - exact_duplicate_collapses_after_canonicalization
+  - observed_entries_are_unchanged_by_missing_value_iterations
+
+required_sensitivity_checks:
+  - rank_one_and_rank_two_fits_are_available_when_identified
+  - unequal_rank_Frobenius_normalization_is_defined
+  - channel_duplication_is_neutralized_by_inverse_square_root_weights
+  - nonconvergence_is_explicit_and_does_not_return_partial_results
+
+acceptance_gates:
+  - all_bound_input_hashes_match
+  - implementation_contains_no_network_or filesystem_IO
+  - hostile_and_invariance_tests_pass
+  - full_private_suite_passes_at_90_percent_branch_coverage
+  - public_slice_passes_with_exactly_seven_registered_evidence_skips
+  - static_analysis_and_formatting_pass
+  - manuscript_revision_states_implementation_without_empirical_validation
+  - release_boundary_scan_finds_no_private_or_protected_material
+
+required_outputs:
+  - research/methodology/run_022_reliability_engine_implementation_protocol_v1.yaml
+  - src/shockbridge_state_risk/state/reliability_engine.py
+  - tests/test_reliability_engine.py
+  - reports/methodology/run_022_reliability_engine_validation.audit.json
+  - reports/methodology/run_022_reliability_engine_result_2026-10-15.md
+  - reports/methodology/run_022_reliability_engine_v1.manifest.yaml
+  - research/paper/manuscript_v1_8.md
+  - reports/methodology/run_022_manuscript_v1_8_claim_audit.yaml
+  - reports/methodology/run_022_manuscript_v1_8_citation_locator_audit.yaml
+
+next_decision:
+  success: >-
+    Seek separate approval for the real official full-history retrieval and
+    decision-time panel build. Passing software tests is not evidence that the
+    wider panel is feasible, stable, useful, or novel.
+  failure: >-
+    Preserve the failed implementation, amend the protocol explicitly, and do
+    not retrieve full histories or open transmission outcomes.

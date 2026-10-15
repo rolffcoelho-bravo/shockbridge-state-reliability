@@ -27,7 +27,7 @@ PRIVATE_ONLY_PATHS = {
     "reports/methodology/run_021_protocol_design_v1.manifest.yaml",
     "reports/methodology/run_021_manuscript_v1_7_citation_locator_audit.yaml",
     "reports/methodology/run_021_manuscript_v1_7_claim_audit.yaml",
-    "reports/methodology/run_021_public_release_receipt_2026-10-14.json",
+    "reports/methodology/run_021_public_release_receipt_2026-10-15.json",
     "shockbridge_state_risk_flagship_blueprint_v1.md",
     "shockbridge_state_risk_flagship_blueprint_v2.md",
     "scripts/reproduce_run010_portable.py",

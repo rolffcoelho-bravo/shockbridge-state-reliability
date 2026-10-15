@@ -221,7 +221,7 @@ class PublicExportTests(unittest.TestCase):
         )
         self.assertTrue(
             is_private_only_path(
-                "reports/methodology/run_021_public_release_receipt_2026-10-14.json"
+                "reports/methodology/run_021_public_release_receipt_2026-10-15.json"
             )
         )
         self.assertTrue(

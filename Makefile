@@ -1,4 +1,4 @@
-.PHONY: install quality test test-public public-export synthetic design-power state-panel monthly-state-panel state-replay state-model-comparison state-redesign state-subspace state-instability state-instability-amendment run010-fetch vintage-robustness run021-contract-audit inventory-audit contract-audit clean
+.PHONY: install quality test test-public public-export synthetic design-power state-panel monthly-state-panel state-replay state-model-comparison state-redesign state-subspace state-instability state-instability-amendment run010-fetch vintage-robustness state-abstention run021-contract-audit run023-retrieve run023-build inventory-audit contract-audit clean
 
 PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 
@@ -59,8 +59,17 @@ run010-fetch:
 vintage-robustness:
 	$(PYTHON) -m shockbridge_state_risk run-vintage-robustness experiments/state_vintage_robustness_run010_v1.yaml --comparison-output data/processed/state_vintage_comparison_run010_v1.csv --geometry-output data/processed/state_vintage_geometry_run010_v1.csv --episode-output data/processed/state_vintage_episodes_run010_v1.csv --audit-output reports/methodology/state_vintage_robustness_run010_v1.audit.json
 
+state-abstention:
+	$(PYTHON) -m shockbridge_state_risk run-state-abstention experiments/state_abstention_run018_v1.yaml --monthly-output data/processed/state_abstention_run018_v1.csv --risk-coverage-output data/processed/state_abstention_risk_coverage_run018_v1.csv --audit-output reports/methodology/state_abstention_run018_v1.audit.json
+
 run021-contract-audit:
 	$(PYTHON) -m shockbridge_state_risk audit-run021-contract research/methodology/run_021_full_panel_build_protocol_v1.yaml research/data/run_021_full_panel_manifest_v1.yaml
+
+run023-retrieve:
+	$(PYTHON) scripts/run023_full_panel_build.py retrieve
+
+run023-build:
+	$(PYTHON) scripts/run023_full_panel_build.py build
 
 inventory-audit:
 	$(PYTHON) -m shockbridge_state_risk verify-artifacts data/manifests/local_artifact_inventory_2026-10-02.yaml

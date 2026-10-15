@@ -1,0 +1,117 @@
+{
+  "audit_id": "run-023-full-panel-build-v1",
+  "duplicate_keys": 0,
+  "missing_reasons": {
+    "insufficient_transformation_lookback": 14,
+    "no_explicit_release_mapped_observation": 363,
+    "no_strictly_prior_observation": 682
+  },
+  "nonfinite_values": 0,
+  "panel_months": 274,
+  "panel_rows": {
+    "P0_CORE_REPLAY_AND_FAST": 1918,
+    "P1_AUGMENTED_BANK_CREDIT": 2740
+  },
+  "passed": true,
+  "point_in_time_violations": 0,
+  "protocol_sha256": "aeb25cbca792b8848aaecad5ba5eba0e494015d75b254ab35e38a26e7829b947",
+  "raw_source_count": 10,
+  "release_evidence_count": 7,
+  "release_mapping_counts": {
+    "BSI": 114,
+    "MIR": 118
+  },
+  "reliability_engine_imported": false,
+  "retrieval_manifest_sha256": "3afeaa8fd2b3d47c1f368d4b4164bf9ae4f6242772ad3415bd59dc354d3a97d2",
+  "series_coverage": {
+    "P0_CORE_REPLAY_AND_FAST:ECB_DEPOSIT_FACILITY_RATE": {
+      "coverage_percent": 44.890511,
+      "observed_origins": 123,
+      "total_origins": 274
+    },
+    "P0_CORE_REPLAY_AND_FAST:ECB_USD_EUR_REFERENCE_RATE": {
+      "coverage_percent": 100.0,
+      "observed_origins": 274,
+      "total_origins": 274
+    },
+    "P0_CORE_REPLAY_AND_FAST:ECB_YIELD_CURVE_10Y": {
+      "coverage_percent": 65.328467,
+      "observed_origins": 179,
+      "total_origins": 274
+    },
+    "P0_CORE_REPLAY_AND_FAST:ECB_YIELD_CURVE_2Y": {
+      "coverage_percent": 65.328467,
+      "observed_origins": 179,
+      "total_origins": 274
+    },
+    "P0_CORE_REPLAY_AND_FAST:RTD_HICP": {
+      "coverage_percent": 98.905109,
+      "observed_origins": 271,
+      "total_origins": 274
+    },
+    "P0_CORE_REPLAY_AND_FAST:RTD_INDUSTRIAL_PRODUCTION": {
+      "coverage_percent": 98.540146,
+      "observed_origins": 270,
+      "total_origins": 274
+    },
+    "P0_CORE_REPLAY_AND_FAST:RTD_UNEMPLOYMENT": {
+      "coverage_percent": 100.0,
+      "observed_origins": 274,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:BSI_MONETARY_AGGREGATE_M3": {
+      "coverage_percent": 37.226277,
+      "observed_origins": 102,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:BSI_NFC_ADJUSTED_LOANS": {
+      "coverage_percent": 37.226277,
+      "observed_origins": 102,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:ECB_DEPOSIT_FACILITY_RATE": {
+      "coverage_percent": 44.890511,
+      "observed_origins": 123,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:ECB_USD_EUR_REFERENCE_RATE": {
+      "coverage_percent": 100.0,
+      "observed_origins": 274,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:ECB_YIELD_CURVE_10Y": {
+      "coverage_percent": 65.328467,
+      "observed_origins": 179,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:ECB_YIELD_CURVE_2Y": {
+      "coverage_percent": 65.328467,
+      "observed_origins": 179,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:MIR_NFC_COST_OF_BORROWING": {
+      "coverage_percent": 93.065693,
+      "observed_origins": 255,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:RTD_HICP": {
+      "coverage_percent": 98.905109,
+      "observed_origins": 271,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:RTD_INDUSTRIAL_PRODUCTION": {
+      "coverage_percent": 98.540146,
+      "observed_origins": 270,
+      "total_origins": 274
+    },
+    "P1_AUGMENTED_BANK_CREDIT:RTD_UNEMPLOYMENT": {
+      "coverage_percent": 100.0,
+      "observed_origins": 274,
+      "total_origins": 274
+    }
+  },
+  "source_registry_sha256": "3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b",
+  "state_estimation_performed": false,
+  "synthetic_empirical_observations_used": false,
+  "transmission_outcomes_accessed": false
+}

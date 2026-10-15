@@ -1,0 +1,19 @@
+{
+  "attempt_id": "run-023-retrieval-attempt-2",
+  "created_on": "2026-10-15",
+  "error_class": "FullPanelBuildError",
+  "error_message": "official retrieval failed for RTD_INDUSTRIAL_PRODUCTION: The read operation timed out",
+  "failed_item": "RTD_INDUSTRIAL_PRODUCTION",
+  "failure_stage": "staging_response_stream",
+  "registered_urls_changed": false,
+  "promoted_raw_bundle": false,
+  "promoted_retrieval_manifest": false,
+  "staging_directory_removed": true,
+  "series_values_transformed": false,
+  "panel_constructed": false,
+  "state_estimation_performed": false,
+  "transmission_outcomes_accessed": false,
+  "synthetic_empirical_observations_used": false,
+  "diagnosis": "The full official RTD response did not complete within the implicit 60-second socket-read timeout.",
+  "resolution": "DEV-090"
+}

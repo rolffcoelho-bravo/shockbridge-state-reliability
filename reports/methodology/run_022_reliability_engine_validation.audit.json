@@ -1,0 +1,85 @@
+{
+  "audit_id": "run-022-reliability-engine-validation-v1",
+  "bound_inputs_verified": 4,
+  "created_on": "2026-10-15",
+  "empirical_panel_constructed": false,
+  "empirical_state_estimated": false,
+  "engine": {
+    "bytes": 18973,
+    "filesystem_surface_present": false,
+    "network_surface_present": false,
+    "path": "src/shockbridge_state_risk/state/reliability_engine.py",
+    "sha256": "b2f395394de5b503312e4f3f17d7d4731f232c13dcf421532f9775348b8e0127"
+  },
+  "focused_validation": {
+    "branch_aware_coverage_percent": 92,
+    "errors": 0,
+    "failures": 0,
+    "software_fixture_values_are_empirical_evidence": false,
+    "tests_passed": 19,
+    "tests_run": 19
+  },
+  "full_history_retrieval_performed": false,
+  "implementation_checks": {
+    "channel_map_applied_once": true,
+    "deterministic_byte_identical_repeat": true,
+    "exact_observed_entry_preservation": true,
+    "icp2_unidentified_sample_fails_closed": true,
+    "integer_width_invariance": true,
+    "near_collinearity_rank_preserved": true,
+    "nonconvergence_returns_no_partial_fit": true,
+    "procrustes_recovery": true,
+    "rotation_invariant_channel_projector": true,
+    "rotation_invariant_score_projector": true,
+    "scenario_order_invariance": true,
+    "unequal_rank_distance_defined": true
+  },
+  "manuscript": {
+    "commercial_computational_assistant_named": false,
+    "empirical_validation_claimed": false,
+    "path": "research/paper/manuscript_v1_8.md",
+    "version": "1.8"
+  },
+  "private_suite": {
+    "branch_aware_coverage_percent": 90,
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests_passed": 225,
+    "tests_run": 225
+  },
+  "protocol": {
+    "path": "research/methodology/run_022_reliability_engine_implementation_protocol_v1.yaml",
+    "sha256": "ca309fdbe4b143c9f841749c37c5452955bf8ae01ddd1f8770aff4e7d4d4b771",
+    "status": "APPROVED_AND_FROZEN_BEFORE_IMPLEMENTATION"
+  },
+  "public_candidate_suite": {
+    "branch_aware_coverage_percent": 87,
+    "errors": 0,
+    "expected_evidence_skips": 7,
+    "failures": 0,
+    "skipped": 7,
+    "tests_discovered": 213,
+    "tests_executed": 206,
+    "unexpected_skip_reasons": []
+  },
+  "recorded_corrections": [
+    "DEV-079",
+    "DEV-080",
+    "DEV-081",
+    "DEV-082"
+  ],
+  "result": "PASS_IMPLEMENTATION_ONLY_NO_EMPIRICAL_VALIDATION",
+  "static_analysis": {
+    "mypy": "PASS_40_SOURCE_FILES",
+    "ruff_format": "PASS_191_FILES",
+    "ruff_lint": "PASS"
+  },
+  "synthetic_empirical_observations_used": false,
+  "test_module": {
+    "bytes": 12966,
+    "path": "tests/test_reliability_engine.py",
+    "sha256": "6bb80bc2b769c1d3a06317a1ef05f9a7d87fbad0260461000702e7a546a338fd"
+  },
+  "transmission_outcomes_accessed": false
+}

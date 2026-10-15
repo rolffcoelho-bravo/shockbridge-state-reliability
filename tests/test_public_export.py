@@ -114,9 +114,9 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("Apache-2.0", readme)
         self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
         self.assertIn("parentless root commit", readme)
+        self.assertIn("225 tests", readme)
+        self.assertIn("213 tests", readme)
         self.assertIn("206 tests", readme)
-        self.assertIn("194 tests", readme)
-        self.assertIn("187 tests", readme)
         self.assertIn("Reviewer paths", readme)
         self.assertIn("Repository map", readme)
         self.assertNotIn("No GitHub remote exists", readme)
@@ -173,7 +173,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("four registered features", readme)
         self.assertIn("large-*N*", readme)
         self.assertIn(
-            "194 tests",
+            "213 tests",
             (root / "REPRODUCING.md").read_text(encoding="utf-8"),
         )
         support = (root / "SUPPORT.md").read_text(encoding="utf-8")
@@ -202,6 +202,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertTrue(is_private_only_path("research/paper/manuscript_v1_5.md"))
         self.assertTrue(is_private_only_path("research/paper/manuscript_v1_6.md"))
         self.assertTrue(is_private_only_path("research/paper/manuscript_v1_7.md"))
+        self.assertTrue(is_private_only_path("research/paper/manuscript_v1_8.md"))
         self.assertTrue(
             is_private_only_path("reports/methodology/run_019_manuscript_v1_5_claim_audit.yaml")
         )
@@ -222,6 +223,17 @@ class PublicExportTests(unittest.TestCase):
         self.assertTrue(
             is_private_only_path(
                 "reports/methodology/run_021_public_release_receipt_2026-10-15.json"
+            )
+        )
+        self.assertTrue(
+            is_private_only_path("reports/methodology/run_022_manuscript_v1_8_claim_audit.yaml")
+        )
+        self.assertTrue(
+            is_private_only_path("reports/methodology/run_022_reliability_engine_v1.manifest.yaml")
+        )
+        self.assertTrue(
+            is_private_only_path(
+                "reports/methodology/run_022_public_release_receipt_2026-10-15.json"
             )
         )
         self.assertTrue(

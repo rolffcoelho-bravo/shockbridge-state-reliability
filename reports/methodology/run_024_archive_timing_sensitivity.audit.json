@@ -1,0 +1,556 @@
+{
+  "audit_id": "run-024-archive-identifier-and-timing-sensitivity-v1",
+  "bound_inputs_verified": 9,
+  "next_day_clock": {
+    "duplicate_keys": 0,
+    "fully_observed_origins": {
+      "P0_CORE_REPLAY_AND_FAST": 123,
+      "P1_AUGMENTED_BANK_CREDIT": 123
+    },
+    "missing_reasons": {
+      "insufficient_transformation_lookback": 14,
+      "no_strictly_prior_observation": 682,
+      "no_verified_release_mapped_observation": 29
+    },
+    "nonfinite_values": 0,
+    "panel_rows": {
+      "P0_CORE_REPLAY_AND_FAST": 1918,
+      "P1_AUGMENTED_BANK_CREDIT": 2740
+    },
+    "point_in_time_violations": 0,
+    "series_coverage": {
+      "P0_CORE_REPLAY_AND_FAST:ECB_DEPOSIT_FACILITY_RATE": {
+        "coverage_percent": 44.890511,
+        "first_usable_origin": "2015-08",
+        "observed_origins": 123,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:ECB_USD_EUR_REFERENCE_RATE": {
+        "coverage_percent": 100.0,
+        "first_usable_origin": "2003-01",
+        "observed_origins": 274,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:ECB_YIELD_CURVE_10Y": {
+        "coverage_percent": 65.328467,
+        "first_usable_origin": "2010-12",
+        "observed_origins": 179,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:ECB_YIELD_CURVE_2Y": {
+        "coverage_percent": 65.328467,
+        "first_usable_origin": "2010-12",
+        "observed_origins": 179,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:RTD_HICP": {
+        "coverage_percent": 98.905109,
+        "first_usable_origin": "2003-04",
+        "observed_origins": 271,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:RTD_INDUSTRIAL_PRODUCTION": {
+        "coverage_percent": 98.540146,
+        "first_usable_origin": "2003-05",
+        "observed_origins": 270,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:RTD_UNEMPLOYMENT": {
+        "coverage_percent": 100.0,
+        "first_usable_origin": "2003-01",
+        "observed_origins": 274,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:BSI_MONETARY_AGGREGATE_M3": {
+        "coverage_percent": 99.270073,
+        "first_usable_origin": "2003-03",
+        "observed_origins": 272,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:BSI_NFC_ADJUSTED_LOANS": {
+        "coverage_percent": 94.890511,
+        "first_usable_origin": "2004-03",
+        "observed_origins": 260,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:ECB_DEPOSIT_FACILITY_RATE": {
+        "coverage_percent": 44.890511,
+        "first_usable_origin": "2015-08",
+        "observed_origins": 123,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:ECB_USD_EUR_REFERENCE_RATE": {
+        "coverage_percent": 100.0,
+        "first_usable_origin": "2003-01",
+        "observed_origins": 274,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:ECB_YIELD_CURVE_10Y": {
+        "coverage_percent": 65.328467,
+        "first_usable_origin": "2010-12",
+        "observed_origins": 179,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:ECB_YIELD_CURVE_2Y": {
+        "coverage_percent": 65.328467,
+        "first_usable_origin": "2010-12",
+        "observed_origins": 179,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:MIR_NFC_COST_OF_BORROWING": {
+        "coverage_percent": 95.255474,
+        "first_usable_origin": "2004-02",
+        "observed_origins": 261,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:RTD_HICP": {
+        "coverage_percent": 98.905109,
+        "first_usable_origin": "2003-04",
+        "observed_origins": 271,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:RTD_INDUSTRIAL_PRODUCTION": {
+        "coverage_percent": 98.540146,
+        "first_usable_origin": "2003-05",
+        "observed_origins": 270,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:RTD_UNEMPLOYMENT": {
+        "coverage_percent": 100.0,
+        "first_usable_origin": "2003-01",
+        "observed_origins": 274,
+        "total_origins": 274
+      }
+    },
+    "timing_variant": "next_day_clock"
+  },
+  "next_day_vs_registered_clock": {
+    "changed_panel_key_count": 793,
+    "changed_release_timestamp_count": 603,
+    "exact_changed_origin_months": [
+      "2009-10",
+      "2010-09",
+      "2010-10",
+      "2011-09",
+      "2012-08",
+      "2013-02",
+      "2014-10",
+      "2015-04",
+      "2015-10",
+      "2016-09",
+      "2017-09",
+      "2018-02",
+      "2018-08",
+      "2019-02",
+      "2019-07",
+      "2020-04",
+      "2020-10",
+      "2021-09",
+      "2021-10",
+      "2022-09",
+      "2023-09",
+      "2024-02",
+      "2025-10"
+    ],
+    "fully_observed_origin_delta_by_panel": {
+      "P0_CORE_REPLAY_AND_FAST": 0,
+      "P1_AUGMENTED_BANK_CREDIT": 0
+    },
+    "missingness_status_change_count": 0,
+    "release_dates_coinciding_with_origin_date": [
+      "2009-10-01",
+      "2010-09-01",
+      "2010-10-01",
+      "2011-09-01",
+      "2012-08-01",
+      "2013-02-01",
+      "2014-10-01",
+      "2015-04-01",
+      "2015-10-01",
+      "2016-09-01",
+      "2017-09-01",
+      "2018-02-01",
+      "2018-08-01",
+      "2019-02-01",
+      "2019-07-01",
+      "2020-04-01",
+      "2020-10-01",
+      "2021-09-01",
+      "2021-10-01",
+      "2022-09-01",
+      "2023-09-01",
+      "2024-02-01",
+      "2025-10-01"
+    ],
+    "selection_change_count": 24,
+    "transformed_value_change_count": 23
+  },
+  "parser_audits": {
+    "BSI": {
+      "archive_entries": 414,
+      "eligible_generic_identifier_additions": 215,
+      "eligible_identifier_entries": 234,
+      "explicit_identifier_cross_validations": 17,
+      "explicit_identifier_disagreements": 0,
+      "explicit_title_mappings": 114,
+      "identifier_candidates_rejected_by_temporal_validation": 2,
+      "in_sample_mapping_count": 271,
+      "merged_mapping_count": 329,
+      "release_kind": "BSI"
+    },
+    "MIR": {
+      "archive_entries": 274,
+      "eligible_generic_identifier_additions": 156,
+      "eligible_identifier_entries": 176,
+      "explicit_identifier_cross_validations": 20,
+      "explicit_identifier_disagreements": 0,
+      "explicit_title_mappings": 118,
+      "identifier_candidates_rejected_by_temporal_validation": 0,
+      "in_sample_mapping_count": 264,
+      "merged_mapping_count": 274,
+      "release_kind": "MIR"
+    }
+  },
+  "passed": true,
+  "preserved_response_count_verified": 17,
+  "protocol_sha256": "6492642c54382d7fe041366bdbb2c339e84eb073bf6eac03c735ae8616f156cd",
+  "registered_clock": {
+    "duplicate_keys": 0,
+    "fully_observed_origins": {
+      "P0_CORE_REPLAY_AND_FAST": 123,
+      "P1_AUGMENTED_BANK_CREDIT": 123
+    },
+    "missing_reasons": {
+      "insufficient_transformation_lookback": 14,
+      "no_strictly_prior_observation": 682,
+      "no_verified_release_mapped_observation": 29
+    },
+    "nonfinite_values": 0,
+    "panel_rows": {
+      "P0_CORE_REPLAY_AND_FAST": 1918,
+      "P1_AUGMENTED_BANK_CREDIT": 2740
+    },
+    "point_in_time_violations": 0,
+    "series_coverage": {
+      "P0_CORE_REPLAY_AND_FAST:ECB_DEPOSIT_FACILITY_RATE": {
+        "coverage_percent": 44.890511,
+        "first_usable_origin": "2015-08",
+        "observed_origins": 123,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:ECB_USD_EUR_REFERENCE_RATE": {
+        "coverage_percent": 100.0,
+        "first_usable_origin": "2003-01",
+        "observed_origins": 274,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:ECB_YIELD_CURVE_10Y": {
+        "coverage_percent": 65.328467,
+        "first_usable_origin": "2010-12",
+        "observed_origins": 179,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:ECB_YIELD_CURVE_2Y": {
+        "coverage_percent": 65.328467,
+        "first_usable_origin": "2010-12",
+        "observed_origins": 179,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:RTD_HICP": {
+        "coverage_percent": 98.905109,
+        "first_usable_origin": "2003-04",
+        "observed_origins": 271,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:RTD_INDUSTRIAL_PRODUCTION": {
+        "coverage_percent": 98.540146,
+        "first_usable_origin": "2003-05",
+        "observed_origins": 270,
+        "total_origins": 274
+      },
+      "P0_CORE_REPLAY_AND_FAST:RTD_UNEMPLOYMENT": {
+        "coverage_percent": 100.0,
+        "first_usable_origin": "2003-01",
+        "observed_origins": 274,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:BSI_MONETARY_AGGREGATE_M3": {
+        "coverage_percent": 99.270073,
+        "first_usable_origin": "2003-03",
+        "observed_origins": 272,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:BSI_NFC_ADJUSTED_LOANS": {
+        "coverage_percent": 94.890511,
+        "first_usable_origin": "2004-03",
+        "observed_origins": 260,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:ECB_DEPOSIT_FACILITY_RATE": {
+        "coverage_percent": 44.890511,
+        "first_usable_origin": "2015-08",
+        "observed_origins": 123,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:ECB_USD_EUR_REFERENCE_RATE": {
+        "coverage_percent": 100.0,
+        "first_usable_origin": "2003-01",
+        "observed_origins": 274,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:ECB_YIELD_CURVE_10Y": {
+        "coverage_percent": 65.328467,
+        "first_usable_origin": "2010-12",
+        "observed_origins": 179,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:ECB_YIELD_CURVE_2Y": {
+        "coverage_percent": 65.328467,
+        "first_usable_origin": "2010-12",
+        "observed_origins": 179,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:MIR_NFC_COST_OF_BORROWING": {
+        "coverage_percent": 95.255474,
+        "first_usable_origin": "2004-02",
+        "observed_origins": 261,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:RTD_HICP": {
+        "coverage_percent": 98.905109,
+        "first_usable_origin": "2003-04",
+        "observed_origins": 271,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:RTD_INDUSTRIAL_PRODUCTION": {
+        "coverage_percent": 98.540146,
+        "first_usable_origin": "2003-05",
+        "observed_origins": 270,
+        "total_origins": 274
+      },
+      "P1_AUGMENTED_BANK_CREDIT:RTD_UNEMPLOYMENT": {
+        "coverage_percent": 100.0,
+        "first_usable_origin": "2003-01",
+        "observed_origins": 274,
+        "total_origins": 274
+      }
+    },
+    "timing_variant": "registered_clock"
+  },
+  "registered_clock_vs_run023": {
+    "changed_panel_key_count": 513,
+    "exact_changed_origin_months": [
+      "2003-03",
+      "2003-04",
+      "2003-05",
+      "2003-06",
+      "2003-07",
+      "2003-08",
+      "2003-09",
+      "2003-10",
+      "2003-11",
+      "2003-12",
+      "2004-01",
+      "2004-02",
+      "2004-03",
+      "2004-04",
+      "2004-05",
+      "2004-06",
+      "2004-07",
+      "2004-08",
+      "2004-09",
+      "2004-10",
+      "2004-11",
+      "2004-12",
+      "2005-01",
+      "2005-02",
+      "2005-03",
+      "2005-04",
+      "2005-05",
+      "2005-06",
+      "2005-07",
+      "2005-08",
+      "2005-09",
+      "2005-10",
+      "2005-11",
+      "2005-12",
+      "2006-01",
+      "2006-02",
+      "2006-03",
+      "2006-04",
+      "2006-05",
+      "2006-06",
+      "2006-07",
+      "2006-08",
+      "2006-09",
+      "2006-10",
+      "2006-11",
+      "2006-12",
+      "2007-01",
+      "2007-02",
+      "2007-03",
+      "2007-04",
+      "2007-05",
+      "2007-06",
+      "2007-07",
+      "2007-08",
+      "2007-09",
+      "2007-10",
+      "2007-11",
+      "2007-12",
+      "2008-01",
+      "2008-02",
+      "2008-03",
+      "2008-04",
+      "2008-05",
+      "2008-06",
+      "2008-07",
+      "2008-08",
+      "2008-09",
+      "2008-10",
+      "2008-11",
+      "2008-12",
+      "2009-01",
+      "2009-02",
+      "2009-03",
+      "2009-04",
+      "2009-05",
+      "2009-06",
+      "2009-07",
+      "2009-08",
+      "2009-09",
+      "2009-10",
+      "2009-11",
+      "2009-12",
+      "2010-01",
+      "2010-02",
+      "2010-03",
+      "2010-04",
+      "2010-05",
+      "2010-06",
+      "2010-07",
+      "2010-08",
+      "2010-09",
+      "2010-10",
+      "2010-11",
+      "2010-12",
+      "2011-01",
+      "2011-02",
+      "2011-03",
+      "2011-04",
+      "2011-05",
+      "2011-06",
+      "2011-07",
+      "2011-08",
+      "2011-09",
+      "2011-10",
+      "2011-11",
+      "2011-12",
+      "2012-01",
+      "2012-02",
+      "2012-03",
+      "2012-04",
+      "2012-05",
+      "2012-06",
+      "2012-07",
+      "2012-08",
+      "2012-09",
+      "2012-10",
+      "2012-11",
+      "2012-12",
+      "2013-01",
+      "2013-02",
+      "2013-03",
+      "2013-04",
+      "2013-05",
+      "2013-06",
+      "2013-07",
+      "2013-08",
+      "2013-09",
+      "2013-10",
+      "2013-11",
+      "2013-12",
+      "2014-01",
+      "2014-02",
+      "2014-03",
+      "2014-04",
+      "2014-05",
+      "2014-06",
+      "2014-07",
+      "2014-08",
+      "2014-09",
+      "2014-10",
+      "2014-11",
+      "2014-12",
+      "2015-01",
+      "2015-02",
+      "2015-03",
+      "2015-04",
+      "2015-05",
+      "2015-06",
+      "2015-07",
+      "2015-08",
+      "2015-09",
+      "2015-10",
+      "2015-11",
+      "2015-12",
+      "2016-01",
+      "2016-02",
+      "2016-03",
+      "2016-04",
+      "2016-05",
+      "2016-06",
+      "2016-07",
+      "2016-08",
+      "2016-09",
+      "2016-10",
+      "2016-11",
+      "2016-12",
+      "2017-01",
+      "2017-02",
+      "2017-03",
+      "2017-04",
+      "2017-05",
+      "2017-11"
+    ],
+    "fully_observed_origin_delta_by_panel": {
+      "P0_CORE_REPLAY_AND_FAST": 0,
+      "P1_AUGMENTED_BANK_CREDIT": 21
+    },
+    "missingness_status_change_count": 334,
+    "observed_origin_delta_by_series": {
+      "P0_CORE_REPLAY_AND_FAST:ECB_DEPOSIT_FACILITY_RATE": 0,
+      "P0_CORE_REPLAY_AND_FAST:ECB_USD_EUR_REFERENCE_RATE": 0,
+      "P0_CORE_REPLAY_AND_FAST:ECB_YIELD_CURVE_10Y": 0,
+      "P0_CORE_REPLAY_AND_FAST:ECB_YIELD_CURVE_2Y": 0,
+      "P0_CORE_REPLAY_AND_FAST:RTD_HICP": 0,
+      "P0_CORE_REPLAY_AND_FAST:RTD_INDUSTRIAL_PRODUCTION": 0,
+      "P0_CORE_REPLAY_AND_FAST:RTD_UNEMPLOYMENT": 0,
+      "P1_AUGMENTED_BANK_CREDIT:BSI_MONETARY_AGGREGATE_M3": 170,
+      "P1_AUGMENTED_BANK_CREDIT:BSI_NFC_ADJUSTED_LOANS": 158,
+      "P1_AUGMENTED_BANK_CREDIT:ECB_DEPOSIT_FACILITY_RATE": 0,
+      "P1_AUGMENTED_BANK_CREDIT:ECB_USD_EUR_REFERENCE_RATE": 0,
+      "P1_AUGMENTED_BANK_CREDIT:ECB_YIELD_CURVE_10Y": 0,
+      "P1_AUGMENTED_BANK_CREDIT:ECB_YIELD_CURVE_2Y": 0,
+      "P1_AUGMENTED_BANK_CREDIT:MIR_NFC_COST_OF_BORROWING": 6,
+      "P1_AUGMENTED_BANK_CREDIT:RTD_HICP": 0,
+      "P1_AUGMENTED_BANK_CREDIT:RTD_INDUSTRIAL_PRODUCTION": 0,
+      "P1_AUGMENTED_BANK_CREDIT:RTD_UNEMPLOYMENT": 0
+    },
+    "release_mapping_count_delta_by_kind": {
+      "BSI": 215,
+      "MIR": 156
+    },
+    "selection_change_count": 484,
+    "transformed_value_change_count": 150
+  },
+  "release_mapping_counts": {
+    "BSI": 329,
+    "MIR": 274
+  },
+  "reliability_engine_imported": false,
+  "scenario_evaluation_performed": false,
+  "state_estimation_performed": false,
+  "synthetic_empirical_observations_used": false,
+  "transmission_outcomes_accessed": false
+}

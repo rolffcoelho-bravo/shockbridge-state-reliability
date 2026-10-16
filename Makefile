@@ -1,4 +1,4 @@
-.PHONY: install quality test test-public public-export synthetic design-power state-panel monthly-state-panel state-replay state-model-comparison state-redesign state-subspace state-instability state-instability-amendment run010-fetch vintage-robustness state-abstention run021-contract-audit run023-retrieve run023-build inventory-audit contract-audit clean
+.PHONY: install quality test test-public public-export synthetic design-power state-panel monthly-state-panel state-replay state-model-comparison state-redesign state-subspace state-instability state-instability-amendment run010-fetch vintage-robustness state-abstention run021-contract-audit run023-retrieve run023-build run024-archive-timing inventory-audit contract-audit clean
 
 PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 
@@ -70,6 +70,9 @@ run023-retrieve:
 
 run023-build:
 	$(PYTHON) scripts/run023_full_panel_build.py build
+
+run024-archive-timing:
+	$(PYTHON) scripts/run024_archive_timing_amendment.py
 
 inventory-audit:
 	$(PYTHON) -m shockbridge_state_risk verify-artifacts data/manifests/local_artifact_inventory_2026-10-02.yaml

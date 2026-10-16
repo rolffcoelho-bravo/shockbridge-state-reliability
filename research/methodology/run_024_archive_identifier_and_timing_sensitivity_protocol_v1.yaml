@@ -1,0 +1,217 @@
+schema_version: 1
+protocol_id: run-024-archive-identifier-and-timing-sensitivity-v1
+created_on: 2026-10-16
+status: FROZEN_BEFORE_RUN024_IMPLEMENTATION_OR_REBUILD
+owner_approval: recorded_2026-10-16
+
+research_question: >-
+  Can narrowly validated reference-period identifiers in the already preserved
+  official ECB MIR and BSI archive indexes extend the conservative Run 023
+  decision-time panels, and does replacing the registered within-day calendar
+  convention with next-calendar-day availability change any monthly vintage?
+
+scientific_boundary:
+  real_official_data_only: true
+  new_network_retrieval_allowed: false
+  preserved_response_bytes_only: true
+  synthetic_empirical_observations_allowed: false
+  value_interpolation_allowed: false
+  release_date_interpolation_allowed: false
+  generic_average_release_lag_allowed: false
+  reliability_engine_import_allowed: false
+  empirical_state_estimation_allowed: false
+  scenario_evaluation_allowed: false
+  transmission_outcomes_access_allowed: false
+  public_release_allowed_only_after_private_validation: true
+
+bound_inputs:
+  run_023_protocol:
+    path: research/methodology/run_023_full_history_retrieval_and_panel_build_protocol_v1.yaml
+    bytes: 14767
+    sha256: aeb25cbca792b8848aaecad5ba5eba0e494015d75b254ab35e38a26e7829b947
+  source_registry:
+    path: research/data/run_021_full_panel_manifest_v1.yaml
+    bytes: 10681
+    sha256: 3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b
+  retrieval_manifest:
+    path: data/manifests/run_023_full_history_sources_v1.yaml
+    bytes: 11662
+    sha256: 3afeaa8fd2b3d47c1f368d4b4164bf9ae4f6242772ad3415bd59dc354d3a97d2
+  mir_archive:
+    path: data/raw/run023_full_panel_v1/release_evidence/mir_archive.html
+    bytes: 231710
+    sha256: 07743fe8f7e827f4e7a3fb039259f08a6a6a391529073f3bbb07466e4a5607a3
+  bsi_archive:
+    path: data/raw/run023_full_panel_v1/release_evidence/bsi_historical_release_index_run_023_addition.html
+    bytes: 307202
+    sha256: dca0f55b3d5abc55750ac714bb8a0592ef28beb7a1421359b9b14daf44ad1443
+  run_023_p0:
+    path: data/processed/run023_full_panel_v1/p0_core_replay_and_fast.csv
+    bytes: 368155
+    sha256: 4c77be8ed6b06ce97e09720158dea55138c7473d01cec0b40127bc447e1042ce
+  run_023_p1:
+    path: data/processed/run023_full_panel_v1/p1_augmented_bank_credit.csv
+    bytes: 529624
+    sha256: 453d7c833545c7d022241635ef4e3760dcfddf3ccec2ef89844308f9ea9a66cd
+  run_023_release_calendar:
+    path: data/processed/run023_full_panel_v1/verified_release_calendar.csv
+    bytes: 8863
+    sha256: 0edd5b7ba6cf0a3d5f82406aaf89f1f2574cbf496bd25f067c6f34c6dc3e5239
+  run_023_build_audit:
+    path: reports/methodology/run_023_full_panel_build.audit.json
+    bytes: 3693
+    sha256: e5eb7dc85e9d5a0b3bf707d1694db0a17f3d37de42d23cf79f39c6c62534c2eb
+
+structural_audit_before_freeze:
+  finding: >-
+    Identifier semantics are not uniform across all archive links. Modern
+    ecb.mir identifiers can encode a release month or date rather than the
+    reference period. Only the exact legacy PDF path grammars below are
+    eligible. Broad mirYYMM or mdYYMM substring parsing is prohibited.
+  explicit_title_cross_validation_in_bound_bytes:
+    MIR:
+      eligible_entries_with_explicit_reference_title: 20
+      identifier_title_agreements: 20
+      disagreements: 0
+    BSI:
+      eligible_entries_with_explicit_reference_title: 17
+      identifier_title_agreements: 17
+      disagreements: 0
+  evidentiary_role: >-
+    These counts justify freezing a narrow parser. They are structural evidence
+    from already preserved archive indexes, not an empirical state or outcome
+    result.
+
+archive_entry_contract:
+  entry_association: >-
+    Associate one dt element's ISO date with only the immediately following dd
+    title container. Do not search an arbitrary preceding token window.
+  release_date_source: dt_isoDate_attribute
+  release_date_validation:
+    - valid_ISO_calendar_date
+    - visible_date_text_must_agree_when_present
+    - one_release_date_per_entry
+  href_normalization: strip_query_only
+  reference_year_resolution: >-
+    Decode YY against the associated release year. The unique admissible full
+    year must equal either the release year or the immediately preceding year.
+    Any other century or year relation fails closed.
+  reference_period_validation:
+    - month_is_01_through_12
+    - reference_month_end_strictly_precedes_release_date
+    - duplicate_reference_periods_must_have_identical_release_dates
+
+identifier_grammars:
+  MIR:
+    exact_path_regex: '^/press/pdf/mfi/mir(?P<yy>[0-9]{2})(?P<mm>0[1-9]|1[0-2])\.pdf$'
+    generic_title_exact: MFI interest rate statistics
+    explicit_title_prefixes:
+      - 'MFI interest rate statistics:'
+      - 'Euro area bank interest rate statistics:'
+    modern_ecb_mir_paths_eligible: false
+  BSI:
+    exact_path_regex: '^/press/pdf/md/(?:ecb\.)?md(?P<yy>[0-9]{2})(?P<mm>0[1-9]|1[0-2])(?:\.en)?\.pdf$'
+    generic_title_exact: Monetary developments in the euro area
+    explicit_title_prefixes:
+      - 'Monetary developments in the euro area:'
+    annex_or_table_paths_eligible: false
+  common_fail_closed_rules:
+    - explicit_title_period_must_equal_identifier_period
+    - unrecognized_title_is_ineligible
+    - partial_identifier_match_is_ineligible
+    - query_parameters_cannot_supply_semantics
+    - malformed_or_conflicting_entry_aborts_the_build
+
+release_mapping_contract:
+  merge_rule: >-
+    Preserve every Run 023 explicit title mapping. Add an identifier mapping
+    only when the archive entry satisfies the complete eligible grammar and
+    validation contract. Identical mappings may overlap; conflicting mappings
+    abort the run.
+  minimum_cross_validation_support:
+    MIR: 20
+    BSI: 17
+  required_cross_validation_disagreements:
+    MIR: 0
+    BSI: 0
+  sample_reference_period_start: 2003-01
+  sample_reference_period_end: 2025-10
+
+timing_variants:
+  registered_clock:
+    label: release_date_at_10_00_01_Europe_Berlin
+    rule: combine_release_date_with_10_00_01_local
+    evidentiary_status: preregistered_calendar_convention_not_document_level_time
+  next_day_clock:
+    label: next_calendar_day_at_00_00_00_Europe_Berlin
+    rule: combine_release_date_plus_one_calendar_day_with_00_00_00_local
+    evidentiary_status: conservative_sensitivity_not_claimed_actual_release_time
+  admissibility: usable_timestamp_strictly_before_monthly_origin
+  monthly_origin: first_calendar_day_23_59_59_Europe_Berlin
+
+rebuild_contract:
+  panel_start: 2003-01
+  panel_end: 2025-10
+  panels:
+    - P0_CORE_REPLAY_AND_FAST
+    - P1_AUGMENTED_BANK_CREDIT
+  all_non_MIR_BSI_source_values_and_transformations: identical_to_bound_run_023
+  raw_directory: data/raw/run023_full_panel_v1
+  output_directory: data/processed/run024_archive_timing_v1
+  immutable_output: true
+  required_outputs:
+    - registered_clock/p0_core_replay_and_fast.csv
+    - registered_clock/p1_augmented_bank_credit.csv
+    - registered_clock/release_calendar.csv
+    - next_day_clock/p0_core_replay_and_fast.csv
+    - next_day_clock/p1_augmented_bank_credit.csv
+    - next_day_clock/release_calendar.csv
+
+comparison_contract:
+  compare_registered_clock_against_run_023:
+    - release_mapping_count_delta_by_kind
+    - observed_origin_delta_by_series
+    - fully_observed_origin_delta_by_panel
+    - changed_panel_key_count
+    - first_usable_origin_by_series
+  compare_next_day_against_registered_clock:
+    - release_dates_coinciding_with_origin_date
+    - changed_release_timestamp_count
+    - changed_panel_key_count
+    - missingness_status_change_count
+    - transformed_value_change_count
+    - fully_observed_origin_delta_by_panel
+    - exact_changed_origin_months
+  invariants:
+    - exact_registered_row_count_per_panel
+    - zero_duplicate_keys
+    - zero_nonfinite_transformed_values
+    - zero_point_in_time_violations
+    - source_response_hashes_unchanged
+    - no_outcome_or_reliability_engine_access
+
+stop_rules:
+  - Stop if any bound input byte count or SHA-256 differs.
+  - Stop if an explicit title disagrees with its eligible identifier.
+  - Stop if cross-validation support falls below the frozen minimum.
+  - Stop if a generic entry requires sequence, average-lag, or neighbouring-entry inference.
+  - Stop if either timing variant violates the strict decision-time clock.
+  - Stop before reliability fitting regardless of coverage improvement.
+
+reporting_contract:
+  preserve_run_023_unchanged: true
+  label_run_024_as_post_coverage_approved_amendment: true
+  manuscript_next_version: research/paper/manuscript_v1_10.md
+  prohibit_claims:
+    - validated_reliable_state
+    - useful_authorization_rate
+    - methodological_novelty_established
+    - high_dimensional_empirical_result
+    - transmission_effect
+    - monetary_policy_recommendation
+
+next_gate_after_run_024:
+  owner_approval_required: true
+  default: >-
+    Report the amendment and sensitivity, then stop. Reliability-envelope
+    fitting requires a separately frozen execution protocol and new approval.

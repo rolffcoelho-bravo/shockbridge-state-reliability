@@ -1,0 +1,19 @@
+{
+  "attempt_id": "run-024-archive-timing-attempt-2",
+  "attempt_date": "2026-10-16",
+  "code_commit": "59a2ec7",
+  "protocol": "research/methodology/run_024_archive_identifier_and_timing_sensitivity_protocol_v1.yaml",
+  "protocol_sha256": "6492642c54382d7fe041366bdbb2c339e84eb073bf6eac03c735ae8616f156cd",
+  "command": "make run024-archive-timing",
+  "status": "FAILED_CLOSED_BEFORE_OUTPUT",
+  "failure_class": "identifier_candidate_failed_temporal_eligibility",
+  "exception_type": "FullPanelBuildError",
+  "exception_message": "identifier reference month does not strictly precede release date",
+  "canonical_output_directory_created": false,
+  "canonical_audit_created": false,
+  "empirical_mapping_completed": false,
+  "panel_rebuild_completed": false,
+  "state_estimation_performed": false,
+  "transmission_outcomes_accessed": false,
+  "resolution": "DEV-096"
+}

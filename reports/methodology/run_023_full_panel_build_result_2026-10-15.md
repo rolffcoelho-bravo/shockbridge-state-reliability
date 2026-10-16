@@ -58,6 +58,8 @@ scenario gates remain unapplied.
 - DEV-091 adds at most three timeout-only attempts with recorded provenance.
 - DEV-092 corrects the description of historical MIR/BSI timing from an exact
   time to an exact date plus the preregistered 10:00:01 calendar convention.
+- DEV-093 canonicalizes direct and wrapped timeout provenance across Python
+  runtimes without changing retry eligibility, response bytes, or panel data.
 
 Retrieval attempt 1 stopped on RTD action-row semantics. Attempts 2 and 3
 stopped on two different RTD transport timeouts. Every staging directory was

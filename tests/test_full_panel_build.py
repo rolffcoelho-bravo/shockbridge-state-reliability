@@ -10,6 +10,7 @@ import unittest
 from datetime import datetime
 from pathlib import Path
 from unittest.mock import patch
+from urllib.error import URLError
 from urllib.parse import parse_qs, urlparse
 
 import yaml
@@ -509,6 +510,29 @@ class FullPanelBuildTests(unittest.TestCase):
             self.assertEqual(record.attempt_count, 2)
             self.assertEqual(record.prior_attempt_error_classes, ["timeout"])
             self.assertEqual(destination.read_bytes(), b"ok")
+
+            wrapped_attempts = 0
+
+            def wrapped_transient(*_args: object, **_kwargs: object) -> _Response:
+                nonlocal wrapped_attempts
+                wrapped_attempts += 1
+                if wrapped_attempts == 1:
+                    raise URLError(TimeoutError("wrapped fixture timeout"))
+                return _Response(b"wrapped", url)
+
+            wrapped_record = _download_with_retry(
+                maximum_attempts=3,
+                item_id="wrapped-fixture",
+                item_type="series_csv",
+                url=url,
+                destination=Path(directory) / "wrapped.csv",
+                maximum_bytes=10,
+                relative_path="wrapped.csv",
+                opener=wrapped_transient,
+            )
+            self.assertEqual(wrapped_record.attempt_count, 2)
+            self.assertEqual(wrapped_record.prior_attempt_error_classes, ["timeout"])
+            self.assertEqual((Path(directory) / "wrapped.csv").read_bytes(), b"wrapped")
 
             with self.assertRaisesRegex(FullPanelBuildError, "maximum attempts"):
                 _download_with_retry(maximum_attempts=False)

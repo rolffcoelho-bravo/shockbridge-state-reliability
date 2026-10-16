@@ -336,13 +336,26 @@ def secure_download(
     )
 
 
-def _retryable_transport_error(error: FullPanelBuildError) -> bool:
-    cause: BaseException | None = error.__cause__
-    while cause is not None:
+def _transport_error_class(error: FullPanelBuildError) -> str | None:
+    """Return a stable provenance label for an eligible transport timeout."""
+    pending: list[BaseException] = []
+    if error.__cause__ is not None:
+        pending.append(error.__cause__)
+    visited: set[int] = set()
+    while pending:
+        cause = pending.pop()
+        if id(cause) in visited:
+            continue
+        visited.add(id(cause))
         if isinstance(cause, (TimeoutError, socket.timeout)):
-            return True
-        cause = cause.__cause__
-    return False
+            return "timeout"
+        nested_cause = cause.__cause__
+        if nested_cause is not None:
+            pending.append(nested_cause)
+        reason = getattr(cause, "reason", None)
+        if isinstance(reason, BaseException):
+            pending.append(reason)
+    return None
 
 
 def _download_with_retry(
@@ -362,10 +375,10 @@ def _download_with_retry(
                 prior_attempt_error_classes=prior_errors,
             )
         except FullPanelBuildError as error:
-            if not _retryable_transport_error(error) or attempt == maximum_attempts:
+            error_class = _transport_error_class(error)
+            if error_class is None or attempt == maximum_attempts:
                 raise
-            cause = error.__cause__
-            prior_errors.append(type(cause).__name__ if cause is not None else type(error).__name__)
+            prior_errors.append(error_class)
     raise AssertionError("unreachable retrieval retry state")
 
 

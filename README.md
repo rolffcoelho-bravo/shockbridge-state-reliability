@@ -23,7 +23,8 @@ project therefore selects no state and does not estimate transmission effects.
 
 **Evidence status:** clean-reproduced, outcome-blind negative measurement
 evidence plus a completed official-series history pilot, a fail-closed wider-
-panel protocol, and its value-free reliability-engine implementation.
+panel protocol, its value-free reliability-engine implementation, and an
+audited outcome-blind build of the registered official panels.
 This repository contains no validated state-dependent transmission effect,
 amplification result, trading signal, or production model.
 
@@ -31,12 +32,12 @@ amplification result, trading signal, or production model.
 
 | Dimension | Current verified status |
 |---|---|
-| Research gate | Four-feature measurement rejected; two wider candidate panels pass source-history gates; Run 021 protocol and Run 022 software gates pass; full retrieval and transmission remain blocked |
+| Research gate | Four-feature measurement rejected; Run 023 builds two wider official decision-time panels; reliability fitting and transmission remain blocked |
 | Main finding | No registered one- or two-dimensional state representation passes the prospective joint stability gates |
 | Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
 | Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
 | Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
-| Test contract | Private canonical suite: 225/225 at 90% coverage; public repository: 213 tests, 206 executions plus exactly seven evidence-bound skips |
+| Test contract | Private canonical suite: 239/239 at 90% coverage; public repository: 227 tests, 220 executions plus exactly seven evidence-bound skips |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
 ### Dimensional scope
@@ -53,11 +54,12 @@ five channels; the ten-series augmented panel spans seven. These short pilot
 samples establish metadata and timing feasibility only. Run 021 now freezes
 the full-panel manifest, decision clock, transformation lookbacks, ragged-edge
 rank rule, 56-scenario ceiling, mature-label evaluation calendar, comparator
-set, invariance tests, and stopping rules. No wider panel has been built or
-estimated. Run 022 implements and adversarially tests the value-free numerical
-kernel, but it does not retrieve those histories or validate the envelope on
-ECB data. The ten-series design is a wider multichannel panel, not a high-
-dimensional empirical result.
+set, invariance tests, and stopping rules. Run 022 implements and adversarially
+tests the value-free numerical kernel without retrieving the histories. Run
+023 then hash-registers ten real official series responses and seven release-
+evidence pages and constructs the two outcome-blind panels over 274 monthly
+origins. It does not fit or validate the reliability envelope. The ten-series
+design is a wider multichannel panel, not a high-dimensional empirical result.
 
 ### Reviewer paths
 
@@ -79,6 +81,10 @@ dimensional empirical result.
   [`reports/methodology/run_022_reliability_engine_result_2026-10-15.md`](reports/methodology/run_022_reliability_engine_result_2026-10-15.md),
   [`src/shockbridge_state_risk/state/reliability_engine.py`](src/shockbridge_state_risk/state/reliability_engine.py), and
   [`tests/test_reliability_engine.py`](tests/test_reliability_engine.py)
+- **Inspect the official panel build:**
+  [`reports/methodology/run_023_full_panel_build_result_2026-10-15.md`](reports/methodology/run_023_full_panel_build_result_2026-10-15.md),
+  [`reports/methodology/run_023_full_panel_coverage.audit.json`](reports/methodology/run_023_full_panel_coverage.audit.json), and
+  [`src/shockbridge_state_risk/data/full_panel_build.py`](src/shockbridge_state_risk/data/full_panel_build.py)
 - **Reproduce the software gates:** [`REPRODUCING.md`](REPRODUCING.md) and
   [reproducibility](#reproducibility)
 - **Review tables and figures:**
@@ -144,12 +150,20 @@ moment standardization, signed channel balancing, ragged-edge EM-PCA, ICp2 rank
 selection, rotation-invariant projectors, Procrustes alignment, and exact
 scenario deduplication. Nineteen focused tests establish software behavior,
 not empirical reliability. The envelope remains a candidate methodological
-synthesis, not an empirically validated method. Real-time monetary-policy analysis, ragged-edge dynamic
-factors, vintage combination, model uncertainty, and robust PCA are
-established. Research value must come from a falsifiable comparison showing
-useful nondegenerate authorization or consequential information-set fragility.
-Universal abstention, cosmetic expansion, or outcome-selected panels count as
-failure.
+synthesis, not an empirically validated method. Real-time monetary-policy
+analysis, ragged-edge dynamic factors, vintage combination, model uncertainty,
+and robust PCA are established. Research value must come from a falsifiable
+comparison showing useful nondegenerate authorization or consequential
+information-set fragility. Universal abstention, cosmetic expansion, or
+outcome-selected panels count as failure.
+
+Run 023 executes only the registered retrieval and panel-build gate. The
+accepted atomic bundle contains ten official ECB histories and seven official
+timing-evidence responses. P0 has 1,918 rows and P1 has 2,740 rows across 274
+monthly origins, with zero duplicate keys, non-finite transformed values, or
+point-in-time violations. P0 and P1 are fully observed at 123 and 102 origins,
+respectively. These are feasibility and provenance results, not evidence that
+the reliability method works.
 
 ## Evidence sequence
 
@@ -178,9 +192,11 @@ common-space method correction ───── definition frozen before implemen
         ↓
 full-panel protocol preflight ─────── 56 scenarios; mature labels; no retrieval
         ↓
-value-free numerical engine ───────── 19 focused tests; no empirical panel
+value-free numerical engine ───────── 19 focused tests; no empirical fit
         ↓
-transmission outcomes remain sealed; full retrieval requires a new approval
+official full-history panel build ─── 274 origins; zero timing violations
+        ↓
+transmission outcomes remain sealed; reliability fitting requires a new approval
 ```
 
 The main public scientific records are:
@@ -196,7 +212,9 @@ The main public scientific records are:
 - [`reports/methodology/run_021_protocol_design_result_2026-10-14.md`](reports/methodology/run_021_protocol_design_result_2026-10-14.md)
   — fail-closed full-panel implementation and evaluation contract;
 - [`reports/methodology/run_022_reliability_engine_result_2026-10-15.md`](reports/methodology/run_022_reliability_engine_result_2026-10-15.md)
-  — value-free numerical implementation and software-validation boundary; and
+  — value-free numerical implementation and software-validation boundary;
+- [`reports/methodology/run_023_full_panel_build_result_2026-10-15.md`](reports/methodology/run_023_full_panel_build_result_2026-10-15.md)
+  — official outcome-blind panel build, coverage, and interpretation boundary; and
 - [`docs/governance/research_artifact_protocol.md`](docs/governance/research_artifact_protocol.md)
   — versioning, claim-chain, negative-result, and recovery controls.
 
@@ -226,10 +244,10 @@ Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
 while also running static analysis, the then-registered 140-test suite, and the
-90% coverage gate. The current private canonical contract contains 225 tests
+90% coverage gate. The current private canonical contract contains 239 tests
 and adds cross-version, cross-runner, archive-safety, release-boundary, source-
 feasibility, series-history, protocol-contract, reliability-engine, and hosted
-security regression coverage. The public repository contains 213 tests; the
+security regression coverage. The public repository contains 227 tests; the
 difference is private evidence and unpublished research-bound material.
 
 Create a locked Python 3.9 environment:
@@ -249,9 +267,9 @@ environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
 Public CI cannot access ignored empirical artifacts. It requires exactly seven
-explicitly labeled evidence-bound skips, executes the remaining 206 tests, and
+explicitly labeled evidence-bound skips, executes the remaining 220 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates all hash-registered evidence, executes all 225 tests, and retains the
+hydrates all hash-registered evidence, executes all 239 tests, and retains the
 90% coverage floor. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:

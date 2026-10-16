@@ -1,0 +1,52 @@
+{
+  "audit_id": "run-023-full-panel-coverage-v1",
+  "created_on": "2026-10-15",
+  "panel_months": 274,
+  "panel_start": "2003-01",
+  "panel_end": "2025-10",
+  "panels": {
+    "P0_CORE_REPLAY_AND_FAST": {
+      "rows": 1918,
+      "series": 7,
+      "fully_observed_origins": 123,
+      "observed_series_count_distribution": {"2": 3, "3": 1, "4": 91, "6": 56, "7": 123}
+    },
+    "P1_AUGMENTED_BANK_CREDIT": {
+      "rows": 2740,
+      "series": 10,
+      "fully_observed_origins": 102,
+      "observed_series_count_distribution": {"2": 3, "3": 1, "4": 15, "5": 76, "7": 56, "8": 21, "10": 102}
+    }
+  },
+  "series": {
+    "RTD_HICP": {"observed_origins": 271, "coverage_percent": 98.905109, "first_usable_origin": "2003-04", "first_observation_period": "2003-01", "last_observation_period": "2025-08"},
+    "RTD_INDUSTRIAL_PRODUCTION": {"observed_origins": 270, "coverage_percent": 98.540146, "first_usable_origin": "2003-05", "first_observation_period": "2003-01", "last_observation_period": "2025-06"},
+    "RTD_UNEMPLOYMENT": {"observed_origins": 274, "coverage_percent": 100.0, "first_usable_origin": "2003-01", "first_observation_period": "2002-10", "last_observation_period": "2025-07"},
+    "ECB_DEPOSIT_FACILITY_RATE": {"observed_origins": 123, "coverage_percent": 44.890511, "first_usable_origin": "2015-08", "first_observation_period": "2015-07-31", "last_observation_period": "2025-10-01"},
+    "ECB_YIELD_CURVE_2Y": {"observed_origins": 179, "coverage_percent": 65.328467, "first_usable_origin": "2010-12", "first_observation_period": "2010-11-30", "last_observation_period": "2025-09-30"},
+    "ECB_YIELD_CURVE_10Y": {"observed_origins": 179, "coverage_percent": 65.328467, "first_usable_origin": "2010-12", "first_observation_period": "2010-11-30", "last_observation_period": "2025-09-30"},
+    "ECB_USD_EUR_REFERENCE_RATE": {"observed_origins": 274, "coverage_percent": 100.0, "first_usable_origin": "2003-01", "first_observation_period": "2002-12-31", "last_observation_period": "2025-09-30"},
+    "MIR_NFC_COST_OF_BORROWING": {"observed_origins": 255, "coverage_percent": 93.065693, "first_usable_origin": "2004-08", "first_observation_period": "2004-05", "last_observation_period": "2025-08"},
+    "BSI_NFC_ADJUSTED_LOANS": {"observed_origins": 102, "coverage_percent": 37.226277, "first_usable_origin": "2017-05", "first_observation_period": "2017-03", "last_observation_period": "2025-08"},
+    "BSI_MONETARY_AGGREGATE_M3": {"observed_origins": 102, "coverage_percent": 37.226277, "first_usable_origin": "2017-05", "first_observation_period": "2017-03", "last_observation_period": "2025-08"}
+  },
+  "release_evidence": {
+    "MIR_total_explicit_mappings": 118,
+    "MIR_in_sample_explicit_mappings": 108,
+    "MIR_first_in_sample_reference_period": "2004-05",
+    "MIR_last_in_sample_reference_period": "2025-10",
+    "BSI_total_explicit_mappings": 114,
+    "BSI_in_sample_explicit_mappings": 104,
+    "BSI_first_in_sample_reference_period": "2017-03",
+    "BSI_last_in_sample_reference_period": "2025-10"
+  },
+  "integrity": {
+    "duplicate_keys": 0,
+    "point_in_time_violations": 0,
+    "nonfinite_values": 0,
+    "state_estimation_performed": false,
+    "transmission_outcomes_accessed": false,
+    "synthetic_empirical_observations_used": false
+  },
+  "passed": true
+}

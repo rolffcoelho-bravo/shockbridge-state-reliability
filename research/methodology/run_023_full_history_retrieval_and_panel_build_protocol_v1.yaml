@@ -1,0 +1,319 @@
+schema_version: 1
+protocol_id: run-023-full-history-retrieval-and-panel-build-v1
+created_on: 2026-10-15
+status: APPROVED_AND_FROZEN_BEFORE_NETWORK_RETRIEVAL
+approval_basis: >-
+  Owner approval in the research thread following acceptance of Run 022.
+  Run 023 may retrieve and hash-register only the ten frozen real, freely
+  accessible official ECB series, preserve the registered official release
+  evidence, and construct the two outcome-blind point-in-time panels. It may
+  not fit the reliability engine, generate or score reliability scenarios,
+  inspect transmission outcomes, or report monetary-policy effects.
+
+bound_inputs:
+  - path: research/methodology/run_021_full_panel_build_protocol_v1.yaml
+    sha256: 0c1eb20d0ff5879623fad2655a2edf8f5f499e8440d896e57b91e013dae40493
+  - path: research/data/run_021_full_panel_manifest_v1.yaml
+    sha256: 3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b
+  - path: reports/methodology/run_021_protocol_preflight.audit.json
+    sha256: a53368a1c40877c3399604a186c0d97bf09b5db3a402c78752c060dd20151d6a
+  - path: research/methodology/run_022_reliability_engine_implementation_protocol_v1.yaml
+    sha256: ca309fdbe4b143c9f841749c37c5452955bf8ae01ddd1f8770aff4e7d4d4b771
+  - path: reports/methodology/run_022_reliability_engine_validation.audit.json
+    sha256: 01f85c7ac6f13055bbd5d375031542e934055a03ad29fd0367ab1a9dec108980
+  - path: src/shockbridge_state_risk/state/reliability_engine.py
+    sha256: b2f395394de5b503312e4f3f17d7d4731f232c13dcf421532f9775348b8e0127
+
+scientific_boundary:
+  real_official_data_only: true
+  zero_cost_sources_only: true
+  synthetic_empirical_observations_allowed: false
+  software_only_fixture_values_allowed: true
+  software_fixture_values_are_empirical_evidence: false
+  registered_series_count: 10
+  registered_panel_count: 2
+  transmission_outcomes_access_allowed: false
+  reliability_engine_import_allowed: false
+  empirical_state_estimation_allowed: false
+  scenario_generation_allowed: false
+  rank_selection_allowed: false
+  reliability_threshold_selection_allowed: false
+  causal_or_policy_effect_claim_allowed: false
+  positive_result_required: false
+
+retrieval_contract:
+  source_registry: research/data/run_021_full_panel_manifest_v1.yaml
+  series_query_urls: exact_registered_urls_only
+  release_evidence_urls: exact_registered_urls_only
+  approved_hosts:
+    - data-api.ecb.europa.eu
+    - data.ecb.europa.eu
+    - www.ecb.europa.eu
+  final_redirect_host_rule: final_host_must_equal_the_registered_request_host
+  transport: HTTPS_only
+  maximum_response_bytes_per_series: 50000000
+  maximum_response_bytes_per_release_evidence_item: 10000000
+  per_response_timeout_seconds: 180
+  maximum_attempts_per_item: 3
+  retryable_failures:
+    - transport_timeout
+  nonretryable_failures:
+    - official_host_violation
+    - response_byte_ceiling
+    - series_identity_mismatch
+    - schema_mismatch
+    - unit_mismatch
+    - timestamp_mismatch
+  record_attempt_count_and_prior_error_classes: true
+  write_mode: atomic_create_only
+  overwrite_existing_destination: false
+  partial_download_promotion: prohibited
+  record_for_every_response:
+    - registered_source_url
+    - final_url
+    - retrieved_at_utc
+    - response_bytes
+    - sha256
+    - content_type
+  series_response_validation:
+    - exact_full_series_key
+    - exact_frequency
+    - exact_unit
+    - frozen_sample_boundaries
+    - required_csv_columns
+    - finite_observation_values_or_explicit_official_missing_rows
+    - exact_unit_on_nondelete_rows
+    - blank_unit_allowed_only_on_explicit_delete_rows
+    - VALID_FROM_or_DELETE_VALID_TO_timestamp_syntax_where_required
+  failed_item_rule: >-
+    Stop before transformation. Preserve no promoted partial response and do
+    not substitute an unregistered source, cached pilot response, synthetic
+    observation, or inferred publication date.
+
+release_evidence_contract:
+  registered_items:
+    - rtd_information
+    - fx_methodology
+    - mir_calendar
+    - mir_archive
+    - bsi_calendar
+    - bsi_information
+    - bsi_historical_release_index_run_023_addition
+  bsi_historical_release_index_run_023_addition: >-
+    https://www.ecb.europa.eu/press/stats/md/html/index.en.html
+  addition_basis: >-
+    The frozen Run 021 manifest registered the BSI current calendar and dataset
+    information but not the official historical press-release index needed to
+    map reference periods over 2003-01 through 2025-10. Run 023 adds only this
+    official, free ECB index and does not change any series, value, panel,
+    transformation, sample boundary, or outcome restriction.
+  preserve_response_bytes_privately: true
+  hash_register_before_transform: true
+  rtd_rule: use_row_level_VALID_FROM_and_ACTION_history
+  daily_market_rule: >-
+    Use the registered deterministic availability algorithm only; do not
+    reinterpret a daily observation as available before its frozen timestamp.
+  mir_bsi_rule: >-
+    Map each reference period only to an exact archived official release date.
+    If the reference-period mapping cannot be demonstrated from preserved
+    official evidence, retain the series-month as missing.
+  calendar_time_zone: Europe/Berlin
+  prohibited:
+    - generic_average_release_lag
+    - release_date_interpolation
+    - current_value_backfill
+    - undocumented_manual_timestamp
+
+panel_build_contract:
+  raw_directory: data/raw/run023_full_panel_v1
+  processed_directory: data/processed/run023_full_panel_v1
+  panel_start: 2003-01
+  panel_end: 2025-10
+  monthly_origin: first_calendar_day_23_59_59_Europe_Berlin
+  admissibility: usable_timestamp_strictly_before_origin
+  equality_at_origin: rejected
+  panels:
+    - P0_CORE_REPLAY_AND_FAST
+    - P1_AUGMENTED_BANK_CREDIT
+  preserve_ragged_edges: true
+  current_value_backfill: prohibited
+  interpolation: prohibited
+  extrapolation: prohibited
+  implicit_zero_fill: prohibited
+  transform_order:
+    - establish_observation_version_and_usable_timestamp
+    - select_latest_admissible_version_at_each_origin
+    - apply_frozen_series_transformation
+    - apply_frozen_economic_sign
+    - assemble_registered_panel_membership
+  output_grain: one_row_per_panel_origin_series
+  required_output_fields:
+    - panel_id
+    - origin_month
+    - origin_timestamp
+    - series_id
+    - observation_period
+    - usable_timestamp
+    - transformed_value
+    - is_missing
+    - missing_reason
+    - source_response_sha256
+  fail_closed_checks:
+    - no_duplicate_panel_origin_series_key
+    - exact_monthly_origin_grid
+    - exact_registered_panel_membership
+    - every_nonmissing_value_has_strictly_prior_usable_timestamp
+    - every_nonmissing_value_has_registered_source_hash
+    - no_infinite_transformed_value
+    - no_unregistered_series
+
+pre_execution_corrections:
+  - deviation_id: DEV-085
+    issue: >-
+      The shared HTTPS downloader checked the redirected scheme but not the
+      redirected host, despite the Run 021 manifest requiring rejection of
+      redirects away from the official host.
+    resolution: >-
+      Implement a Run 023 retrieval primitive that requires the final host to
+      equal the registered request host, enforces the byte ceiling while
+      streaming, captures content type, and refuses an existing destination.
+    empirical_effect: >-
+      Prospective provenance and supply-chain hardening before any Run 023
+      request; no official response has been retrieved or transformed under
+      the defective path.
+  - deviation_id: DEV-086
+    issue: >-
+      The Run 021 source manifest registered the BSI current release calendar
+      and dataset information but omitted the ECB historical Monetary
+      Developments index required for exact reference-period release mapping.
+    resolution: >-
+      Register the official, free ECB historical release index in Run 023
+      before retrieval, preserve its exact response bytes privately, and parse
+      only explicit dated reference-period records. Leave unmatched months
+      missing.
+    empirical_effect: >-
+      Prospective temporal-provenance completion. No series definition, panel,
+      transformation, sample boundary, or outcome firewall changes.
+  - deviation_id: DEV-087
+    issue: >-
+      The first loader draft assigned the same sentinel usable timestamp to all
+      MIR and BSI current-history revisions, so multiple revisions of one
+      reference period could select the first row rather than the latest row.
+    resolution: >-
+      Use API VALID_FROM solely to select the latest current-history row, fail
+      on contradictory rows at the same timestamp, and then replace that
+      timestamp with the independently verified initial-release timestamp for
+      decision-time availability.
+    empirical_effect: >-
+      Pre-retrieval separation of revision selection from information
+      availability. No official Run 023 series byte had been retrieved or used.
+  - deviation_id: DEV-088
+    issue: >-
+      The first build-audit draft mislabeled the retrieval-manifest hash as the
+      source-registry hash and rechecked only the two parsed archive files
+      rather than the byte count, hash, path, registered URL, and final host of
+      every preserved response.
+    resolution: >-
+      Store distinct source-registry and retrieval-manifest hashes and verify
+      all ten series plus all seven evidence responses against the frozen
+      source set before loading any values.
+    empirical_effect: >-
+      Pre-retrieval provenance correction. No official Run 023 response,
+      transform, panel, state estimate, or outcome was affected.
+  - deviation_id: DEV-089
+    issue: >-
+      Retrieval attempt 1 stopped on RTD HICP because the full ECB history,
+      unlike the short pilot, contains explicit Delete rows with blank UNIT,
+      blank OBS_VALUE, blank VALID_FROM, and a dated VALID_TO. It also contains
+      Replace rows with an explicit blank observation value. Treating those
+      action rows as ordinary valued observations incorrectly failed the unit
+      and timestamp contract.
+    resolution: >-
+      Preserve the failed attempt record. Require the frozen unit on every
+      nondelete row, allow a blank unit only on an explicit Delete row, accept
+      an explicit blank observation as missing rather than a value, and use a
+      Delete row's VALID_TO as its effective action timestamp when VALID_FROM
+      is blank. Add hostile regression tests before retrying the same URLs.
+    empirical_effect: >-
+      Fail-closed schema correction after no bundle was promoted. No Run 023
+      value was transformed, no panel was built, no state was estimated, and
+      no outcome was accessed.
+  - deviation_id: DEV-090
+    issue: >-
+      Retrieval attempt 2 passed the corrected HICP schema gate but the
+      registered RTD industrial-production response exceeded the downloader's
+      implicit 60-second socket-read timeout. The staging bundle was removed.
+    resolution: >-
+      Preserve the failed attempt record and freeze an explicit 180-second
+      per-response timeout. Retain the same URLs, final-host rule, 50 MB series
+      cap, atomic bundle promotion, and zero-retry behavior inside one attempt.
+    empirical_effect: >-
+      Transport-boundary clarification only. No raw bundle or manifest was
+      promoted, and no observation was transformed or estimated.
+  - deviation_id: DEV-091
+    issue: >-
+      Retrieval attempt 3 completed the first two corrected RTD histories but
+      the RTD unemployment stream then stalled through the explicit 180-second
+      timeout. Re-running the entire 17-item bundle manually is inefficient and
+      does not expose item-level retry provenance.
+    resolution: >-
+      Preserve the failed attempt record. Allow at most three attempts for the
+      same registered item only when the exception chain contains a transport
+      timeout. Never retry host, byte, schema, identity, unit, or timestamp
+      failures. Record the successful attempt number and prior timeout classes.
+    empirical_effect: >-
+      Bounded transport-resilience correction. No source URL, data definition,
+      transformation, panel, estimate, or outcome boundary changes.
+
+acceptance_gates:
+  - every_bound_input_hash_matches
+  - protocol_committed_before_first_network_request
+  - all_series_responses_are_real_free_and_official
+  - all_promoted_responses_pass_identity_schema_and_size_checks
+  - all_release_evidence_responses_are_privately_preserved_and_hash_registered
+  - exact_MIR_and_BSI_release_mapping_is_evidenced_or_values_remain_missing
+  - both_panel_files_pass_point_in_time_integrity_audit
+  - reliability_engine_is_not_imported_or_executed
+  - transmission_outcomes_are_not_accessed
+  - private_quality_and_test_gates_pass
+  - manuscript_revision_distinguishes_panel_feasibility_from_model_performance
+  - public_release_contains_no_raw_data_private_calendar_bytes_or_protected_records
+
+required_outputs:
+  - research/methodology/run_023_full_history_retrieval_and_panel_build_protocol_v1.yaml
+  - src/shockbridge_state_risk/data/full_panel_build.py
+  - scripts/run023_full_panel_build.py
+  - tests/test_full_panel_build.py
+  - data/manifests/run_023_full_history_sources_v1.yaml
+  - data/processed/run023_full_panel_v1/p0_core_replay_and_fast.csv
+  - data/processed/run023_full_panel_v1/p1_augmented_bank_credit.csv
+  - reports/methodology/run_023_full_panel_build.audit.json
+  - reports/methodology/run_023_full_panel_build_result_2026-10-15.md
+  - reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - research/paper/manuscript_v1_9.md
+  - reports/methodology/run_023_manuscript_v1_9_claim_audit.yaml
+  - reports/methodology/run_023_manuscript_v1_9_citation_locator_audit.yaml
+
+stop_rules:
+  - >-
+    If a series response fails its frozen identity, schema, unit, period, host,
+    byte, or timestamp contract, stop before constructing either panel.
+  - >-
+    If exact MIR or BSI release evidence is incomplete, do not invent dates;
+    construct the panels only with explicit missingness and report the affected
+    reference periods and coverage.
+  - >-
+    Do not fit the implemented reliability engine or inspect any transmission
+    outcome even if both panels pass.
+
+next_decision:
+  success: >-
+    Seek separate approval for an outcome-blind empirical reliability run over
+    the frozen scenario envelope. Panel feasibility alone is not evidence of
+    reliability, novelty, monetary-policy value, or causal validity.
+  incomplete_release_evidence: >-
+    Propose a separately approved official-calendar recovery or prospective
+    forward-collection extension; preserve missingness meanwhile.
+  failure: >-
+    Preserve the failed audit and diagnose the registered source or temporal
+    contract without substituting data or relaxing the outcome firewall.

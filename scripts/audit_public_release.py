@@ -149,8 +149,8 @@ def audit() -> dict[str, Any]:
         "history_privacy_findings": len(history_privacy),
         "suspicious_filenames": len(suspicious_filenames),
         "prohibited_tracked_data_paths": len(prohibited_data_paths),
-        "public_author_identity_records": len(public_author_records),
     }
+    disclosures = {"public_author_identity_records": len(public_author_records)}
     return {
         "schema_version": 1,
         "audit_id": "run-012-public-release-v1",
@@ -166,6 +166,7 @@ def audit() -> dict[str, Any]:
         "data_boundary_status": "PASS" if not prohibited_data_paths else "FAIL",
         "status": "PUBLICATION_READY" if not any(blockers.values()) else "PUBLICATION_BLOCKED",
         "blocker_counts": blockers,
+        "disclosure_counts": disclosures,
         "current_secret_findings": current_secrets,
         "history_secret_findings": history_secrets,
         "current_privacy_findings": current_privacy,
@@ -178,6 +179,7 @@ def audit() -> dict[str, Any]:
             "home_path_usernames_limited_to_portable_account_characters": True,
             "high_entropy_generic_secret_detection_performed": False,
             "legal_opinion_provided": False,
+            "git_author_identity_treated_as_attribution_not_secret": True,
         },
     }
 

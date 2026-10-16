@@ -9,6 +9,7 @@ from scripts.audit_public_release import (
     _atomic_json,
     _is_allowed_data_placeholder,
     _pattern_hits,
+    audit,
 )
 
 
@@ -38,6 +39,11 @@ class PublicReleaseAuditTests(unittest.TestCase):
             self.assertTrue(path.is_file())
             with self.assertRaisesRegex(PublicReleaseAuditError, "immutable"):
                 _atomic_json({"passed": True}, path)
+
+    def test_author_identity_is_disclosed_but_not_a_publication_blocker(self) -> None:
+        payload = audit()
+        self.assertIn("public_author_identity_records", payload["disclosure_counts"])
+        self.assertNotIn("public_author_identity_records", payload["blocker_counts"])
 
 
 if __name__ == "__main__":

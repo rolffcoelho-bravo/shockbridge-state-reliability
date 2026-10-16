@@ -113,7 +113,7 @@ def verify(root: Path, archive: Path, bundle: Path) -> dict[str, Any]:
                 "shockbridge_state_risk",
                 "scripts/run_public_tests.py",
                 "--expected-evidence-skips",
-                "7",
+                "9",
             ],
         ),
         ("public_coverage", [python, "-m", "coverage", "report", "--fail-under=87"]),

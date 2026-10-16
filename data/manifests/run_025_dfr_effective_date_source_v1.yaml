@@ -1,0 +1,28 @@
+schema_version: 1
+manifest_id: run-025-dfr-effective-date-source-v1
+protocol: research/methodology/run_025_dfr_effective_date_source_audit_protocol_v1.yaml
+protocol_sha256: e420005ffafa2175feadfc8c4c6eeda9b91eade5a8884c0f481fde183f4f0a4d
+retrieval:
+  item_id: ECB_KEY_INTEREST_RATES_EFFECTIVE_DATE_TABLE
+  item_type: official_html
+  registered_source_url: https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html
+  final_url: https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html
+  retrieved_at_utc: '2026-10-16T14:23:45.412355+00:00'
+  response_bytes: 131224
+  sha256: fddef164d35d6dcd67adc614234f093435c2fd019af48e97f69c1d41b176066e
+  content_type: text/html
+  relative_path: data/raw/run025_dfr_effective_dates_v1/ecb_key_interest_rates.html
+  attempt_count: 1
+  prior_attempt_error_classes: []
+retained_cross_validation_source:
+  series_key: FM.D.U2.EUR.4F.KR.DFR.LEV
+  response_bytes: 2925510
+  sha256: 8c90a704b16f6a8965a9c16d2932dca45840bc02f44a0b6d5a7848157fe5cb40
+  relative_path: data/raw/run023_full_panel_v1/series/ecb_deposit_facility_rate.csv
+  role: independent_official_daily_value_cross_validation
+scientific_boundary:
+  provider: European Central Bank
+  real_official_data_only: true
+  zero_cost_source: true
+  synthetic_empirical_observations_used: false
+  transmission_outcomes_accessed: false

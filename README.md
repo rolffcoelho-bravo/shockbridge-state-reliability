@@ -33,12 +33,12 @@ amplification result, trading signal, or production model.
 
 | Dimension | Current verified status |
 |---|---|
-| Research gate | Four-feature measurement rejected; Run 024 expands the wider official panels and preserves two release clocks; reliability fitting and transmission remain blocked |
+| Research gate | Four-feature measurement rejected; Run 025 validates the DFR effective-date clock and freezes four wider-panel source-clock scenarios; reliability fitting and transmission remain blocked |
 | Main finding | No registered one- or two-dimensional state representation passes the prospective joint stability gates |
 | Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
 | Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
 | Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
-| Test contract | Private canonical suite: 248/248 at 90% coverage; public repository: 236 tests, 229 executions plus exactly seven evidence-bound skips |
+| Test contract | Private canonical suite: 260/260 at 90% coverage; prospective public slice: 248 tests, 239 executions plus exactly nine evidence-bound skips |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
 ### Dimensional scope
@@ -61,8 +61,11 @@ tests the value-free numerical kernel without retrieving the histories. Run
 evidence pages and constructs the two outcome-blind panels over 274 monthly
 origins. Run 024 then validates exact legacy archive identifiers, raising fully
 observed augmented-panel origins from 102 to 123, and rebuilds a conservative
-next-day timing variant. It does not fit or validate the reliability envelope. The ten-series
-design is a wider multichannel panel, not a high-dimensional empirical result.
+next-day timing variant. Run 025 then validates 51 official DFR effective-date
+events against 8,366 retained daily observations, raises fully observed origins
+to 179 in both panels, and freezes four archive × DFR clock scenarios. It does
+not fit or validate the reliability envelope. The ten-series design is a wider
+multichannel panel, not a high-dimensional empirical result.
 
 ### Reviewer paths
 
@@ -88,10 +91,12 @@ design is a wider multichannel panel, not a high-dimensional empirical result.
   [`reports/methodology/run_023_full_panel_build_result_2026-10-15.md`](reports/methodology/run_023_full_panel_build_result_2026-10-15.md),
   [`reports/methodology/run_023_full_panel_coverage.audit.json`](reports/methodology/run_023_full_panel_coverage.audit.json), and
   [`src/shockbridge_state_risk/data/full_panel_build.py`](src/shockbridge_state_risk/data/full_panel_build.py)
-- **Inspect the archive and timing amendment:**
+- **Inspect the source-clock amendments:**
   [`reports/methodology/run_024_archive_timing_sensitivity_result_2026-10-16.md`](reports/methodology/run_024_archive_timing_sensitivity_result_2026-10-16.md),
-  [`reports/methodology/run_024_archive_timing_sensitivity.audit.json`](reports/methodology/run_024_archive_timing_sensitivity.audit.json), and
-  [`src/shockbridge_state_risk/data/archive_timing_amendment.py`](src/shockbridge_state_risk/data/archive_timing_amendment.py)
+  [`reports/methodology/run_025_dfr_effective_date_source_result_2026-10-16.md`](reports/methodology/run_025_dfr_effective_date_source_result_2026-10-16.md), and
+  the corresponding implementations in
+  [`archive_timing_amendment.py`](src/shockbridge_state_risk/data/archive_timing_amendment.py) and
+  [`dfr_effective_date.py`](src/shockbridge_state_risk/data/dfr_effective_date.py)
 - **Reproduce the software gates:** [`REPRODUCING.md`](REPRODUCING.md) and
   [reproducibility](#reproducibility)
 - **Review tables and figures:**
@@ -180,6 +185,13 @@ the next calendar day changes selected values at 23 origins but changes no
 missingness status or complete-origin count. Both clocks remain future
 reliability scenarios; neither is a reliability result.
 
+Run 025 replaces the DFR API database-validity clock with an independently
+preserved official effective-date table after 8,366/8,366 daily exact matches.
+DFR coverage rises from 123 to 274 origins and fully observed P0/P1 coverage
+rises to 179/179. Moving DFR usability to the next calendar day changes stored
+timestamps but no monthly selected observation, value, or missingness state.
+The four source-clock panels remain outcome blind and unfitted.
+
 ## Evidence sequence
 
 ```text
@@ -213,7 +225,9 @@ official full-history panel build ─── 274 origins; zero timing violations
         ↓
 archive and timing amendment ──────── P1 complete origins 102→123; two clocks
         ↓
-transmission outcomes remain sealed; reliability fitting requires a new approval
+DFR effective-date amendment ──────── both panels complete at 179; four clocks
+        ↓
+transmission outcomes remain sealed; reliability fitting requires a new protocol
 ```
 
 The main public scientific records are:
@@ -263,10 +277,10 @@ Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
 while also running static analysis, the then-registered 140-test suite, and the
-90% coverage gate. The current private canonical contract contains 248 tests
+90% coverage gate. The current private canonical contract contains 260 tests
 and adds cross-version, cross-runner, archive-safety, release-boundary, source-
 feasibility, series-history, protocol-contract, reliability-engine, and hosted
-security regression coverage. The public repository contains 236 tests; the
+security regression coverage. The prospective public slice contains 248 tests; the
 difference is private evidence and unpublished research-bound material.
 
 Create a locked Python 3.9 environment:
@@ -285,10 +299,10 @@ installation. The lock files describe the exact verified Python 3.9
 environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
-Public CI cannot access ignored empirical artifacts. It requires exactly seven
-explicitly labeled evidence-bound skips, executes the remaining 229 tests, and
+Public CI cannot access ignored empirical artifacts. It requires exactly nine
+explicitly labeled evidence-bound skips, executes the remaining 239 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates all hash-registered evidence, executes all 248 tests, and retains the
+hydrates all hash-registered evidence, executes all 260 tests, and retains the
 90% coverage floor. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:

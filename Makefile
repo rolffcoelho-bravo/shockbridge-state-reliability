@@ -1,4 +1,4 @@
-.PHONY: install quality test test-public public-export synthetic design-power state-panel monthly-state-panel state-replay state-model-comparison state-redesign state-subspace state-instability state-instability-amendment run010-fetch vintage-robustness state-abstention run021-contract-audit run023-retrieve run023-build run024-archive-timing inventory-audit contract-audit clean
+.PHONY: install quality test test-public public-export synthetic design-power state-panel monthly-state-panel state-replay state-model-comparison state-redesign state-subspace state-instability state-instability-amendment run010-fetch vintage-robustness state-abstention run021-contract-audit run023-retrieve run023-build run024-archive-timing run025-dfr-effective-date inventory-audit contract-audit clean
 
 PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 
@@ -15,7 +15,7 @@ test:
 	$(PYTHON) -m coverage report
 
 test-public:
-	$(PYTHON) -m coverage run --branch --source shockbridge_state_risk scripts/run_public_tests.py --expected-evidence-skips 7
+	$(PYTHON) -m coverage run --branch --source shockbridge_state_risk scripts/run_public_tests.py --expected-evidence-skips 9
 	$(PYTHON) -m coverage report --fail-under=87
 
 public-export:
@@ -73,6 +73,9 @@ run023-build:
 
 run024-archive-timing:
 	$(PYTHON) scripts/run024_archive_timing_amendment.py
+
+run025-dfr-effective-date:
+	$(PYTHON) scripts/run025_dfr_effective_date_audit.py
 
 inventory-audit:
 	$(PYTHON) -m shockbridge_state_risk verify-artifacts data/manifests/local_artifact_inventory_2026-10-02.yaml

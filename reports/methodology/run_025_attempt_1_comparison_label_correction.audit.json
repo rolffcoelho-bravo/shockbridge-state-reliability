@@ -1,0 +1,28 @@
+{
+  "audit_id": "run-025-attempt-1-comparison-label-correction",
+  "recorded_at_utc": "2026-10-16T14:31:26Z",
+  "status": "SUPERSEDED_BEFORE_ACCEPTANCE",
+  "protocol_sha256": "e420005ffafa2175feadfc8c4c6eeda9b91eade5a8884c0f481fde183f4f0a4d",
+  "source_manifest_sha256": "1ca5d2f72c3c0121f8d2ede6968b92d8af1287be8b8bf0340263e266c4bc0ad3",
+  "source_response_sha256": "fddef164d35d6dcd67adc614234f093435c2fd019af48e97f69c1d41b176066e",
+  "reason": "The first execution correctly found 274 DFR usable-timestamp differences and zero observation-value or missingness differences between effective-day and next-day timing. Its audit field called all timestamp-only row differences selection_changes, which could overstate the economic effect. The label and decomposition were corrected before scientific acceptance.",
+  "superseded_field": "effective_vs_next_day_selection_changes",
+  "replacement_fields": [
+    "effective_vs_next_day_timestamp_changes",
+    "effective_vs_next_day_observation_period_changes",
+    "effective_vs_next_day_value_or_missingness_changes"
+  ],
+  "first_execution_summary": {
+    "timestamp_or_row_differences": 274,
+    "value_or_missingness_differences": 0,
+    "passed": true
+  },
+  "claim_firewall": {
+    "state_estimation_performed": false,
+    "reliability_engine_imported": false,
+    "scenario_evaluation_performed": false,
+    "transmission_outcomes_accessed": false,
+    "synthetic_empirical_observations_used": false
+  },
+  "disposition": "The uncommitted processed output and canonical audit were regenerated from the unchanged frozen protocol and source bytes after this reporting-schema correction."
+}

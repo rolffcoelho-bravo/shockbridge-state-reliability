@@ -1,0 +1,256 @@
+schema_version: 1
+protocol_id: run-025-dfr-effective-date-source-audit-v1
+created_on: 2026-10-16
+status: APPROVED_AND_FROZEN_AFTER_LOCATOR_INSPECTION_BEFORE_CANONICAL_RETRIEVAL_OR_REBUILD
+owner_approval: recorded_2026-10-16
+
+research_question: >-
+  Does the ECB's independently published key-interest-rate table provide a
+  defensible effective-date clock for the deposit-facility rate that removes
+  the artificial pre-2015 gap created by treating a database maintenance
+  timestamp as economic availability, while remaining exactly consistent with
+  the already retained official ECB daily series?
+
+design_stage_disclosure: >-
+  The official ECB locator and rendered table were inspected on 2026-10-16 to
+  establish the source semantics and a feasible parser before this protocol
+  was frozen. The table heading and historical values were therefore visible
+  during design. No canonical response was retained, no panel was rebuilt, no
+  reliability model was fitted, and no transmission outcome was accessed
+  before freeze. Run 025 is prospective with respect to canonical retrieval,
+  byte hashes, parser execution, acceptance, and all panel comparisons, but is
+  not represented as blinded source discovery.
+
+scientific_boundary:
+  real_official_data_only: true
+  zero_cost_sources_only: true
+  new_network_retrieval_allowed: true
+  allowed_hosts:
+    - www.ecb.europa.eu
+  synthetic_empirical_observations_allowed: false
+  value_interpolation_allowed: false
+  inferred_effective_dates_allowed: false
+  announcement_date_substitution_allowed: false
+  database_VALID_FROM_as_policy_effective_date_allowed: false
+  reliability_engine_import_allowed: false
+  empirical_state_estimation_allowed: false
+  scenario_evaluation_allowed: false
+  transmission_outcomes_access_allowed: false
+  public_release_allowed_only_after_private_validation: true
+
+bound_inputs:
+  run_024_protocol:
+    path: research/methodology/run_024_archive_identifier_and_timing_sensitivity_protocol_v1.yaml
+    bytes: 8986
+    sha256: 6492642c54382d7fe041366bdbb2c339e84eb073bf6eac03c735ae8616f156cd
+  run_024_audit:
+    path: reports/methodology/run_024_archive_timing_sensitivity.audit.json
+    bytes: 15414
+    sha256: 86ac0123cf13e62c4268f55b06508413c08f92609dedbd3420ff9870c639dc1c
+  retained_ecb_dfr_api_response:
+    path: data/raw/run023_full_panel_v1/series/ecb_deposit_facility_rate.csv
+    bytes: 2925510
+    sha256: 8c90a704b16f6a8965a9c16d2932dca45840bc02f44a0b6d5a7848157fe5cb40
+  run_024_registered_p0:
+    path: data/processed/run024_archive_timing_v1/registered_clock/p0_core_replay_and_fast.csv
+    bytes: 368155
+    sha256: 4c77be8ed6b06ce97e09720158dea55138c7473d01cec0b40127bc447e1042ce
+  run_024_registered_p1:
+    path: data/processed/run024_archive_timing_v1/registered_clock/p1_augmented_bank_credit.csv
+    bytes: 531968
+    sha256: e9d27008af0dcc74d81ee8fed4d7a7a69c1edbd7c42fe6cc2b35e47f5e2ea5ae
+  run_024_next_day_p0:
+    path: data/processed/run024_archive_timing_v1/next_day_clock/p0_core_replay_and_fast.csv
+    bytes: 368155
+    sha256: 4c77be8ed6b06ce97e09720158dea55138c7473d01cec0b40127bc447e1042ce
+  run_024_next_day_p1:
+    path: data/processed/run024_archive_timing_v1/next_day_clock/p1_augmented_bank_credit.csv
+    bytes: 531967
+    sha256: c95f6110f030350f85f89d2b8b6490c6bf074fe4fe2203028cf0be614425f103
+  source_registry:
+    path: research/data/run_021_full_panel_manifest_v1.yaml
+    bytes: 10681
+    sha256: 3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b
+
+canonical_source_contract:
+  source_id: ECB_KEY_INTEREST_RATES_EFFECTIVE_DATE_TABLE
+  provider: European Central Bank
+  url: https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html
+  required_final_host: www.ecb.europa.eu
+  destination: data/raw/run025_dfr_effective_dates_v1/ecb_key_interest_rates.html
+  atomic_download: true
+  immutable_destination: true
+  refuse_overwrite: true
+  maximum_response_bytes: 5000000
+  accepted_content_types:
+    - text/html
+  capture:
+    - final_url
+    - retrieved_at_utc
+    - response_bytes
+    - sha256
+    - content_type
+  required_visible_semantics:
+    page_heading: Key ECB interest rates
+    table_date_heading: Date (with effect from)
+    value_heading: Deposit facility
+    unit_text: interest rate levels in percentages per annum
+  official_semantic_rule: >-
+    The table's date column is explicitly headed "Date (with effect from)".
+    The pre-10-March-2004 qualification on the same page concerns when changes
+    to main-refinancing-operation rates became effective; it does not replace
+    the stated effective dates of the deposit standing facility.
+
+parser_contract:
+  table_selection: >-
+    Select exactly one table containing both the frozen date and deposit-rate
+    headings. Zero or multiple matching tables abort the run.
+  year_rule: >-
+    A four-digit year cell starts a year block. Empty year cells inherit only
+    the immediately preceding valid year within the selected table. Any other
+    year inference is prohibited.
+  date_rule: >-
+    Parse only a day plus an English month abbreviation from the date cell,
+    after removing displayed footnote markers. The resulting calendar date
+    must be valid and unique within the selected table.
+  value_rule: >-
+    Parse the deposit-facility cell as a finite decimal percentage per annum.
+    Normalize Unicode minus to ASCII minus. A dash or blank is ineligible, not
+    zero. Floating-point comparison is prohibited.
+  target_event_window:
+    first_required_baseline_date: 2002-12-06
+    last_admissible_effective_date: 2025-10-31
+  duplicate_rule: exact_date_and_value_duplicates_may_collapse_conflicts_abort
+  ordering_rule: strictly_increasing_after_sort
+  prohibited_methods:
+    - interpolation
+    - forward_or_backward_date_inference
+    - average_lag_imputation
+    - neighbouring_row_value_imputation
+    - parsing_other_language_pages
+    - treating_page_retrieval_time_as_historical_availability
+
+cross_validation_contract:
+  retained_series_key: FM.D.U2.EUR.4F.KR.DFR.LEV
+  retained_period_field: TIME_PERIOD
+  retained_value_field: OBS_VALUE
+  retained_database_timestamp_fields_are_not_effective_dates:
+    - VALID_FROM
+    - VALID_TO
+  comparison_window:
+    start: 2002-12-06
+    end: 2025-10-31
+  expansion_rule: >-
+    For each retained API calendar day, select the last official table event
+    whose effective date is not later than that day. Compare normalized decimal
+    values exactly; do not use a floating tolerance.
+  acceptance_requirements:
+    minimum_official_events_in_window: 30
+    minimum_compared_api_days: 8000
+    exact_value_agreement_percent: 100
+    conflicting_days: 0
+    unmatched_api_days: 0
+    unmatched_effective_events: 0
+  semantics_required_for_acceptance:
+    - official_page_identifies_provider_and_rate
+    - official_page_labels_dates_as_effective
+    - retained_api_title_contains_date_of_changes_raw_data
+    - retained_api_unit_is_percent_per_annum
+
+timing_variants:
+  effective_day_clock:
+    label: official_effective_date_at_00_00_00_Europe_Berlin
+    rule: combine_official_effective_date_with_local_midnight
+    evidentiary_status: official_date_in_force_within_the_calendar_day
+  conservative_next_day_clock:
+    label: next_calendar_day_at_00_00_00_Europe_Berlin
+    rule: combine_official_effective_date_plus_one_calendar_day_with_local_midnight
+    evidentiary_status: conservative_intraday_sensitivity_not_claimed_actual_effective_time
+  admissibility: usable_timestamp_strictly_before_monthly_origin
+  monthly_origin: first_calendar_day_23_59_59_Europe_Berlin
+
+conditional_panel_rebuild:
+  execute_only_if_source_audit_passes: true
+  panel_start: 2003-01
+  panel_end: 2025-10
+  replace_only_series_id: ECB_DEPOSIT_FACILITY_RATE
+  replacement_transformation: level
+  replacement_sign: 1
+  preserve_every_non_DFR_row_byte_for_byte: true
+  source_panels:
+    registered_mir_bsi_clock:
+      - data/processed/run024_archive_timing_v1/registered_clock/p0_core_replay_and_fast.csv
+      - data/processed/run024_archive_timing_v1/registered_clock/p1_augmented_bank_credit.csv
+    next_day_mir_bsi_clock:
+      - data/processed/run024_archive_timing_v1/next_day_clock/p0_core_replay_and_fast.csv
+      - data/processed/run024_archive_timing_v1/next_day_clock/p1_augmented_bank_credit.csv
+  output_directory: data/processed/run025_dfr_effective_dates_v1
+  immutable_output: true
+  scenario_grid:
+    - registered_mir_bsi__effective_day_dfr
+    - registered_mir_bsi__next_day_dfr
+    - next_day_mir_bsi__effective_day_dfr
+    - next_day_mir_bsi__next_day_dfr
+  required_outputs_per_scenario:
+    - p0_core_replay_and_fast.csv
+    - p1_augmented_bank_credit.csv
+  additional_required_outputs:
+    - dfr_effective_date_events.csv
+    - source_manifest.yaml
+
+comparison_contract:
+  source_audit_metrics:
+    - canonical_response_bytes_and_sha256
+    - parsed_event_count
+    - first_and_last_effective_dates
+    - exact_api_days_compared
+    - exact_agreement_count
+    - conflict_count
+    - unmatched_count
+  panel_metrics_by_scenario:
+    - observed_DFR_origin_count
+    - first_usable_DFR_origin
+    - fully_observed_origin_count_by_panel
+    - DFR_rows_changed_against_bound_Run_024_panel
+    - missingness_status_changes
+    - transformed_value_changes
+    - exact_changed_origin_months
+  invariants:
+    - exact_registered_row_count_per_panel
+    - zero_duplicate_keys
+    - zero_nonfinite_transformed_values
+    - zero_point_in_time_violations
+    - all_non_DFR_rows_byte_identical_to_bound_Run_024
+    - no_outcome_or_reliability_engine_access
+    - no_synthetic_empirical_observations
+
+stop_rules:
+  - Stop if any bound input byte count or SHA-256 differs.
+  - Stop if retrieval leaves the frozen ECB host or exceeds the response cap.
+  - Stop if required page semantics or exactly one target table are absent.
+  - Stop if any effective date or deposit-rate cell requires inference beyond the frozen parser.
+  - Stop if exact cross-validation is below 100 percent or any required event is unmatched.
+  - Stop without rebuilding panels if the source audit fails.
+  - Stop if any non-DFR panel row changes.
+  - Stop before reliability fitting regardless of the coverage result.
+
+reporting_contract:
+  preserve_runs_023_and_024_unchanged: true
+  label_run_025_as_post_coverage_approved_source_contract_amendment: true
+  manuscript_next_version: research/paper/manuscript_v1_11.md
+  progress_dashboard: research/paper/research_progress_dashboard_v1.md
+  prohibit_claims:
+    - validated_reliable_state
+    - useful_authorization_rate
+    - benchmark_superiority
+    - methodological_novelty_established
+    - high_dimensional_empirical_result
+    - transmission_effect
+    - monetary_policy_recommendation
+
+next_gate_after_run_025:
+  owner_approval_required: true
+  default: >-
+    Report the official-source audit and panel sensitivity, then stop.
+    Reliability-envelope fitting requires a separately frozen execution
+    protocol and new approval.

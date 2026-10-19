@@ -35,6 +35,7 @@ private canonical archive.
 | Run 012 exact dependency locks | `requirements/*.lock` | Git checkpoint; exact verified Python 3.9 build, runtime, and development versions |
 | Run 012 public-release records | `reports/methodology/run_012_*` and `research/paper/manuscript_architecture_v1.md` | Git checkpoint; locked reproduction, rights/privacy audit, public-CI boundary, and claim-controlled paper structure |
 | Run 020 public reliability records | `research/data/run_020_*`, `research/methodology/run_020_*`, and `reports/methodology/run_020_series_history_*` | Git checkpoint; exact-series timing pilot and corrected common-space method, excluding raw responses and rejected attempts |
+| Run 027 executable-completeness records | `research/methodology/run_027_*`, `src/shockbridge_state_risk/state/reliability_protocol_completeness.py`, `scripts/run027_protocol_completeness_audit.py`, `tests/test_reliability_protocol_completeness.py`, and `reports/methodology/run_027_*` public records | Git checkpoint; 11-gap fail-closed semantic audit and unapproved prospective amendment, excluding the working manuscript and private claim/decision records |
 | CI and build configuration | `.github/`, `Makefile`, and `pyproject.toml` | Git checkpoint |
 
 ## Critical recovery paths
@@ -49,6 +50,7 @@ private canonical archive.
 - Re-fetch the exact Run 010 ECB sources with `make run010-fetch` only when the immutable v1 source bundle is absent; the command refuses overwrite and source substitution.
 - Rebuild the Run 010 matched-period latest-vintage bundle with `make vintage-robustness` only under a new versioned run ID if v1 already exists; the v1 writer deliberately refuses overwrite.
 - Recheck Run 010 from a clean temporary checkout with `scripts/reproduce_run010_clean.py`; the script validates every hydrated input, refuses to modify canonical outputs, and records exact hash equality.
+- Recheck Run 027 with `make run027-protocol-completeness`; status 2 is the registered stop result and the JSON must report exactly 11 critical gaps against the unchanged Run 026 protocol hash. The amendment proposal is not approved and must not be used to fit official values.
 - Rebuild the Run 011 paper presentation only under a new versioned output directory; `scripts/build_run011_paper_artifacts.py` treats the published bundle as immutable.
 - Recheck the exact Python 3.9 environment with `scripts/reproduce_run010_locked.py` only under a new versioned audit path; the Run 012 v1 audit is immutable.
 - Audit a proposed current tree and its history with `scripts/audit_public_release.py`; use the published-repository checks for append-only corrections after the audited root release.

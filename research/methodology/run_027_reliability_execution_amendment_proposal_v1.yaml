@@ -1,0 +1,251 @@
+schema_version: 1
+proposal_id: run-027-reliability-execution-amendment-proposal-v1
+created_on: 2026-10-19
+status: PROPOSED_AWAITING_OWNER_APPROVAL_NO_EMPIRICAL_EXECUTION
+amends_if_approved: run-026-information-clock-reliability-execution-v1
+
+reason: >-
+  A semantic executable-completeness audit found eleven result-sensitive
+  choices that the byte-integrity preflight could not detect. Selecting any of
+  them after fitting calibration or evaluation values would weaken the
+  prospective design. Run 026 remains immutable; this proposal is a new,
+  prospective amendment and has no force until separately approved.
+
+bound_inputs:
+  - path: research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml
+    sha256: 78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb
+  - path: reports/methodology/run_027_run026_executable_completeness.audit.json
+    sha256: 3abab61daf9b47ebc0a3a741ca0380482da4952b861a759a770e020623fb358e
+
+scientific_boundary:
+  empirical_fit_allowed_before_approval: false
+  evaluation_results_access_allowed_before_approval: false
+  transmission_outcomes_access_allowed: false
+  synthetic_empirical_observations_allowed: false
+  software_fixtures_allowed_for_tests_only: true
+  positive_result_required: false
+  amendment_may_be_changed_after_empirical_fit: false
+
+proposed_resolutions:
+  XG-01_data_matrix:
+    row_coordinate: monthly_origin
+    column_coordinate: manifest_series_id
+    cell: transformed_value_selected_at_that_origin
+    observed: is_missing_equals_0
+    expanding_history: all_origins_from_2003_01_through_t
+    rolling_history: last_120_monthly_origins_through_t
+    standardization: separately_within_each_history_using_observed_moments
+    observation_period_is_metadata_not_row_coordinate: true
+
+  XG-02_slow_release_stress:
+    affected_timing_class: B_RELEASE_LAG_ELIGIBLE
+    affected_series:
+      - ECB_USD_EUR_REFERENCE_RATE
+      - MIR_NFC_COST_OF_BORROWING
+      - BSI_NFC_ADJUSTED_LOANS
+      - BSI_MONETARY_AGGREGATE_M3
+    operator: >-
+      For affected series only, shift the complete selected-value,
+      observation-period, missingness, and missing-reason path forward by one
+      monthly origin within each analytic clock class. The first origin is
+      missing with reason slow_release_boundary. Do not shift other series.
+    no_backward_fill: true
+    provenance_retained: true
+
+  XG-03_complete_case_score_recovery:
+    standardization_sample: observed_values_in_the_declared_history_only
+    fit_rows: rows_with_all_retained_series_observed
+    minimum_complete_rows: 60
+    fit: deterministic_channel_weighted_SVD_on_complete_rows
+    rank_rule: same_observed_entry_ICp2_grid_as_primary_estimator
+    common_calendar_score_recovery: >-
+      Holding standardized loadings fixed, estimate each of the final 120
+      monthly scores by deterministic weighted least squares over that row's
+      observed retained series.
+    row_identification_rule: observed_loading_submatrix_rank_at_least_selected_rank
+    unidentified_row: scenario_nondegenerate_false
+    synthetic_imputation: prohibited
+
+  XG-04_near_duplicate_resolution:
+    exact_duplicate_first: true
+    correlation_threshold_absolute: 0.98
+    minimum_pairwise_months: 60
+    statistics_window: declared_training_history_only
+    graph_rule: >-
+      Within each economic channel, connect two series when their absolute
+      observed-pair correlation exceeds the threshold. Use connected
+      components, not sequential deletion.
+    representative_tie_break:
+      - stronger_timing_class
+      - lower_revision_exposure
+      - earlier_first_usable_origin
+      - lower_training_missingness
+      - manifest_order
+    recompute_channel_weights_after_selection: true
+
+  XG-05_rank_invariant_orientation:
+    channel_order:
+      - prices_and_expectations
+      - real_activity_and_labour
+      - policy_stance_and_money_market
+      - sovereign_curve_and_term_structure
+      - bank_funding_and_lending_rates
+      - credit_and_money_quantities
+      - financial_conditions_and_systemic_stress
+      - external_value_and_cross_border_conditions
+    anchor_after_registered_series_signs: [1, 1, 1, 1, 1, 1, 1, 1]
+    anchor_normalization: divide_by_sqrt_8
+    interpretation: orientation_device_not_structural_policy_stance
+    anchor_capture: euclidean_norm_of_Q_times_anchor
+    scalar_state: >-
+      Project the fixed anchor into the scenario channel-loading subspace,
+      map the resulting coefficient vector through the factor scores, and
+      standardize the scalar on that fit's training history. This definition
+      is invariant to orthogonal factor rotation and permits unequal ranks.
+    minimum_anchor_capture_is_protocol_orientation_statistic: true
+    cross_scenario_procrustes_required_for_scalar_state: false
+
+  XG-06_fit_and_envelope_gates:
+    each_scenario_requires_histories: [expanding, rolling_120_month]
+    within_scenario_gates:
+      - both_history_fits_converged
+      - both_history_fits_have_at_least_five_channels
+      - every_retained_series_passes_count_coverage_and_scale_rules
+      - final_120_calendar_scores_are_identified
+      - expanding_vs_rolling_score_distance_not_above_selected_threshold
+      - expanding_vs_rolling_channel_distance_not_above_selected_threshold
+      - both_anchor_captures_not_below_selected_floor
+    cross_scenario_envelope: >-
+      Take the maximum pairwise score- and channel-projector distances and the
+      minimum anchor capture over every nondegenerate scenario-history fit at
+      the origin. History labels do not count toward the two-scenario rule.
+    authorization_requires_unique_scenario_ids: 2
+    exact_origin_deduplication_key: >-
+      Concatenate the expanding and rolling eligibility masks and canonical
+      standardized-matrix hashes before lexical representative selection.
+
+  XG-07_comparators:
+    common_rule: >-
+      Every comparator uses the same calibration loss, threshold grid,
+      deterministic tie-break, embargo, future-failure label, and one-time
+      evaluation boundary as the envelope.
+    B0_ALWAYS_ABSTAIN:
+      authorization: never
+    B1_SINGLE_AUGMENTED_PANEL:
+      input: registered_mir_bsi__effective_day_dfr_P1_full_ragged
+      statistic: expanding_versus_rolling_score_channel_and_anchor_geometry
+      cutoff_grid: same_three_dimensional_grid_as_envelope
+    B2_VINTAGE_PANEL_COMBINATION:
+      inputs: unique_nondegenerate_analytic_clock_classes
+      score: equal_weight_mean_of_rank_invariant_anchor_oriented_scalar_scores
+      provenance_duplicate_weight: 0
+      statistic: expanding_versus_rolling_combination_instability
+      cutoff_grid: same_three_dimensional_grid_as_envelope
+    B3_ROBUST_PCA:
+      input: same_information_set_as_B1
+      objective: observed_entry_stable_principal_component_pursuit
+      formula: minimize_nuclear_norm_L_plus_lambda_times_l1_norm_S_on_observed_cells
+      lambda_grid_multiplier: [0.5, 1.0, 2.0]
+      lambda_base: one_over_sqrt_max_T_N
+      solver: deterministic_inexact_augmented_Lagrangian
+      relative_primal_tolerance: 0.00000001
+      maximum_iterations: 2000
+      nonconvergence: abstain
+      lambda_selection: calibration_loss_only_then_lower_multiplier
+      rank_rule_after_low_rank_recovery: same_ICp2_candidate_ranks_1_2_3
+      statistic: expanding_versus_rolling_score_channel_and_anchor_geometry
+      cutoff_grid: same_three_dimensional_grid_as_envelope
+    matched_participation:
+      target: envelope_calibration_participation
+      comparator_cutoff: nearest_calibration_participation_only
+      tie_break: lower_calibration_loss_then_more_conservative_cutoff
+      evaluation_rematching: prohibited
+
+  XG-08_controls_reclassification:
+    required_invariances:
+      - source_clock_labels_permuted_without_changing_analytic_paths
+      - common_channel_rows_permuted_consistently_everywhere
+    negative_controls:
+      - id: NC1_SERIES_TO_CHANNEL_ASSIGNMENT_ROTATION
+        operator: >-
+          Rotate manifest-order series assignments across the seven represented
+          channel labels before rebuilding weights; do not merely relabel
+          common channel rows.
+      - id: NC2_TIMING_PATH_CYCLIC_SHIFT_24_MONTHS
+        operator: >-
+          Cyclically shift each class-B timing path by 24 months separately
+          inside calibration and evaluation, preserving block membership.
+      - id: NC3_CALIBRATION_LABEL_BLOCK_PERMUTATION
+        operator: >-
+          Permute twelve-month calibration future-failure blocks with the
+          frozen bootstrap seed; this is a harness control and never replaces
+          the primary evaluation labels.
+
+  XG-09_control_failure_rules:
+    invariance_tolerance_absolute: 0.0000000001
+    invariance_failure_if_any_action_metric_or_serialized_identity_differs: true
+    negative_control_requirement: >-
+      At least NC1 or NC2 must have calibration decision loss no lower than the
+      primary envelope and must not satisfy every primary success condition.
+      NC3 must not reproduce the primary selected threshold and loss jointly.
+    failure_action: report_control_failure_and_do_not_authorize_transmission
+    controls_do_not_redefine_primary_result: true
+
+  XG-10_bootstrap:
+    random_generator: numpy_PCG64
+    seed: 2602719
+    draws: 1999
+    block_construction: all_overlapping_non_circular_blocks_in_origin_order
+    draw_length: evaluation_origin_count_truncated_after_concatenation
+    paired_resampling: true
+    point_estimate_centering: empirical_evaluation_contrast
+    standard_error: sample_standard_deviation_across_bootstrap_draws_ddof_1
+    zero_standard_error: degenerate_interval_equal_to_point_estimate
+    simultaneous_statistic: maximum_absolute_studentized_centered_contrast
+    interval_quantile: empirical_0_95_quantile_with_higher_order_statistic
+    source_clock_labels_resampled: false
+
+  XG-11_two_stage_firewall:
+    stage_A_name: calibration_lock
+    stage_A_may_access:
+      - calibration_origins_and_their_matured_labels
+      - embargo_origins_only_to_mature_calibration_labels
+      - evaluation_input_only_scenario_identity_hashes_without_metrics_or_labels
+    stage_A_must_write_immutably:
+      - exact_input_hashes
+      - implementation_commit
+      - threshold_and_comparator_cutoffs
+      - robust_PCA_penalty
+      - calibration_metrics
+      - evaluation_origin_scenario_identity_hashes
+      - invariance_results
+      - stage_A_sha256
+    stage_B_name: one_time_evaluation
+    stage_B_preconditions:
+      - approved_amendment_hash_matches
+      - stage_A_lock_hash_matches
+      - no_prior_evaluation_marker_exists
+      - transmission_import_scan_passes
+    stage_B_first_action: atomically_create_evaluation_started_marker
+    stage_B_outputs: immutable_hash_chained_bundle
+    overwrite_or_second_evaluation_attempt: refuse
+    evaluation_threshold_or_scenario_reselection: prohibited
+    transmission_modules_and_outcomes: inaccessible
+
+acceptance_tests_required_before_stage_A:
+  - original_Run026_exact_byte_preflight_still_passes
+  - all_eleven_executable_gap_tests_pass_against_the_approved_amendment
+  - complete_case_scores_have_exact_120_row_coordinate_or_fail_closed
+  - rank_invariant_scalar_is_rotation_invariant_for_ranks_1_2_3
+  - pure_channel_row_relabeling_is_recognized_as_invariance_not_control
+  - structure_breaking_controls_change_fixture_geometry
+  - comparator_cutoffs_use_calibration_only
+  - evaluation_bundle_cannot_be_created_twice
+  - no_transmission_module_is_imported_or_read
+  - complete_private_suite_and_public_source_only_suite_pass
+
+approval_request: >-
+  Approve this prospective amendment before implementation, calibration, or
+  evaluation. Approval authorizes implementation and hostile software tests
+  first. Calibration may begin only after those tests pass. Evaluation may
+  open once only after the immutable calibration lock is written and audited.

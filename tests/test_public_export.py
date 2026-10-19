@@ -114,9 +114,9 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("Apache-2.0", readme)
         self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
         self.assertIn("parentless root commit", readme)
-        self.assertIn("260 tests", readme)
+        self.assertIn("271 tests", readme)
+        self.assertIn("259 tests", readme)
         self.assertIn("248 tests", readme)
-        self.assertIn("239 tests", readme)
         self.assertIn("Reviewer paths", readme)
         self.assertIn("Repository map", readme)
         self.assertNotIn("No GitHub remote exists", readme)
@@ -131,6 +131,7 @@ class PublicExportTests(unittest.TestCase):
         codeql = (root / ".github/workflows/codeql.yml").read_text(encoding="utf-8")
         dependabot = (root / ".github/dependabot.yml").read_text(encoding="utf-8")
         security = (root / "SECURITY.md").read_text(encoding="utf-8")
+        verifier = (root / "scripts/verify_public_export.py").read_text(encoding="utf-8")
 
         self.assertNotIn("ubuntu-latest", ci)
         self.assertIn("runs-on: ubuntu-24.04", ci)
@@ -145,6 +146,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("package-ecosystem: github-actions", dependabot)
         self.assertIn("version-update:semver-major", dependabot)
         self.assertIn("private vulnerability reporting", security)
+        self.assertIn('"--expected-evidence-skips",\n                "11",', verifier)
 
     def test_public_contribution_templates_are_structured(self) -> None:
         import yaml
@@ -173,7 +175,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("four registered features", readme)
         self.assertIn("large-*N*", readme)
         self.assertIn(
-            "248 tests",
+            "259 tests",
             (root / "REPRODUCING.md").read_text(encoding="utf-8"),
         )
         support = (root / "SUPPORT.md").read_text(encoding="utf-8")

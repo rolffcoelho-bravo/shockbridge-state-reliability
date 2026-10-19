@@ -26,7 +26,7 @@ def _prepare_import_path(root: Path = REPOSITORY_ROOT) -> Path:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--expected-evidence-skips", type=int, default=9)
+    parser.add_argument("--expected-evidence-skips", type=int, default=11)
     args = parser.parse_args()
     root = _prepare_import_path()
     suite = unittest.defaultTestLoader.discover(str(root / "tests"))

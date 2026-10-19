@@ -18,7 +18,7 @@ make quality
 make test-public
 ```
 
-The prospective public contract discovers 248 tests, executes 239, permits exactly nine
+The prospective public contract discovers 259 tests, executes 248, permits exactly eleven
 explicitly labelled evidence-bound skips, and enforces 87% branch-aware
 coverage of the released source. An additional Ubuntu 26.04 lane is
 prospective compatibility evidence and is not an empirical-reproduction claim.
@@ -39,7 +39,7 @@ make test
 ```
 
 This tier requires the locally retained, hash-registered evidence inventory. It
-executes all 260 tests and enforces 90% coverage. Run 011 and Run 012 recorded
+executes all 271 tests and enforces 90% coverage. Run 011 and Run 012 recorded
 byte-for-byte equality for all four registered Run 010 outputs in clean and
 locked Python 3.9 environments.
 
@@ -52,7 +52,7 @@ locked Python 3.9 environments.
   state passes the measurement gate. That status protects the outcome firewall;
   it is not a software defect.
 - A test skip is acceptable only when the public runner labels it as
-  evidence-bound and the total remains exactly nine.
+  evidence-bound and the total remains exactly eleven.
 
 ## Audit trail
 

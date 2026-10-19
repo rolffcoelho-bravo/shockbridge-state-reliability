@@ -15,7 +15,7 @@ This ledger is append-only in substance: superseded findings remain visible with
 | C01 | ECB event responses differ by the pre-event state. | Outcome-blind point-in-time panel built for 242 events. Event-indexed HMM fails stability/support. On the regular calendar, none of PCA, dynamic factor, HMM, or change point passes every frozen gate; no response outcomes inspected. | Redesign state representation, freeze an eligible state model or continuous score, overlap, observed-state power, state-independent response baseline, dependence-aware inference, falsifications. | BLOCKED_KILL_GATE |
 | C02 | State uncertainty changes the estimated response contrast. | Synthetic design benchmark: hard misclassification attenuates the interaction and probability conditioning restores the coefficient only under an ideal known-error model, while power remains lower. | Probability-weighted, bias-adjusted, and hard-state estimators on frozen data with first-stage uncertainty propagation. | SYNTHETIC_ONLY |
 | C03 | A common-unit amplification summary is informative beyond volatility/stress. | Definition in V2. | Frozen scales/weights, denominator floor, uncertainty, benchmark incremental test. | BLOCKED |
-| C04 | Prospective reliability diagnostics identify future unsupported/high-loss cases. | Timing guard implemented. | Frozen failure event, matured labels, chronological calibration, matched-participation baselines. | BLOCKED |
+| C04 | Prospective reliability diagnostics identify future unsupported/high-loss cases. | Run 026 freezes the failure event, confirms matured labels, binds chronological calibration/embargo/evaluation blocks, and registers matched-participation comparators without fitting or opening evaluation results. | Execute the sealed protocol once; report benchmark contrasts, useful participation, negative controls, uncertainty intervals, and invariance diagnostics. | PROTOCOL_FROZEN_EXECUTION_PENDING |
 | C05 | Speech events improve precision without changing the estimand. | EA-EMPD source audited; paper reports broader event universe. | Separate shock construction, clustering, speaker/event controls, transportability analysis. | EXPLORATORY |
 | C06 | The public pipeline is reproducible and fails closed on temporal leakage. | Hashed source registry, 1,210-row candidate state panel, zero temporal violations, strict-boundary/deletion/staleness tests, schema audits and CI. Run 010 reproduces exactly in clean resolved and exact-version-locked Python 3.9 archives. Run 013 adds explicit licenses, a security-clean parentless public root, a verified commit identity, independent live public/private repositories, and a hosted Python 3.9/3.12 matrix passing the exact seven-skip source-only gate. | Verify the complete empirical bundle on a second operating system/runtime and add package-distribution hashes or a validated container. | PUBLIC_RELEASE_LIVE_HOSTED_CI_PASSED |
 | C07 | A 47-event block cannot serve as the sole primary transmission test under plausible state imbalance. | Prespecified synthetic design grid; at 20% minority prevalence, power is 26.0% for a 0.5 standardized interaction and 63.7% for a 1.0 interaction. | Observed state support, economic-unit SESOI, observed-shock rerun, dependence-aware focused simulation. | DESIGN_SCREEN |
@@ -55,6 +55,25 @@ This ledger is append-only in substance: superseded findings remain visible with
 - Run 013 selects Apache-2.0 for software and CC BY 4.0 for owner-authored documentation and figures, without relicensing external data or third-party materials.
 - The Run 013 public root is parentless and has no flagship blueprint, prohibited data path, known-secret, privacy-path, or supplementary entropy finding. Its verifier binds imports to the exported source, requires exactly seven evidence-bound skips, and validates static analysis, coverage, Git integrity, the recovery bundle, and archive exclusions.
 - Both independent repositories are live and their first-push remote `main` refs exactly matched the local heads. The first hosted matrix exposed a Python 3.12 repository-root import defect while Python 3.9 passed; publication amendment 2 preserves that failed run and its replacement matrix passes both Python 3.9 and 3.12 under the unchanged test and coverage contract.
+- Run 025 public PR #12 was squash-merged at `72211d2` after all eight
+  branch/review checks passed; all four independent post-merge `main` jobs also
+  passed. The current public tree contains no raw or processed observation,
+  private manuscript, blueprint, or private scientific-ledger path.
+- Run 026 freezes, but does not execute, the first real-data reliability
+  evaluation. Its fail-closed preflight verifies 12 exact upstream inputs, 8
+  panel files, 18,632 rows, 4 comparators, the mature evaluation calendar, and
+  the evaluation and transmission firewalls.
+- The four source-clock provenance labels contain only three unique analytic
+  value-and-missingness paths: one P0 class and two P1 classes separated by the
+  MIR/BSI clock. DFR effective-day and next-day labels remain auditable but do
+  not receive independent multiplicity weight.
+- The Run 026 provenance-labelled scenario ceiling is 224. Exact input-clock
+  deduplication lowers the analytic ceiling to 88 before origin-specific
+  eligibility-mask and standardized-matrix deduplication. Clock labels are not
+  resampled as observations.
+- Run 026 fits no state or reliability scenario and opens no evaluation or
+  transmission outcome. Its protocol discipline is not evidence of benchmark
+  advantage, useful participation, novelty, or monetary-policy value.
 - A second empirical operating system/runtime and cryptographically hash-pinned distributions remain open credibility improvements.
 
 ## Reporting rules

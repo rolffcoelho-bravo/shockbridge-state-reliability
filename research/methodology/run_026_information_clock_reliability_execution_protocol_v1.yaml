@@ -1,0 +1,426 @@
+schema_version: 1
+protocol_id: run-026-information-clock-reliability-execution-v1
+created_on: 2026-10-16
+status: APPROVED_AND_FROZEN_BEFORE_EMPIRICAL_RELIABILITY_EXECUTION
+owner_approval: recorded_2026-10-16
+
+research_question: >-
+  Does an outcome-blind reliability certificate built over defensible official
+  ECB information clocks authorize a nondegenerate macro-financial state at
+  useful participation, and does it improve future internal measurement
+  reliability relative to the preregistered single-panel and robust
+  comparators?
+
+approved_scope: >-
+  Freeze and preflight the first real-data reliability execution over all four
+  Run 025 source-clock labels. Do not fit the empirical state, reveal the
+  one-time evaluation results, inspect a transmission outcome, or revise a
+  threshold in Run 026 protocol-freeze work. Empirical execution requires the
+  next separately recorded owner approval.
+
+scientific_boundary:
+  real_official_data_only: true
+  zero_cost_sources_only: true
+  new_network_retrieval_allowed: false
+  preserved_hash_bound_panels_only: true
+  synthetic_empirical_observations_allowed: false
+  software_fixture_values_allowed_for_tests_only: true
+  software_fixture_values_are_empirical_evidence: false
+  empirical_reliability_fit_allowed_during_protocol_freeze: false
+  evaluation_results_access_allowed_during_protocol_freeze: false
+  transmission_outcomes_access_allowed: false
+  transmission_module_import_allowed: false
+  high_dimensional_empirical_claim_allowed: false
+  methodological_novelty_claim_allowed: false
+  monetary_policy_recommendation_allowed: false
+  positive_result_required: false
+
+bound_inputs:
+  - path: research/methodology/run_020_information_set_reliability_method_v1.md
+    bytes: 8816
+    sha256: 5b90faf36b4679cf2bdb955f76a748a560cc4f98fbbd30ea78a753512a8a79bb
+  - path: research/methodology/run_021_full_panel_build_protocol_v1.yaml
+    bytes: 14034
+    sha256: 0c1eb20d0ff5879623fad2655a2edf8f5f499e8440d896e57b91e013dae40493
+  - path: research/data/run_021_full_panel_manifest_v1.yaml
+    bytes: 10681
+    sha256: 3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b
+  - path: research/methodology/run_022_reliability_engine_implementation_protocol_v1.yaml
+    bytes: 6211
+    sha256: ca309fdbe4b143c9f841749c37c5452955bf8ae01ddd1f8770aff4e7d4d4b771
+  - path: src/shockbridge_state_risk/state/reliability_engine.py
+    bytes: 18973
+    sha256: b2f395394de5b503312e4f3f17d7d4731f232c13dcf421532f9775348b8e0127
+  - path: reports/methodology/run_022_reliability_engine_validation.audit.json
+    bytes: 2705
+    sha256: 01f85c7ac6f13055bbd5d375031542e934055a03ad29fd0367ab1a9dec108980
+  - path: research/methodology/run_024_archive_identifier_and_timing_sensitivity_protocol_v1.yaml
+    bytes: 8986
+    sha256: 6492642c54382d7fe041366bdbb2c339e84eb073bf6eac03c735ae8616f156cd
+  - path: reports/methodology/run_024_archive_timing_sensitivity.audit.json
+    bytes: 15414
+    sha256: 86ac0123cf13e62c4268f55b06508413c08f92609dedbd3420ff9870c639dc1c
+  - path: research/methodology/run_025_dfr_effective_date_source_audit_protocol_v1.yaml
+    bytes: 10976
+    sha256: e420005ffafa2175feadfc8c4c6eeda9b91eade5a8884c0f481fde183f4f0a4d
+  - path: reports/methodology/run_025_dfr_effective_date_source.audit.json
+    bytes: 53538
+    sha256: 8fc2dc119d9e67bd4c689ee4cf882dc4e2716d919a9c98c6fa408b132796be30
+  - path: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+    bytes: 6109
+    sha256: 6466a48cb1a6c7df1e74a15d748c9d91b75ac22e68ef029406912d80f5d651df
+  - path: data/processed/run025_dfr_effective_dates_v1/source_manifest.yaml
+    bytes: 607
+    sha256: 9f9f860d28be01e5174dcab8abe611138c4c5c7ea7af73b5351af30fa0bb673d
+
+source_clock_inputs:
+  expected_source_clock_labels: 4
+  expected_panel_files: 8
+  expected_total_rows: 18632
+  scenarios:
+    - scenario_id: registered_mir_bsi__effective_day_dfr
+      mir_bsi_clock: registered_release_date_at_10_00_01_Europe_Berlin
+      dfr_clock: official_effective_date_at_00_00_00_Europe_Berlin
+      panels:
+        - panel_id: P0_CORE_REPLAY_AND_FAST
+          path: data/processed/run025_dfr_effective_dates_v1/registered_mir_bsi__effective_day_dfr/p0_core_replay_and_fast.csv
+          bytes: 371357
+          sha256: 53fcda0390cbec62b41c15b9cae52eb4f62757acf9e4bc60754fee18b325c3f0
+          rows: 1918
+        - panel_id: P1_AUGMENTED_BANK_CREDIT
+          path: data/processed/run025_dfr_effective_dates_v1/registered_mir_bsi__effective_day_dfr/p1_augmented_bank_credit.csv
+          bytes: 535992
+          sha256: 1e7f20983b07c3082baf164494c6974e83bc5382ee1e9efdd81e661d8c712b9b
+          rows: 2740
+    - scenario_id: registered_mir_bsi__next_day_dfr
+      mir_bsi_clock: registered_release_date_at_10_00_01_Europe_Berlin
+      dfr_clock: next_calendar_day_at_00_00_00_Europe_Berlin
+      panels:
+        - panel_id: P0_CORE_REPLAY_AND_FAST
+          path: data/processed/run025_dfr_effective_dates_v1/registered_mir_bsi__next_day_dfr/p0_core_replay_and_fast.csv
+          bytes: 371357
+          sha256: 05253a940eacf3e42c803960ec747c9e6fec6bc73bdf51840eb7c29089751ae1
+          rows: 1918
+        - panel_id: P1_AUGMENTED_BANK_CREDIT
+          path: data/processed/run025_dfr_effective_dates_v1/registered_mir_bsi__next_day_dfr/p1_augmented_bank_credit.csv
+          bytes: 535992
+          sha256: d133120f9729643551f28971d373efe04afefe6072a4a76c83a46dde5ea11211
+          rows: 2740
+    - scenario_id: next_day_mir_bsi__effective_day_dfr
+      mir_bsi_clock: next_calendar_day_at_00_00_00_Europe_Berlin
+      dfr_clock: official_effective_date_at_00_00_00_Europe_Berlin
+      panels:
+        - panel_id: P0_CORE_REPLAY_AND_FAST
+          path: data/processed/run025_dfr_effective_dates_v1/next_day_mir_bsi__effective_day_dfr/p0_core_replay_and_fast.csv
+          bytes: 371357
+          sha256: 53fcda0390cbec62b41c15b9cae52eb4f62757acf9e4bc60754fee18b325c3f0
+          rows: 1918
+        - panel_id: P1_AUGMENTED_BANK_CREDIT
+          path: data/processed/run025_dfr_effective_dates_v1/next_day_mir_bsi__effective_day_dfr/p1_augmented_bank_credit.csv
+          bytes: 535991
+          sha256: bec2bd59d75ca6bf7e48647ff386f07a807bfad1136ab13a9e5524ab5e3ced72
+          rows: 2740
+    - scenario_id: next_day_mir_bsi__next_day_dfr
+      mir_bsi_clock: next_calendar_day_at_00_00_00_Europe_Berlin
+      dfr_clock: next_calendar_day_at_00_00_00_Europe_Berlin
+      panels:
+        - panel_id: P0_CORE_REPLAY_AND_FAST
+          path: data/processed/run025_dfr_effective_dates_v1/next_day_mir_bsi__next_day_dfr/p0_core_replay_and_fast.csv
+          bytes: 371357
+          sha256: 05253a940eacf3e42c803960ec747c9e6fec6bc73bdf51840eb7c29089751ae1
+          rows: 1918
+        - panel_id: P1_AUGMENTED_BANK_CREDIT
+          path: data/processed/run025_dfr_effective_dates_v1/next_day_mir_bsi__next_day_dfr/p1_augmented_bank_credit.csv
+          bytes: 535991
+          sha256: 2095b558e46f4fa00c6050dccf7b607966e1b86905c4baf763920d9d274c96cd
+          rows: 2740
+
+analytic_equivalence_contract:
+  purpose: >-
+    Distinguish provenance clocks from independent numerical information sets.
+    Timestamp-only differences retain their provenance labels but contribute
+    one analytic path and one weight after exact deduplication.
+  canonical_fields:
+    - origin_month
+    - series_id
+    - observation_period
+    - transformed_value
+    - is_missing
+    - missing_reason
+  excluded_provenance_fields:
+    - panel_id
+    - origin_timestamp
+    - usable_timestamp
+    - source_response_sha256
+  exact_class_count_before_model_scenario_generation: 3
+  expected_classes:
+    - panel_id: P0_CORE_REPLAY_AND_FAST
+      members:
+        - registered_mir_bsi__effective_day_dfr
+        - registered_mir_bsi__next_day_dfr
+        - next_day_mir_bsi__effective_day_dfr
+        - next_day_mir_bsi__next_day_dfr
+    - panel_id: P1_AUGMENTED_BANK_CREDIT
+      members:
+        - registered_mir_bsi__effective_day_dfr
+        - registered_mir_bsi__next_day_dfr
+    - panel_id: P1_AUGMENTED_BANK_CREDIT
+      members:
+        - next_day_mir_bsi__effective_day_dfr
+        - next_day_mir_bsi__next_day_dfr
+  multiplicity_weight: one_per_exact_analytic_class
+  uncertainty_resampling_axis: monthly_origins_only
+  clock_labels_as_independent_draws: false
+  provenance_mapping_retained_in_every_output: true
+
+execution_clock_and_calendar:
+  timezone: Europe/Berlin
+  monthly_origin: first_calendar_day_23_59_59
+  availability_operator: usable_timestamp_strictly_less_than_origin
+  histories: [expanding, rolling_120_month]
+  first_possible_geometry_origin: 2013-01
+  calibration_start: 2013-01
+  calibration_end: 2017-12
+  embargo_start: 2018-01
+  embargo_end: 2018-12
+  evaluation_start: 2019-01
+  evaluation_end: 2024-10
+  diagnostic_tail_end: 2025-10
+  future_failure_horizon_months: 12
+  every_evaluation_label_matured: true
+  evaluation_once_only: true
+  transmission_outcomes_remain_sealed: true
+
+model_scenario_generator:
+  base_panel_family_counts:
+    P0_CORE_REPLAY_AND_FAST: 6
+    P1_AUGMENTED_BANK_CREDIT: 8
+  family_scenarios: [full_panel, leave_one_available_channel_out]
+  release_lag_policies:
+    - observed_registered_source_clock
+    - run021_class_B_plus_one_calendar_month_stress
+  missingness_policies:
+    - observed_ragged_edge
+    - complete_case_common_window
+  provenance_labeled_ceiling_before_deduplication: 224
+  unique_analytic_ceiling_after_input_clock_deduplication: 88
+  arithmetic: >-
+    Provenance ceiling: (6 + 8) * 4 source-clock labels * 2 release-lag
+    policies * 2 missingness policies = 224. Analytic ceiling after the frozen
+    three-class input deduplication: (6 * 1 + 8 * 2) * 2 * 2 = 88.
+  final_origin_specific_deduplication_key: >-
+    exact eligibility mask plus standardized observed matrix SHA-256 using the
+    frozen Run 022 canonicalization
+  scenario_order: lexical_id
+  prohibited:
+    - duplicate_provenance_count_as_information_set_evidence
+    - scenario_weighting_by_clock_multiplicity
+    - scenario_selected_by_state_path
+    - scenario_selected_by_authorization_rate
+    - scenario_selected_by_evaluation_result
+    - scenario_selected_by_transmission_result
+    - dropping_run021_slow_release_stress_after_observing_panels
+
+estimation_contract:
+  engine: deterministic_channel_weighted_EM_PCA
+  implementation: src/shockbridge_state_risk/state/reliability_engine.py
+  standardization: observed_expanding_history_moments_only
+  series_minimum_training_coverage: 0.80
+  minimum_observations_per_retained_series: 24
+  minimum_training_months: 60
+  common_geometry_window_months: 120
+  minimum_distinct_channels: 5
+  candidate_ranks: [1, 2, 3]
+  rank_rule: observed_entry_ICp2_adaptation
+  fixed_rank_sensitivities: [1, 2]
+  maximum_iterations: 1000
+  relative_observed_loss_tolerance: 0.00000001
+  nonconvergence: scenario_nondegenerate_false
+  transformations_recomputed_with_future_data: prohibited
+  backward_fill: prohibited
+  interpolation: prohibited
+  synthetic_imputation: prohibited
+
+geometry_and_authorization:
+  score_space: common_120_month_calendar_projector
+  channel_space: frozen_eight_channel_projector
+  alignment: training_only_orthogonal_Procrustes
+  orientation_anchor: frozen_signed_eight_channel_direction
+  envelope_statistics:
+    - maximum_pairwise_score_projector_spectral_distance
+    - maximum_pairwise_channel_projector_spectral_distance
+    - minimum_absolute_anchor_cosine
+    - aligned_state_score_minimum
+    - aligned_state_score_first_quartile
+    - aligned_state_score_median
+    - aligned_state_score_third_quartile
+    - aligned_state_score_maximum
+  threshold_grid:
+    score_projector_distance: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+    channel_projector_distance: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+    orientation_floor: [0.50, 0.60, 0.70, 0.80]
+  authorize_only_if:
+    - at_least_two_unique_nondegenerate_analytic_scenarios
+    - every_within_panel_quality_gate_passes
+    - every_cross_scenario_envelope_gate_passes
+    - every_source_clock_provenance_label_maps_to_a_passing_analytic_class
+  fewer_than_two_unique_scenarios: abstain
+  provenance_duplicates_may_satisfy_two_scenario_rule: false
+
+future_failure_label:
+  reference_panel: P1_AUGMENTED_BANK_CREDIT
+  reference_source_clock: registered_mir_bsi__effective_day_dfr
+  reference_scenario: observed_registered_source_clock_observed_ragged_edge_full_panel
+  one_month_breach_if_any:
+    - score_projector_spectral_distance_greater_than_0.35
+    - channel_projector_spectral_distance_greater_than_0.35
+    - absolute_anchor_cosine_less_than_0.20
+    - eligible_channel_count_less_than_5
+    - estimator_or_rank_selection_nondegenerate_false
+  label: any_one_month_breach_in_months_t_plus_1_through_t_plus_12
+  candidate_envelope_thresholds_do_not_enter_label: true
+  transmission_outcomes_do_not_enter_label: true
+
+threshold_selection:
+  calibration_only: true
+  loss:
+    false_authorization_cost: 1.0
+    abstention_cost: 0.25
+  deterministic_tie_break:
+    - lower_loss
+    - higher_participation
+    - lower_distance_thresholds
+    - higher_orientation_floor
+  evaluation_reselection: prohibited
+  post_evaluation_threshold_repair: prohibited
+
+registered_comparators:
+  - id: B0_ALWAYS_ABSTAIN
+    implementation: authorize_no_origin
+  - id: B1_SINGLE_AUGMENTED_PANEL
+    implementation: >-
+      Registered P1 under registered MIR/BSI and effective-day DFR clocks,
+      observed ragged edges, and full-panel within-panel quality only.
+  - id: B2_VINTAGE_PANEL_COMBINATION
+    implementation: >-
+      Equal-weight training-aligned scores across unique nondegenerate analytic
+      classes; provenance duplicates receive zero additional weight.
+  - id: B3_ROBUST_PCA
+    implementation: >-
+      Principal-component-pursuit sensitivity on the B1 information set with
+      penalty frozen using calibration data only.
+
+comparator_matching:
+  matched_participation_rule: >-
+    Freeze each cutoff using calibration data only and report evaluation
+    contrasts both at that cutoff and at the nearest calibration participation
+    to the envelope. Never rematch on evaluation results.
+
+primary_metrics:
+  - evaluation_decision_loss_difference_vs_B1
+  - evaluation_future_failure_rate_difference_vs_B1_at_calibration_matched_participation
+  - evaluation_participation_rate
+  - evaluation_information_set_fragility_rate
+  - evaluation_clock_robust_authorization_rate
+
+primary_success_requires_all:
+  - evaluation_participation_rate_at_least_0.10
+  - at_least_two_unique_nondegenerate_analytic_scenarios_at_authorized_origins
+  - decision_loss_strictly_lower_than_B1
+  - future_failure_rate_not_higher_than_B1_at_calibration_matched_participation
+  - authorization_is_invariant_across_all_four_provenance_clocks
+  - no_invariance_or_negative_control_failure
+
+inference:
+  resampling: paired_non_circular_moving_blocks_over_evaluation_origins
+  draws: 1999
+  primary_block_months: 12
+  sensitivity_block_months: [6, 18, 24]
+  simultaneous_interval: maximum_absolute_studentized_statistic_across_primary_contrasts
+  resample_source_clock_labels: false
+  condition_on_selected_thresholds_and_observed_paths: true
+  finite_sample_guarantee_claim: prohibited
+  p_value_language_without_valid_test: prohibited
+
+required_invariances:
+  - scenario_input_order_has_no_effect
+  - factor_rotation_has_no_effect
+  - provenance_duplicate_has_no_effect_after_analytic_deduplication
+  - repeated_identical_clock_label_has_zero_incremental_weight
+  - exact_immutable_input_requery_has_zero_distance
+  - serialization_is_byte_identical_in_locked_reproduction
+
+negative_controls:
+  - channel_labels_permuted_before_frozen_map
+  - source_clock_labels_permuted_without_changing_analytic_paths
+  - timing_scenario_cyclically_shifted_within_calibration_and_evaluation
+  - evaluation_outcomes_replaced_by_calibration_block_permutation_for_test_harness_only
+
+negative_control_interpretation:
+  interpretation: >-
+    Controls diagnose leakage, label dependence, and mechanical authorization;
+    they do not prove causality, general optimality, or methodological novelty.
+
+novelty_and_claim_safeguards:
+  candidate_increment: >-
+    A clock-robust authorization rule over an ambiguity set generated by
+    auditable official information mechanics, evaluated in common calendar and
+    economic-channel spaces with duplicate-neutral weighting and an outcome
+    firewall.
+  established_components_not_claimed_as_new:
+    - principal_components_and_EM_PCA
+    - ragged_edge_factor_models
+    - Bai_Ng_information_criteria
+    - projector_and_Procrustes_geometry
+    - real_time_vintage_analysis
+    - robust_PCA
+    - model_uncertainty_and_robust_decisions
+    - selective_prediction_and_abstention
+    - block_bootstrap_inference
+  novelty_language_requires_before_reconsideration:
+    - systematic_primary_literature_update_through_execution_date
+    - successful_registered_comparator_result
+    - useful_nondegenerate_participation
+    - robustness_to_all_source_clocks_and_negative_controls
+    - independent_external_assessment
+  prohibited_current_claims:
+    - new_factor_estimator
+    - formal_reliability_theory
+    - high_dimensional_empirical_validation
+    - methodological_novelty_established
+    - transmission_effect
+    - monetary_policy_recommendation
+
+stop_rules:
+  - stop_if_any_bound_input_byte_count_or_sha256_differs
+  - stop_if_any_panel_key_is_duplicate_or_any_observed_value_is_nonfinite
+  - stop_if_the_eight_files_do_not_collapse_to_exactly_three_frozen_analytic_classes
+  - stop_if_a_provenance_label_is_lost_during_deduplication
+  - stop_if_the_run021_slow_release_stress_is_not_implemented
+  - stop_if_fewer_than_two_unique_nondegenerate_scenarios_exist
+  - stop_and_report_non_improvement_if_participation_is_below_0.10
+  - stop_and_report_non_improvement_if_primary_success_is_not_met
+  - stop_if_any_transmission_module_or_outcome_is_accessed
+  - keep_transmission_outcomes_sealed_until_a_separate_post_evaluation_authorization
+
+required_protocol_freeze_outputs:
+  - research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml
+  - src/shockbridge_state_risk/state/reliability_execution_contract.py
+  - tests/test_reliability_execution_contract.py
+  - reports/methodology/run_026_protocol_preflight.audit.json
+  - reports/methodology/run_026_protocol_freeze_result_2026-10-16.md
+  - reports/methodology/run_026_protocol_freeze_v1.manifest.yaml
+  - research/paper/manuscript_v1_12.md
+  - reports/methodology/run_026_manuscript_v1_12_claim_audit.yaml
+  - reports/methodology/run_026_manuscript_v1_12_citation_locator_audit.yaml
+
+next_decision:
+  approval_required: true
+  success: >-
+    Request separate approval to implement the empirical execution harness and
+    run the sealed reliability evaluation exactly once. Preserve the four
+    provenance clocks, fit unique analytic paths once, and keep every
+    transmission outcome inaccessible.
+  failure: >-
+    Preserve the failed preflight, amend prospectively, and do not fit any
+    empirical state or inspect any evaluation or transmission result.

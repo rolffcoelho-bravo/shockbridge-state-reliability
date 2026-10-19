@@ -1,7 +1,7 @@
 # ShockBridge research progress dashboard
 
-**Status date:** 2026-10-16  
-**Current evidence frontier:** Run 025 DFR effective-date source audit and four-clock panel amendment accepted
+**Status date:** 2026-10-17
+**Current evidence frontier:** Run 026 duplicate-neutral, clock-robust reliability execution protocol frozen and preflighted; empirical fit unopened
 **Interpretation:** progress counts completed research gates, not the probability of a positive result.
 
 ## Evidence-gate map
@@ -14,7 +14,7 @@
 | 4. Reliability method and software kernel | Define and adversarially test the information-set reliability envelope before using empirical values | Complete | Frozen Run 021 protocol and outcome-blind Run 022 implementation |
 | 5. Full-history panels and timing amendment | Build the real decision-time panels and quantify archive/timestamp sensitivity | Complete | Run 023 panels; Run 024 raises augmented-panel complete origins from 102 to 123 and preserves two archive clocks |
 | 6. Effective-date coverage amendment | Validate the economic DFR clock against retained daily data and freeze the executable panel | Complete | Run 025: 51 official events, 8,366/8,366 exact daily agreements, 179 fully observed origins in both panels, four source-clock scenarios |
-| 7. First empirical reliability fit | Estimate the envelope under both registered and next-day clocks without opening transmission outcomes | Not started | Frozen execution protocol, scenario audit, empirical fit, numerical and invariance diagnostics |
+| 7. First empirical reliability fit | Estimate the envelope under both registered and next-day clocks without opening transmission outcomes | Protocol frozen; execution not started | Run 026 preflight passes: 4 provenance clocks, 3 unique analytic classes, 224 labelled/88 duplicate-neutral maximum scenarios; fit and evaluation remain sealed |
 | 8. Prospective authorization evaluation | Test future-failure risk, useful participation, and comparator performance on the sealed evaluation sample | Not started | Calibration/embargo/evaluation audit, uncertainty intervals, negative controls, stopping decision |
 | 9. Transmission authorization gate | Open monetary-policy outcomes only if the measurement method passes its preregistered authorization requirements | Blocked by Gates 7–8 | Either a justified outcome-opening decision or a publishable validated-abstention result |
 | 10. External reproduction and final paper artifacts | Convert the completed evidence into a journal-standard working paper and reproducibility release | Not started | Independent reproduction; final tables, equations, vector figures, appendix, data/code statement, submission package |
@@ -27,7 +27,9 @@ FOUNDATION   ORIGINAL SCREEN   WIDER DESIGN   METHOD KERNEL   REAL PANELS   SOUR
                                                                                   │
                                                                                   ▼
 FINAL PAPER      OUTCOME GATE      AUTHORIZATION      EMPIRICAL FIT
-    [ ] ◀────────── [ ] ◀──────────── [ ] ◀────────────── [ ]
+    [ ] ◀────────── [ ] ◀──────────── [ ] ◀────────────── [◇]
+                                                        protocol
+                                                         frozen
 ```
 
 Six foundational and evidence-construction gates are complete. Four decision,
@@ -46,15 +48,18 @@ a valid measurement-reliability paper.
 - Run 025 cross-validates 51 official DFR effective-date events against 8,366 retained daily API observations with 100% exact agreement and zero conflicts.
 - DFR coverage increases from 123 to 274 origins; fully observed P0 and P1 origins increase from 123 to 179. The complete-case share is now 65.33%.
 - The DFR effective-day versus next-day sensitivity changes 274 usable timestamps but zero monthly observation periods, values, or missingness states. All four archive × DFR clock combinations are retained.
+- Run 026 verifies 12 exact inputs, 8 panel files, and 18,632 rows. The four provenance clocks map to three unique analytic classes, reducing the maximum scenario count from 224 labelled paths to 88 duplicate-neutral paths before origin-specific deduplication.
+- Run 026 has not fitted the method or opened the 2019-01–2024-10 evaluation block; no authorization, comparator, or novelty result exists yet.
 - No transmission outcome, state-dependent policy effect, or monetary-policy recommendation has been estimated.
 
 ## Manuscript state
 
-The private working manuscript is `research/paper/manuscript_v1_11.md`. It
+The private working manuscript is `research/paper/manuscript_v1_12.md`. It
 records the research question, literature position, prospective governance,
 mathematical method, negative original-state evidence, wider-panel
 construction, Run 024 archive timing sensitivity, Run 025 effective-date
-equation and results table, limitations, and claim boundaries. Final journal
+equation and results table, the Run 026 analytic-equivalence relation and
+duplicate-neutral scenario algebra, limitations, and claim boundaries. Final journal
 tables, complete mathematical typesetting, vector graphics, graphical
 abstract, and publication images remain deferred until the empirical
 reliability and authorization decisions are complete, so the final artifacts
@@ -62,11 +67,14 @@ report the terminal evidence rather than an interim narrative.
 
 ## Immediate decision required
 
-The source-clock and coverage amendments are complete. The recommended next
-improvement is a prospectively frozen Run 026 empirical reliability-envelope
-execution over all four source-clock scenarios. Authorization should require
-stable rank, economic orientation, common-calendar and common-channel geometry,
-future internal-failure performance, useful participation, and registered-
-comparator performance across the clock ambiguity set. Transmission outcomes
-must remain sealed. A focused literature update should accompany that run
-before any novelty language is reconsidered.
+The Run 026 contract is frozen and its preflight passes without fitting or
+opening the evaluation block. The recommended next step is to execute the
+calibration and embargo stages, lock the selected thresholds and all
+origin-level scenario identities, and only then open the one-time 2019-01–
+2024-10 reliability evaluation. Authorization must require stable rank,
+economic orientation, common-calendar and common-channel geometry, future
+internal-failure performance, useful participation, and registered-comparator
+performance across all four auditable clock paths and three unique analytic
+classes. Transmission outcomes remain sealed. The focused literature update
+and independent contribution assessment remain mandatory before any novelty
+language is reconsidered.

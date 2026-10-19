@@ -25,7 +25,8 @@ project therefore selects no state and does not estimate transmission effects.
 evidence plus a completed official-series history pilot, a fail-closed wider-
 panel protocol, its value-free reliability-engine implementation, an audited
 outcome-blind build of the registered official panels, and a validated archive-
-identifier and release-time sensitivity.
+identifier and release-time sensitivity. Run 026 now freezes and preflights a
+duplicate-neutral, clock-robust reliability execution without fitting it.
 This repository contains no validated state-dependent transmission effect,
 amplification result, trading signal, or production model.
 
@@ -33,12 +34,12 @@ amplification result, trading signal, or production model.
 
 | Dimension | Current verified status |
 |---|---|
-| Research gate | Four-feature measurement rejected; Run 025 validates the DFR effective-date clock and freezes four wider-panel source-clock scenarios; reliability fitting and transmission remain blocked |
+| Research gate | Four-feature measurement rejected; Run 026 preserves four source-clock provenance labels, identifies three unique analytic panel classes, and freezes the reliability execution; fitting, evaluation results, and transmission remain blocked |
 | Main finding | No registered one- or two-dimensional state representation passes the prospective joint stability gates |
 | Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
 | Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
 | Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
-| Test contract | Private canonical suite: 260/260 at 90% coverage; prospective public slice: 248 tests, 239 executions plus exactly nine evidence-bound skips |
+| Test contract | Private canonical suite: 271/271 at 90% coverage; prospective public slice: 259 tests, 248 executions plus exactly eleven evidence-bound skips |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
 ### Dimensional scope
@@ -64,7 +65,11 @@ observed augmented-panel origins from 102 to 123, and rebuilds a conservative
 next-day timing variant. Run 025 then validates 51 official DFR effective-date
 events against 8,366 retained daily observations, raises fully observed origins
 to 179 in both panels, and freezes four archive × DFR clock scenarios. It does
-not fit or validate the reliability envelope. The ten-series design is a wider
+not fit or validate the reliability envelope. Run 026 then verifies 12 exact
+inputs, eight panel files, 18,632 rows, and four comparators; it reduces 224
+provenance-labelled candidate paths to an 88-path analytic ceiling by weighting
+three unique value-and-missingness classes once. No fit or evaluation result is
+opened. The ten-series design is a wider
 multichannel panel, not a high-dimensional empirical result.
 
 ### Reviewer paths
@@ -97,6 +102,10 @@ multichannel panel, not a high-dimensional empirical result.
   the corresponding implementations in
   [`archive_timing_amendment.py`](src/shockbridge_state_risk/data/archive_timing_amendment.py) and
   [`dfr_effective_date.py`](src/shockbridge_state_risk/data/dfr_effective_date.py)
+- **Inspect the frozen clock-robust execution:**
+  [`reports/methodology/run_026_protocol_freeze_result_2026-10-16.md`](reports/methodology/run_026_protocol_freeze_result_2026-10-16.md),
+  [`research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml`](research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml), and
+  [`reliability_execution_contract.py`](src/shockbridge_state_risk/state/reliability_execution_contract.py)
 - **Reproduce the software gates:** [`REPRODUCING.md`](REPRODUCING.md) and
   [reproducibility](#reproducibility)
 - **Review tables and figures:**
@@ -192,6 +201,16 @@ rises to 179/179. Moving DFR usability to the next calendar day changes stored
 timestamps but no monthly selected observation, value, or missingness state.
 The four source-clock panels remain outcome blind and unfitted.
 
+Run 026 distinguishes source provenance from independent numerical evidence.
+The four source-clock labels remain attached to every output, but exact
+value-and-missingness equality yields only three analytic classes: one P0
+class and two P1 classes separated by MIR/BSI release timing. The protocol
+retains the original slow-release stress, calibration and embargo blocks,
+four comparators, negative controls, and outcome firewall. Its 224 labelled
+paths have an 88-path ceiling after input-clock deduplication and before
+origin-specific deduplication. This is a prospective protocol result, not an
+empirical performance or novelty result.
+
 ## Evidence sequence
 
 ```text
@@ -227,7 +246,9 @@ archive and timing amendment ──────── P1 complete origins 102→
         ↓
 DFR effective-date amendment ──────── both panels complete at 179; four clocks
         ↓
-transmission outcomes remain sealed; reliability fitting requires a new protocol
+clock-robust execution preflight ──── 4 labels; 3 analytic classes; no fit
+        ↓
+transmission outcomes remain sealed; reliability execution requires approval
 ```
 
 The main public scientific records are:
@@ -277,10 +298,10 @@ Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
 while also running static analysis, the then-registered 140-test suite, and the
-90% coverage gate. The current private canonical contract contains 260 tests
+90% coverage gate. The current private canonical contract contains 271 tests
 and adds cross-version, cross-runner, archive-safety, release-boundary, source-
 feasibility, series-history, protocol-contract, reliability-engine, and hosted
-security regression coverage. The prospective public slice contains 248 tests; the
+security regression coverage. The prospective public slice contains 259 tests; the
 difference is private evidence and unpublished research-bound material.
 
 Create a locked Python 3.9 environment:
@@ -299,10 +320,10 @@ installation. The lock files describe the exact verified Python 3.9
 environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
-Public CI cannot access ignored empirical artifacts. It requires exactly nine
-explicitly labeled evidence-bound skips, executes the remaining 239 tests, and
+Public CI cannot access ignored empirical artifacts. It requires exactly eleven
+explicitly labeled evidence-bound skips, executes the remaining 248 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates all hash-registered evidence, executes all 260 tests, and retains the
+hydrates all hash-registered evidence, executes all 271 tests, and retains the
 90% coverage floor. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:

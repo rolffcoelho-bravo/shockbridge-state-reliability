@@ -1,0 +1,48 @@
+{
+  "analytic_class_members": [
+    {
+      "analytic_sha256": "00925b64e0aea1dc96dd73fca73c498e241ec0eb70bdf3099800a27d15420d46",
+      "member_ids": [
+        "next_day_mir_bsi__effective_day_dfr",
+        "next_day_mir_bsi__next_day_dfr",
+        "registered_mir_bsi__effective_day_dfr",
+        "registered_mir_bsi__next_day_dfr"
+      ],
+      "panel_id": "P0_CORE_REPLAY_AND_FAST"
+    },
+    {
+      "analytic_sha256": "bd6c203d4a160f4c3e3f68bea95f33838c4de3b5ca04c26273d12163fa56d3fb",
+      "member_ids": [
+        "next_day_mir_bsi__effective_day_dfr",
+        "next_day_mir_bsi__next_day_dfr"
+      ],
+      "panel_id": "P1_AUGMENTED_BANK_CREDIT"
+    },
+    {
+      "analytic_sha256": "03353df9379264b01f6ffcdb5bb4e9a585b080028f66087df15533f475cbfb89",
+      "member_ids": [
+        "registered_mir_bsi__effective_day_dfr",
+        "registered_mir_bsi__next_day_dfr"
+      ],
+      "panel_id": "P1_AUGMENTED_BANK_CREDIT"
+    }
+  ],
+  "analytic_equivalence_classes": 3,
+  "audit_id": "run-026-protocol-preflight-v1",
+  "bound_inputs_verified": 12,
+  "comparator_count": 4,
+  "empirical_reliability_fit_performed": false,
+  "evaluation_labels_matured": true,
+  "evaluation_results_accessed": false,
+  "panel_files_verified": 8,
+  "panel_rows_verified": 18632,
+  "passed": true,
+  "protocol_id": "run-026-information-clock-reliability-execution-v1",
+  "protocol_path": "research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml",
+  "protocol_sha256": "78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb",
+  "provenance_labeled_scenario_ceiling": 224,
+  "source_clock_labels": 4,
+  "synthetic_empirical_observations_used": false,
+  "transmission_outcomes_accessed": false,
+  "unique_analytic_scenario_ceiling": 88
+}

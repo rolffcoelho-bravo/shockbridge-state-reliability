@@ -1,7 +1,7 @@
 # Run 027 — Executable-completeness audit of the Run 026 reliability protocol
 
-**Status:** mandatory prospective amendment required before empirical fitting  
-**Date:** 19 October 2026  
+**Status:** mandatory prospective amendment required before empirical fitting
+**Date:** 19 October 2026
 **Evidence boundary:** protocol semantics and software only; no empirical fit,
 evaluation result, transmission outcome, or synthetic empirical observation
 

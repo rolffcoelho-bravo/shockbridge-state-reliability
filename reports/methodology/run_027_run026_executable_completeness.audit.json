@@ -1,0 +1,101 @@
+{
+  "audit_id": "run-027-run026-executable-completeness-v1",
+  "critical_gap_count": 11,
+  "empirical_fit_performed": false,
+  "evaluation_results_accessed": false,
+  "gaps": [
+    {
+      "empirical_consequence": "Different row semantics change histories, ranks, projectors, and labels.",
+      "gap_id": "XG-01",
+      "issue": "The protocol does not state whether rows are origin snapshots or observation periods.",
+      "location": "data_matrix",
+      "required_resolution": "Freeze the exact origin-by-series matrix construction and history windows.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "Alternative shifts create different admissible panels and authorization rates.",
+      "gap_id": "XG-02",
+      "issue": "The one-calendar-month class-B stress is named but has no executable value/mask rule.",
+      "location": "model_scenario_generator.release_lag_policies",
+      "required_resolution": "Define the exact series set, calendar shift, boundary missingness, and provenance fields.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "Dropping rows makes the common-calendar projector undefined or incomparable.",
+      "gap_id": "XG-03",
+      "issue": "Complete-case fitting has no rule for recovering scores on the required 120 calendar rows.",
+      "location": "model_scenario_generator.missingness_policies",
+      "required_resolution": "Freeze complete-row fitting and observed-row score recovery with failure conditions.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "Order-dependent column retention changes channel weights and factor geometry.",
+      "gap_id": "XG-04",
+      "issue": "The bound method invokes a 0.98 near-duplicate rule, but Run 026 omits its graph and tie-break execution.",
+      "location": "redundancy_and_channel_balance",
+      "required_resolution": "Freeze connected-component construction and the complete deterministic representative tie-break.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "Orientation gates and state-score summaries can change under arbitrary implementation choices.",
+      "gap_id": "XG-05",
+      "issue": "The signed eight-channel anchor is not a numerical vector and unequal-rank state alignment is undefined.",
+      "location": "geometry_and_authorization.orientation_anchor",
+      "required_resolution": "Freeze the channel order, anchor vector, rank-invariant scalar projection, and normalization.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "The same scenario can be accepted or rejected under multiple defensible readings.",
+      "gap_id": "XG-06",
+      "issue": "Within-panel quality gates and the role of expanding versus rolling fits are not enumerated.",
+      "location": "geometry_and_authorization.authorize_only_if",
+      "required_resolution": "Define each binary gate and which fit pairs enter within-panel and cross-scenario envelopes.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "Primary benchmark loss and matched participation are not reproducible.",
+      "gap_id": "XG-07",
+      "issue": "B1 and B2 lack calibrated authorization statistics and B3 lacks an objective, penalty grid, solver, and failure rule.",
+      "location": "registered_comparators",
+      "required_resolution": "Freeze comparator estimands, cutoff grids, calibration losses, robust-PCA algorithm, and tie-breaks.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "These controls cannot diagnose mechanical authorization or supply a pass/fail result.",
+      "gap_id": "XG-08",
+      "issue": "Channel-label and source-clock relabeling are algebraic invariances under the registered distances and deduplication.",
+      "location": "negative_controls",
+      "required_resolution": "Reclassify pure relabelings as invariances and register nondegenerate structure-breaking controls.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "The success gate can be declared passed or failed after observing results.",
+      "gap_id": "XG-09",
+      "issue": "No numerical failure criterion is defined for any negative control.",
+      "location": "negative_control_interpretation",
+      "required_resolution": "Freeze control-specific expected effects and exact rejection or non-inferiority rules.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "Intervals are not byte-reproducible and may differ in small samples.",
+      "gap_id": "XG-10",
+      "issue": "Bootstrap seed, edge-block enumeration, zero-variance handling, and studentization are unspecified.",
+      "location": "inference",
+      "required_resolution": "Freeze the deterministic resampling stream and all finite-sample computational conventions.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    },
+    {
+      "empirical_consequence": "Calibration choices and evaluation access cannot be independently audited.",
+      "gap_id": "XG-11",
+      "issue": "The protocol requires one-time evaluation but does not define lock artifacts, state transitions, or overwrite refusal.",
+      "location": "execution_firewall",
+      "required_resolution": "Freeze a two-stage state machine with immutable calibration lock, evaluation marker, and hash chain.",
+      "severity": "CRITICAL_STOP_BEFORE_EMPIRICAL_FIT"
+    }
+  ],
+  "passed": false,
+  "protocol_path": "research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml",
+  "protocol_sha256": "78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb",
+  "result_sensitive_choice_count": 11,
+  "transmission_outcomes_accessed": false
+}

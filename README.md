@@ -26,7 +26,9 @@ evidence plus a completed official-series history pilot, a fail-closed wider-
 panel protocol, its value-free reliability-engine implementation, an audited
 outcome-blind build of the registered official panels, and a validated archive-
 identifier and release-time sensitivity. Run 026 now freezes and preflights a
-duplicate-neutral, clock-robust reliability execution without fitting it.
+duplicate-neutral, clock-robust reliability execution without fitting it. Run
+027 then stops the fit at eleven result-sensitive executable gaps and records
+a prospective amendment for approval.
 This repository contains no validated state-dependent transmission effect,
 amplification result, trading signal, or production model.
 
@@ -34,12 +36,12 @@ amplification result, trading signal, or production model.
 
 | Dimension | Current verified status |
 |---|---|
-| Research gate | Four-feature measurement rejected; Run 026 preserves four source-clock provenance labels, identifies three unique analytic panel classes, and freezes the reliability execution; fitting, evaluation results, and transmission remain blocked |
+| Research gate | Four-feature measurement rejected; Run 027 stops the wider-panel fit at 11 executable gaps before calibration; the amendment, evaluation, and transmission gates remain blocked |
 | Main finding | No registered one- or two-dimensional state representation passes the prospective joint stability gates |
 | Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
 | Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
 | Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
-| Test contract | Private canonical suite: 271/271 at 90% coverage; prospective public slice: 259 tests, 248 executions plus exactly eleven evidence-bound skips |
+| Test contract | Private canonical suite: 275/275 at 90% coverage; prospective public slice: 263 tests, 252 executions plus exactly eleven evidence-bound skips |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
 ### Dimensional scope
@@ -106,6 +108,10 @@ multichannel panel, not a high-dimensional empirical result.
   [`reports/methodology/run_026_protocol_freeze_result_2026-10-16.md`](reports/methodology/run_026_protocol_freeze_result_2026-10-16.md),
   [`research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml`](research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml), and
   [`reliability_execution_contract.py`](src/shockbridge_state_risk/state/reliability_execution_contract.py)
+- **Inspect the executable-completeness stop:**
+  [`reports/methodology/run_027_executable_completeness_result_2026-10-19.md`](reports/methodology/run_027_executable_completeness_result_2026-10-19.md),
+  [`research/methodology/run_027_reliability_execution_amendment_proposal_v1.yaml`](research/methodology/run_027_reliability_execution_amendment_proposal_v1.yaml), and
+  [`reliability_protocol_completeness.py`](src/shockbridge_state_risk/state/reliability_protocol_completeness.py)
 - **Reproduce the software gates:** [`REPRODUCING.md`](REPRODUCING.md) and
   [reproducibility](#reproducibility)
 - **Review tables and figures:**
@@ -211,6 +217,14 @@ paths have an 88-path ceiling after input-clock deduplication and before
 origin-specific deduplication. This is a prospective protocol result, not an
 empirical performance or novelty result.
 
+Run 027 adds a semantic gate that the byte-integrity preflight did not cover.
+It records eleven operations that could change ranks, geometry,
+authorization, comparator loss, controls, or intervals. In particular, common
+channel-row and source-clock relabelings are algebraic invariances rather than
+discriminating negative controls. The empirical fit therefore remains sealed
+until the proposed operational amendment is approved, implemented, and
+adversarially tested.
+
 ## Evidence sequence
 
 ```text
@@ -298,10 +312,10 @@ Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
 while also running static analysis, the then-registered 140-test suite, and the
-90% coverage gate. The current private canonical contract contains 271 tests
+90% coverage gate. The current private canonical contract contains 275 tests
 and adds cross-version, cross-runner, archive-safety, release-boundary, source-
 feasibility, series-history, protocol-contract, reliability-engine, and hosted
-security regression coverage. The prospective public slice contains 259 tests; the
+security regression coverage. The prospective public slice contains 263 tests; the
 difference is private evidence and unpublished research-bound material.
 
 Create a locked Python 3.9 environment:
@@ -321,9 +335,9 @@ environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
 Public CI cannot access ignored empirical artifacts. It requires exactly eleven
-explicitly labeled evidence-bound skips, executes the remaining 248 tests, and
+explicitly labeled evidence-bound skips, executes the remaining 252 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates all hash-registered evidence, executes all 271 tests, and retains the
+hydrates all hash-registered evidence, executes all 275 tests, and retains the
 90% coverage floor. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:

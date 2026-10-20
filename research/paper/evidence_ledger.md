@@ -17,7 +17,7 @@ This ledger is append-only in substance: superseded findings remain visible with
 | C03 | A common-unit amplification summary is informative beyond volatility/stress. | Definition in V2. | Frozen scales/weights, denominator floor, uncertainty, benchmark incremental test. | BLOCKED |
 | C04 | Prospective reliability diagnostics identify future unsupported/high-loss cases. | Run 026 freezes the evidence clock and analytic-class contract; Run 027 then stops execution at 11 result-sensitive semantic gaps before any fit. Two nominal controls are reclassified as algebraic invariances. | Approve and implement the prospective executable amendment; pass hostile tests; lock calibration; execute the sealed evaluation once; report all benchmark, participation, control, interval, and invariance results. | EXECUTABLE_AMENDMENT_APPROVAL_REQUIRED |
 | C05 | Speech events improve precision without changing the estimand. | EA-EMPD source audited; paper reports broader event universe. | Separate shock construction, clustering, speaker/event controls, transportability analysis. | EXPLORATORY |
-| C06 | The public pipeline is reproducible and fails closed on temporal leakage. | Hashed source registry, 1,210-row candidate state panel, zero temporal violations, strict-boundary/deletion/staleness tests, schema audits and CI. Run 010 reproduces exactly in clean resolved and exact-version-locked Python 3.9 archives. Run 013 adds explicit licenses, a security-clean parentless public root, a verified commit identity, independent live public/private repositories, and a hosted Python 3.9/3.12 matrix passing the exact seven-skip source-only gate. | Verify the complete empirical bundle on a second operating system/runtime and add package-distribution hashes or a validated container. | PUBLIC_RELEASE_LIVE_HOSTED_CI_PASSED |
+| C06 | The public pipeline is reproducible and fails closed on temporal leakage. | Hashed source registry, 1,210-row candidate state panel, zero temporal violations, strict-boundary/deletion/staleness tests, schema audits and CI. Run 010 reproduces exactly in clean resolved and exact-version-locked Python 3.9 archives. Run 013 adds explicit licenses, a security-clean parentless public root, a verified commit identity, independent live public/private repositories, and a hosted Python 3.9/3.12 matrix passing the exact seven-skip source-only gate. Run 014 adds explicit Ubuntu 24.04 gates, a passing Ubuntu 26.04 compatibility lane, advanced CodeQL with zero open alerts, dependency monitoring, a security policy, and private vulnerability reporting. | Verify the complete empirical bundle on a second operating system/runtime and add package-distribution hashes or a validated container. | PUBLIC_RELEASE_SECURITY_HARDENED |
 | C07 | A 47-event block cannot serve as the sole primary transmission test under plausible state imbalance. | Prespecified synthetic design grid; at 20% minority prevalence, power is 26.0% for a 0.5 standardized interaction and 63.7% for a 1.0 interaction. | Observed state support, economic-unit SESOI, observed-shock rerun, dependence-aware focused simulation. | DESIGN_SCREEN |
 | C08 | Favorable predictive density can coexist with economically consequential instability in a real-time macro state measurement. | Runs 007 and 008 prospectively reject scalar and two-dimensional state representations. Run 009 finds pervasive full-panel geometry failure across 96/120/144-month windows, continuous dated breach episodes, and off-diagonal rather than availability-dominated Gram drift. Run 010 retains every full-panel and deletion-window classification under matched-period latest official ECB RTD values. Run 011 exactly reproduces all four Run 010 outputs in an isolated clean checkout, audits the closest literature, and defines the negative-result estimand and external-validity boundary. | Manuscript-level synthesis, cross-platform reproduction, and external review of incremental contribution; no novelty wording before those checks. | CLEAN_REPRODUCED_POSITIONED_NEGATIVE_EVIDENCE |
 
@@ -53,8 +53,52 @@ This ledger is append-only in substance: superseded findings remain visible with
 - `run-012-locked-reproduction-v1`: exact-version Python 3.9 locks reproduce all four Run 010 hashes from a clean archive after verifying and hydrating the portable local inventory; the full quality suite passes at 90% coverage on the audited macOS host.
 - Run 012's frozen source-only simulation executed 137 of 144 tests, required exactly seven disclosed local-evidence skips, and enforced 87% coverage. This historical count does not replace the full locked scientific gate.
 - Run 013 selects Apache-2.0 for software and CC BY 4.0 for owner-authored documentation and figures, without relicensing external data or third-party materials.
-- The Run 013 public root is parentless and has no flagship blueprint, prohibited data path, known-secret, privacy-path, or supplementary entropy finding. Its verifier binds imports to the exported source, requires exactly seven evidence-bound skips, and validates static analysis, coverage, Git integrity, the recovery bundle, and archive exclusions.
+- The Run 013 public candidate has one parentless commit, no flagship blueprint, no prohibited data path, and no known-secret, privacy-path, or supplementary entropy finding. Its verifier binds imports to the exported source, requires exactly seven evidence-bound skips, and validates static analysis, coverage, Git integrity, the recovery bundle, and archive exclusions.
+- Publication amendment 1 replaces only the temporary public-commit address with the owner's ID-based GitHub no-reply identity. The tree, message, dates, 215-file surface, and parentless root are unchanged; every local release gate passes again.
 - Both independent repositories are live and their first-push remote `main` refs exactly matched the local heads. The first hosted matrix exposed a Python 3.12 repository-root import defect while Python 3.9 passed; publication amendment 2 preserves that failed run and its replacement matrix passes both Python 3.9 and 3.12 under the unchanged test and coverage contract.
+- Run 014 replaces the moving primary runner label with Ubuntu 24.04, adds a passing non-blocking Ubuntu 26.04/Python 3.12 lane, and enables advanced CodeQL, weekly dependency updates, dependency alerts, a security policy, secret and push protection, and private vulnerability reporting. Three archive-extraction alerts were corrected in code; one value-redacted audit-writer alert was dismissed as a documented false positive. The final CodeQL dashboard reports zero open and four closed alerts.
+- The current canonical test contract contains 225 tests and executes all 225 at 90% branch-aware coverage. The Run 022 public release contains 213 tests, executes 206, and skips exactly seven evidence-bound cases at an 87% floor. Run 022 adds a 19-test deterministic reliability-engine surface at 92% branch-aware engine coverage. Public PR #9 passed all eight branch/review checks; squash commit `3bdfa0c` then passed all four post-merge `main` checks. Passing these software fixtures is not empirical validation.
+- `run-022-reliability-engine-implementation-v1` implements the value-free numerical core without network or filesystem access. It retrieves no official full history, builds no wider panel, estimates no empirical state, and accesses no transmission outcome. DEV-079–DEV-082 document and correct prospective coordinate, exact-preservation, input-domain, and numerical-conditioning anomalies before empirical execution.
+- `run-023-full-history-panel-build-v1` privately preserves ten real official ECB series responses and seven official timing-evidence pages. Its two processed panels span 274 monthly origins and contain 1,918 P0 plus 2,740 P1 rows with zero duplicate keys, non-finite values, or timing violations. P0/P1 are fully observed at 123/102 origins. No reliability estimator or transmission outcome is accessed.
+- Run 023 retains three failed, non-promoted retrieval attempts. DEV-085–DEV-093 document redirect hardening, BSI archive registration, revision-clock separation, complete response binding, RTD action-row semantics, explicit timeouts, bounded timeout-only retries, timing-claim qualification, and cross-runtime provenance normalization.
+- The conservative Run 023 release parser maps 108 in-sample explicit MIR reference periods and 104 BSI periods. Generic older archive titles remain unmapped even where official link identifiers appear informative; using those identifiers requires a prospective approved amendment.
+- The historical MIR/BSI evidence establishes release dates; the registered 10:00:01 Europe/Berlin usable time is a calendar convention, not an independently recovered timestamp for every historical release. DEV-092 requires this distinction in all claims and reserves a next-day timing sensitivity for a prospective amendment.
+- Run 023 public PR #10 was squash-merged at `39aa7ad` after all eight branch/review checks passed; all four independent post-merge `main` checks also passed. The public tree contains implementation, hashes, aggregate audits, and documentation but no raw or processed observations, private manuscript, or private scientific ledgers.
+- Run 015 adds reviewer routes, a repository map, contribution guidance, structured bug/reproducibility forms, a scientific pull-request checklist, a concise repository description, and eight research topics. This improves discoverability but does not upgrade any empirical or novelty claim.
+- `run-024-archive-identifier-and-timing-sensitivity-v1` reuses the exact 17
+  Run 023 official responses and verifies all nine bound inputs before rebuild.
+  It performs no network retrieval, reliability fit, scenario evaluation, or
+  transmission-outcome access.
+- The Run 024 parser admits only exact legacy PDF identifiers after entry-local
+  association and temporal validation. It cross-validates 20/20 MIR and 17/17
+  BSI explicit-title overlaps with zero disagreement and rejects two pre-sample
+  BSI candidates whose encoded months had not ended by the release date.
+- In-sample release coverage expands from 108 to 264 MIR periods and from 104
+  to 271 BSI periods. P1 observed origins become 261 for MIR borrowing costs,
+  260 for adjusted NFC loans, and 272 for M3; fully observed P1 origins rise
+  from 102 to 123. P0 remains byte-identical to Run 023.
+- The next-day timing sensitivity changes 24 selected observations and 23
+  transformed values across 23 origin months, but changes no missingness status
+  and no fully observed-origin count. Both clocks remain required scenarios.
+- Run 024 attempts 1 and 2 stopped before canonical output. DEV-095 and DEV-096
+  preserve the parser corrections and machine-readable failed-attempt records.
+- Run 024 public PR #11 was squash-merged at `80ce90c` after all eight
+  branch/review checks and all four post-merge `main` jobs passed. The public
+  tree contains no protected observation or private-ledger path.
+- Run 025 preserves a canonical official ECB key-rate response whose table
+  explicitly reports dates “with effect from.” Its 51 eligible events reproduce
+  all 8,366 retained daily DFR API values exactly, with zero conflicts or
+  unmatched records.
+- Replacing database-record validity with the official DFR effective-date
+  clock expands observed DFR origins from 123 to 274 and fully observed P0/P1
+  origins from 123/123 to 179/179. All four archive × DFR clock scenarios have
+  zero duplicate keys, non-finite values, point-in-time violations, or changed
+  non-DFR rows.
+- The Run 025 DFR next-day sensitivity changes 274 usable timestamps but zero
+  monthly selected observation periods, transformed values, or missingness
+  states. This is monthly-calendar invariance, not daily or intraday invariance.
+- DEV-100 preserves and corrects the first uncommitted audit's ambiguous
+  `selection_changes` label before scientific acceptance.
 - Run 025 public PR #12 was squash-merged at `72211d2` after all eight
   branch/review checks passed; all four independent post-merge `main` jobs also
   passed. The current public tree contains no raw or processed observation,
@@ -74,7 +118,47 @@ This ledger is append-only in substance: superseded findings remain visible with
 - Run 026 fits no state or reliability scenario and opens no evaluation or
   transmission outcome. Its protocol discipline is not evidence of benchmark
   advantage, useful participation, novelty, or monetary-policy value.
+- Run 026 public PR #15 was squash-merged at `10a29f9` after all eight
+  branch/review checks passed; all four independent post-merge `main` jobs also
+  passed. The released tree contains the protocol, software, hashes, and
+  aggregate evidence but no raw or processed observation, private manuscript,
+  blueprint, or private scientific-ledger path.
 - A second empirical operating system/runtime and cryptographically hash-pinned distributions remain open credibility improvements.
+
+## Run 028 outcome-blind implementation evidence
+
+- Owner approval binds the exact 11,887-byte Run 027 amendment proposal at
+  SHA-256 `cda763f5102d6491dfce4d3b0687cf5729089e156cf2cac59be716fb04655899`
+  and authorizes implementation and hostile software tests only.
+- The execution harness exposes an explicit implementation surface for every
+  gap XG-01 through XG-11 and imports no transmission or outcome module.
+- Fifteen focused hostile tests pass across exact-grid construction,
+  slow-release timing, score recovery, redundancy, rank-invariant orientation,
+  history gates, robust PCA, comparator cutoffs, controls, bootstrap replay,
+  and immutable access-state transitions.
+- The immutable audit reports `IMPLEMENTATION_GATE_PASSED` against unchanged
+  Run 026 protocol SHA-256
+  `78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb`.
+- No official value entered an estimator. No calibration, evaluation, or
+  transmission result was accessed. Software fixtures remain non-empirical.
+- Passing this gate establishes executable completeness, not performance,
+  participation, novelty, a reliable state, or policy value.
+
+## Run 029 Stage-A orchestration-readiness evidence
+
+- Owner approval authorizes Stage A only subject to a passing readiness gate.
+- The readiness audit inspects five methodology/source files and no empirical
+  data path; it records no official fit or calibration, evaluation, or
+  transmission access.
+- Six gaps can change empirical results and three concern lock completeness and
+  leakage-resistant auditability.
+- The current B3 SVD step uses zero outside the observed set, so the code does
+  not yet solve the registered observed-entry problem.
+- Four hostile readiness tests pass, including tampered-binding failure and
+  immutable audit serialization.
+- The Run 029 amendment is prospective and unapproved. Its B2/B3 equations and
+  complete orchestration have no evidentiary status until approved,
+  implemented, and hostile-tested.
 
 ## Reporting rules
 

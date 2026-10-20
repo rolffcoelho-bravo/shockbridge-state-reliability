@@ -336,9 +336,1065 @@ artifacts:
     bytes: 4568
     sha256: b13e9df80688d44aa50918a955d081f566171d2d844c475e27b45821c6d6da34
     recovery_record: research/methodology/run_012_public_release_and_manuscript_protocol_v1.yaml
+  - path: research/methodology/run_013_sanitized_public_export_protocol_v1.yaml
+    bytes: 3592
+    sha256: 6ab07389259337909b29a6c43b0cb040f4a6a08e6c3fa8c3c5be26ff386adbcb
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: LICENSE
+    bytes: 11357
+    sha256: c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: LICENSE-DOCS.md
+    bytes: 931
+    sha256: d0a98e703b613f4aa7cbda5f432af5fac8c7c227300a34cd57e611ed46cb28a7
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: NOTICE
+    bytes: 751
+    sha256: 3d97fddda178795e3b56ae861fe4fbd7a4b4c0ce95985007f3979a7ec9245d59
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: CITATION.cff
+    bytes: 603
+    sha256: f0ff69eb593b48b1b65dfef9012b416d77f6631603fd857c705ad5252c0d80dd
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: docs/governance/repository_strategy.md
+    bytes: 3294
+    sha256: d3456b571edcedea361237ca1c7ea322bdf1ff0a74c1e3a062b88cbfa21b59f9
+    recovery_record: reports/methodology/run_013_publication_amendment_2.manifest.yaml
+  - path: reports/methodology/run_013_public_export_build_attempt1.audit.json
+    bytes: 750
+    sha256: 7d0e159ea1af637b803e37cd8c4533fbb13033b2adfbdc7372f3c36cf7163d73
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_security_attempt1.audit.json
+    bytes: 4059
+    sha256: b940755c4313c3616aee894e64733259856105a5a1651c80f20ed23575465833
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_build_attempt2.audit.json
+    bytes: 750
+    sha256: 71b20f49e033128f860025d61b5130ea15e56e17e78029f4083322b8c1a70578
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_security_attempt2.audit.json
+    bytes: 1691
+    sha256: 141af37707ebca41eac568ea205ca5d130a597e401660b940580ca84a977b875
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_build_attempt3.audit.json
+    bytes: 603
+    sha256: d840c448acabd8e8c9df9246c53bdcd6bc987678576e745cb40931f1d20487d4
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_security_attempt3.audit.json
+    bytes: 1561
+    sha256: e146ba48c736594efb6e97506509f9569516160b1f312141e5d5691bde6cdc72
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_build_attempt4.audit.json
+    bytes: 603
+    sha256: 803250f13ad15a5984327326672897b977753746406e1c8c08f6d251ec57faa8
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_security_attempt4.audit.json
+    bytes: 1401
+    sha256: f766c1db52d67dd91f733b856fd4acf865e293d9178c5e25c70ee3f50d7e84ef
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_build_attempt5.audit.json
+    bytes: 603
+    sha256: 9d1b7dc7b5d3310119f0added01b4deb41ecc1d2e6e0a06d2f1154ce88f9fab0
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_security_attempt5.audit.json
+    bytes: 1401
+    sha256: 4a4f87332e3deca808d63afd0a4d446293ae817d63fe0af8845a1ca25e01b325
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_verification_attempt5.audit.json
+    bytes: 3776
+    sha256: 903d6718ffef9ca5dcf79a82a8dc488a7a3a04cf7e509be62380122c7cdada41
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_build_attempt6.audit.json
+    bytes: 603
+    sha256: e63a71c46e197faa7310ad29f444078f74e22094467e62452f0cd28eb63fc2d0
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_security_attempt6.audit.json
+    bytes: 1401
+    sha256: 6c217a4922fc61fc296267470add3518f70995b7c2c8f6bd7fbbc443ba769cc2
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_verification_attempt6.audit.json
+    bytes: 3776
+    sha256: ca08c3b4b81dbfef551cf951f920499f0411eeb7ec8d95fdc0d82dcb68874f33
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_build.audit.json
+    bytes: 603
+    sha256: d91995ec760b3d388a2cf85553c284030f592d0a6429e6bf6c1eb3bc8a42dac7
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_security.audit.json
+    bytes: 1401
+    sha256: dba8470749fc44986c2db73f430907a86ed88b72fbbae57d0fbcb1e201952100
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_public_export_verification.audit.json
+    bytes: 3776
+    sha256: 4eeefcd957a0369c836254f10cd1ebcddcad7c1323dd8cdd7893bf685c83d33e
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_sanitized_public_export_result_2026-10-04.md
+    bytes: 6080
+    sha256: 56acc2eb6e7335765d94b0e811cc502edbd5c9dc74daa53c3f691bca0c512ac3
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: artifacts/public-export/shockbridge-state-reliability.tar.gz
+    bytes: 380689
+    sha256: 144cc89873f37babeed622861ccf204e6f3eb6f97b9fe001c9d9ecae1dbe6c8b
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: artifacts/public-export/shockbridge-state-reliability.bundle
+    bytes: 469090
+    sha256: 6d64f712a114f28b8100a745885e35e5190bbc8a98bbf826a24ca5ded52ac02a
+    recovery_record: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+  - path: reports/methodology/run_013_sanitized_public_export_v1.manifest.yaml
+    bytes: 6702
+    sha256: 6d92e34e60002aaee16d473d316f2174cb02b556de927e24f25e1e623158374e
+    recovery_record: research/methodology/run_013_sanitized_public_export_protocol_v1.yaml
+  - path: research/methodology/run_013_publication_amendment_1_protocol.yaml
+    bytes: 3537
+    sha256: 2650b7bd7b462a6608f40594d8fbd89f785324afb2df4ff8dab9ca111b335064
+    recovery_record: reports/methodology/run_013_publication_amendment_1.manifest.yaml
+  - path: reports/methodology/run_013_publication_amendment_1_security.audit.json
+    bytes: 1427
+    sha256: 602df58be65ef3af823ae09da0de91cf25b63290bdaadae176e1f13bc8181324
+    recovery_record: reports/methodology/run_013_publication_amendment_1.manifest.yaml
+  - path: reports/methodology/run_013_publication_amendment_1_verification.audit.json
+    bytes: 3800
+    sha256: cbdfcfe84a45e473ff4b000862b977c8c062d55647a1942da726ec68a9d1b571
+    recovery_record: reports/methodology/run_013_publication_amendment_1.manifest.yaml
+  - path: reports/methodology/run_013_publication_amendment_1_result_2026-10-04.md
+    bytes: 3758
+    sha256: 953aea16c90900ca7648a86be67a621f75f4c9e525760acf2fd45d09a5d63f84
+    recovery_record: reports/methodology/run_013_publication_amendment_1.manifest.yaml
+  - path: artifacts/public-export/shockbridge-state-reliability-publication-amendment-1.bundle
+    bytes: 469112
+    sha256: c4931564d1e4970d687e15bea9585c378aae2c17fe49c97ca909a129553bfb2f
+    recovery_record: reports/methodology/run_013_publication_amendment_1.manifest.yaml
+  - path: reports/methodology/run_013_publication_amendment_1.manifest.yaml
+    bytes: 3718
+    sha256: 310bca6c50b5f87a721fad234b9fb0e598f5941046b4a7942fc5d8c7aaa0cc35
+    recovery_record: research/methodology/run_013_publication_amendment_1_protocol.yaml
+  - path: research/methodology/run_013_publication_amendment_2_protocol.yaml
+    bytes: 2971
+    sha256: 7dfd02a9c9db673b343b7e7d1b8d59ea75eeefa166ce5c973934b4c43fecd6ad
+    recovery_record: reports/methodology/run_013_publication_amendment_2.manifest.yaml
+  - path: reports/methodology/run_013_publication_amendment_2_hosted.audit.json
+    bytes: 2246
+    sha256: c459219639be453ba4e764ed2612c87c6d8679f52002672821754ec46d568e01
+    recovery_record: reports/methodology/run_013_publication_amendment_2.manifest.yaml
+  - path: reports/methodology/run_013_publication_amendment_2_result_2026-10-04.md
+    bytes: 3329
+    sha256: a0892918ca8801e2ce0c68e4c6ee3b30476d3fd0aeb59c890f2c4ad96e4c0ca4
+    recovery_record: reports/methodology/run_013_publication_amendment_2.manifest.yaml
+  - path: reports/methodology/run_013_publication_amendment_2.manifest.yaml
+    bytes: 3126
+    sha256: 93c6c1545f828854125cdb4034d8957b37eca5feef8fb804df639497a603367f
+    recovery_record: research/methodology/run_013_publication_amendment_2_protocol.yaml
+  - path: research/methodology/run_014_repository_security_and_runner_protocol_v1.yaml
+    bytes: 3295
+    sha256: 5be141d1b1ca00a305855da6fcf1dcdc6798874c276eaf29c6a6d3fcc634f25d
+    recovery_record: reports/methodology/run_014_repository_security_and_runner_v1.manifest.yaml
+  - path: research/methodology/run_014_codeql_amendment_1_protocol.yaml
+    bytes: 2482
+    sha256: 47cdac18903219c0525d1e8eed42244d80c3b4ae3c0cdb821a45d5f48374f5ac
+    recovery_record: reports/methodology/run_014_repository_security_and_runner_v1.manifest.yaml
+  - path: reports/methodology/run_014_repository_security_and_runner.audit.json
+    bytes: 4539
+    sha256: 409bdf7c81b600b8db2ee02cf845de96cbb791254b3a15da745be1a85f2fdaf7
+    recovery_record: reports/methodology/run_014_repository_security_and_runner_v1.manifest.yaml
+  - path: reports/methodology/run_014_repository_security_and_runner_result_2026-10-05.md
+    bytes: 3630
+    sha256: e2eb1d95527395281c3901712acf9de85b45d15d6f7c10223cb41eafee559cf6
+    recovery_record: reports/methodology/run_014_repository_security_and_runner_v1.manifest.yaml
+  - path: reports/methodology/run_014_repository_security_and_runner_v1.manifest.yaml
+    bytes: 3366
+    sha256: f3622379398815280b1d668bb1514763da893674f64e40bf30296f330d452a0a
+    recovery_record: research/methodology/run_014_repository_security_and_runner_protocol_v1.yaml
+  - path: research/methodology/run_015_public_research_profile_protocol_v1.yaml
+    bytes: 2238
+    sha256: 0925b78102f59e44966fd4d0662c76739b8e984a3de6c19463775f6d660cdf2a
+    recovery_record: reports/methodology/run_015_public_research_profile_v1.manifest.yaml
+  - path: reports/methodology/run_015_public_research_profile_result_2026-10-05.md
+    bytes: 2690
+    sha256: cebd0599ebffbd0143be054ae701c3881778be5659bc82efd8e234adb64b2af5
+    recovery_record: reports/methodology/run_015_public_research_profile_v1.manifest.yaml
+  - path: reports/methodology/run_015_public_research_profile_v1.manifest.yaml
+    bytes: 2410
+    sha256: 32f03858f52effaad99b6f92277ae008657a493419301f7fb8dbf97048ea09ae
+    recovery_record: research/methodology/run_015_public_research_profile_protocol_v1.yaml
+  - path: research/methodology/run_016_manuscript_v1_protocol.yaml
+    bytes: 3963
+    sha256: ceccd48e6d2edf9a78df68c3b703f4d2acb867cad11786a94698457e68c1bdec
+    recovery_record: reports/methodology/run_016_manuscript_v1.manifest.yaml
+  - path: research/paper/manuscript_v1.md
+    bytes: 30684
+    sha256: aa844f7160f224ed1caeef1fb8740545440b8f9f7888d050e530deb8b09603e7
+    recovery_record: reports/methodology/run_016_manuscript_v1.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_v1_claim_audit.yaml
+    bytes: 6144
+    sha256: 27d0aaeb75f482623e1c635e5004dfc8c01c88021dde506719f7cb1763887ab7
+    recovery_record: reports/methodology/run_016_manuscript_v1.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_v1_result_2026-10-09.md
+    bytes: 3938
+    sha256: a72802b0677d41698de65cb5f469aad790164c8cbcc1ad6c4d0f698dce1ec468
+    recovery_record: reports/methodology/run_016_manuscript_v1.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_v1.manifest.yaml
+    bytes: 1718
+    sha256: b0e3d97deb1b304373ade1f5d13ce5eafbefc73b62382698a7f6dc8202a603d4
+    recovery_record: research/methodology/run_016_manuscript_v1_protocol.yaml
+  - path: research/methodology/run_016_paper_artifacts_amendment_1_protocol.yaml
+    bytes: 3568
+    sha256: f6100dd1330e3dfd722e93471dfdb266a54dc17f94e62fbe12e750f247ac2d20
+    recovery_record: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+  - path: reports/paper/run016/run016_table_1_data_timing_v1.csv
+    bytes: 911
+    sha256: e9142279953ca66a2633edd33a031f951dd0d12b4e199ef9edd0979ef5914da0
+    recovery_record: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+  - path: reports/paper/run016/run016_table_2_candidate_gates_v1.csv
+    bytes: 2867
+    sha256: 2dbc859b6fc499ce01ca17ca76554be7cedd7d15c9f4371e33cdc8289d202735
+    recovery_record: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+  - path: reports/paper/run016/run016_table_6_reproduction_v1.csv
+    bytes: 716
+    sha256: 91d1724257f3750d2f6086951b51716dbca1de17fb2d37289cad33c420b728e6
+    recovery_record: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+  - path: reports/paper/run016/run016_figure_1_evidence_sequence_v1.svg
+    bytes: 6800
+    sha256: d662a1d9d6c5942fdd80994b901861eea3d19387c1f2326cd2a792f51581ebc4
+    recovery_record: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+  - path: reports/paper/run016/run016_figure_4_gram_drift_attribution_v1.svg
+    bytes: 7358
+    sha256: 7f0c6dc4bfb2ff586bc059290263f79bbfb9f43ed56462e2f39977f5dcca3843
+    recovery_record: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+  - path: reports/paper/run016/run016_manuscript_artifacts_v1.json
+    bytes: 3932
+    sha256: 36d6a054e6ed6bd8ee1ad2f8503da051f214aa80751aeddd0cbd2681ac634e17
+    recovery_record: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+  - path: reports/methodology/run_016_paper_artifacts_amendment_1_result_2026-10-11.md
+    bytes: 3483
+    sha256: aecbc24ee2d450ba9994764a1d5d342e8a7298260b73fbbe362fff1ce59361fa
+    recovery_record: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+  - path: reports/methodology/run_016_paper_artifacts_amendment_1.manifest.yaml
+    bytes: 2443
+    sha256: fda093f96fa84822c70aac27b55d9d6c942e928805e13d333806e4a2e3d3c16e
+    recovery_record: research/methodology/run_016_paper_artifacts_amendment_1_protocol.yaml
+  - path: reports/methodology/run_015_public_governance_amendment_1_attempt1.audit.json
+    bytes: 2628
+    sha256: 1234d60e9deea4f810bcc20f0493a0d665882040ebf85ec535ce9974c18a6769
+    recovery_record: research/methodology/run_015_public_governance_amendment_1_protocol.yaml
+  - path: research/methodology/run_015_public_governance_amendment_1_protocol.yaml
+    bytes: 3700
+    sha256: 6b3e2f4450044528411d488dd10750c4003c1f722aad3f123f0e71f57c5820e5
+    recovery_record: reports/methodology/run_015_public_governance_amendment_1.manifest.yaml
+  - path: reports/methodology/run_015_public_governance_amendment_1.audit.json
+    bytes: 2278
+    sha256: 26d92ba5f24b8c3cd4c9d0afcaffa290e2a605a26a17b9f2edab66a3e921842a
+    recovery_record: reports/methodology/run_015_public_governance_amendment_1.manifest.yaml
+  - path: reports/methodology/run_015_public_governance_amendment_1_result_2026-10-11.md
+    bytes: 2075
+    sha256: 76cc87b0c7e0b616a20c6617eec80381066bb93d915be84fd1f4ceb88d3f26d5
+    recovery_record: reports/methodology/run_015_public_governance_amendment_1.manifest.yaml
+  - path: reports/methodology/run_015_public_governance_amendment_1.manifest.yaml
+    bytes: 1593
+    sha256: 27c2a27f8afc0ef0bf506a7abc7deeb20a067bf8ebbcb1337ced627a9dfae3b2
+    recovery_record: research/methodology/run_015_public_governance_amendment_1_protocol.yaml
+  - path: research/methodology/run_016_manuscript_revision_1_protocol.yaml
+    bytes: 2913
+    sha256: a6f83d06c7aec1a6d66b44da04bd31f5cf4046f23fd9621af51bf16bd9167343
+    recovery_record: reports/methodology/run_016_manuscript_revision_1.manifest.yaml
+  - path: research/paper/manuscript_v1_1.md
+    bytes: 32600
+    sha256: 2db72250abd91c6c1c73d5324eae42a350518edb066da35069eb6f44b218f428
+    recovery_record: reports/methodology/run_016_manuscript_revision_1.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_v1_1_claim_audit.yaml
+    bytes: 6394
+    sha256: e3a9874c2fd970888b24e4689d7564ab06847fe62c90e97492c65c5df64ff2fe
+    recovery_record: reports/methodology/run_016_manuscript_revision_1.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_v1_1_citation_locator_audit.yaml
+    bytes: 6197
+    sha256: 04641c07121aa459bb6c255722a5cccd6a7a3674c94820e24e75d98dbf2b28c0
+    recovery_record: reports/methodology/run_016_manuscript_revision_1.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_revision_1_result_2026-10-11.md
+    bytes: 3421
+    sha256: 45e03d0f6f2839293625904f1848b0a12f83712509dc316549720500ae136f28
+    recovery_record: reports/methodology/run_016_manuscript_revision_1.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_revision_1.manifest.yaml
+    bytes: 2379
+    sha256: 28df326c6e6493a1a2533190f484d241fe52235bb0dafc2360df4481fa0dd6d4
+    recovery_record: research/methodology/run_016_manuscript_revision_1_protocol.yaml
+  - path: research/methodology/run_016_adversarial_contribution_and_journal_fit_protocol.yaml
+    bytes: 4352
+    sha256: 300696d02fad57a5e7237d73464748e2cf536a8ea9101dfc698b317add6928ce
+    recovery_record: reports/methodology/run_016_adversarial_contribution_and_journal_fit.manifest.yaml
+  - path: research/paper/manuscript_v1_2.md
+    bytes: 35122
+    sha256: 3f1c2533360911cdc5b9cfa8404ef4774291f7163b3a891c5ba30d052384bbf7
+    recovery_record: reports/methodology/run_016_adversarial_contribution_and_journal_fit.manifest.yaml
+  - path: reports/paper/run016/run016_journal_fit_matrix_v1.csv
+    bytes: 3998
+    sha256: 1005854e9fe2263e5d5159dd7eb174689ca2a5078b969ccc39d695368359c599
+    recovery_record: reports/methodology/run_016_adversarial_contribution_and_journal_fit.manifest.yaml
+  - path: reports/methodology/run_016_adversarial_contribution_audit.yaml
+    bytes: 4767
+    sha256: 44571f97bc36bc10933be4ce1661b887da08c389d73907ea45ff458c8ff975f2
+    recovery_record: reports/methodology/run_016_adversarial_contribution_and_journal_fit.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_v1_2_claim_audit.yaml
+    bytes: 6509
+    sha256: f3278d6d254e189264b90fb88c9ccd525749ce0f52bea362efec7b5ef9873fc5
+    recovery_record: reports/methodology/run_016_adversarial_contribution_and_journal_fit.manifest.yaml
+  - path: reports/methodology/run_016_manuscript_v1_2_citation_locator_audit.yaml
+    bytes: 7196
+    sha256: c967bbfbb157bfb3785ac602efaa068de5f1c08619baf4afdfae72802373ee7b
+    recovery_record: reports/methodology/run_016_adversarial_contribution_and_journal_fit.manifest.yaml
+  - path: reports/methodology/run_016_adversarial_contribution_and_journal_fit_result_2026-10-11.md
+    bytes: 4700
+    sha256: ae38b0e9f3a6636747b4d46215511b9640db89dff52e524252c8d00524971ea5
+    recovery_record: reports/methodology/run_016_adversarial_contribution_and_journal_fit.manifest.yaml
+  - path: reports/methodology/run_016_adversarial_contribution_and_journal_fit.manifest.yaml
+    bytes: 2745
+    sha256: 0ebb611b403875e12a4fb3c16a31473eaf19b515b662133a59693da93bd81334
+    recovery_record: research/methodology/run_016_adversarial_contribution_and_journal_fit_protocol.yaml
+  - path: research/methodology/run_017_external_validation_and_manuscript_revision_2_protocol.yaml
+    bytes: 4860
+    sha256: 0dba46ab11afa6be79c7b102e508bdf51eb17952476d4bd6bf4e19a1c8416cf4
+    recovery_record: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+  - path: private/evidence_capsules/run010_exact_v1/ATTRIBUTION.md
+    bytes: 1481
+    sha256: aebce2074f4c4dbcdf9d367af2084c021556099172ce63a6cd62462953bf246e
+    recovery_record: private/evidence_capsules/run010_exact_v1/manifest.yaml
+  - path: private/evidence_capsules/run010_exact_v1/manifest.yaml
+    bytes: 2003
+    sha256: 09775a86ea9a5b820ba7e9f31edf9b07ab14ed128801fb972b3be111a8f425dc
+    recovery_record: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+  - path: private/evidence_capsules/run010_exact_v1/data/processed/monthly_state_panel_v2.csv
+    bytes: 490466
+    sha256: 80d5e5f4b04fb7551bc69d4c4b429271258efad09987d9971551fd4a477f527e
+    recovery_record: private/evidence_capsules/run010_exact_v1/manifest.yaml
+  - path: private/evidence_capsules/run010_exact_v1/data/processed/state_instability_run009_v1.csv
+    bytes: 846213
+    sha256: c177cfac7fe553d48ada0509d95d665c9c424aa93d339fa3a96ae69bb6553af4
+    recovery_record: private/evidence_capsules/run010_exact_v1/manifest.yaml
+  - path: private/evidence_capsules/run010_exact_v1/data/raw/ecb_state/run010_latest_hicp.csv
+    bytes: 117477
+    sha256: d04f0211cc9ab2a0d0dea254c3d814b17e74366b484c59fb62085f27cf7ce154
+    recovery_record: private/evidence_capsules/run010_exact_v1/manifest.yaml
+  - path: private/evidence_capsules/run010_exact_v1/data/raw/ecb_state/run010_latest_ip.csv
+    bytes: 151556
+    sha256: 48825eaff5ec41c8653f53a97803e4c705f11bc34daff3a54633b8ed84914064
+    recovery_record: private/evidence_capsules/run010_exact_v1/manifest.yaml
+  - path: private/evidence_capsules/run010_exact_v1/data/raw/ecb_state/run010_latest_unemployment.csv
+    bytes: 135223
+    sha256: db2bac035fdb4c3497a7ced0e08f53626a88d99b925c28834328b6431c580dc0
+    recovery_record: private/evidence_capsules/run010_exact_v1/manifest.yaml
+  - path: research/paper/external_review_packet_v1.md
+    bytes: 5720
+    sha256: 0b5ca3873dd4dccc4b02693bf2958cfb608a0d080ece4ac94b4003ef8e795a60
+    recovery_record: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+  - path: research/paper/manuscript_v1_3.md
+    bytes: 36489
+    sha256: 77bb5ac620cae17e5ce59ccdba0017ff5616984e656000ed532b817c3244aea9
+    recovery_record: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+  - path: reports/methodology/run_017_external_validation.audit.yaml
+    bytes: 3692
+    sha256: c189c4300403054fca4ef92195a67580fefb15a7861c6b70d3ea5e1ff0eb19fd
+    recovery_record: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+  - path: reports/methodology/run_017_manuscript_v1_3_claim_audit.yaml
+    bytes: 6786
+    sha256: 977c76446e0829c01ada8ed8d692d6707f3189f2db9fe746020d80ed22da2234
+    recovery_record: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+  - path: reports/methodology/run_017_manuscript_v1_3_citation_locator_audit.yaml
+    bytes: 7201
+    sha256: 1e41cf2d7c02454749dc74fed18bbff13ef4780f5eb1b68d42418c277e7df9e2
+    recovery_record: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+  - path: reports/methodology/run_017_external_validation_and_manuscript_revision_2_result_2026-10-11.md
+    bytes: 4326
+    sha256: 609f9aab4eeb849d6b74fd7a7750e8f4f2829b98928709a07845da88f92530d9
+    recovery_record: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+  - path: reports/methodology/run_017_external_validation_and_manuscript_revision_2.manifest.yaml
+    bytes: 3887
+    sha256: 62cbc5fbaa543a337c604c7797f2df8c19a104063260fbeeda4d1c9a53dcfbe5
+    recovery_record: research/methodology/run_017_external_validation_and_manuscript_revision_2_protocol.yaml
+  - path: research/methodology/run_018_abstention_calibration_protocol_v1.yaml
+    bytes: 8827
+    sha256: daf2f7e42efd690a3153e1ed46c81a6dc4ed4ecb51bd38e1bb819234e49422fd
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: experiments/state_abstention_run018_v1.yaml
+    bytes: 1024
+    sha256: 2d332d4f8a289e7722ecd0e3c02e972825f7b27eefef219d2f3c8fe1e47babdc
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: data/processed/state_abstention_run018_v1.csv
+    bytes: 7408
+    sha256: 1e4e4d95a8b3bfc64ac5c0c5f5de7ba3b6c12bd1bbe3b56d247422267ba5e440
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: data/processed/state_abstention_risk_coverage_run018_v1.csv
+    bytes: 27409
+    sha256: ec0f4f9e8e4b8d2d68dc7b7360f6ac91eeddf9f3e8be99591ff245cfb00e49dc
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/methodology/state_abstention_run018_v1.audit.json
+    bytes: 17894
+    sha256: a0fe446685f76d74a30426d74615e59ca97649644c0944d0fca7988e580220ed
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/paper/run018/run018_table_1_policy_evaluation_v1.csv
+    bytes: 573
+    sha256: cf4be881e659c768ebe89ca6c4a333579d9c647d8d4a027170a735ce23be1566
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/paper/run018/run018_table_2_negative_controls_v1.csv
+    bytes: 305
+    sha256: 0c1d94402cf977b8837f44683d0a3f91680ba30079bdd28188a22b18783b0a7e
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/paper/run018/run018_figure_1_risk_coverage_v1.svg
+    bytes: 3651
+    sha256: 5fb4f6af258b6bfbb3dacfd014b124ac9313514dd96266acd49942128fc9f0e6
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/paper/run018/run018_artifacts_v1.json
+    bytes: 1224
+    sha256: 944a56ea760d5ea3f1a9b6714b6b4d8bf285c7fabf82c5e7e75d66c7252ea270
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_4.md
+    bytes: 42791
+    sha256: e2e624450fa4a2bd9de52fe871a31e22a9f821736a9aa4d88b4be451476769e6
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/methodology/run_018_manuscript_v1_4_claim_audit.yaml
+    bytes: 8102
+    sha256: 319e8f55b043ea9803c18146d1c18df0b1f9d47e4309cb3f25701af121a2318d
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/methodology/run_018_manuscript_v1_4_citation_locator_audit.yaml
+    bytes: 8643
+    sha256: b22f5e618429a804fca6d7dc31834b689d4ad6ad6dd0997d9d83fa26d3e92352
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/methodology/run_018_abstention_calibration_result_2026-10-12.md
+    bytes: 6596
+    sha256: 15c8f81b581533fa8fa0f4d0a961408f4b2105bc7f09f89045362c2c9592d77c
+    recovery_record: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+  - path: reports/methodology/run_018_abstention_calibration_v1.manifest.yaml
+    bytes: 4708
+    sha256: 8df45314ec142b914cc1075217abd8ba7b70a8b1b4248346cadb9256e363a52a
+    recovery_record: research/methodology/run_018_abstention_calibration_protocol_v1.yaml
+  - path: research/methodology/run_019_high_dimensional_source_feasibility_protocol_v1.yaml
+    bytes: 9364
+    sha256: 2c29c5c9e3e406f91897a0ff8f97de42609079ff05f071e075bdd9d8935287bb
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: research/data/run_019_source_feasibility_matrix_v1.csv
+    bytes: 8579
+    sha256: 664f711f442062f5497bfee45c6132fd7785b9dc491d71ed4cfbe469fc803e82
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: research/data/run_019_channel_architecture_v1.yaml
+    bytes: 6612
+    sha256: 5fa79e56b60255c2146bcf3ca92ed67035e048870949598975a6921b39f1a16b
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: research/methodology/run_019_information_set_reliability_concept_v1.md
+    bytes: 6991
+    sha256: 4227b840a33b4ce2586d251cb700eb245cf2a3f934af7d4301d59fd30d614009
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_5.md
+    bytes: 47672
+    sha256: 4a5155c04f3c1c50ccf22d26f3dce1728c090338ebfe460c93ed6b87b89c7417
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: reports/methodology/run_019_manuscript_v1_5_claim_audit.yaml
+    bytes: 8769
+    sha256: 1aea11d48191a5968b9cbf00dcc3517356f73633dae885450b924bc2a22caf78
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: reports/methodology/run_019_manuscript_v1_5_citation_locator_audit.yaml
+    bytes: 11850
+    sha256: 4907ece231344b1f515e6b0a3ceb6c9e869d62ab1eb5a04a377697b43166d7ab
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: reports/methodology/run_019_high_dimensional_source_feasibility_audit_v1.yaml
+    bytes: 7490
+    sha256: 2b3916e52e43929df042eda88e19c7a3523176d8d3f844a81104f94c42ecef3e
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: reports/methodology/run_019_high_dimensional_source_feasibility_result_2026-10-12.md
+    bytes: 5430
+    sha256: 08fb774a055feba6b8375b670bb7fba3907dbc233fdb25f10da89fc87b00a013
+    recovery_record: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+  - path: reports/methodology/run_019_high_dimensional_source_feasibility_v1.manifest.yaml
+    bytes: 5118
+    sha256: 9d2935d971871fd6565c460a76cb59270f88dc224078e1ed700f1fa4cac542e1
+    recovery_record: research/methodology/run_019_high_dimensional_source_feasibility_protocol_v1.yaml
+  - path: reports/methodology/run_019_public_export_build_attempt2.audit.json
+    bytes: 567
+    sha256: ed0b973b82f705771c9cd0d2ca84e7ff6b746d85809e1b59576c7437b1beb5f3
+    recovery_record: research/methodology/deviation_log.md
+  - path: reports/methodology/run_019_public_export_security_attempt2.audit.json
+    bytes: 1389
+    sha256: 9fc8135781002bf51d9cb69ad3555ab7bbaec63583d639e7847acb167ace7d06
+    recovery_record: research/methodology/deviation_log.md
+  - path: reports/methodology/run_019_public_export_verification_attempt2.audit.json
+    bytes: 4028
+    sha256: d2a3bedb447771a17825b0edbb42ccd6fb422a536267cc5c1b950264afcd5fd7
+    recovery_record: research/methodology/deviation_log.md
+  - path: reports/methodology/run_019_public_release_receipt_2026-10-12.json
+    bytes: 3070
+    sha256: c9144b8d8f73f042c89a81288efd9882743c5c80d9a708fb28658e5d88dad449
+    recovery_record: PROJECT_STORAGE.md
+  - path: research/methodology/run_020_series_history_and_reliability_protocol_v1.yaml
+    bytes: 9618
+    sha256: cbfb96998516edf8548e65c6de97b10766b32dc22e1961a1473a73730ad14040
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: research/data/run_020_series_pilot_manifest_v1.yaml
+    bytes: 9038
+    sha256: 86ddc2d73f2b44694928e972231b5ee64ca2d5fb61bc93947584a504d3d25bf1
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: research/methodology/run_020_series_pilot_amendment_1_protocol.yaml
+    bytes: 1639
+    sha256: cfecb6c61f63f289e8cb33bebc92498443bc573b92c0a0b08b9a0ed71fe05f8c
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+    bytes: 9433
+    sha256: a93429cd1fe08009e7c01a6cb45a0197a67267f235348fa94f6048279c7a4d9e
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: research/methodology/run_020_reliability_definition_amendment_2_protocol.yaml
+    bytes: 1354
+    sha256: 1d9e8a3b11e2afa2a2cecaf2a3075a02eacebf1d095267dfc7b7c61162d5859c
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: data/raw/run020_series_pilot_v1/bsi_monetary_aggregate_m3.csv
+    bytes: 1509
+    sha256: f3f91507867fc71100b5f9c5f4133ed5a60df4a60dce3f7713f32e9e4ba69186
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/bsi_nfc_adjusted_loans.csv
+    bytes: 1536
+    sha256: 7b55547d3e70a4698ccae8c29f538ba5e58557f12f103f8d760e83cfb318caff
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/ecb_deposit_facility_rate.csv
+    bytes: 30680
+    sha256: 912def055e87baa69ad2a6e0a97d227cb40855d9ca9c6f6c83ed8293a76cc1dd
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/ecb_new_ciss.csv
+    bytes: 3679
+    sha256: f9c205e72c78f70be05905615b4e2c3a6d3e2d62b6ba0961153e561bb57bc1fe
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/ecb_usd_eur_reference_rate.csv
+    bytes: 1782
+    sha256: c6711d4f3bd586dcb760d787baf5c027b592e02950141e47e002aa61a5048ce9
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/ecb_yield_curve_10y.csv
+    bytes: 4681
+    sha256: 1088351f333a35e73fd0e0c55d8f6c6e83a465646cbd1c780d185151a82f7ad3
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/ecb_yield_curve_2y.csv
+    bytes: 4653
+    sha256: d642aee6e9615b541564cf40a8baf60d9cbe0430e2e43af1626ffd438bb9af53
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/mir_nfc_cost_of_borrowing.csv
+    bytes: 1780
+    sha256: 460a079e0945ede437912b05422f5c9898c149db0cb60d87d3d94f019c722d46
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/rtd_hicp.csv
+    bytes: 3279
+    sha256: 72f418fda7bc01763284b0ed85a96305e5efaea7a80d9c9a661623c4252e2829
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/rtd_industrial_production.csv
+    bytes: 7780
+    sha256: 19ae58505d385edd10616065d7accfaaf473225951fadd0e25adc331580a70c8
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: data/raw/run020_series_pilot_v1/rtd_unemployment.csv
+    bytes: 9436
+    sha256: 83b38ebfb09b149ebf03f4deb015a9073a277580d6572435eb3fa609386636dc
+    recovery_record: research/data/run_020_series_pilot_manifest_v1_amendment_1.yaml
+  - path: reports/methodology/run_020_series_history_pilot_attempt1.audit.json
+    bytes: 14104
+    sha256: aa0401c5e2a50ee8902aed9a88e06044cfcf12b938e08ac953448188be7ce525
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: reports/methodology/run_020_series_history_pilot_attempt2.audit.json
+    bytes: 14128
+    sha256: 5607f640e8816bdd0e0ebddb5a8f7430bff1437dda2bdb151ca439dba6a06519
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: reports/methodology/run_020_series_history_pilot.audit.json
+    bytes: 13540
+    sha256: ffad1ae89f9c2598c998ca5918be51b8460c904af5f8b77d01f7af0d39d65345
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: research/methodology/run_020_information_set_reliability_method_v1.md
+    bytes: 8816
+    sha256: 5b90faf36b4679cf2bdb955f76a748a560cc4f98fbbd30ea78a753512a8a79bb
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_6.md
+    bytes: 39695
+    sha256: 3fe8c99c5390630390e3b1cc6bdbf34d463cd0fb9bb0539d79558952bf60f8e9
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: reports/methodology/run_020_manuscript_v1_6_claim_audit.yaml
+    bytes: 5118
+    sha256: 89defea9969753b613c020f1cc98e8e52567038c1248f4b588786a2e773457b7
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: reports/methodology/run_020_manuscript_v1_6_citation_locator_audit.yaml
+    bytes: 6141
+    sha256: 51027db0c51894de07160a27766736a0f51985664cffec5c7dd3458d78889749
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: reports/methodology/run_020_series_history_and_reliability_result_2026-10-12.md
+    bytes: 4731
+    sha256: db181b5aadf514495a48da8a736a4e624fdb9e0564aa5e3e51c636ba52215d16
+    recovery_record: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+  - path: reports/methodology/run_020_series_history_and_reliability_v1.manifest.yaml
+    bytes: 7253
+    sha256: f160a03076c5c9232a89ed7a75710e93e21a47679f9b16f93146a1754ef9e9ff
+    recovery_record: research/methodology/run_020_series_history_and_reliability_protocol_v1.yaml
+  - path: reports/methodology/run_020_public_release_receipt_2026-10-14.json
+    bytes: 3087
+    sha256: e4d64869c6dcb6f5c9354cb8accfdff385e2a586991f3aa88809af31cad13300
+    recovery_record: PROJECT_STORAGE.md
+  - path: research/data/run_021_full_panel_manifest_v1.yaml
+    bytes: 10681
+    sha256: 3693e85cd251738c377f45183b1ae8f6550b47df0fd0b98296fa176bdddbb25b
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: research/methodology/run_021_full_panel_build_protocol_v1.yaml
+    bytes: 14034
+    sha256: 0c1eb20d0ff5879623fad2655a2edf8f5f499e8440d896e57b91e013dae40493
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: research/methodology/run_021_information_set_reliability_method_v2.md
+    bytes: 7616
+    sha256: 5a9ca4156683500a436a793f5acfbc6f782d0b31926846b807843b09c88ebc65
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: reports/methodology/run_021_protocol_preflight.audit.json
+    bytes: 959
+    sha256: a53368a1c40877c3399604a186c0d97bf09b5db3a402c78752c060dd20151d6a
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: reports/methodology/run_021_closest_prior_art_audit_2026-10-14.md
+    bytes: 7201
+    sha256: ab153f32a88c8c621cf44c64f0b486fa61412ec5d62f6604d9f5e2e6cb062e81
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: reports/methodology/run_021_protocol_design_result_2026-10-14.md
+    bytes: 3765
+    sha256: ae376a8e4da2df0214e68c451303e876b7744271b27847ecf2e1963094d4ed08
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_7.md
+    bytes: 45588
+    sha256: 54a8d57017e19f991a25fc7017b9ada7c889a608738400138ad16ce697c89d7e
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: reports/methodology/run_021_manuscript_v1_7_claim_audit.yaml
+    bytes: 6474
+    sha256: 371ead7066f8914cb70a228c52dd0e5937f6b681e88ca2d3e82b3769b389b5bb
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: reports/methodology/run_021_manuscript_v1_7_citation_locator_audit.yaml
+    bytes: 6663
+    sha256: 76c27ec4dae2c6af936f36d69aae16db58c4fd3e4fdbbd11da96b53d9d37c294
+    recovery_record: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+  - path: reports/methodology/run_021_protocol_design_v1.manifest.yaml
+    bytes: 3902
+    sha256: b1f22f250ccd5cf861871584f9510ff06d8020b073216072b3a9ecadb1d8013e
+    recovery_record: research/methodology/run_021_full_panel_build_protocol_v1.yaml
+  - path: reports/methodology/run_021_public_release_receipt_2026-10-15.json
+    bytes: 3485
+    sha256: 80c653d1712187e314154579ab3227da34a7f106ae40c600c1e8c19a4a4ccf00
+    recovery_record: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/pull/8
+  - path: research/methodology/run_022_reliability_engine_implementation_protocol_v1.yaml
+    bytes: 6211
+    sha256: ca309fdbe4b143c9f841749c37c5452955bf8ae01ddd1f8770aff4e7d4d4b771
+    recovery_record: reports/methodology/run_022_reliability_engine_v1.manifest.yaml
+  - path: reports/methodology/run_022_reliability_engine_validation.audit.json
+    bytes: 2705
+    sha256: 01f85c7ac6f13055bbd5d375031542e934055a03ad29fd0367ab1a9dec108980
+    recovery_record: reports/methodology/run_022_reliability_engine_v1.manifest.yaml
+  - path: reports/methodology/run_022_reliability_engine_result_2026-10-15.md
+    bytes: 3837
+    sha256: 52d1285d5d386c0f15c3aead8bef1686ded9c628aabc998283c1b00cd744ae3e
+    recovery_record: reports/methodology/run_022_reliability_engine_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_8.md
+    bytes: 49025
+    sha256: 72bbd78df74111f1e44f24e9d6fc65648e1d3d8c71f2b432c194142ec92b8c37
+    recovery_record: reports/methodology/run_022_reliability_engine_v1.manifest.yaml
+  - path: reports/methodology/run_022_manuscript_v1_8_claim_audit.yaml
+    bytes: 7081
+    sha256: 654b2de181354c818be4a42dc6e04e315c98e4a4a2a438c9f9b40946876e471a
+    recovery_record: reports/methodology/run_022_reliability_engine_v1.manifest.yaml
+  - path: reports/methodology/run_022_manuscript_v1_8_citation_locator_audit.yaml
+    bytes: 6765
+    sha256: b5fcf0f01c2c11815b9fee462893cc1a17cce8f94115a2101a193844c24cd3be
+    recovery_record: reports/methodology/run_022_reliability_engine_v1.manifest.yaml
+  - path: reports/methodology/run_022_reliability_engine_v1.manifest.yaml
+    bytes: 2948
+    sha256: d599c5184e22d42b653fe82ed78c247ef582ee46b634ed7a006d12f858514928
+    recovery_record: research/methodology/run_022_reliability_engine_implementation_protocol_v1.yaml
+  - path: reports/methodology/run_022_public_release_receipt_2026-10-15.json
+    bytes: 3596
+    sha256: bd29468d6093bc7c366f43e3f49ade4d6d6171ee5a60548c032bffd5295fc53d
+    recovery_record: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/pull/9
+  - path: data/raw/run023_full_panel_v1/series/rtd_hicp.csv
+    bytes: 615409
+    sha256: 0d221ac72fc322ea9bcedaac8a2cd3bb95b86fb4941a333d8e74b1d64b777b19
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/rtd_industrial_production.csv
+    bytes: 9903988
+    sha256: b4a69326ebb74565721b890263d5bdc3f0813a6400bd18c3c0a1f3427af701e7
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/rtd_unemployment.csv
+    bytes: 13562375
+    sha256: 5ad65174443d55569f45c1967d0b0d28090b96669aaaed576bd7e1b8bf964ac0
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/ecb_deposit_facility_rate.csv
+    bytes: 2925510
+    sha256: 8c90a704b16f6a8965a9c16d2932dca45840bc02f44a0b6d5a7848157fe5cb40
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/ecb_yield_curve_2y.csv
+    bytes: 3260907
+    sha256: 34926c06ca0dc4c16a1b0f7b97762f459a49c8fc2db18712aa966dbe4b50c50c
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/ecb_yield_curve_10y.csv
+    bytes: 3279667
+    sha256: 2bf6d4f3f11e2d6f9d09e7b17c47a6274490fcef1fabcac3a01e008aacb65a69
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/ecb_usd_eur_reference_rate.csv
+    bytes: 1275082
+    sha256: f23fa6545156e8934c601eea12806c24af137d4ad3701cc797fd53ca2f67f515
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/mir_nfc_cost_of_borrowing.csv
+    bytes: 187531
+    sha256: 34b5a547cbc0f4ddc01480463319d95090eab89fa6bd6fccbf381599158a6528
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/bsi_nfc_adjusted_loans.csv
+    bytes: 148378
+    sha256: 1091261196611ef71e3a9f6a84a1607a21cbfcff441871547f28d364ee9c1304
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/series/bsi_monetary_aggregate_m3.csv
+    bytes: 151209
+    sha256: 3bb930d69cdb033cbb585f31a7445cec6510ed42398119281208da276ae57a7f
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/release_evidence/rtd_information.html
+    bytes: 71424
+    sha256: 8f74fc312ae4f5d531d2beb52e4e31c841d48e038832f733daf5ec64e50c5c39
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/release_evidence/fx_methodology.html
+    bytes: 119495
+    sha256: 5ed519726f65459ff3b8b40bce892d3978ed8e6b6134f4d03be1e29d4b5fe1cb
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/release_evidence/mir_calendar.html
+    bytes: 99679
+    sha256: 105275ed93943b1a755e80a16075caacfddd7be3fa198bc35b40ea2d550c33b0
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/release_evidence/mir_archive.html
+    bytes: 231710
+    sha256: 07743fe8f7e827f4e7a3fb039259f08a6a6a391529073f3bbb07466e4a5607a3
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/release_evidence/bsi_calendar.html
+    bytes: 99691
+    sha256: 4975002a1863660f991cab1a30fbc89a49402c3787c2c46a88edd2c59fb73ee9
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/release_evidence/bsi_information.html
+    bytes: 77393
+    sha256: 665fea67282bc40892a3226f85dde3b17f34c31b55dc1388f7b94e9c0896d9ac
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/raw/run023_full_panel_v1/release_evidence/bsi_historical_release_index_run_023_addition.html
+    bytes: 307202
+    sha256: dca0f55b3d5abc55750ac714bb8a0592ef28beb7a1421359b9b14daf44ad1443
+    recovery_record: data/manifests/run_023_full_history_sources_v1.yaml
+  - path: data/processed/run023_full_panel_v1/p0_core_replay_and_fast.csv
+    bytes: 368155
+    sha256: 4c77be8ed6b06ce97e09720158dea55138c7473d01cec0b40127bc447e1042ce
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: data/processed/run023_full_panel_v1/p1_augmented_bank_credit.csv
+    bytes: 529624
+    sha256: 453d7c833545c7d022241635ef4e3760dcfddf3ccec2ef89844308f9ea9a66cd
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: data/processed/run023_full_panel_v1/verified_release_calendar.csv
+    bytes: 8863
+    sha256: 0edd5b7ba6cf0a3d5f82406aaf89f1f2574cbf496bd25f067c6f34c6dc3e5239
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: research/methodology/run_023_full_history_retrieval_and_panel_build_protocol_v1.yaml
+    bytes: 14767
+    sha256: aeb25cbca792b8848aaecad5ba5eba0e494015d75b254ab35e38a26e7829b947
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: data/manifests/run_023_full_history_sources_v1.yaml
+    bytes: 11662
+    sha256: 3afeaa8fd2b3d47c1f368d4b4164bf9ae4f6242772ad3415bd59dc354d3a97d2
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: reports/methodology/run_023_full_panel_build.audit.json
+    bytes: 3693
+    sha256: e5eb7dc85e9d5a0b3bf707d1694db0a17f3d37de42d23cf79f39c6c62534c2eb
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: reports/methodology/run_023_full_panel_coverage.audit.json
+    bytes: 3298
+    sha256: 6ba8d43fd0e18a3a342baa6ae60aea79a07fe4aa3378831b5e1d6b0068d96f7b
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: reports/methodology/run_023_full_panel_build_result_2026-10-15.md
+    bytes: 5490
+    sha256: a07a16296f5e9c5928a206b8c44e2d4c770acbbb497601cd847aebf0e27dba85
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_9.md
+    bytes: 54145
+    sha256: a3fd3fe9e32a7825400346020779c5e47920fce93872bb5f824cb1dae44fe4f6
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: reports/methodology/run_023_manuscript_v1_9_claim_audit.yaml
+    bytes: 3437
+    sha256: 7549da9be6d06010bdef4fe8ee6c86c5ac085e286a6bb05bc18c6d5d6bd568bd
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: reports/methodology/run_023_manuscript_v1_9_citation_locator_audit.yaml
+    bytes: 1156
+    sha256: 70046145482efd723cef663d9d60bf37a279b3898a2b3d30eb9b0028bd667201
+    recovery_record: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+  - path: reports/methodology/run_023_full_panel_build_v1.manifest.yaml
+    bytes: 5274
+    sha256: f6a0dd101554f835689f562bb8a884aa922794ccac3a341b54f615ff39c76649
+    recovery_record: research/methodology/run_023_full_history_retrieval_and_panel_build_protocol_v1.yaml
+  - path: reports/methodology/run_023_public_release_receipt_2026-10-16.json
+    bytes: 4194
+    sha256: de0c5778b3395eec27ee639733b903b816515cd9e1149d7088720f13a39e6f26
+    recovery_record: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/pull/10
+  - path: research/methodology/run_024_archive_identifier_and_timing_sensitivity_protocol_v1.yaml
+    bytes: 8986
+    sha256: 6492642c54382d7fe041366bdbb2c339e84eb073bf6eac03c735ae8616f156cd
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: reports/methodology/run_024_archive_timing_attempt_1_failure.audit.json
+    bytes: 842
+    sha256: ca976a39ca52ed8215adcd50835b08863bc1e237ab5c1a8da0852861ed759b66
+    recovery_record: research/methodology/deviation_log.md
+  - path: reports/methodology/run_024_archive_timing_attempt_2_failure.audit.json
+    bytes: 869
+    sha256: 361ad13df760b4fd210e3974854de83637a689c2de808386149e75d4e84c8ea3
+    recovery_record: research/methodology/deviation_log.md
+  - path: data/processed/run024_archive_timing_v1/registered_clock/p0_core_replay_and_fast.csv
+    bytes: 368155
+    sha256: 4c77be8ed6b06ce97e09720158dea55138c7473d01cec0b40127bc447e1042ce
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: data/processed/run024_archive_timing_v1/registered_clock/p1_augmented_bank_credit.csv
+    bytes: 531968
+    sha256: e9d27008af0dcc74d81ee8fed4d7a7a69c1edbd7c42fe6cc2b35e47f5e2ea5ae
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: data/processed/run024_archive_timing_v1/registered_clock/release_calendar.csv
+    bytes: 41264
+    sha256: 4353ddc67ef4089c216c93f4e4c20448f89aa8e59f51670de0e015b4321354f1
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: data/processed/run024_archive_timing_v1/next_day_clock/p0_core_replay_and_fast.csv
+    bytes: 368155
+    sha256: 4c77be8ed6b06ce97e09720158dea55138c7473d01cec0b40127bc447e1042ce
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: data/processed/run024_archive_timing_v1/next_day_clock/p1_augmented_bank_credit.csv
+    bytes: 531967
+    sha256: c95f6110f030350f85f89d2b8b6490c6bf074fe4fe2203028cf0be614425f103
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: data/processed/run024_archive_timing_v1/next_day_clock/release_calendar.csv
+    bytes: 41264
+    sha256: be1d9ed8780abf6d83d2f774e69dc0eb031e6ecb00538806fb58c2f7c1f95bbe
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: reports/methodology/run_024_archive_timing_sensitivity.audit.json
+    bytes: 15414
+    sha256: 86ac0123cf13e62c4268f55b06508413c08f92609dedbd3420ff9870c639dc1c
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: reports/methodology/run_024_archive_timing_sensitivity_result_2026-10-16.md
+    bytes: 5017
+    sha256: d3575106ab6fe92fd8d2963897e496244a6c9886fea56b2a44c9d9fdb58e13d9
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_10.md
+    bytes: 57950
+    sha256: 92225926089ce16bf7f219627665cb3d8777e63d86e9a9465fac8d24968c0e2d
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: reports/methodology/run_024_manuscript_v1_10_claim_audit.yaml
+    bytes: 3500
+    sha256: 0bf837a3854fc800a5eca4f4dbb265077ab658a7fb4ee6eae31e4703368dc151
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: reports/methodology/run_024_manuscript_v1_10_citation_locator_audit.yaml
+    bytes: 1131
+    sha256: 8b405a9af252982b0e40595aeda9e9948f669430c100f361eda31456b4c81b8d
+    recovery_record: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+  - path: reports/methodology/run_024_archive_timing_sensitivity_v1.manifest.yaml
+    bytes: 6241
+    sha256: 08b7321dda48ce7e973f10810e02144aebb73bb51112931193c3501c8aa4010b
+    recovery_record: research/methodology/run_024_archive_identifier_and_timing_sensitivity_protocol_v1.yaml
+  - path: reports/methodology/run_024_public_release_receipt_2026-10-16.json
+    bytes: 4085
+    sha256: 56baf41f2bc8fcb6129d3f91ed737788e035c08662cc556ac0bf48b54eb6c7e1
+    recovery_record: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/pull/11
+  - path: research/methodology/run_025_dfr_effective_date_source_audit_protocol_v1.yaml
+    bytes: 10976
+    sha256: e420005ffafa2175feadfc8c4c6eeda9b91eade5a8884c0f481fde183f4f0a4d
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/manifests/run_025_dfr_effective_date_source_v1.yaml
+    bytes: 1403
+    sha256: 1ca5d2f72c3c0121f8d2ede6968b92d8af1287be8b8bf0340263e266c4bc0ad3
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/raw/run025_dfr_effective_dates_v1/ecb_key_interest_rates.html
+    bytes: 131224
+    sha256: fddef164d35d6dcd67adc614234f093435c2fd019af48e97f69c1d41b176066e
+    recovery_record: data/manifests/run_025_dfr_effective_date_source_v1.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/dfr_effective_date_events.csv
+    bytes: 870
+    sha256: dab78ce60cf643b49bdfd345c14cab1eeaf0cca8e570ad817ceb215ea740aad3
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/registered_mir_bsi__effective_day_dfr/p0_core_replay_and_fast.csv
+    bytes: 371357
+    sha256: 53fcda0390cbec62b41c15b9cae52eb4f62757acf9e4bc60754fee18b325c3f0
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/registered_mir_bsi__effective_day_dfr/p1_augmented_bank_credit.csv
+    bytes: 535992
+    sha256: 1e7f20983b07c3082baf164494c6974e83bc5382ee1e9efdd81e661d8c712b9b
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/registered_mir_bsi__next_day_dfr/p0_core_replay_and_fast.csv
+    bytes: 371357
+    sha256: 05253a940eacf3e42c803960ec747c9e6fec6bc73bdf51840eb7c29089751ae1
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/registered_mir_bsi__next_day_dfr/p1_augmented_bank_credit.csv
+    bytes: 535992
+    sha256: d133120f9729643551f28971d373efe04afefe6072a4a76c83a46dde5ea11211
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/next_day_mir_bsi__effective_day_dfr/p0_core_replay_and_fast.csv
+    bytes: 371357
+    sha256: 53fcda0390cbec62b41c15b9cae52eb4f62757acf9e4bc60754fee18b325c3f0
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/next_day_mir_bsi__effective_day_dfr/p1_augmented_bank_credit.csv
+    bytes: 535991
+    sha256: bec2bd59d75ca6bf7e48647ff386f07a807bfad1136ab13a9e5524ab5e3ced72
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/next_day_mir_bsi__next_day_dfr/p0_core_replay_and_fast.csv
+    bytes: 371357
+    sha256: 05253a940eacf3e42c803960ec747c9e6fec6bc73bdf51840eb7c29089751ae1
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/next_day_mir_bsi__next_day_dfr/p1_augmented_bank_credit.csv
+    bytes: 535991
+    sha256: 2095b558e46f4fa00c6050dccf7b607966e1b86905c4baf763920d9d274c96cd
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: data/processed/run025_dfr_effective_dates_v1/source_manifest.yaml
+    bytes: 607
+    sha256: 9f9f860d28be01e5174dcab8abe611138c4c5c7ea7af73b5351af30fa0bb673d
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: reports/methodology/run_025_attempt_1_comparison_label_correction.audit.json
+    bytes: 1641
+    sha256: 9143b2bff230ffe878969de37ae970d5fca993675333397576331a1399de3a58
+    recovery_record: research/methodology/deviation_log.md
+  - path: reports/methodology/run_025_dfr_effective_date_source.audit.json
+    bytes: 53538
+    sha256: 8fc2dc119d9e67bd4c689ee4cf882dc4e2716d919a9c98c6fa408b132796be30
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: reports/methodology/run_025_dfr_effective_date_source_result_2026-10-16.md
+    bytes: 6562
+    sha256: 6d4817a1d2d72848eaa3e9021e08e308bbad82dead996c16816b6d813ddbc87e
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_11.md
+    bytes: 62046
+    sha256: a927053e5827de4e4eb464048193a1452d0e79499b83b6d256dd9a519581fcd9
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: reports/methodology/run_025_manuscript_v1_11_claim_audit.yaml
+    bytes: 3637
+    sha256: efecbf8f5b6b1f9360cc219fb2b3d5caa1d67ae41a0d6c87a098ba2ded1620c7
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: reports/methodology/run_025_manuscript_v1_11_citation_locator_audit.yaml
+    bytes: 1252
+    sha256: 06e1bc3026dcc1b61aaff2cdd560d59b296633011a7801f1bc4399f0c3380ae2
+    recovery_record: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+  - path: reports/methodology/run_025_dfr_effective_date_source_v1.manifest.yaml
+    bytes: 6109
+    sha256: 6466a48cb1a6c7df1e74a15d748c9d91b75ac22e68ef029406912d80f5d651df
+    recovery_record: research/methodology/run_025_dfr_effective_date_source_audit_protocol_v1.yaml
+  - path: reports/methodology/run_025_public_release_receipt_2026-10-17.json
+    bytes: 4029
+    sha256: e3044c7443640ad2f2b1752871e0c48474d7319caf4514755a53861666e3bb7f
+    recovery_record: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/pull/12
+  - path: research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml
+    bytes: 19028
+    sha256: 78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb
+    recovery_record: reports/methodology/run_026_protocol_freeze_v1.manifest.yaml
+  - path: reports/methodology/run_026_protocol_preflight.audit.json
+    bytes: 1764
+    sha256: c197a693eb8a2fb12cd3addfaccd95ae87966f625e580dcec32e404cae4ded01
+    recovery_record: reports/methodology/run_026_protocol_freeze_v1.manifest.yaml
+  - path: reports/methodology/run_026_protocol_freeze_result_2026-10-16.md
+    bytes: 6840
+    sha256: 818e31f688b255c5d7dc1bd8540ec718669f49dbed183b69838dbc78ffc22f3d
+    recovery_record: reports/methodology/run_026_protocol_freeze_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_12.md
+    bytes: 66407
+    sha256: b7f6d7ef27767a64ce9e0e0549642dde899694aa4bd839292db194be86de8cae
+    recovery_record: reports/methodology/run_026_protocol_freeze_v1.manifest.yaml
+  - path: reports/methodology/run_026_manuscript_v1_12_claim_audit.yaml
+    bytes: 3030
+    sha256: ce5935af0820933cf95c62a9b35e255c162f85e5fb4a91e41bec3842149942ea
+    recovery_record: reports/methodology/run_026_protocol_freeze_v1.manifest.yaml
+  - path: reports/methodology/run_026_manuscript_v1_12_citation_locator_audit.yaml
+    bytes: 1484
+    sha256: 340088a420f8c07e485f4da57ceca12d07c17ccf2b2ac327ef3381073a5cebc0
+    recovery_record: reports/methodology/run_026_protocol_freeze_v1.manifest.yaml
+  - path: reports/methodology/run_026_protocol_freeze_v1.manifest.yaml
+    bytes: 4852
+    sha256: 6ad3b7e9fde8b545e47da71a08a251eac2239617834a4ef4b5a317176d9842ff
+    recovery_record: research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml
+  - path: research/paper/research_progress_dashboard_v1.md
+    bytes: 9456
+    sha256: 42941d12109e184c41a74b4fdbcd3a0ef6b433b3231407962953c98a4a3b5080
+    recovery_record: PROJECT_STORAGE.md
+  - path: reports/methodology/run_026_public_release_receipt_2026-10-19.json
+    bytes: 4308
+    sha256: aef2449995d1d5eeb12aadfd4a566bad5df3a87814689482578854d277ae82fa
+    recovery_record: https://github.com/rolffcoelho-bravo/shockbridge-state-reliability/pull/15
+  - path: research/methodology/run_027_reliability_execution_amendment_proposal_v1.yaml
+    bytes: 11887
+    sha256: cda763f5102d6491dfce4d3b0687cf5729089e156cf2cac59be716fb04655899
+    recovery_record: reports/methodology/run_027_executable_completeness_v1.manifest.yaml
+  - path: reports/methodology/run_027_run026_executable_completeness.audit.json
+    bytes: 5950
+    sha256: 3abab61daf9b47ebc0a3a741ca0380482da4952b861a759a770e020623fb358e
+    recovery_record: reports/methodology/run_027_executable_completeness_v1.manifest.yaml
+  - path: reports/methodology/run_027_executable_completeness_result_2026-10-19.md
+    bytes: 4787
+    sha256: 46f4ac5ca95311f66d29d850ef2d944347a9382786b45b01d2579d9e5eda7196
+    recovery_record: reports/methodology/run_027_executable_completeness_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_13.md
+    bytes: 71285
+    sha256: 8a0eae016fdd1fafec671a953db47bf66fac88d0c7f4c3ce8bf161fc6d33c696
+    recovery_record: reports/methodology/run_027_executable_completeness_v1.manifest.yaml
+  - path: reports/methodology/run_027_manuscript_v1_13_claim_audit.yaml
+    bytes: 3171
+    sha256: 59b935719d70401c284ecb77622a23dac56a301fd8554c05c6236c466a1d5192
+    recovery_record: reports/methodology/run_027_executable_completeness_v1.manifest.yaml
+  - path: reports/methodology/run_027_manuscript_v1_13_citation_locator_audit.yaml
+    bytes: 1216
+    sha256: 1f663e74566b9b55ff835942597bee6280647a5a18fcb8dfe75a8ad036ed1acf
+    recovery_record: reports/methodology/run_027_executable_completeness_v1.manifest.yaml
+  - path: reports/methodology/run_027_executable_completeness_v1.manifest.yaml
+    bytes: 4319
+    sha256: 881062aa670a2a82834a2eaed195f0c7df9648fef9e2280e19dec91d51caec84
+    recovery_record: research/methodology/run_027_reliability_execution_amendment_proposal_v1.yaml
+  - path: research/methodology/run_028_reliability_execution_amendment_approval_v1.yaml
+    bytes: 1618
+    sha256: d5bbb3c532d8830afb98417b867d2d315f28293ddcc7cba32b7ff10f53d191b6
+    recovery_record: reports/methodology/run_028_reliability_execution_harness_v1.manifest.yaml
+  - path: reports/methodology/run_028_execution_harness_validation.audit.json
+    bytes: 2288
+    sha256: 00b6fb5c5914d5b7c2a07d0e066e2811c47b6aa78500a2c980acebdf889d8d39
+    recovery_record: reports/methodology/run_028_reliability_execution_harness_v1.manifest.yaml
+  - path: reports/methodology/run_028_execution_harness_result_2026-10-20.md
+    bytes: 5277
+    sha256: 0b62563bfa0b94417b24bf0b763ce7316362dd6ed9ff66e92621497861c2b06f
+    recovery_record: reports/methodology/run_028_reliability_execution_harness_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_14.md
+    bytes: 75329
+    sha256: 8d1288613c19acb092971f3e2648647ad94a39314c84738a9e2cedc802a3949e
+    recovery_record: reports/methodology/run_028_reliability_execution_harness_v1.manifest.yaml
+  - path: reports/methodology/run_028_manuscript_v1_14_claim_audit.yaml
+    bytes: 3535
+    sha256: ee4931f6ce4e2baa051e8632ed26b9c3d509bc1438c414a05dbbc06c117fba1c
+    recovery_record: reports/methodology/run_028_reliability_execution_harness_v1.manifest.yaml
+  - path: reports/methodology/run_028_manuscript_v1_14_citation_locator_audit.yaml
+    bytes: 1279
+    sha256: eed9b71e13cceef1cf32412fb1c7d3dc7defd07941bb0aa4ea80dabd32468b0d
+    recovery_record: reports/methodology/run_028_reliability_execution_harness_v1.manifest.yaml
+  - path: reports/methodology/run_028_reliability_execution_harness_v1.manifest.yaml
+    bytes: 3390
+    sha256: 60cc206d2ef95324ad6c019075dbfecf66b549cc536082c83bc311f1b27b4ddf
+    recovery_record: research/methodology/run_028_reliability_execution_amendment_approval_v1.yaml
+  - path: research/methodology/run_029_stage_A_calibration_approval_v1.yaml
+    bytes: 1510
+    sha256: 5e937ad3525034614531ec63221aed9c31152ef51aea5f8a2b93ac8d730659c9
+    recovery_record: reports/methodology/run_029_stage_A_orchestration_readiness_v1.manifest.yaml
+  - path: research/methodology/run_029_stage_A_orchestration_amendment_proposal_v1.yaml
+    bytes: 10931
+    sha256: 723e00e5bbaa701698ff59a149a68de37bedda6268e76e624524d0e142b04a9b
+    recovery_record: reports/methodology/run_029_stage_A_orchestration_readiness_v1.manifest.yaml
+  - path: reports/methodology/run_029_stage_A_orchestration_readiness.audit.json
+    bytes: 7850
+    sha256: 3009f79a853c3f06a6a3906db479e42ea510dfb1d769d18f67ab86b27eef2b13
+    recovery_record: reports/methodology/run_029_stage_A_orchestration_readiness_v1.manifest.yaml
+  - path: reports/methodology/run_029_stage_A_orchestration_readiness_result_2026-10-20.md
+    bytes: 5052
+    sha256: 31d0714369004aa4c359f5829ca3bf284ecbba5ef5989a78a0a80b5668e21da9
+    recovery_record: reports/methodology/run_029_stage_A_orchestration_readiness_v1.manifest.yaml
+  - path: research/paper/manuscript_v1_15.md
+    bytes: 80804
+    sha256: 6a6ea17909cf004dbe8aa19644ac7b9cdce7307326142de0b4953bd1193d8f4d
+    recovery_record: reports/methodology/run_029_stage_A_orchestration_readiness_v1.manifest.yaml
+  - path: reports/methodology/run_029_manuscript_v1_15_claim_audit.yaml
+    bytes: 1709
+    sha256: 69858d8f83e960e18d2f0c9247ce6a06b7fd374d27735d1dbbdaadd21ba5d087
+    recovery_record: reports/methodology/run_029_stage_A_orchestration_readiness_v1.manifest.yaml
+  - path: reports/methodology/run_029_manuscript_v1_15_citation_locator_audit.yaml
+    bytes: 995
+    sha256: 4fc7c6c64d6453b842f5ee0e229982d92a569fb021ea79d2bf0b55893c2d72eb
+    recovery_record: reports/methodology/run_029_stage_A_orchestration_readiness_v1.manifest.yaml
+  - path: reports/methodology/run_029_stage_A_orchestration_readiness_v1.manifest.yaml
+    bytes: 3868
+    sha256: 76ecd86e3206973703cf5d7861e7fe2d9b74c1a5436972a76c6101bf79993f9d
+    recovery_record: research/methodology/run_029_stage_A_orchestration_amendment_proposal_v1.yaml
 
 verification:
-  artifact_count: 83
+  artifact_count: 347
   all_paths_inside_canonical_root: true
-  all_hashes_verified_on: 2026-10-04
+  all_hashes_verified_on: 2026-10-20
   raw_and_processed_repository_status: LOCAL_GIT_IGNORED

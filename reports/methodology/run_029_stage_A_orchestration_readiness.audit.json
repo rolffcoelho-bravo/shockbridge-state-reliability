@@ -1,0 +1,100 @@
+{
+  "audit_id": "run-029-stage-A-orchestration-readiness-v1",
+  "calibration_fit_performed": false,
+  "critical_auditability_gap_count": 3,
+  "critical_result_choice_count": 6,
+  "evaluation_results_accessed": false,
+  "gaps": [
+    {
+      "empirical_consequence": "Different retained columns change ranks and geometry; different series sets can share the same value hash and provenance identity.",
+      "gap_id": "OG-01",
+      "issue": "The approved text does not say whether expanding and rolling histories select retained series independently, and the key hashes matrices without ordered series IDs.",
+      "location": "history-specific eligibility and scenario_history_key",
+      "required_resolution": "Freeze history-specific selection and bind ordered series IDs, masks, and matrices for both histories into every scenario identity.",
+      "severity": "CRITICAL_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    },
+    {
+      "empirical_consequence": "All operations are individually defensible but do not commute, so alternative orders can change admissible scenarios and authorization.",
+      "gap_id": "OG-02",
+      "issue": "No executable ordering composes timing stress, family deletion, history slicing, coverage filtering, exact deduplication, standardization, near-duplicate resolution, channel reweighting, scenario deduplication, and provenance aggregation.",
+      "location": "scenario generator orchestration",
+      "required_resolution": "Freeze a single ordered pipeline, scenario-ID grammar, representative rule, and many-to-one provenance map before fitting.",
+      "severity": "CRITICAL_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    },
+    {
+      "empirical_consequence": "Unregistered ordinal encodings or skipped exact collapse can select a different series.",
+      "gap_id": "OG-03",
+      "issue": "The harness expects numeric timing strength, revision exposure, and first-usable origin, but the frozen manifest supplies categorical strings and YYYY-MM values; exact-duplicate collapse is declared but not implemented by the redundancy primitive.",
+      "location": "redundancy metadata materialization",
+      "required_resolution": "Freeze categorical rank maps and month encoding, execute exact value-and-missingness collapse first, and apply one deterministic representative rule to both duplicate stages.",
+      "severity": "CRITICAL_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    },
+    {
+      "empirical_consequence": "B2 authorization and matched participation cannot be reproduced and benchmark loss can change under multiple plausible constructions.",
+      "gap_id": "OG-04",
+      "issue": "The amendment names an equal-weight scalar score and a three-dimensional geometry grid but does not define the B2 score projector, channel operator, or anchor statistic.",
+      "location": "B2 vintage-panel combination",
+      "required_resolution": "Define the expanding and rolling combined scalar, duplicate-neutral channel operator, anchor summary, and exact three gate statistics.",
+      "severity": "CRITICAL_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    },
+    {
+      "empirical_consequence": "Zero-filling changes the convex problem, low-rank recovery, selected rank, and B3 loss.",
+      "gap_id": "OG-05",
+      "issue": "The current SVD update inserts zero at unobserved cells, while the registered objective penalizes residuals only on observed cells; missing-cell continuation and downstream geometry construction are not frozen.",
+      "location": "B3 observed-entry robust PCA",
+      "required_resolution": "Freeze a projected observed-entry iteration, initialization, missing-cell continuation, post-recovery rank/channel geometry, and convergence identity.",
+      "severity": "CRITICAL_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    },
+    {
+      "empirical_consequence": "The control gate either leaks evaluation results or remains impossible to evaluate at the calibration lock.",
+      "gap_id": "OG-06",
+      "issue": "The calibration-stage rule asks whether NC1/NC2 satisfy every primary success condition, but those conditions include sealed evaluation metrics.",
+      "location": "negative-control staging",
+      "required_resolution": "Define calibration-only analogues for Stage A, freeze control settings there, and reserve the unchanged evaluation control assessment for Stage B.",
+      "severity": "CRITICAL_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    },
+    {
+      "empirical_consequence": "An implementation can omit identity-changing inputs or inadvertently serialize sealed metrics while still producing valid-looking hashes.",
+      "gap_id": "OG-07",
+      "issue": "Stage A permits evaluation scenario identities but does not define hash payload, cardinality, coordinate order, or allowed preprocessing.",
+      "location": "evaluation input-only identity hashes",
+      "required_resolution": "Freeze a per-origin/per-scenario canonical identity over coordinates, retained series, masks, matrix hashes, provenance mapping, and a no-metric serialization boundary.",
+      "severity": "CRITICAL_AUDITABILITY_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    },
+    {
+      "empirical_consequence": "A partial lock can pass its body hash while omitting a threshold, comparator, control, origin count, failure reason, or exact code identity.",
+      "gap_id": "OG-08",
+      "issue": "The lock writer accepts unrestricted settings, metrics, and invariance mappings and an unvalidated implementation string.",
+      "location": "immutable calibration-lock schema",
+      "required_resolution": "Freeze required keys and types, full commit/source hashes, origin counts, comparator and control settings, and schema validation before atomic creation.",
+      "severity": "CRITICAL_AUDITABILITY_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    },
+    {
+      "empirical_consequence": "Aggregate metrics cannot reveal silent origin loss, failed-fit handling, or label/decision misalignment.",
+      "gap_id": "OG-09",
+      "issue": "No immutable row schema records scenario failures, representatives, authorization, matured reference labels, candidate losses, and exclusions at each calibration origin.",
+      "location": "calibration origin ledger and label materialization",
+      "required_resolution": "Freeze a complete 60-origin ledger, require matured labels through the embargo, and hash the ledger into the Stage-A lock.",
+      "severity": "CRITICAL_AUDITABILITY_STOP_BEFORE_OFFICIAL_CALIBRATION"
+    }
+  ],
+  "input_sha256": {
+    "research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml": "78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb",
+    "research/methodology/run_027_reliability_execution_amendment_proposal_v1.yaml": "cda763f5102d6491dfce4d3b0687cf5729089e156cf2cac59be716fb04655899",
+    "research/methodology/run_028_reliability_execution_amendment_approval_v1.yaml": "d5bbb3c532d8830afb98417b867d2d315f28293ddcc7cba32b7ff10f53d191b6",
+    "research/methodology/run_029_stage_A_calibration_approval_v1.yaml": "5e937ad3525034614531ec63221aed9c31152ef51aea5f8a2b93ac8d730659c9",
+    "src/shockbridge_state_risk/state/reliability_execution_harness.py": "ed8480fb7c42ed48d0014d1c4a779ceb4bffd594f8f023628a1ccb00c84ba378"
+  },
+  "inspected_paths": [
+    "research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml",
+    "research/methodology/run_027_reliability_execution_amendment_proposal_v1.yaml",
+    "research/methodology/run_028_reliability_execution_amendment_approval_v1.yaml",
+    "src/shockbridge_state_risk/state/reliability_execution_harness.py",
+    "research/methodology/run_029_stage_A_calibration_approval_v1.yaml"
+  ],
+  "official_panel_value_loaded_into_estimator": false,
+  "passed": false,
+  "primitive_implementation_gate_passed": true,
+  "stage_A_owner_approval_recorded": true,
+  "transmission_outcomes_accessed": false
+}

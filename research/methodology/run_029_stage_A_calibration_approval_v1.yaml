@@ -1,0 +1,32 @@
+schema_version: 1
+approval_id: run-029-stage-A-calibration-owner-approval-v1
+recorded_on: 2026-10-20
+status: OWNER_APPROVED_STAGE_A_CALIBRATION_SUBJECT_TO_READINESS_GATE
+owner_instruction: >-
+  Approved. Continue exactly from where the research stopped, audit and correct
+  anomalies, improve research quality and novelty without opening transmission
+  outcomes, record all information needed for a high-standard paper, and stop
+  for approval when a result-sensitive improvement opportunity emerges.
+
+bound_implementation:
+  run_026_protocol_sha256: 78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb
+  run_027_amendment_sha256: cda763f5102d6491dfce4d3b0687cf5729089e156cf2cac59be716fb04655899
+  run_028_harness_sha256: ed8480fb7c42ed48d0014d1c4a779ceb4bffd594f8f023628a1ccb00c84ba378
+
+authorized_if_readiness_gate_passes:
+  official_calibration_origins_and_matured_labels: true
+  embargo_origins_only_to_mature_calibration_labels: true
+  evaluation_input_only_identity_hashes_without_metrics_or_labels: true
+  immutable_calibration_lock: true
+
+never_authorized_in_stage_A:
+  evaluation_metrics_or_labels: false
+  evaluation_threshold_reselection: false
+  transmission_module_or_outcome_access: false
+  synthetic_empirical_observations: false
+  favorable_result_requirement: false
+
+fail_closed_rule: >-
+  A result-sensitive or auditability gap found before the first official fit
+  stops Stage A. Record the gap and a prospective amendment; do not resolve it
+  silently from empirical behavior.

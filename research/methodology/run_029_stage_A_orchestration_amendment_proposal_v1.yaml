@@ -1,0 +1,244 @@
+schema_version: 1
+proposal_id: run-029-stage-A-orchestration-amendment-proposal-v1
+created_on: 2026-10-20
+status: PROPOSED_AWAITING_OWNER_APPROVAL_NO_OFFICIAL_FIT
+amends_if_approved:
+  - run-026-information-clock-reliability-execution-v1
+  - run-027-reliability-execution-amendment-proposal-v1
+
+reason: >-
+  Run 028 proved that each approved numerical primitive works in isolation.
+  The separately approved Stage-A calibration cannot begin safely because a
+  value-free orchestration audit found six result-sensitive composition choices
+  and three lock/auditability gaps. This prospective amendment resolves those
+  choices without inspecting any official panel value, calibration result,
+  evaluation result, or transmission outcome.
+
+scientific_boundary:
+  official_value_fitted_before_approval: false
+  calibration_result_accessed: false
+  evaluation_result_or_label_accessed: false
+  transmission_module_or_outcome_accessed: false
+  synthetic_empirical_observations_allowed: false
+  software_fixtures_allowed_for_hostile_tests_only: true
+  positive_result_required: false
+  amendment_change_after_first_official_fit: prohibited
+
+proposed_resolutions:
+  OG-01_history_specific_retention_and_identity:
+    retention: independently_within_each_declared_history
+    rationale: >-
+      Coverage, scale, exact duplicates, and near-duplicate correlations are
+      history-specific. Each fit must therefore select its own admissible
+      series rather than importing eligibility from the other history.
+    comparison_spaces:
+      score: common_final_120_month_calendar
+      channel: frozen_eight_channel_coordinate
+    scenario_identity_payload_in_order:
+      - scenario_id
+      - expanding_ordered_retained_series_ids
+      - expanding_eligibility_mask
+      - expanding_canonical_standardized_matrix_hash
+      - rolling_ordered_retained_series_ids
+      - rolling_eligibility_mask
+      - rolling_canonical_standardized_matrix_hash
+    different_column_counts_across_histories: allowed
+    lexical_representative_after_hash_equality: true
+
+  OG-02_ordered_scenario_pipeline:
+    operations_in_order:
+      - verify_exact_bound_panel_bytes_and_coordinates
+      - build_origin_by_manifest_series_path
+      - apply_registered_or_plus_one_month_timing_policy
+      - apply_full_panel_or_leave_one_available_channel_out_family_rule
+      - slice_expanding_and_exact_rolling_120_histories
+      - independently_apply_count_coverage_and_nonzero_scale_eligibility
+      - collapse_exact_equal_value_and_missingness_paths_within_channel
+      - standardize_using_observed_moments_within_each_history
+      - build_within_channel_absolute_correlation_graph
+      - select_one_representative_per_connected_component
+      - recompute_signed_equal_total_channel_weights
+      - fit_each_history_and_construct_common_space_geometry
+      - hash_and_deduplicate_complete_two_history_scenario_identity
+      - map_every_provenance_label_to_its_analytic_representative
+    scenario_id_fields:
+      - base_panel
+      - source_clock_analytic_class
+      - timing_policy
+      - missingness_policy
+      - family_rule
+    scenario_order: lexical_full_id
+    representative: lexical_minimum_full_id
+    provenance_multiplicity_weight: zero_after_first_analytic_representative
+
+  OG-03_redundancy_metadata_and_exact_duplicates:
+    timing_strength_rank_lower_is_stronger:
+      A_REPLAY_ELIGIBLE: 0
+      B_RELEASE_LAG_ELIGIBLE: 1
+    revision_exposure_rank_lower_is_stronger:
+      archived_policy_concept_vintages: 0
+      dated_effective_rate_with_history_timestamp: 1
+      dated_curve_estimate_with_history_timestamp: 2
+      nonrevisable_dated_reference_rate_assumption_to_be_audited: 3
+      current_history_shifted_to_verified_release_calendar: 4
+    first_usable_month_encoding: year_times_12_plus_month_minus_1
+    manifest_order_encoding: zero_based_declared_series_order
+    exact_duplicate_definition: equal_ordered_missingness_mask_and_equal_observed_float64_values
+    exact_duplicate_scope: within_economic_channel_and_declared_history
+    exact_duplicate_representative: same_frozen_tie_break_as_near_duplicates
+    correlation_edge: absolute_observed_pair_correlation_strictly_greater_than_0_98
+    minimum_pairwise_months: 60
+
+  OG-04_B2_vintage_panel_combination:
+    member_weight: equal_over_unique_nondegenerate_analytic_classes
+    provenance_duplicate_incremental_weight: 0
+    for_each_history:
+      scalar: arithmetic_mean_of_member_standardized_anchor_scalars_on_common_final_120_months
+      channel_operator: arithmetic_mean_of_member_eight_by_eight_channel_projectors
+      anchor_capture: arithmetic_mean_of_member_anchor_captures
+    score_statistic: >-
+      Spectral distance between the rank-one projectors of the expanding and
+      rolling combined scalar vectors on the common 120-month calendar.
+    channel_statistic: >-
+      Spectral norm of the expanding minus rolling duplicate-neutral mean
+      channel operators.
+    orientation_statistic: minimum_of_expanding_and_rolling_mean_anchor_capture
+    gate_grid: same_three_dimensional_grid_as_primary_envelope
+    nondegenerate_requires: at_least_two_unique_member_classes_in_both_histories
+
+  OG-05_B3_projected_observed_entry_PCP:
+    input: B1_history_specific_observed_standardized_matrix
+    initialization: L_zero_S_zero_Y_zero
+    observed_projection: P_Omega
+    missing_projection: P_Omega_complement
+    iteration:
+      L_update: >-
+        singular_value_threshold of
+        P_Omega(X - S + Y/mu) + P_Omega_complement(L_previous)
+        at threshold 1/mu
+      S_update: >-
+        P_Omega elementwise soft threshold of X - L + Y/mu at lambda/mu;
+        S is exactly zero outside Omega
+      Y_update: Y_plus_mu_times_P_Omega_of_X_minus_L_minus_S
+      mu_initial: 1_25_divided_by_observed_data_spectral_norm
+      mu_multiplier: 1_5
+    stopping_rule: observed_relative_primal_error_not_above_1e_minus_8
+    maximum_iterations: 2000
+    missing_low_rank_cells: final_projected_continuation_from_L
+    post_recovery_rank: ICp2_over_candidate_ranks_1_2_3_on_full_L
+    post_recovery_geometry: same_score_channel_anchor_construction_as_B1
+    nonconvergence: abstain
+
+  OG-06_negative_control_staging:
+    stage_A_calibration_analogues:
+      - calibration_participation_at_least_0_10
+      - at_least_two_unique_nondegenerate_scenarios_at_authorized_origins
+      - calibration_decision_loss_strictly_lower_than_B1
+      - calibration_future_failure_rate_not_higher_than_B1_at_matched_participation
+    stage_A_requirement: >-
+      At least NC1 or NC2 has calibration loss no lower than the primary and
+      fails at least one calibration analogue. NC3 must not reproduce the
+      selected threshold and loss jointly.
+    stage_A_freezes_all_control_settings: true
+    stage_B_requirement: apply_original_primary_success_conditions_without_retuning
+    stage_B_control_failure_action: no_transmission_authorization
+
+  OG-07_evaluation_input_identity:
+    permitted_evaluation_operations_in_stage_A:
+      - verify_bound_input_bytes
+      - construct_input_scenarios_through_pre_fit_deduplication
+      - canonicalize_identity_payload
+      - hash_identity_payload
+    prohibited_evaluation_operations_in_stage_A:
+      - estimator_fit
+      - geometry_metric
+      - future_failure_label
+      - authorization_decision
+      - comparator_metric
+      - aggregate_result
+    per_origin_per_scenario_payload:
+      - origin_month
+      - full_scenario_id
+      - analytic_representative_id
+      - provenance_member_ids
+      - expanding_ordered_retained_series_ids
+      - expanding_eligibility_mask_hash
+      - expanding_standardized_matrix_hash
+      - rolling_ordered_retained_series_ids
+      - rolling_eligibility_mask_hash
+      - rolling_standardized_matrix_hash
+    serialization: canonical_JSON_sorted_keys_compact_UTF8_newline
+    lock_storage: origin_month_to_sorted_scenario_identity_hashes
+    raw_evaluation_values_in_lock: prohibited
+
+  OG-08_calibration_lock_schema:
+    implementation_identity:
+      git_commit: exact_40_lowercase_hex_from_clean_private_tree
+      orchestrator_sha256: required_64_lowercase_hex
+      harness_sha256: required_64_lowercase_hex
+      protocol_and_amendment_hashes: required
+    required_counts:
+      calibration_origins: 60
+      embargo_months: 12
+      evaluation_origins: 70
+    required_selected_settings:
+      - primary_threshold
+      - B1_cutoff_and_matched_participation_cutoff
+      - B2_cutoff_and_matched_participation_cutoff
+      - B3_lambda_cutoff_and_matched_participation_cutoff
+      - NC1_NC2_NC3_frozen_settings
+    required_calibration_metrics:
+      - candidate_grid_count
+      - participation
+      - decision_loss
+      - future_failure_prevalence
+      - authorized_future_failure_rate
+      - nondegenerate_scenario_count_distribution
+      - comparator_metrics
+      - negative_control_metrics
+    required_hashes:
+      - calibration_origin_ledger_sha256
+      - evaluation_identity_map_sha256
+      - exact_input_hashes
+    schema_validation_before_atomic_create: required
+
+  OG-09_calibration_origin_ledger:
+    expected_rows: 60
+    unique_key: origin_month
+    required_fields:
+      - origin_month
+      - matured_future_failure_label
+      - analytic_scenario_count
+      - provenance_to_analytic_mapping
+      - scenario_representatives_and_failure_reasons
+      - envelope_statistics
+      - candidate_authorization_vector_hash
+      - B1_B2_B3_candidate_authorization_vector_hashes
+      - negative_control_candidate_vector_hashes
+      - selected_primary_and_comparator_decisions
+    every_row_required: true
+    missing_reference_fit_is_breach_under_registered_label: true
+    label_months_must_end_no_later_than: 2018-12
+    aggregate_metrics_recomputed_from_ledger_before_lock: true
+    serialization: canonical_JSON_lines_in_origin_order
+    immutable_private_storage: true
+
+acceptance_tests_required_before_first_official_fit:
+  - all_nine_orchestration_gap_tests_pass
+  - expanding_and_rolling_series_sets_may_differ_without_identity_collision
+  - operation_order_permutations_fail_the_pipeline_contract
+  - categorical_tie_break_maps_cover_every_manifest_value
+  - B2_is_duplicate_neutral_and_rotation_invariant
+  - B3_missing_entries_are_not_treated_as_observed_zeros
+  - stage_A_controls_do_not_read_evaluation_metrics_or_labels
+  - evaluation_identity_serialization_contains_no_metric_or_label_field
+  - incomplete_calibration_lock_schema_is_rejected
+  - calibration_ledger_has_exactly_60_unique_matured_origins
+  - full_private_and_public_source_only_suites_pass
+
+approval_request: >-
+  Approve this exact prospective amendment before implementation and hostile
+  software testing. After those tests pass, the already recorded Stage-A owner
+  authorization may be exercised once under the unchanged empirical firewall.
+  Stop again after the immutable calibration lock; evaluation and transmission
+  remain separately sealed.

@@ -114,9 +114,9 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("Apache-2.0", readme)
         self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
         self.assertIn("parentless root commit", readme)
-        self.assertIn("290 tests", readme)
-        self.assertIn("278 tests", readme)
-        self.assertIn("267 tests", readme)
+        self.assertIn("294 tests", readme)
+        self.assertIn("282 tests", readme)
+        self.assertIn("271 tests", readme)
         self.assertIn("Reviewer paths", readme)
         self.assertIn("Repository map", readme)
         self.assertNotIn("No GitHub remote exists", readme)
@@ -175,7 +175,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("four registered features", readme)
         self.assertIn("large-*N*", readme)
         self.assertIn(
-            "278 tests",
+            "282 tests",
             (root / "REPRODUCING.md").read_text(encoding="utf-8"),
         )
         support = (root / "SUPPORT.md").read_text(encoding="utf-8")

@@ -1,0 +1,78 @@
+{
+  "approval_sha256": "d5bbb3c532d8830afb98417b867d2d315f28293ddcc7cba32b7ff10f53d191b6",
+  "approved_amendment_sha256": "cda763f5102d6491dfce4d3b0687cf5729089e156cf2cac59be716fb04655899",
+  "audit_id": "run-028-execution-harness-validation-v1",
+  "calibration_fit_performed": false,
+  "evaluation_results_accessed": false,
+  "harness_sha256": "ed8480fb7c42ed48d0014d1c4a779ceb4bffd594f8f023628a1ccb00c84ba378",
+  "hostile_tests_sha256": "bab41157a623a0bc2283701cd810c62e84638c819c2db6512260ed53cefad6fc",
+  "implementation_surface": {
+    "XG-01": "build_origin_matrix",
+    "XG-02": "apply_slow_release_stress",
+    "XG-03": "recover_complete_case_scores",
+    "XG-04": "resolve_near_duplicates",
+    "XG-05": "rank_invariant_anchor_state",
+    "XG-06": [
+      "scenario_history_key",
+      "evaluate_within_scenario_gate"
+    ],
+    "XG-07": [
+      "fit_observed_stable_pcp",
+      "select_calibration_threshold",
+      "match_calibration_participation"
+    ],
+    "XG-08": [
+      "rotate_series_channel_assignments",
+      "cyclic_shift_within_blocks",
+      "permute_label_blocks"
+    ],
+    "XG-09": "assess_negative_controls",
+    "XG-10": [
+      "make_noncircular_block_plan",
+      "simultaneous_bootstrap_intervals"
+    ],
+    "XG-11": [
+      "write_calibration_lock",
+      "start_evaluation_once"
+    ],
+    "evaluation_results_accessed": false,
+    "official_values_accessed": false,
+    "outcome_modules_imported": false
+  },
+  "implemented_gap_ids": [
+    "XG-01",
+    "XG-02",
+    "XG-03",
+    "XG-04",
+    "XG-05",
+    "XG-06",
+    "XG-07",
+    "XG-08",
+    "XG-09",
+    "XG-10",
+    "XG-11"
+  ],
+  "imported_modules": [
+    "__future__",
+    "collections.abc",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "numpy",
+    "numpy.typing",
+    "os",
+    "pathlib",
+    "shockbridge_state_risk.state.hmm",
+    "shockbridge_state_risk.state.reliability_engine",
+    "typing",
+    "yaml"
+  ],
+  "official_values_accessed": false,
+  "passed": true,
+  "prohibited_outcome_imports": [],
+  "software_fixture_tests_expected": 15,
+  "status": "IMPLEMENTATION_GATE_PASSED",
+  "synthetic_empirical_observations_used": false,
+  "transmission_outcomes_accessed": false,
+  "unchanged_run026_protocol_sha256": "78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb"
+}

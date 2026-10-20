@@ -114,9 +114,9 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("Apache-2.0", readme)
         self.assertIn("rolffcoelho-bravo/shockbridge-state-reliability", readme)
         self.assertIn("parentless root commit", readme)
-        self.assertIn("275 tests", readme)
-        self.assertIn("263 tests", readme)
-        self.assertIn("252 tests", readme)
+        self.assertIn("290 tests", readme)
+        self.assertIn("278 tests", readme)
+        self.assertIn("267 tests", readme)
         self.assertIn("Reviewer paths", readme)
         self.assertIn("Repository map", readme)
         self.assertNotIn("No GitHub remote exists", readme)
@@ -175,7 +175,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertIn("four registered features", readme)
         self.assertIn("large-*N*", readme)
         self.assertIn(
-            "263 tests",
+            "278 tests",
             (root / "REPRODUCING.md").read_text(encoding="utf-8"),
         )
         support = (root / "SUPPORT.md").read_text(encoding="utf-8")
@@ -206,6 +206,7 @@ class PublicExportTests(unittest.TestCase):
         self.assertTrue(is_private_only_path("research/paper/manuscript_v1_7.md"))
         self.assertTrue(is_private_only_path("research/paper/manuscript_v1_8.md"))
         self.assertTrue(is_private_only_path("research/paper/manuscript_v1_13.md"))
+        self.assertTrue(is_private_only_path("research/paper/manuscript_v1_14.md"))
         self.assertTrue(
             is_private_only_path("reports/methodology/run_019_manuscript_v1_5_claim_audit.yaml")
         )
@@ -255,6 +256,19 @@ class PublicExportTests(unittest.TestCase):
         self.assertTrue(
             is_private_only_path(
                 "reports/methodology/run_027_manuscript_v1_13_citation_locator_audit.yaml"
+            )
+        )
+        self.assertTrue(
+            is_private_only_path("reports/methodology/run_028_manuscript_v1_14_claim_audit.yaml")
+        )
+        self.assertTrue(
+            is_private_only_path(
+                "reports/methodology/run_028_manuscript_v1_14_citation_locator_audit.yaml"
+            )
+        )
+        self.assertTrue(
+            is_private_only_path(
+                "reports/methodology/run_028_reliability_execution_harness_v1.manifest.yaml"
             )
         )
         self.assertTrue(

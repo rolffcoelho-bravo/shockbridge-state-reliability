@@ -18,7 +18,7 @@ make quality
 make test-public
 ```
 
-The prospective public contract discovers 263 tests, executes 252, permits exactly eleven
+The prospective public contract discovers 278 tests, executes 267, permits exactly eleven
 explicitly labelled evidence-bound skips, and enforces 87% branch-aware
 coverage of the released source. An additional Ubuntu 26.04 lane is
 prospective compatibility evidence and is not an empirical-reproduction claim.
@@ -39,7 +39,7 @@ make test
 ```
 
 This tier requires the locally retained, hash-registered evidence inventory. It
-executes all 275 tests and enforces 90% coverage. Run 011 and Run 012 recorded
+executes all 290 tests and enforces 90% coverage. Run 011 and Run 012 recorded
 byte-for-byte equality for all four registered Run 010 outputs in clean and
 locked Python 3.9 environments.
 

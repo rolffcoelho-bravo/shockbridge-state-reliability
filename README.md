@@ -27,8 +27,9 @@ panel protocol, its value-free reliability-engine implementation, an audited
 outcome-blind build of the registered official panels, and a validated archive-
 identifier and release-time sensitivity. Run 026 now freezes and preflights a
 duplicate-neutral, clock-robust reliability execution without fitting it. Run
-027 then stops the fit at eleven result-sensitive executable gaps and records
-a prospective amendment for approval.
+027 then stops the fit at eleven result-sensitive executable gaps. Run 028
+records approval of the exact amendment and implements all eleven resolutions
+behind an audited outcome firewall, still without fitting official values.
 This repository contains no validated state-dependent transmission effect,
 amplification result, trading signal, or production model.
 
@@ -36,12 +37,12 @@ amplification result, trading signal, or production model.
 
 | Dimension | Current verified status |
 |---|---|
-| Research gate | Four-feature measurement rejected; Run 027 stops the wider-panel fit at 11 executable gaps before calibration; the amendment, evaluation, and transmission gates remain blocked |
+| Research gate | Four-feature measurement rejected; Run 028 passes the outcome-blind implementation gate for all 11 executable gaps; official calibration, evaluation, and transmission remain sealed |
 | Main finding | No registered one- or two-dimensional state representation passes the prospective joint stability gates |
 | Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
 | Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
 | Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
-| Test contract | Private canonical suite: 275/275 at 90% coverage; prospective public slice: 263 tests, 252 executions plus exactly eleven evidence-bound skips |
+| Test contract | Private canonical suite: 290/290 at 90% coverage; prospective public slice: 278 tests, 267 executions plus exactly eleven evidence-bound skips |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
 ### Dimensional scope
@@ -223,7 +224,12 @@ authorization, comparator loss, controls, or intervals. In particular, common
 channel-row and source-clock relabelings are algebraic invariances rather than
 discriminating negative controls. The empirical fit therefore remains sealed
 until the proposed operational amendment is approved, implemented, and
-adversarially tested.
+adversarially tested. Run 028 completes that implementation-only gate: all
+eleven resolutions are exposed as executable operators, fifteen hostile tests
+pass, and an immutable audit confirms that no official value or outcome module
+was accessed. Official calibration still requires a separate prospective
+authorization, and evaluation can open only once after an immutable
+calibration lock exists.
 
 ## Evidence sequence
 
@@ -312,10 +318,10 @@ Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
 while also running static analysis, the then-registered 140-test suite, and the
-90% coverage gate. The current private canonical contract contains 275 tests
+90% coverage gate. The current private canonical contract contains 290 tests
 and adds cross-version, cross-runner, archive-safety, release-boundary, source-
 feasibility, series-history, protocol-contract, reliability-engine, and hosted
-security regression coverage. The prospective public slice contains 263 tests; the
+security regression coverage. The prospective public slice contains 278 tests; the
 difference is private evidence and unpublished research-bound material.
 
 Create a locked Python 3.9 environment:
@@ -335,9 +341,9 @@ environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
 Public CI cannot access ignored empirical artifacts. It requires exactly eleven
-explicitly labeled evidence-bound skips, executes the remaining 252 tests, and
+explicitly labeled evidence-bound skips, executes the remaining 267 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates all hash-registered evidence, executes all 275 tests, and retains the
+hydrates all hash-registered evidence, executes all 290 tests, and retains the
 90% coverage floor. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:

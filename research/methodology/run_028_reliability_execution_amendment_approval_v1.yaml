@@ -1,0 +1,38 @@
+schema_version: 1
+approval_id: run-028-reliability-execution-amendment-approval-v1
+created_on: 2026-10-19
+status: APPROVED_FOR_IMPLEMENTATION_AND_HOSTILE_SOFTWARE_TESTS_ONLY
+owner_approval: recorded_2026-10-19
+
+approved_amendment:
+  path: research/methodology/run_027_reliability_execution_amendment_proposal_v1.yaml
+  bytes: 11887
+  sha256: cda763f5102d6491dfce4d3b0687cf5729089e156cf2cac59be716fb04655899
+  incorporated_by_reference_without_modification: true
+
+approval_scope:
+  implement_all_eleven_executable_resolutions: true
+  hostile_software_tests_with_synthetic_fixtures: true
+  official_calibration_fit_allowed_in_this_run: false
+  official_evaluation_access_allowed_in_this_run: false
+  transmission_outcome_access_allowed: false
+  synthetic_empirical_observations_allowed: false
+  software_fixtures_are_empirical_evidence: false
+  public_pull_request_for_run027_audit_allowed: true
+
+execution_sequence:
+  - verify_approved_amendment_identity
+  - implement_value_agnostic_execution_primitives
+  - pass_hostile_software_tests
+  - audit_no_transmission_import_or_access
+  - freeze_implementation_identity
+  - seek_separate_owner_approval_for_official_calibration
+  - write_immutable_calibration_lock_if_later_approved
+  - open_evaluation_once_only_after_lock_audit
+
+claim_boundary: >-
+  Approval establishes a prospective operational specification and authorizes
+  software implementation. It is not evidence that the wider state is
+  reliable, that authorization will occur, that a comparator is beaten, that
+  the method is novel in the literature, or that any monetary-policy
+  transmission effect exists.

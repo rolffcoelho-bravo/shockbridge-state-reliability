@@ -1,0 +1,38 @@
+schema_version: 1
+approval_id: run-030-stage-A-orchestration-amendment-owner-approval-v1
+recorded_on: 2026-10-21
+status: APPROVED_EXACT_AMENDMENT_FOR_IMPLEMENTATION_HOSTILE_TESTS_AND_CONDITIONAL_STAGE_A
+owner_instruction: >-
+  Approved. Continue exactly from where the research stopped, improve the
+  methodology, audit and correct code anomalies, preserve the scientific
+  record, update the manuscript and GitHub repository, and keep evaluation
+  and transmission sealed.
+
+approved_amendment:
+  path: research/methodology/run_029_stage_A_orchestration_amendment_proposal_v1.yaml
+  bytes: 10931
+  sha256: 723e00e5bbaa701698ff59a149a68de37bedda6268e76e624524d0e142b04a9b
+  incorporated_by_reference_without_modification: true
+
+approval_scope:
+  implement_all_nine_orchestration_resolutions: true
+  hostile_software_tests_with_fixture_values: true
+  fixture_values_are_empirical_evidence: false
+  official_stage_A_calibration_after_all_acceptance_tests_pass: true
+  embargo_access_only_to_mature_calibration_labels: true
+  evaluation_input_identity_hashing_before_fit_only: true
+  immutable_calibration_lock_after_successful_stage_A: true
+
+still_prohibited:
+  evaluation_estimator_fit: true
+  evaluation_metric_or_label_access: true
+  evaluation_authorization_decision: true
+  transmission_module_or_outcome_access: true
+  synthetic_empirical_observations: true
+  result_contingent_method_change: true
+
+fail_closed_rule: >-
+  A failed acceptance test, an incomplete lock field, a dirty implementation
+  tree, or a newly discovered result-sensitive ambiguity stops official
+  calibration. Any further amendment must be prospective and separately
+  approved.

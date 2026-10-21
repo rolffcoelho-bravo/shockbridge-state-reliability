@@ -169,3 +169,20 @@ This ledger is append-only in substance: superseded findings remain visible with
 - cite exact artifact hashes and code commits in tables and figures;
 - report effective independent events, not only row counts;
 - disclose protocol breaks, exclusions, missingness, and multiplicity families.
+
+## Run 030 Stage-A orchestration implementation evidence
+
+- The owner approval binds the exact Run 029 amendment bytes and leaves the
+  evaluation and transmission prohibitions intact.
+- The new implementation exposes OG-01 through OG-09 and the exact fourteen-
+  operation scenario pipeline.
+- The Run 028 harness remains byte-identical; its known B3 mismatch is not
+  erased from the historical record.
+- The corrected projected PCP carries low-rank continuation on missing cells,
+  keeps the sparse component zero outside the observed set, and computes its
+  stopping residual only on observed coordinates.
+- Fourteen focused hostile test methods pass; the focused module reaches 97%
+  branch-aware coverage; strict static analysis passes.
+- No official value entered an estimator, no calibration or evaluation result
+  was accessed, and no transmission or outcome module was imported.
+- Implementation success is not empirical reliability or novelty evidence.

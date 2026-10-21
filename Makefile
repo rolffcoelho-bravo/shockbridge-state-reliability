@@ -1,4 +1,4 @@
-.PHONY: install quality test test-public public-export synthetic design-power state-panel monthly-state-panel state-replay state-model-comparison state-redesign state-subspace state-instability state-instability-amendment run010-fetch vintage-robustness state-abstention run021-contract-audit run023-retrieve run023-build run024-archive-timing run025-dfr-effective-date run026-protocol-preflight run027-protocol-completeness run028-harness-audit run029-stage-A-readiness inventory-audit contract-audit clean
+.PHONY: install quality test test-public public-export synthetic design-power state-panel monthly-state-panel state-replay state-model-comparison state-redesign state-subspace state-instability state-instability-amendment run010-fetch vintage-robustness state-abstention run021-contract-audit run023-retrieve run023-build run024-archive-timing run025-dfr-effective-date run026-protocol-preflight run027-protocol-completeness run028-harness-audit run029-stage-A-readiness run030-orchestration-audit inventory-audit contract-audit clean
 
 PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 
@@ -88,6 +88,9 @@ run028-harness-audit:
 
 run029-stage-A-readiness:
 	$(PYTHON) scripts/run029_stage_A_readiness_audit.py
+
+run030-orchestration-audit:
+	$(PYTHON) scripts/run030_stage_A_orchestration_audit.py
 
 inventory-audit:
 	$(PYTHON) -m shockbridge_state_risk verify-artifacts data/manifests/local_artifact_inventory_2026-10-02.yaml

@@ -1,0 +1,40 @@
+{
+  "B3_lambda_multipliers": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "approval_sha256": "90ef05c520d448b39449ca3a94cd170f9c94fc6f4f0ca25dc017a94cedb987b0",
+  "audit_id": "run-031-stage-A-runner-validation-v1",
+  "calibration_fit_performed": false,
+  "calibration_module_sha256": "2d12791657dfdfa7c1f5b736e1087194a89a5afc509b76dbbf201048e5177075",
+  "calibration_origin_count": 60,
+  "calibration_tests_sha256": "aa77a71919809c085bbde33417a21dd0ca22abd49241ba5ce9e583584212bb8d",
+  "candidate_grid_count": 144,
+  "evaluation_metric_or_label_accessed": false,
+  "focused_test_methods": 10,
+  "geometry_module_sha256": "8603ae089512002f7a801ea96c19b4694c48c289035f6a0450d72ab866249761",
+  "geometry_tests_sha256": "721ff9de0b66f412e92ee914768e9e50a48e8ef339e0ef425e1edd0fee409923",
+  "imports": [
+    "__future__",
+    "collections.abc",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "numpy",
+    "numpy.typing",
+    "shockbridge_state_risk.state.calibration_orchestration",
+    "shockbridge_state_risk.state.hmm",
+    "shockbridge_state_risk.state.reliability_engine",
+    "shockbridge_state_risk.state.reliability_execution_harness",
+    "shockbridge_state_risk.state.stage_a_calibration",
+    "typing"
+  ],
+  "official_panel_loaded_into_estimator": false,
+  "passed": true,
+  "prohibited_imports": [],
+  "remaining_gate": "Implement and hostile-test the hash-bound origin-by-scenario panel generator before supplying official geometry to this transaction.",
+  "software_fixture_values_used_for_tests_only": true,
+  "status": "STAGE_A_TRANSACTION_AND_GEOMETRY_GATE_PASSED",
+  "transmission_outcomes_accessed": false
+}

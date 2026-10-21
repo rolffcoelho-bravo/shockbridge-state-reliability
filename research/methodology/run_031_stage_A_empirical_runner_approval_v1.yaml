@@ -1,0 +1,40 @@
+schema_version: 1
+approval_id: run-031-stage-A-empirical-runner-owner-approval-v1
+recorded_on: 2026-10-21
+status: OWNER_APPROVED_PROSPECTIVE_RUNNER_HARDENING
+owner_instruction: >-
+  Approved. Continue exactly from the prior checkpoint, focus on research
+  quality and novelty, audit and correct anomalies, preserve all scientific
+  evidence, update the manuscript and GitHub repositories, and keep
+  evaluation and transmission sealed.
+
+inherited_exact_rules:
+  run_026_protocol_sha256: 78d562c4d2e20529f5609198721c4d2be85694544ca66f62a48132cf29216aeb
+  run_027_amendment_sha256: cda763f5102d6491dfce4d3b0687cf5729089e156cf2cac59be716fb04655899
+  run_028_harness_sha256: ed8480fb7c42ed48d0014d1c4a779ceb4bffd594f8f023628a1ccb00c84ba378
+  run_029_orchestration_proposal_sha256: 723e00e5bbaa701698ff59a149a68de37bedda6268e76e624524d0e142b04a9b
+
+approved_scope:
+  separate_geometry_from_calibration_selection: true
+  b2_member_universe: every_unique_nondegenerate_primary_analytic_scenario_at_origin
+  provenance_duplicate_incremental_weight: 0
+  origin_failure_policy: fail_closed_and_record_reason
+  exact_candidate_grid_size: 144
+  b3_lambda_multipliers: [0.5, 1.0, 2.0]
+  hostile_software_fixture_tests: true
+  official_stage_A_only_after_complete_origin_generator_passes: true
+
+still_prohibited:
+  evaluation_estimator_fit: true
+  evaluation_metric_or_label_access: true
+  evaluation_authorization_decision: true
+  transmission_module_or_outcome_access: true
+  synthetic_empirical_observations: true
+  result_contingent_method_change: true
+
+fail_closed_rule: >-
+  A failed test, incomplete origin generator, dirty implementation tree, or
+  newly discovered result-sensitive ambiguity stops the official fit. The
+  calibration transaction may not receive official geometry until the entire
+  origin-by-scenario generator is executable and audited.
+

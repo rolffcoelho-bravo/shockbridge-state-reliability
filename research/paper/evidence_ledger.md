@@ -186,3 +186,19 @@ This ledger is append-only in substance: superseded findings remain visible with
 - No official value entered an estimator, no calibration or evaluation result
   was accessed, and no transmission or outcome module was imported.
 - Implementation success is not empirical reliability or novelty evidence.
+
+## Run 031 typed-runner evidence
+
+- Owner approval preserves the Run 026–030 rules and authorizes the separate
+  geometry and calibration-transaction implementation.
+- The transaction materializes all 144 authorization vectors over exactly 60
+  ordered origins and hashes every vector before selection.
+- The geometry kernel implements ragged-edge, complete-case, and projected-PCP
+  paths in common 120-month score and eight-channel spaces.
+- B2 uses every unique nondegenerate primary analytic scenario at an origin;
+  provenance duplicates receive zero additional weight.
+- Ten focused hostile test methods pass; focused branch-aware coverage is 96%
+  and 95% for the two new modules. The complete private suite passes 318/318 at
+  the unchanged 90% floor.
+- No official value entered an estimator. No calibration, evaluation, or
+  transmission result was accessed.

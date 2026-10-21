@@ -33,7 +33,10 @@ behind an audited outcome firewall, still without fitting official values. Run
 029 records Stage-A authorization but stops before the first official fit: six
 result-sensitive composition choices and three auditability gaps remain. Run
 030 binds approval of the exact prospective amendment and passes the complete
-orchestration implementation gate; official calibration has not yet begun.
+orchestration implementation gate. Run 031 separates threshold-free geometry
+from the label-bearing calibration transaction, materializes the exact 144-rule
+grid, and passes its hostile gate; the origin-by-scenario generator remains the
+final pre-fit layer and official calibration has not yet begun.
 This repository contains no validated state-dependent transmission effect,
 amplification result, trading signal, or production model.
 
@@ -41,12 +44,12 @@ amplification result, trading signal, or production model.
 
 | Dimension | Current verified status |
 |---|---|
-| Research gate | Four-feature measurement rejected; Run 030 resolves and hostile-tests all 9 approved Stage-A orchestration gaps without fitting official values |
+| Research gate | Four-feature measurement rejected; Run 031 passes the typed geometry/calibration-transaction gate without fitting official values |
 | Main finding | No registered one- or two-dimensional state representation passes the prospective joint stability gates |
 | Empirical basis | Real, freely retrievable official ECB sources with point-in-time timing controls |
 | Reproduction | Exact Run 010 byte-hash reproduction in clean and locked Python 3.9 environments |
 | Public verification | Python 3.9 and 3.12 on Ubuntu 24.04; prospective Ubuntu 26.04 compatibility lane |
-| Test contract | Private canonical suite: 308/308 at 90% coverage; prospective public slice: 296 tests, 285 executions plus exactly eleven evidence-bound skips |
+| Test contract | Private canonical suite: 318/318 at 90% coverage; prospective public slice: 306 tests, 295 executions plus exactly eleven evidence-bound skips |
 | Security | CodeQL, secret and push protection, Dependabot, immutable action pins, and private vulnerability reporting |
 
 ### Dimensional scope
@@ -231,9 +234,8 @@ until the proposed operational amendment is approved, implemented, and
 adversarially tested. Run 028 completes that implementation-only gate: all
 eleven resolutions are exposed as executable operators, fifteen hostile tests
 pass, and an immutable audit confirms that no official value or outcome module
-was accessed. Stage A still requires a separately recorded authorization and
-passing composition gate; evaluation can open only once after an immutable
-calibration lock exists.
+was accessed. Stage A has since received conditional authorization; evaluation
+can open only once after an immutable calibration lock exists.
 
 Run 029 records that Stage-A authorization, then performs a distinct
 composition audit before loading official values. It finds that history-
@@ -248,6 +250,14 @@ the projected missing-cell correction plus the remaining eight orchestration
 resolutions in a new layer. Fourteen focused hostile test methods pass at 97%
 module coverage. The official fit remains unopened until the exact clean
 implementation checkpoint is committed and bound into Stage A.
+
+Run 031 adds a typed geometry kernel and a separate calibration transaction.
+The transaction requires exactly 60 ordered origins, materializes and hashes
+all 144 candidate authorization vectors, applies the full calibration-only
+success analogue, and jointly freezes B3's three penalty multipliers. Ten
+focused hostile test methods pass at 95–96% module coverage. The official fit
+remains unopened because the hash-bound origin-by-scenario generator is not yet
+implemented; no partial empirical script is permitted to bypass that gate.
 
 ## Evidence sequence
 
@@ -292,7 +302,11 @@ Stage-A orchestration readiness ───── 9 gaps; deliberate stop before f
         ↓
 approved orchestration layer ──────── 14 hostile tests; no official fit
         ↓
-Stage-A calibration lock ──────────── next; evaluation remains sealed
+typed geometry/calibration layer ──── 10 hostile tests; no official fit
+        ↓
+origin-by-scenario generator ──────── next; official fit still sealed
+        ↓
+Stage-A calibration lock ──────────── evaluation remains sealed
 ```
 
 The main public scientific records are:
@@ -344,10 +358,10 @@ Run 011 reproduced all four registered Run 010 outputs byte for byte from a
 clean Git archive and isolated Python environment. Run 012 repeated the exact
 reproduction using explicit Python 3.9 build, runtime, and development locks,
 while also running static analysis, the then-registered 140-test suite, and the
-90% coverage gate. The current private canonical contract contains 308 tests
+90% coverage gate. The current private canonical contract contains 318 tests
 and adds cross-version, cross-runner, archive-safety, release-boundary, source-
 feasibility, series-history, protocol-contract, reliability-engine, and hosted
-security regression coverage. The prospective public slice contains 296 tests; the
+security regression coverage. The prospective public slice contains 306 tests; the
 difference is private evidence and unpublished research-bound material.
 
 Create a locked Python 3.9 environment:
@@ -367,9 +381,9 @@ environment. A second operating system or Python minor version has not yet
 reproduced the empirical bundle.
 
 Public CI cannot access ignored empirical artifacts. It requires exactly eleven
-explicitly labeled evidence-bound skips, executes the remaining 285 tests, and
+explicitly labeled evidence-bound skips, executes the remaining 295 tests, and
 enforces an 87% source-only coverage floor. The locked local reproduction
-hydrates all hash-registered evidence, executes all 308 tests, and retains the
+hydrates all hash-registered evidence, executes all 318 tests, and retains the
 90% coverage floor. These are separate, visible gates.
 
 Locally retained empirical artifacts are verified with:

@@ -1297,8 +1297,8 @@ artifacts:
     sha256: 6ad3b7e9fde8b545e47da71a08a251eac2239617834a4ef4b5a317176d9842ff
     recovery_record: research/methodology/run_026_information_clock_reliability_execution_protocol_v1.yaml
   - path: research/paper/research_progress_dashboard_v1.md
-    bytes: 9456
-    sha256: 42941d12109e184c41a74b4fdbcd3a0ef6b433b3231407962953c98a4a3b5080
+    bytes: 10408
+    sha256: 3110b491472548824bfab150d9e6cec179e00e71c9ac29a5ff72adab5a02feff
     recovery_record: PROJECT_STORAGE.md
   - path: reports/methodology/run_026_public_release_receipt_2026-10-19.json
     bytes: 4308
@@ -1392,9 +1392,8 @@ artifacts:
     bytes: 3868
     sha256: 76ecd86e3206973703cf5d7861e7fe2d9b74c1a5436972a76c6101bf79993f9d
     recovery_record: research/methodology/run_029_stage_A_orchestration_amendment_proposal_v1.yaml
-
 verification:
   artifact_count: 347
   all_paths_inside_canonical_root: true
-  all_hashes_verified_on: 2026-10-20
+  all_hashes_verified_on: 2026-10-21
   raw_and_processed_repository_status: LOCAL_GIT_IGNORED

@@ -1,10 +1,11 @@
 # ShockBridge research progress dashboard
 
 **Status date:** 2026-10-21
-**Current evidence frontier:** Run 030 implements and hostile-tests all nine
-approved orchestration resolutions without fitting official values; the exact
-checkpoint must now be committed before the already authorized Stage A runs
-once, while evaluation and transmission remain unopened
+**Current evidence frontier:** Run 031 separates threshold-free geometry from
+the 60-origin label-bearing calibration transaction, materializes the full 144
+candidate grid, and passes the complete software suite without fitting
+official values; the hash-bound origin-by-scenario generator remains the final
+pre-fit gate, while evaluation and transmission remain unopened
 **Interpretation:** progress counts completed research gates, not the probability of a positive result.
 
 ## Evidence-gate map
@@ -17,7 +18,7 @@ once, while evaluation and transmission remain unopened
 | 4. Reliability method and software kernel | Define and adversarially test the information-set reliability envelope before using empirical values | Complete | Frozen Run 021 protocol and outcome-blind Run 022 implementation |
 | 5. Full-history panels and timing amendment | Build the real decision-time panels and quantify archive/timestamp sensitivity | Complete | Run 023 panels; Run 024 raises augmented-panel complete origins from 102 to 123 and preserves two archive clocks |
 | 6. Effective-date coverage amendment | Validate the economic DFR clock against retained daily data and freeze the executable panel | Complete | Run 025: 51 official events, 8,366/8,366 exact daily agreements, 179 fully observed origins in both panels, four source-clock scenarios |
-| 7. First empirical reliability fit | Estimate the envelope under both registered and next-day clocks without opening transmission outcomes | Orchestration implementation complete; Stage A not yet fitted | Run 030 resolves OG-01–OG-09, preserves the historical harness, and passes 14 focused hostile test methods; clean implementation commit and official Stage-A lock remain |
+| 7. First empirical reliability fit | Estimate the envelope under both registered and next-day clocks without opening transmission outcomes | Geometry and calibration transaction complete; Stage A not yet fitted | Run 031 passes ten additional hostile test methods and the 318-test private suite; exact origin generator, clean checkpoint, and official Stage-A lock remain |
 | 8. Prospective authorization evaluation | Test future-failure risk, useful participation, and comparator performance on the sealed evaluation sample | Not started | Calibration/embargo/evaluation audit, uncertainty intervals, negative controls, stopping decision |
 | 9. Transmission authorization gate | Open monetary-policy outcomes only if the measurement method passes its preregistered authorization requirements | Blocked by Gates 7–8 | Either a justified outcome-opening decision or a publishable validated-abstention result |
 | 10. External reproduction and final paper artifacts | Convert the completed evidence into a journal-standard working paper and reproducibility release | Not started | Independent reproduction; final tables, equations, vector figures, appendix, data/code statement, submission package |
@@ -29,16 +30,17 @@ FOUNDATION   ORIGINAL SCREEN   WIDER DESIGN   METHOD KERNEL   REAL PANELS   SOUR
    [✓] ───────── [✓] ─────────── [✓] ─────────── [✓] ────────── [✓] ────────── [✓]
                                                                                   │
                                                                                   ▼
-FINAL PAPER      OUTCOME GATE      AUTHORIZATION      CALIBRATION      ORCHESTRATION      PRIMITIVES
-    [ ] ◀────────── [ ] ◀──────────── [ ] ◀──────────── [ ] ◀──────────── [✓] ◀──────────── [✓]
-                                                        next
+FINAL PAPER   OUTCOME GATE   AUTHORIZATION   CALIBRATION   ORIGIN GENERATOR   TRANSACTION   ORCHESTRATION
+    [ ] ◀──────── [ ] ◀───────── [ ] ◀───────── [ ] ◀───────── [ ] ◀────────── [✓] ◀────────── [✓]
+                                                    next
 ```
 
-Six foundational and evidence-construction gates are complete, and both Gate
-7 software prerequisites—primitive and orchestration implementations—are
-complete. Stage A is authorized but has not yet fitted official values; its
-next action must start from the clean committed Run 030 checkpoint and stop at
-the immutable calibration lock. Gates 8–10 remain sealed. The count is deliberately
+Six foundational and evidence-construction gates are complete. The primitive,
+orchestration, geometry, and calibration-transaction layers for Gate 7 are
+complete. Stage A is authorized but has not yet fitted official values because
+the exact origin-by-scenario generator is still absent. After that generator
+passes, Stage A must start from a clean committed checkpoint and stop at the
+immutable calibration lock. Gates 8–10 remain sealed. The count is deliberately
 not converted into a percentage of scientific completion because a failed
 authorization gate can terminate the transmission branch while still producing
 a valid measurement-reliability paper.
@@ -76,11 +78,18 @@ a valid measurement-reliability paper.
 - Run 030 implements OG-01 through OG-09. Fourteen focused hostile test
   methods pass, the focused module reaches 97% branch-aware coverage, and no
   official calibration fit or evaluation operation occurs.
+- Run 031 separates scenario geometry from calibration selection. Ten focused
+  hostile test methods pass, the new modules reach 95% and 96% branch-aware
+  coverage, and the complete private suite passes 318/318 tests at 90%.
+- The first Run 031 control assessment omitted two calibration analogues; it
+  was corrected before official execution and is recorded as DEV-111.
+- Manuscript Version 1.17 corrects the obsolete 56-scenario statement to the
+  frozen 88-scenario analytic ceiling.
 - No transmission outcome, state-dependent policy effect, or monetary-policy recommendation has been estimated.
 
 ## Manuscript state
 
-The private working manuscript is `research/paper/manuscript_v1_16.md`. It
+The private working manuscript is `research/paper/manuscript_v1_17.md`. It
 records the research question, literature position, prospective governance,
 mathematical method, negative original-state evidence, wider-panel
 construction, Run 024 archive timing sensitivity, Run 025 effective-date
@@ -97,12 +106,13 @@ report the terminal evidence rather than an interim narrative.
 
 ## Immediate next gate
 
-The exact Run 029 amendment is approved and the Run 030 implementation gate
-passes. The implementation must now be committed and its public-safe source
-surface verified. The already authorized Stage A may then run once from that
-clean commit using only the registered real, freely retrievable official
-inputs. It must write an immutable 60-origin calibration ledger, the permitted
-pre-fit evaluation identity map, and the complete calibration lock, then stop
-before any one-time evaluation access. Transmission outcomes remain sealed. A
+The Run 031 transaction and geometry gate passes. The next step is to implement
+and hostile-test the hash-bound origin-by-scenario generator, including every
+provenance mapping, failure reason, future reference failure through the
+embargo, and metric-free evaluation identity. The already authorized Stage A
+may then run once from the clean commit using only the registered real, freely
+retrievable official inputs. It must write an immutable 60-origin calibration
+ledger, the permitted pre-fit evaluation identity map, and the complete lock,
+then stop before any one-time evaluation access. Transmission remains sealed. A
 focused literature update and independent contribution assessment remain
 mandatory before any novelty language is reconsidered.

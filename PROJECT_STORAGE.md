@@ -1,7 +1,7 @@
 # Project storage and recovery map
 
 **Canonical project root:** the repository root, resolved portably from the local inventory
-**Storage audit date:** 2026-10-19
+**Storage audit date:** 2026-10-21
 
 All research documents, source code, tests, reports, contracts, manifests, downloaded source artifacts, and derived outputs produced for this project are stored under the canonical project root.
 
@@ -51,7 +51,7 @@ All research documents, source code, tests, reports, contracts, manifests, downl
 | Run 030 approved Stage-A orchestration and working paper | `research/methodology/run_030_*`, `src/shockbridge_state_risk/state/calibration_orchestration.py`, `scripts/run030_stage_A_orchestration_audit.py`, `tests/test_calibration_orchestration.py`, `research/paper/manuscript_v1_16.md`, and matching `reports/methodology/run_030_*` records | Private Git checkpoint with a public-safe implementation surface; binds exact owner approval, preserves the historical Run 028 harness, implements OG-01–OG-09, passes 14 focused hostile test methods at 97% module coverage, and records no official fit or evaluation/transmission access |
 | Run 031 typed Stage-A runner and working paper | `research/methodology/run_031_*`, `src/shockbridge_state_risk/state/stage_a_*.py`, `scripts/run031_stage_A_runner_audit.py`, `tests/test_stage_a_*.py`, `research/paper/manuscript_v1_17.md`, and matching `reports/methodology/run_031_*` records | Private Git checkpoint with public-safe geometry and calibration-selection surfaces; fixes the 144-rule grid, B2 member universe, three B3 penalties, full calibration analogues, and a fail-closed remaining origin-generator gate; no official fit or evaluation/transmission access |
 | Private Run 010 reproduction capsule | `private/evidence_capsules/run010_exact_v1/` | Private GitHub archive and local project only; five real official/derived ECB inputs, attribution, exact hashes, and no transmission outcomes; excluded from every public export |
-| Sanitized public checkout | `artifacts/public-export/shockbridge-state-reliability/` | Local, Git-ignored, append-only 18-commit public history rooted at the audited parentless Run 013 commit; exact `origin/main` recovery is authoritative for post-publication commits |
+| Sanitized public checkout | `artifacts/public-export/shockbridge-state-reliability/` | Local, Git-ignored, append-only public history rooted at the audited parentless Run 013 commit; exact remote refs are authoritative for post-publication commits |
 | Public source archive and Git bundles | `artifacts/public-export/shockbridge-state-reliability.tar.gz`, the original `.bundle`, and the publication-amendment bundle | Local, Git-ignored, hash-registered recovery artifacts for the accepted root and identity amendment; later append-only public commits are recovered from the verified public remote |
 | Rejected public candidates | `artifacts/public-export/attempt*/` | Local, Git-ignored release-debug evidence; receipts are Git-tracked and candidates are recoverable from retained archives/bundles |
 | CI and build configuration | `.github/`, `Makefile`, and `pyproject.toml` | Git checkpoint |
@@ -98,7 +98,7 @@ Cache directories, coverage files, virtual environments, package build metadata,
 
 ## Current storage condition
 
-The code and documentation layer is protected by the private canonical GitHub repository; the independently sanitized public surface is also live on GitHub. The private `main` ref is verified at Run 030 implementation commit `740981c756de299b0953d69efe5cfa8c61f20f65`. The public remote `main` ref remains `10a29f9827e6e7a97e70b2d3c67c3ecb919ee78e`; Runs 027–030 remain stacked, unmerged checkpoints, and the public Run 030 branch is pushed at `0074b6ad08c4d2683eb7b5dde45fdb613391fb97`. Ignored evidence remains outside Git and is protected by a 354-artifact cryptographic inventory plus deterministic retrieval/build instructions. The dedicated SSH credential is stored outside the project, and no private key or token is tracked. Public corrections must be appended without rewriting the audited root commit and must pass the local release boundary plus hosted CI.
+The code and documentation layer is protected by the private canonical GitHub repository; the independently sanitized public surface is also live on GitHub. The private Run 031 implementation checkpoint is `d489d41825877a6131d210aeba928473bca662e3` on `main`. The public remote `main` ref remains `10a29f9827e6e7a97e70b2d3c67c3ecb919ee78e`; Runs 027–031 remain stacked, unmerged checkpoints, and the public Run 031 implementation branch is pushed at `fa5bc1508437da16854b097f5ab7e4d5f201fbd2`. Ignored evidence remains outside Git and is protected by a 361-artifact cryptographic inventory plus deterministic retrieval/build instructions. The dedicated SSH credential is stored outside the project, and no private key or token is tracked. Public corrections must be appended without rewriting the audited root commit and must pass the local release boundary plus hosted CI.
 
 ## Scientific record protocol
 
